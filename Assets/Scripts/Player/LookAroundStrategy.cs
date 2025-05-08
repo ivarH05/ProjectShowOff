@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Player
 {
+    /// <summary>
+    /// Simple script for looking around with the camera. Slightly jank but does the job.
+    /// </summary>
     public class LookAroundStrategy : MouseStrategy
     {
         [SerializeField] float _maximumVerticalAngle = 90;
@@ -12,6 +15,8 @@ namespace Player
 
         public override void StartStrategy(PlayerController controller) { _currentMouse = controller.CameraTransform.eulerAngles; }
         public override void StopStrategy(PlayerController controller) { }
+        public override void OnAttack(PlayerController controller){}
+        public override void OnAttackSecondary(PlayerController controller){}
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
@@ -23,5 +28,6 @@ namespace Player
             controller.transform.localRotation = Quaternion.Euler(0, _currentMouse.x, 0);
             controller.CameraTransform.localRotation = Quaternion.Euler(_currentMouse.y, 0, 0);
         }
+
     }
 }

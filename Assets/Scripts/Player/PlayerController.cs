@@ -40,6 +40,8 @@ namespace Player
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
         public void OnLook(InputAction.CallbackContext context) => MouseStrategy?.OnLook(this, context.ReadValue<Vector2>());
+        public void OnAttack(InputAction.CallbackContext context) => MouseStrategy?.OnAttack(this);
+        public void OnAttackSecondary(InputAction.CallbackContext context) => MouseStrategy?.OnAttackSecondary(this);
 
         private void FixedUpdate()
         {
