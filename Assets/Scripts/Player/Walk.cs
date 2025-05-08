@@ -5,7 +5,7 @@ namespace Player
     /// <summary>
     /// Allows walking around. No jumping.
     /// </summary>
-    public class WalkStrategy : MovementStrategy
+    public class Walk : MovementStrategy
     {
         [SerializeField] float _speed = 2;
 
@@ -13,7 +13,7 @@ namespace Player
 
         public override void OnMove(PlayerController controller, Vector3 direction)
         {
-            controller.transform.position += direction * Time.deltaTime * _speed;
+            controller.Body.MovePosition(controller.Body.position + direction * Time.deltaTime * _speed);
         }
 
         public override void StopStrategy(PlayerController controller) {}

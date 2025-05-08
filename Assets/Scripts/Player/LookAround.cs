@@ -5,7 +5,7 @@ namespace Player
     /// <summary>
     /// Simple script for looking around with the camera. Slightly jank but does the job.
     /// </summary>
-    public class LookAroundStrategy : MouseStrategy
+    public class LookAround : MouseStrategy
     {
         [SerializeField] float _maximumVerticalAngle = 90;
         [SerializeField] float _sensitivity = .05f;
@@ -15,14 +15,8 @@ namespace Player
 
         public override void StartStrategy(PlayerController controller) { _currentMouse = controller.CameraTransform.eulerAngles; }
         public override void StopStrategy(PlayerController controller) { }
-        public override void OnAttack(PlayerController controller)
-        {
-            Debug.Log("click");
-        }
-        public override void OnAttackSecondary(PlayerController controller)
-        {
-            Debug.Log("rclick");
-        }
+        public override void OnAttack(PlayerController controller){}
+        public override void OnAttackSecondary(PlayerController controller){}
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
