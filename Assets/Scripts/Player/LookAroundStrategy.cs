@@ -15,8 +15,14 @@ namespace Player
 
         public override void StartStrategy(PlayerController controller) { _currentMouse = controller.CameraTransform.eulerAngles; }
         public override void StopStrategy(PlayerController controller) { }
-        public override void OnAttack(PlayerController controller){}
-        public override void OnAttackSecondary(PlayerController controller){}
+        public override void OnAttack(PlayerController controller)
+        {
+            Debug.Log("click");
+        }
+        public override void OnAttackSecondary(PlayerController controller)
+        {
+            Debug.Log("rclick");
+        }
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
