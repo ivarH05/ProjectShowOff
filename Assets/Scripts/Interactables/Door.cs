@@ -4,13 +4,10 @@ using UnityEngine;
 
 namespace Interactables
 {
-    public class Door : MonoBehaviour
+    public class Door : Interactable
     {
         [Header("Setup")]
         public Transform hinge;
-
-        [Header("Debug setup")]
-        public PlayerController controller;
 
         [Header("Settings")]
         [Range(0, 180)]
@@ -21,7 +18,14 @@ namespace Interactables
         [HideInInspector]
         public DoorState state;
 
+        private PlayerController controller;
         private float _angle;
+
+        private Vector3 _originalCameraPosition;
+        private Quaternion _originalCameraRotation;
+        private bool _returningCamera = false;
+
+        public bool isInFront = false;
 
         /// <summary>
         /// check if door is closed or not
@@ -57,14 +61,27 @@ namespace Interactables
 
 
         ////////// Standard behaviour
-        private void Start()
-        {
-            OnInteractStart(controller);
-        }
+
         private void Update()
         {
-            HandleCamera(controller.CameraTransform);
+            if(_returningCamera)
+                ReturnCamera();
             HandleRotation();
+        }
+
+        private void ReturnCamera()
+        {
+            Transform cam = controller.CameraTransform;
+            cam.localPosition = Vector3.Lerp(cam.localPosition, _originalCameraPosition, Time.deltaTime * 10);
+            cam.localRotation = Quaternion.Slerp(cam.localRotation, _originalCameraRotation, Time.deltaTime * 10);
+
+            if(Vector3.Distance(cam.localPosition, _originalCameraPosition) < 0.05f)
+            {
+                cam.localPosition = _originalCameraPosition;
+                cam.localRotation = _originalCameraRotation;
+                controller.SwitchMouseStrategy<LookAround>();
+                _returningCamera = false;
+            }
         }
 
         private void HandleRotation()
@@ -74,37 +91,71 @@ namespace Interactables
             SetLocalDoorRotation(nextAngle);
         }
 
-        public void HandleCamera(Transform cameraTransform)
+        private bool EstimateDesiredForwards(PlayerController controller)
         {
-            Vector3 relPosition = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, hinge.localEulerAngles.y / 90));
-            Vector3 relRotation = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, 50, 30), hinge.localEulerAngles.y / 180);
+            Vector3 point = controller.CameraTransform.position;
 
-            Vector3 targetPos = hinge.TransformPoint(relPosition);
-            Quaternion targetRot = Quaternion.Euler(hinge.TransformDirection(relRotation));
+            if (Vector3.Dot(point - hinge.position, hinge.forward) < 0)
+                return true; //if the player stands in front of the door, assume he wants to close it
 
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPos, Time.deltaTime * 5);
-            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, targetRot, Time.deltaTime * 3);
+            if (Vector3.Dot(point - transform.position, transform.forward) > 0)
+                return false; // if the player stands behind the doorpost, assume he wants to open it
+
+            Vector3 localPoint = transform.TransformPoint(point);
+            localPoint.z = 0;
+            return localPoint.magnitude > 0.5f; //if neither, rely on how far away the player is from the door itself
         }
 
-        public bool IsInFront(Vector3 point)
+        public void HandleCamera(Transform cameraTransform)
         {
-            return Vector3.Dot(point - transform.position, transform.position) < 0;
+            Vector3 relPosition;
+            Vector3 relDirection;
+
+
+            if (isInFront)
+            {
+                relPosition = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, hinge.localEulerAngles.y / 90));
+                relDirection = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, -90, 0), hinge.localEulerAngles.y / 180);
+            }
+            else
+            {
+                relPosition = Vector3.Lerp(new Vector3(0.5f, 1.6f, 0.3f), new Vector3(0.2f, 1.6f, 0.5f), hinge.localEulerAngles.y / 180);
+                relDirection = Vector3.Lerp(new Vector3(0, 120, -20), new Vector3(0, 0, 0), hinge.localEulerAngles.y / 180);
+            }
+
+            Vector3 targetPos = hinge.TransformPoint(relPosition);
+            Quaternion targetRot = Quaternion.Euler(relDirection + hinge.transform.eulerAngles);
+
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPos, Time.deltaTime * 10);
+            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, targetRot, Time.deltaTime * 5);
         }
 
         /// <summary>
         /// Called when the player hits the interact key while targeting the door
         /// </summary>
         /// <param name="controller"></param>
-        void OnInteractStart(PlayerController controller)
+        override public void OnUseStart (PlayerController controller)
         {
+            _originalCameraPosition = controller.CameraTransform.localPosition;
+            _originalCameraRotation = controller.CameraTransform.localRotation;
+
             this.controller = controller;
-            controller.SwitchStrategy(new DoorMouseStrategy(this));
+            controller.SwitchMouseStrategy<DoorMouseStrategy>();
+
+            isInFront = EstimateDesiredForwards(controller);
         }
 
-        void OnInteractStop(PlayerController controller)
+        public override void OnUse (PlayerController controller)
         {
-            controller.SwitchStrategy(new LookAround());
+            HandleCamera(controller.CameraTransform);
         }
+
+        override public void OnUseStop (PlayerController controller)
+        {
+            _returningCamera = true;
+        }
+
+        public override void OnInteract(PlayerController controller) { }
 
         /// <summary>
         /// Smoothy move the door by changing the target angle relative to the current angle
@@ -138,7 +189,6 @@ namespace Interactables
         
         private void OnDrawGizmos()
         {
-            _angle = startAngle;
             DrawDoorGizmos();
         }
 
