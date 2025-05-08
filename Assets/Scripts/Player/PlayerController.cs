@@ -14,10 +14,12 @@ namespace Player
         [field: SerializeField] public MouseStrategy MouseStrategy { get; private set; }
         [field: SerializeField] public InteractStrategy InteractStrategy { get; private set; }
         [field: SerializeField] public Transform CameraTransform { get; private set; }
+        
         [SerializeField] float _coyoteTime = .2f;
 
         public Rigidbody Body {get; private set;}
         public CapsuleCollider MainCollider { get; private set;}
+        public float CharacterHeight { get; private set; }
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
 
@@ -26,6 +28,7 @@ namespace Player
         bool _sprintHeld;
         bool _crouchHeld;
         bool _attackHeld;
+        
         int _collidersInFootTrigger;
         float _timeSinceLastFootCollider = 0;
 
@@ -37,6 +40,7 @@ namespace Player
 
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
+            CharacterHeight = MainCollider.height;
             _input = GetComponent<PlayerInput>();
 
             MoveStrategy ??= GetComponent<Walk>();
@@ -86,7 +90,7 @@ namespace Player
 
             MoveStrategy?.StopStrategy(this);
             MoveStrategy = newStrategy;
-            newStrategy.StartStrategy(this);
+            newStrategy?.StartStrategy(this);
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
