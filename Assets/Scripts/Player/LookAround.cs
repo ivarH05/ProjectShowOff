@@ -17,6 +17,10 @@ namespace Player
         public override void StopStrategy(PlayerController controller) { }
         public override void OnAttack(PlayerController controller){}
         public override void OnAttackSecondary(PlayerController controller){}
+        public override void OnInteract(PlayerController controller)
+        {
+            Debug.Log("haha who up interacting they shit", this);
+        }
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
