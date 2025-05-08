@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(PlayerController))]
     public abstract class MovementStrategy : MonoBehaviour
     {
         public abstract void StartStrategy(PlayerController controller);
