@@ -90,6 +90,11 @@ namespace Player
             if(context.started)
                 MoveStrategy?.OnJump(this);
         }
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                MouseStrategy.OnInteract(this);
+        }
 
         private void FixedUpdate()
         {
