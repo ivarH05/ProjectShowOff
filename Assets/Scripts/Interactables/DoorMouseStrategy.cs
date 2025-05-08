@@ -14,11 +14,13 @@ namespace Interactables
         public override void StartStrategy(PlayerController controller) { }
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
+            if (door.IsLocked)
+                return;
+
             float DoorMoveSpeed = 0.2f;
 
-            if (Vector3.Dot(door.transform.forward, controller.CameraTransform.forward) > 0)
+            if (door.IsInFront(controller.CameraTransform.position))
                 DoorMoveSpeed = -DoorMoveSpeed;
-
 
             door.Move(lookDelta.y * DoorMoveSpeed);
         }
