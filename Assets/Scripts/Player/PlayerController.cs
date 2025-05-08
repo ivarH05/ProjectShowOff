@@ -17,6 +17,7 @@ namespace Player
         public Rigidbody Body {get; private set;}
         public CapsuleCollider MainCollider { get; private set;}
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
+        public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
 
         PlayerInput _input;
         Vector2 _currentPlayerDirection;
@@ -93,7 +94,7 @@ namespace Player
         private void FixedUpdate()
         {
             if(_collidersInFootTrigger < 1)
-                _timeSinceLastFootCollider += Time.fixedDeltaTime;
+                _timeSinceLastFootCollider += Time.deltaTime;
 
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
