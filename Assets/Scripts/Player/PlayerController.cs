@@ -12,16 +12,23 @@ namespace Player
         [field: SerializeField] public MovementStrategy MoveStrategy { get; private set; }
         [field: SerializeField] public MouseStrategy MouseStrategy { get; private set; }
         [field: SerializeField] public Transform CameraTransform { get; private set; }
+        [SerializeField] float _coyoteTime = .2f;
 
         public Rigidbody Body {get; private set;}
+        public CapsuleCollider MainCollider { get; private set;}
+        public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
 
         PlayerInput _input;
         Vector2 _currentPlayerDirection;
         bool _sprintHeld;
+        bool _crouchHeld;
+        int _collidersInFootTrigger;
+        float _timeSinceLastFootCollider = 0;
 
         private void Start()
         {
             Body = GetComponent<Rigidbody>();
+            MainCollider = GetComponent<CapsuleCollider>();
             _input = GetComponent<PlayerInput>();
 
             MoveStrategy ??= GetComponent<MovementStrategy>();
@@ -62,8 +69,21 @@ namespace Player
         {
             if(context.started)
                 MouseStrategy?.OnAttackSecondary(this);
-        } 
-        public void OnSprint(InputAction.CallbackContext context) => _sprintHeld = context.started;
+        }
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                _sprintHeld = true;
+            if(context.canceled)
+                _sprintHeld = false;
+        }
+        public void OnCrouch(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                _crouchHeld = true;
+            if(context.canceled)
+                _crouchHeld = false;
+        }
         public void OnJump(InputAction.CallbackContext context)
         {
             if(context.started)
@@ -72,10 +92,20 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if(_collidersInFootTrigger < 1)
+                _timeSinceLastFootCollider += Time.fixedDeltaTime;
+
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMove(this, res, _sprintHeld);
+            MoveStrategy?.OnMoveUpdate(this, res, _sprintHeld, _crouchHeld);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            _collidersInFootTrigger++;
+            _timeSinceLastFootCollider = 0;
+        }
+        private void OnTriggerExit(Collider other) => _collidersInFootTrigger--;
     }
 }
