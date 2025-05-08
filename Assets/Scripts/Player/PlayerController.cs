@@ -17,6 +17,7 @@ namespace Player
 
         PlayerInput _input;
         Vector2 _currentPlayerDirection;
+        bool _sprintHeld;
 
         private void Start()
         {
@@ -39,6 +40,16 @@ namespace Player
             MoveStrategy = newStrategy;
             newStrategy.StartStrategy(this);
         }
+        /// <summary>
+        /// Switches the movement strategy to another one.
+        /// </summary>
+        /// <param name="newStrategy">The strategy to use instead of the current one.</param>
+        public void SwitchStrategy(MouseStrategy newStrategy)
+        {
+            MouseStrategy?.StopStrategy(this);
+            MouseStrategy = newStrategy;
+            newStrategy.StartStrategy(this);
+        }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
         public void OnLook(InputAction.CallbackContext context) => MouseStrategy?.OnLook(this, context.ReadValue<Vector2>());
@@ -52,13 +63,19 @@ namespace Player
             if(context.started)
                 MouseStrategy?.OnAttackSecondary(this);
         } 
+        public void OnSprint(InputAction.CallbackContext context) => _sprintHeld = context.started;
+        public void OnJump(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                MoveStrategy?.OnJump(this);
+        }
 
         private void FixedUpdate()
         {
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMove(this, res);
+            MoveStrategy?.OnMove(this, res, _sprintHeld);
         }
     }
 }
