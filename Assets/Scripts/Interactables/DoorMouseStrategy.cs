@@ -5,6 +5,7 @@ namespace Interactables
 {
     public class DoorMouseStrategy : MouseStrategy
     {
+        public float DoorSensitivity = 0.1f;
         public override void StartStrategy(PlayerController controller) { }
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
@@ -14,12 +15,9 @@ namespace Interactables
             if (door.IsLocked)
                 return;
 
-            float DoorMoveSpeed = 0.2f;
 
-            if (door.isInFront)
-                DoorMoveSpeed = -DoorMoveSpeed;
+            door.Move(lookDelta.y * (door.isInFront ? -DoorSensitivity : DoorSensitivity));
 
-            door.Move(lookDelta.y * DoorMoveSpeed);
         }
         public override void StopStrategy(PlayerController controller) { }
     }
