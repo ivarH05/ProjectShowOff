@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 namespace Player
@@ -11,12 +12,14 @@ namespace Player
         [SerializeField] float _sensitivity = .05f;
         [SerializeField] bool _flipVertical = true;
 
+
         Vector2 _currentMouse;
 
-        public override void StartStrategy(PlayerController controller) { _currentMouse = controller.CameraTransform.eulerAngles; }
+        public override void StartStrategy(PlayerController controller) 
+        { 
+            _currentMouse = new Vector2(controller.transform.localEulerAngles.y, controller.CameraTransform.localEulerAngles.x);
+        }
         public override void StopStrategy(PlayerController controller) { }
-        public override void OnAttack(PlayerController controller){}
-        public override void OnAttackSecondary(PlayerController controller){}
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
@@ -28,6 +31,5 @@ namespace Player
             controller.transform.localRotation = Quaternion.Euler(0, _currentMouse.x, 0);
             controller.CameraTransform.localRotation = Quaternion.Euler(_currentMouse.y, 0, 0);
         }
-
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,54 +12,148 @@ namespace Player
     {
         [field: SerializeField] public MovementStrategy MoveStrategy { get; private set; }
         [field: SerializeField] public MouseStrategy MouseStrategy { get; private set; }
+        [field: SerializeField] public InteractStrategy InteractStrategy { get; private set; }
         [field: SerializeField] public Transform CameraTransform { get; private set; }
+        
+        [SerializeField] float _coyoteTime = .2f;
 
         public Rigidbody Body {get; private set;}
+        public CapsuleCollider MainCollider { get; private set;}
+        public float CharacterHeight { get; private set; }
+        public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
+        public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
 
         PlayerInput _input;
         Vector2 _currentPlayerDirection;
+        bool _sprintHeld;
+        bool _crouchHeld;
+        bool _attackHeld;
+        
+        int _collidersInFootTrigger;
+        float _timeSinceLastFootCollider = 0;
+
+        public Interactable ActiveInteractable { get { return InteractStrategy.activeInteractable; } }
 
         private void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+
             Body = GetComponent<Rigidbody>();
+            MainCollider = GetComponent<CapsuleCollider>();
+            CharacterHeight = MainCollider.height;
             _input = GetComponent<PlayerInput>();
 
-            MoveStrategy ??= GetComponent<MovementStrategy>();
+            MoveStrategy ??= GetComponent<Walk>();
             MoveStrategy?.StartStrategy(this);
-            MouseStrategy ??= GetComponent<MouseStrategy>();
+            MouseStrategy ??= GetComponent<LookAround>();
             MouseStrategy?.StartStrategy(this);
+            InteractStrategy ??= GetComponent<StandardInteract>();
+            InteractStrategy?.StartStrategy(this);
+        }
+
+        private void Update()
+        {
+            if(_attackHeld)
+                InteractStrategy?.OnAttack(this);
+        }
+
+        /// <summary>
+        /// Switches the mouse strategy to another one.
+        /// </summary>
+        /// <param name="newStrategy">The strategy to use instead of the current one.</param>
+        public void SwitchMouseStrategy<T>() where T : MouseStrategy 
+        {
+            MouseStrategy newStrategy = GetComponent<T>();
+            if (newStrategy == null)
+            {
+                Debug.LogError($"Missing required component of type {typeof(T)} on GameObject. Cannot switch strategy.");
+                return;
+            }
+
+            MouseStrategy?.StopStrategy(this);
+            MouseStrategy = newStrategy;
+            newStrategy.StartStrategy(this);
         }
 
         /// <summary>
         /// Switches the movement strategy to another one.
         /// </summary>
         /// <param name="newStrategy">The strategy to use instead of the current one.</param>
-        public void SwitchStrategy(MovementStrategy newStrategy)
+        public void SwitchMovementStrategy<T>() where T : MovementStrategy
         {
+            MovementStrategy newStrategy = GetComponent<T>();
+            if (newStrategy == null)
+            {
+                Debug.LogError($"Missing required component of type {typeof(T)} on GameObject. Cannot switch strategy.");
+                return;
+            }
+
             MoveStrategy?.StopStrategy(this);
             MoveStrategy = newStrategy;
-            newStrategy.StartStrategy(this);
+            newStrategy?.StartStrategy(this);
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
         public void OnLook(InputAction.CallbackContext context) => MouseStrategy?.OnLook(this, context.ReadValue<Vector2>());
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if(context.started)
-                MouseStrategy?.OnAttack(this);
+            if (context.started)
+            {
+                _attackHeld = true;
+                InteractStrategy?.OnAttackStart(this);
+            }
+            if (context.canceled)
+            {
+                _attackHeld = false;
+                InteractStrategy?.OnAttackStop(this);
+            }
         }
         public void OnAttackSecondary(InputAction.CallbackContext context) 
         {
             if(context.started)
-                MouseStrategy?.OnAttackSecondary(this);
-        } 
+                InteractStrategy?.OnAttackSecondary(this);
+        }
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                _sprintHeld = true;
+            if(context.canceled)
+                _sprintHeld = false;
+        }
+        public void OnCrouch(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                _crouchHeld = true;
+            if(context.canceled)
+                _crouchHeld = false;
+        }
+        public void OnJump(InputAction.CallbackContext context)
+        {
+            if(context.started)
+                MoveStrategy?.OnJump(this);
+        }
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                InteractStrategy.OnInteract(this);
+        }
 
         private void FixedUpdate()
         {
+            if(_collidersInFootTrigger < 1)
+                _timeSinceLastFootCollider += Time.deltaTime;
+
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMove(this, res);
+            MoveStrategy?.OnMoveUpdate(this, res, _sprintHeld, _crouchHeld);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            _collidersInFootTrigger++;
+            _timeSinceLastFootCollider = 0;
+        }
+        private void OnTriggerExit(Collider other) => _collidersInFootTrigger--;
     }
 }
