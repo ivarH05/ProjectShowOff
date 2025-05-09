@@ -25,7 +25,7 @@ namespace Interactables
         private Quaternion _originalCameraRotation;
         private bool _returningCamera = false;
 
-        public bool isInFront = false;
+        [HideInInspector]public bool isInFront = false;
 
         /// <summary>
         /// check if door is closed or not
@@ -152,6 +152,10 @@ namespace Interactables
 
         override public void OnUseStop (PlayerController controller)
         {
+            if (_angle < 10)
+                _angle = 0;
+            else
+                _angle = maxAngle;
             _returningCamera = true;
         }
 
