@@ -46,7 +46,7 @@ namespace Player
 
         public override void OnMoveUpdate(PlayerController controller, Vector3 direction, bool sprintHeld, bool crouchHeld)
         {
-            if(crouchHeld) sprintHeld = false;
+            if(_crouchValue01 > .2f) sprintHeld = false;
 
             _currentJumpCooldown += Time.deltaTime;
             var vel = direction * _speed * (sprintHeld ? _sprintMultiplier : Mathf.Lerp(1, _crouchSpeedMultiplier, _crouchValue01));
@@ -74,15 +74,17 @@ namespace Player
 
             float crouchedHeight = controller.CharacterHeight * _crouchHeightMultiplier;
             float currentHeight = Mathf.Lerp(controller.CharacterHeight, crouchedHeight, _crouchValue01);
+            float heightDelta = currentHeight - controller.MainCollider.height;
 
-            Vector3 headTipPos = controller.transform.position + Vector3.up * (currentHeight - controller.CharacterHeight * .5f);
-            if (Physics.Raycast(new(headTipPos + Vector3.up * .001f, Vector3.up), .2f))
+            Vector3 headTipPos = controller.transform.position + Vector3.up * (controller.MainCollider.height*.5f+controller.MainCollider.center.y);
+            var ray = new Ray(headTipPos - Vector3.up * .2f, Vector3.up);
+            if (heightDelta > 0 && Physics.Raycast(ray, .4f))
             {
+                Debug.DrawRay(ray.origin, ray.direction * .4f);
                 _crouchValue01 = Mathf.Clamp01(_crouchValue01 + Time.deltaTime * _crouchAnimationSpeed);
                 return;
             }
-
-            float heightDelta = currentHeight - controller.MainCollider.height;
+            else Debug.DrawRay(ray.origin, ray.direction * .4f, Color.red);
 
             controller.MainCollider.height = currentHeight;
             controller.MainCollider.center += new Vector3(0, heightDelta*.5f, 0);
