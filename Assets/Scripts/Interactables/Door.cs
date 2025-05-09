@@ -143,6 +143,11 @@ namespace Interactables
             controller.SwitchMouseStrategy<DoorMouseStrategy>();
 
             isInFront = EstimateDesiredForwards(controller);
+
+            if (IsClosed)
+                SetAngle(15);
+            else
+                SetAngle(90);
         }
 
         public override void OnUse (PlayerController controller)
@@ -172,6 +177,11 @@ namespace Interactables
                 _angle = 0;
             if(_angle > maxAngle)
                 _angle = maxAngle;
+        }
+
+        public void SetAngle(float angle)
+        {
+            _angle = Mathf.Clamp(angle, 0, maxAngle);
         }
 
         /// <summary>
