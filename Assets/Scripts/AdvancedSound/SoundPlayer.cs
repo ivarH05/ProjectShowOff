@@ -7,10 +7,14 @@ namespace AdvancedSound
     /// </summary>
     public class SoundPlayer : MonoBehaviour
     {
-        [SerializeField] AudioClip _sound;
+        [SerializeField] Sound _sound;
         public void Play(float volume = 1, float pitch = 1)
         {
-            SoundHandler.Singleton.PlaySound(_sound, transform.position, volume, pitch);
+            var res = _sound;
+            res.Volume *= volume;
+            res.Pitch *= pitch;
+            res.Origin = transform.position;
+            SoundHandler.Singleton.PlaySound(res);
         }
 
     }
