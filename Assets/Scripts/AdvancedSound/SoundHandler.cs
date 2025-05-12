@@ -12,6 +12,6 @@ namespace AdvancedSound
             DontDestroyOnLoad(gameObject);
         }
 
-        public abstract void PlaySound(AudioClip sound, Vector3 origin, float volume = 1, float pitch = 1);
+        public abstract void PlaySound(Sound snd);
     }
 }
