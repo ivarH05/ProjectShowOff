@@ -99,6 +99,7 @@ namespace Interactables
                 cam.localEulerAngles = new Vector3(cam.localEulerAngles.x, cam.localEulerAngles.y, 0);
 
                 controller.SwitchMouseStrategy<LookAround>();
+                controller.SwitchMovementStrategy<Walk>();
                 controller = null;
                 _returningCamera = false;
             }
@@ -155,6 +156,7 @@ namespace Interactables
 
             this.controller = controller;
             controller.SwitchMouseStrategy<DoorMouseStrategy>();
+            controller.DisableMovement();
 
             isInFront = EstimateDesiredForwards(controller);
 

@@ -17,11 +17,9 @@ namespace Player
 
         public override void StartStrategy(PlayerController controller) 
         {
-            Debug.Log(_currentMouse);
             _currentMouse = new Vector2(
                 controller.transform.localEulerAngles.y + controller.CameraTransform.localEulerAngles.y, 
                 controller.CameraTransform.eulerAngles.x);
-            Debug.Log(_currentMouse);
         }
 
         public override void StopStrategy(PlayerController controller) { }

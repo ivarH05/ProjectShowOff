@@ -93,6 +93,12 @@ namespace Player
             newStrategy?.StartStrategy(this);
         }
 
+        public void DisableMovement()
+        {
+            MoveStrategy?.StopStrategy(this);
+            MoveStrategy = null; 
+        }
+
         public void MovePosition(Vector3 position)
         {
             transform.position = position;
