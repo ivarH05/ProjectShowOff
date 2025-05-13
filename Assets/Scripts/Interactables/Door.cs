@@ -17,6 +17,7 @@ namespace Interactables
         [Range(0, 180)] 
         public float maxAngle = 120;
 
+        [Space]
         public Events events = new Events();
 
         [HideInInspector]
