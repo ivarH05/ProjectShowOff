@@ -37,7 +37,7 @@ namespace Player
                     if (myHeight != controller.MainCollider.height)
                         break;
                     UpdateCrouch(false, controller);
-                    myHeight = controller.MainCollider.height; 
+                    myHeight = controller.MainCollider.height;
                     yield return new WaitForFixedUpdate();
                 }
                 Debug.Log("reached end");
@@ -76,7 +76,8 @@ namespace Player
             float currentHeight = Mathf.Lerp(controller.CharacterHeight, crouchedHeight, _crouchValue01);
             float heightDelta = currentHeight - controller.MainCollider.height;
 
-            Vector3 headTipPos = controller.transform.position + Vector3.up * (controller.MainCollider.height*.5f+controller.MainCollider.center.y);
+            float headTipOffset = (controller.MainCollider.height*.5f + controller.MainCollider.center.y);
+            Vector3 headTipPos = controller.transform.position + Vector3.up * headTipOffset;
             var ray = new Ray(headTipPos - Vector3.up * .2f, Vector3.up);
             if (heightDelta > 0 && Physics.Raycast(ray, .4f))
             {
@@ -88,7 +89,7 @@ namespace Player
 
             controller.MainCollider.height = currentHeight;
             controller.MainCollider.center += new Vector3(0, heightDelta*.5f, 0);
-            controller.CameraTransform.position += new Vector3(0, heightDelta, 0);
+            controller.CameraTransform.localPosition = new Vector3(0,headTipOffset + controller.EyeOffset,0);
         }
     }
 }

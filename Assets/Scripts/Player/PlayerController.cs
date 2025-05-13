@@ -20,10 +20,13 @@ namespace Player
         public Rigidbody Body {get; private set;}
         public CapsuleCollider MainCollider { get; private set;}
         public float CharacterHeight { get; private set; }
+        /// <summary>
+        /// Relative to the top of the MainCollider.
+        /// </summary>
+        public float EyeOffset { get; private set; }
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
 
-        PlayerInput _input;
         Vector2 _currentPlayerDirection;
         bool _sprintHeld;
         bool _crouchHeld;
@@ -41,7 +44,7 @@ namespace Player
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
             CharacterHeight = MainCollider.height;
-            _input = GetComponent<PlayerInput>();
+            EyeOffset = CameraTransform.localPosition.y - MainCollider.height * .5f;
 
             MoveStrategy ??= GetComponent<Walk>();
             MoveStrategy?.StartStrategy(this);
