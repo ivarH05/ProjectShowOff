@@ -13,10 +13,10 @@ namespace AdvancedSound
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PlaySound(Sound snd)
+        public void PlaySound(Sound snd, Vector3 position)
         {
             var GO = new GameObject("Temp sound");
-            GO.transform.position = snd.Origin;
+            GO.transform.position = position;
             var player = GO.AddComponent<AudioSource>();
             player.clip = snd.Clip;
             player.volume = snd.Volume;
@@ -35,9 +35,23 @@ namespace AdvancedSound
             player.SetCustomCurve(AudioSourceCurveType.CustomRolloff, audioFalloff);
             player.Play();
 
+            foreach(var listener in SoundListener.Listeners)
+            {
+                var dist = (listener.transform.position - position).sqrMagnitude;
+                if (dist > snd.Range * snd.Range) continue;
+                float normDist = Mathf.Sqrt(dist);
+                HeardSound res = default;
+                res.Origin = position;
+                res.Type = snd.Type;
+                res.Loudness = Loudness.Faint;
+                if(normDist < snd.ModerateThreshold)
+                    res.Loudness = normDist < snd.LoudThreshold ? Loudness.Loud : Loudness.Moderate;
+                if(res.Type == SoundType.Ambient) res.Loudness = Loudness.Inaudible;
+                listener.OnHearSound(res);
+            }
+
             StartCoroutine(DestroyIfStopped());
             IEnumerator DestroyIfStopped()
-
             {
                 while (player.isPlaying)
                     yield return new WaitForFixedUpdate();

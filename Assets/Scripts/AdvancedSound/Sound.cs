@@ -7,7 +7,6 @@ namespace AdvancedSound
     public struct Sound
     {
         public AudioClip Clip;
-        [HideInInspector] public Vector3 Origin;
         public SoundType Type;
         public float Volume;
         public float Pitch;

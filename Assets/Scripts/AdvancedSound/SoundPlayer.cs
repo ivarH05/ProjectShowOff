@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,8 +15,7 @@ namespace AdvancedSound
             var res = _sound;
             res.Volume *= volume;
             res.Pitch *= pitch;
-            res.Origin = transform.position;
-            SoundHandler.Singleton.PlaySound(res);
+            SoundHandler.Singleton.PlaySound(res, transform.position);
         }
 
 #if UNITY_EDITOR
