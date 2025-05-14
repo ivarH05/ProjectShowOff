@@ -19,8 +19,10 @@ namespace AdvancedSound
         }
 
 #if UNITY_EDITOR
+        [SerializeField] bool _showGizmos = true;
         private void OnDrawGizmosSelected()
         {
+            if(!_showGizmos) return;
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, _sound.Range);
             Gizmos.color = Color.orange;

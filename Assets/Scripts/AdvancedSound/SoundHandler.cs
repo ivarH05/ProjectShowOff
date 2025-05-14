@@ -28,10 +28,12 @@ namespace AdvancedSound
                 new(0, 1),
                 new(snd.LoudThreshold, .5f),
                 new(snd.ModerateThreshold, .15f),
-                new(1, 0)
+                new(1, .07f),
+                new(1.3f, 0)
             );
             audioFalloff.SmoothTangents(1, 0);
             audioFalloff.SmoothTangents(2, 0);
+            audioFalloff.SmoothTangents(3, 0);
             player.SetCustomCurve(AudioSourceCurveType.CustomRolloff, audioFalloff);
             player.Play();
 
