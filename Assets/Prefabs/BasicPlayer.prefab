@@ -371,7 +371,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.2
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -394,8 +394,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.28
-  m_Center: {x: 0, y: -0.7, z: 0}
+  m_Radius: 0.15
+  m_Center: {x: 0, y: -0.8, z: 0}
 --- !u!54 &7460458228229255450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -709,3 +709,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691899e4d2c5b004b89cfdc781527c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorSensitivity: 0.1
