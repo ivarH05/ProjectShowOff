@@ -10,7 +10,8 @@ namespace AdvancedSound
         public SoundType Type;
         public float Volume;
         public float Pitch;
-        public float Range;
+        public float AudibleRange;
+        [Range(0, 1)] public float FaintThreshold;
         [Range(0, 1)] public float ModerateThreshold;
         [Range(0, 1)] public float LoudThreshold;
     }

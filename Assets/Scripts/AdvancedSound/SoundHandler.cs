@@ -21,15 +21,15 @@ namespace AdvancedSound
             player.clip = snd.Clip;
             player.volume = snd.Volume;
             player.pitch = snd.Pitch;
-            player.maxDistance = snd.Range;
+            player.maxDistance = snd.AudibleRange;
             player.rolloffMode = AudioRolloffMode.Custom;
             player.SetCustomCurve(AudioSourceCurveType.SpatialBlend, new(new Keyframe(0, 1, 0, 0)));
             AnimationCurve audioFalloff = new(
                 new(0, 1),
                 new(snd.LoudThreshold, .5f),
                 new(snd.ModerateThreshold, .15f),
-                new(1, .07f),
-                new(1.3f, 0)
+                new(snd.FaintThreshold, .07f),
+                new(1f, 0)
             );
             audioFalloff.SmoothTangents(1, 0);
             audioFalloff.SmoothTangents(2, 0);
@@ -40,7 +40,7 @@ namespace AdvancedSound
             foreach(var listener in SoundListener.Listeners)
             {
                 var dist = (listener.transform.position - position).sqrMagnitude;
-                if (dist > snd.Range * snd.Range) continue;
+                if (dist > snd.AudibleRange * snd.AudibleRange) continue;
                 float normDist = Mathf.Sqrt(dist);
                 HeardSound res = default;
                 res.Origin = position;

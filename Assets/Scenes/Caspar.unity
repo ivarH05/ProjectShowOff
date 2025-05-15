@@ -261,7 +261,8 @@ MonoBehaviour:
     Type: 0
     Volume: 0.1
     Pitch: 1
-    Range: 9.96
+    AudibleRange: 10.39
+    FaintThreshold: 0.711
     ModerateThreshold: 0.422
     LoudThreshold: 0.151
   _showGizmos: 1
@@ -496,6 +497,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759612135}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &884978758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884978760}
+  - component: {fileID: 884978759}
+  m_Layer: 0
+  m_Name: the playerrr (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &884978759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884978758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound:
+    Clip: {fileID: 8300000, guid: e3817c17f720b2d4ab6c4f3ab8c43faf, type: 3}
+    Type: 0
+    Volume: 0.1
+    Pitch: 1
+    AudibleRange: 10.39
+    FaintThreshold: 0.711
+    ModerateThreshold: 0.422
+    LoudThreshold: 0.151
+  _showGizmos: 1
+--- !u!4 &884978760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884978758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.14, y: 0.89, z: -0.32607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1016413442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,4 +1203,5 @@ SceneRoots:
   - {fileID: 7676499613770020346}
   - {fileID: 1370699521}
   - {fileID: 181597313}
+  - {fileID: 884978760}
   - {fileID: 1670522293}

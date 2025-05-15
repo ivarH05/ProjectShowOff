@@ -23,12 +23,14 @@ namespace AdvancedSound
         private void OnDrawGizmosSelected()
         {
             if(!_showGizmos) return;
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, _sound.Range);
-            Gizmos.color = Color.orange;
-            Gizmos.DrawWireSphere(transform.position, _sound.Range * _sound.ModerateThreshold);
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, _sound.Range * _sound.LoudThreshold);
+            Gizmos.color = new(1, 1, 1, .25f);
+            Gizmos.DrawWireSphere(transform.position, _sound.AudibleRange);
+            Gizmos.color = new(1,1,0,.35f);
+            Gizmos.DrawWireSphere(transform.position, _sound.AudibleRange * _sound.FaintThreshold);
+            Gizmos.color = new(1,.5f,0,.5f);
+            Gizmos.DrawWireSphere(transform.position, _sound.AudibleRange * _sound.ModerateThreshold);
+            Gizmos.color = new(1,0,0,.5f);
+            Gizmos.DrawWireSphere(transform.position, _sound.AudibleRange * _sound.LoudThreshold);
         }
 
         [CustomEditor(typeof(SoundPlayer))]
@@ -45,11 +47,14 @@ namespace AdvancedSound
                 GUI.enabled = true;
 
                 GUI.color = new(1,.3f,0);
-                if (snd._sound.Range <= 0
+                if (snd._sound.AudibleRange <= 0
+                    || snd._sound.FaintThreshold == 0
                     || snd._sound.ModerateThreshold == 0
                     || snd._sound.LoudThreshold == 0)
                 EditorGUILayout.LabelField("Thresholds/range is 0! The SoundPlayer may not work correctly.");
                 GUI.color = Color.white;
+                if(snd._sound.FaintThreshold < snd._sound.ModerateThreshold)
+                    snd._sound.FaintThreshold = snd._sound.ModerateThreshold;
                 if(snd._sound.ModerateThreshold < snd._sound.LoudThreshold)
                     snd._sound.ModerateThreshold = snd._sound.LoudThreshold;
             }
