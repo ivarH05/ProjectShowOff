@@ -25,10 +25,10 @@ namespace Tools
             }
         }
 #else
-    void Start()
-    {
-        Destroy(this);
-    }
+        void Start()
+        {
+            Destroy(this);
+        }
 #endif
     }
 }

@@ -26,10 +26,10 @@ namespace Player
         public float EyeOffset { get; private set; }
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
+        public bool SprintHeld { get; private set; }
+        public bool CrouchHeld { get; private set; }
 
         Vector2 _currentPlayerDirection;
-        bool _sprintHeld;
-        bool _crouchHeld;
         bool _attackHeld;
         
         int _collidersInFootTrigger;
@@ -131,16 +131,16 @@ namespace Player
         public void OnSprint(InputAction.CallbackContext context)
         {
             if(context.started)
-                _sprintHeld = true;
+                SprintHeld = true;
             if(context.canceled)
-                _sprintHeld = false;
+                SprintHeld = false;
         }
         public void OnCrouch(InputAction.CallbackContext context)
         {
             if(context.started)
-                _crouchHeld = true;
+                CrouchHeld = true;
             if(context.canceled)
-                _crouchHeld = false;
+                CrouchHeld = false;
         }
         public void OnJump(InputAction.CallbackContext context)
         {
@@ -161,7 +161,7 @@ namespace Player
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMoveUpdate(this, res, _sprintHeld, _crouchHeld);
+            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, CrouchHeld);
         }
 
         private void OnTriggerEnter(Collider other)

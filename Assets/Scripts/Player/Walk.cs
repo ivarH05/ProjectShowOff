@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -21,7 +22,10 @@ namespace Player
         
         [SerializeField] float _jumpForce = 3;
         [SerializeField] float _jumpCooldown = .5f;
-        
+
+        public event Action OnTrueJump;
+        public bool IsCrouched => _crouchValue01 > .5f;
+
         float _currentJumpCooldown;
         float _crouchValue01 = 0; // 0 if not crouching, 1 if crouching, anything in between for transitionary states
 
@@ -40,7 +44,6 @@ namespace Player
                     myHeight = controller.MainCollider.height;
                     yield return new WaitForFixedUpdate();
                 }
-                Debug.Log("reached end");
             }
         }
 
@@ -63,6 +66,7 @@ namespace Player
             {
                 _currentJumpCooldown = 0;
                 controller.Body.AddForce(new Vector3(0,_jumpForce * Mathf.Lerp(1, _crouchJumpHeightMultiplier, _crouchValue01), 0), ForceMode.Impulse);
+                OnTrueJump?.Invoke();
             }
         }
         void UpdateCrouch(bool crouchHeld, PlayerController controller)
@@ -81,11 +85,9 @@ namespace Player
             var ray = new Ray(headTipPos - Vector3.up * .2f, Vector3.up);
             if (heightDelta > 0 && Physics.Raycast(ray, .4f))
             {
-                Debug.DrawRay(ray.origin, ray.direction * .4f);
                 _crouchValue01 = Mathf.Clamp01(_crouchValue01 + Time.deltaTime * _crouchAnimationSpeed);
                 return;
             }
-            else Debug.DrawRay(ray.origin, ray.direction * .4f, Color.red);
 
             controller.MainCollider.height = currentHeight;
             controller.MainCollider.center += new Vector3(0, heightDelta*.5f, 0);
