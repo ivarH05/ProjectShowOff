@@ -17,6 +17,7 @@ namespace Interactables
         [Range(0, 180)] 
         public float maxAngle = 120;
 
+        [Space]
         public Events events = new Events();
 
         [HideInInspector]
@@ -39,6 +40,9 @@ namespace Interactables
             public UnityEvent<Door, PlayerController> OnOpen;
             public UnityEvent<Door, PlayerController> OnMove;
             public UnityEvent<Door, PlayerController> OnClose;
+
+            public UnityEvent<Door, PlayerController> OnLock;
+            public UnityEvent<Door, PlayerController> OnUnluck;
         }
 
 
@@ -64,13 +68,22 @@ namespace Interactables
             {
                 if (value)
                 {
+                    if(state != DoorState.locked)
+                        events.OnLock.Invoke(this, controller);
                     state = DoorState.locked;
+
                     Close();
                 }
-                else if (IsClosed)
-                    state = DoorState.closed;
                 else
-                    state = DoorState.open;
+                {
+                    if (state == DoorState.locked)
+                        events.OnUnluck.Invoke(this, controller);
+
+                    if (IsClosed)
+                        state = DoorState.closed;
+                    else
+                        state = DoorState.open;
+                }
             }
         }
 
@@ -94,7 +107,9 @@ namespace Interactables
             if (Mathf.Abs(cam.localEulerAngles.z) < 1)
             {
                 Vector3 temp = cam.position;
+                controller.Body.isKinematic = false;
                 controller.MovePosition(cam.position - _originalCameraPosition);
+
                 cam.position = temp;
                 cam.localEulerAngles = new Vector3(cam.localEulerAngles.x, cam.localEulerAngles.y, 0);
 
@@ -130,18 +145,7 @@ namespace Interactables
         {
             Vector3 relPosition;
             Vector3 relDirection;
-
-
-            if (isInFront)
-            {
-                relPosition = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, hinge.localEulerAngles.y / 90));
-                relDirection = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, -90, 0), hinge.localEulerAngles.y / 180);
-            }
-            else
-            {
-                relPosition = Vector3.Lerp(new Vector3(0.5f, 1.6f, 0.3f), new Vector3(0.2f, 1.6f, 0.5f), hinge.localEulerAngles.y / 180);
-                relDirection = Vector3.Lerp(new Vector3(0, 120, -20), new Vector3(0, 0, 0), hinge.localEulerAngles.y / 180);
-            }
+            GetCameraTransforms(out relPosition, out relDirection);
 
             Vector3 targetPos = hinge.TransformPoint(relPosition);
             Quaternion targetRot = Quaternion.Euler(relDirection + hinge.transform.eulerAngles);
@@ -150,6 +154,26 @@ namespace Interactables
             cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, targetRot, Time.deltaTime * 5);
         }
 
+        /// <summary>
+        /// Get the relative position of the camere when peeking
+        /// </summary>
+        /// <param name="PositionResult">the relative position</param>
+        /// <param name="DirectionResult">the relative rotation</param>
+        public virtual void GetCameraTransforms(out Vector3 PositionResult, out Vector3 DirectionResult)
+        {
+            if (isInFront)
+            {
+                PositionResult = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, hinge.localEulerAngles.y / 90));
+                DirectionResult = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, -90, 0), hinge.localEulerAngles.y / 180);
+            }
+            else
+            {
+                PositionResult = Vector3.Lerp(new Vector3(0.5f, 1.6f, 0.3f), new Vector3(0.2f, 1.6f, 0.5f), hinge.localEulerAngles.y / 180);
+                DirectionResult = Vector3.Lerp(new Vector3(0, 120, -20), new Vector3(0, 0, 0), hinge.localEulerAngles.y / 180);
+            }
+        }
+
+
         override public void OnUseStart (PlayerController controller)
         {
             _originalCameraPosition = controller.CameraTransform.localPosition;
@@ -157,6 +181,7 @@ namespace Interactables
             this.controller = controller;
             controller.SwitchMouseStrategy<DoorMouseStrategy>();
             controller.DisableMovement();
+            controller.Body.isKinematic = true;
 
             isInFront = EstimateDesiredForwards(controller);
 
@@ -180,6 +205,7 @@ namespace Interactables
                 Close();
             else
                 SetAngle(maxAngle);
+
             _returningCamera = true;
         }
 
@@ -215,6 +241,8 @@ namespace Interactables
         /// <param name="newAngle">the target angle</param>
         private void SetLocalDoorRotation(float newAngle)
         {
+            if (hinge == null)
+                return;
             hinge.localEulerAngles = new Vector3(
                 hinge.localEulerAngles.x,
                 newAngle,
