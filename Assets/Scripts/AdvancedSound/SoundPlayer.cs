@@ -13,9 +13,8 @@ namespace AdvancedSound
         public void Play(float volume = 1, float pitch = 1)
         {
             var res = _sound;
-            res.Volume *= volume;
             res.Pitch *= pitch;
-            SoundHandler.Singleton.PlaySound(res, transform.position);
+            SoundHandler.Singleton.PlaySound(res, transform.position, volume);
         }
 
 #if UNITY_EDITOR

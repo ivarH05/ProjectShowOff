@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sound:
     Clip: {fileID: 8300000, guid: 06d4b6afa57573f4a981441acd05835a, type: 3}
-    Type: 0
+    Type: 1
     Volume: 0.91
     Pitch: 1
     AudibleRange: 14
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sound:
     Clip: {fileID: 8300000, guid: 06d4b6afa57573f4a981441acd05835a, type: 3}
-    Type: 0
+    Type: 1
     Volume: 1
     Pitch: 0.73
     AudibleRange: 3.51
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sound:
     Clip: {fileID: 8300000, guid: aa3d7224a14acf3408a2eb097fcd0a7d, type: 3}
-    Type: 0
+    Type: 1
     Volume: 0.8
     Pitch: 1
     AudibleRange: 10.29

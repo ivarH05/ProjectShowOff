@@ -13,13 +13,13 @@ namespace AdvancedSound
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PlaySound(Sound snd, Vector3 position)
+        public void PlaySound(Sound snd, Vector3 position, float volumeMultiplier)
         {
             var GO = new GameObject("Temp sound");
             GO.transform.position = position;
             var player = GO.AddComponent<AudioSource>();
             player.clip = snd.Clip;
-            player.volume = snd.Volume;
+            player.volume = snd.Volume * volumeMultiplier;
             player.pitch = snd.Pitch;
             player.maxDistance = snd.AudibleRange;
             player.rolloffMode = AudioRolloffMode.Custom;
@@ -40,8 +40,8 @@ namespace AdvancedSound
             foreach(var listener in SoundListener.Listeners)
             {
                 var dist = (listener.transform.position - position).sqrMagnitude;
-                if (dist > snd.AudibleRange * snd.AudibleRange) continue;
-                float normDist = Mathf.Sqrt(dist);
+                if (dist > snd.AudibleRange * snd.AudibleRange * volumeMultiplier) continue;
+                float normDist = Mathf.Sqrt(dist) / (snd.AudibleRange * volumeMultiplier);
                 HeardSound res = default;
                 res.Origin = position;
                 res.Type = snd.Type;
