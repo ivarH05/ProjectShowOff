@@ -849,6 +849,7 @@ GameObject:
   - component: {fileID: 501709742}
   - component: {fileID: 501709741}
   - component: {fileID: 501709740}
+  - component: {fileID: 501709743}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -890,7 +891,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501709739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -920,6 +921,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501709743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501709739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc82469100276d144a0fe56c0ea3bcd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceRange: {x: 5, y: 15}
+  PauseTimeRange: {x: 2, y: 5}
 --- !u!1 &756474586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,10 +1764,10 @@ MonoBehaviour:
   height: 0
   isEditing: 0
   EditorTiles:
-  - {x: -5.5, y: 17.5}
-  - {x: -9.5, y: 17.5}
-  - {x: -5.5, y: 25.5}
-  - {x: -9.5, y: 25.5}
+  - {x: -10.5, y: 26.5}
+  - {x: -6.5, y: 27.5}
+  - {x: -9.5, y: 18.5}
+  - {x: -5.5, y: 18.5}
 --- !u!4 &1876889858
 Transform:
   m_ObjectHideFlags: 0

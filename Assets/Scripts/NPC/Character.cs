@@ -36,6 +36,7 @@ namespace NPC
             _agent = GetComponent<NavMeshAgent>();
 
             events.OnSpawn.Invoke(this);
+            SetBehaviourState<RoamState>();
         }
 
         internal virtual void Update() { _behaviourState?.UpdateState(this); }
