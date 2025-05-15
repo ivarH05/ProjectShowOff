@@ -2,26 +2,52 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
 using System.Linq;
+using UnityEngine.UIElements.Experimental;
+using Unity.VisualScripting;
 
 public class Crypt : MonoBehaviour
 {
+    public float height;
+
     [HideInInspector] public bool isEditing = false;
+    [SerializeField] private List<Vector2> EditorTiles;
+
     private bool _isSelecting = true;
-
-    [SerializeField]private List<Vector2> EditorTiles;
-
-    private HashSet<Vector2> _tiles = new HashSet<Vector2>();
     private const float tileSize = 0.5f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private static List<Vector3> _tiles = new List<Vector3>();
+
     void Start()
     {
-        _tiles = EditorTiles.ToHashSet();
+        for (int i = 0; i < EditorTiles.Count; i++)
+        {
+            Vector2 tile = EditorTiles[i];
+            _tiles.Add(new Vector3(tile.x, height, tile.y));
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Get the closest point on the full Crypt Grid
+    /// </summary>
+    /// <param name="point">world position</param>
+    /// <returns>the gridbased worldposition of the closest tile to the worldposition</returns>
+    public static Vector3 GetClosestPoint(Vector3 point)
     {
+        Vector3 tile = WorldPointToTile(point);
+
+        Vector3 closestPoint = Vector3.zero;
+        float minDistance = float.MaxValue;
+        for (int i = 0; i < _tiles.Count; i++)
+        {
+            float distance = Vector3.Distance(tile, _tiles[i]);
+            if (distance > minDistance)
+                continue;
+            minDistance = distance;
+            closestPoint = _tiles[i];
+        }
+
+        return TileToWorldPoint(closestPoint);
     }
 
     public void EditorMouseDown(Vector2 mousePosition)
@@ -31,33 +57,39 @@ public class Crypt : MonoBehaviour
 
         SetTile(pos, _isSelecting);
     }
-    public void EditorMouse(Vector2 mousePosition)
-    {
-        SetTile(GetAimingTile(mousePosition), _isSelecting);
-    }
-    public void EditorMouseUp(Vector2 mousePosition)
-    {
-        SetTile(GetAimingTile(mousePosition), _isSelecting);
-    }
+    public void EditorMouse(Vector2 mousePosition) => SetTile(GetAimingTile(mousePosition), _isSelecting);
+    public void EditorMouseUp(Vector2 mousePosition) => SetTile(GetAimingTile(mousePosition), _isSelecting);
 
-    Vector2 GetAimingTile(Vector2 mousePosition)
+    private Vector2 GetAimingTile(Vector2 mousePosition)
     {
         Ray ray = HandleUtility.GUIPointToWorldRay(mousePosition);
-        Plane localXZPlane = new Plane(transform.up, transform.position);
+        Plane XZPlane = new Plane(Vector3.up, new Vector3(0, height, 0));
 
-        if (localXZPlane.Raycast(ray, out float distance))
+        if (XZPlane.Raycast(ray, out float distance))
         {
             Vector3 worldPoint = ray.GetPoint(distance);
-            Vector3 localPoint = transform.InverseTransformPoint(worldPoint);
-            localPoint /= tileSize;
-            localPoint = Vector3Int.FloorToInt(localPoint);
-
-            return new Vector2(localPoint.x, localPoint.z);
+            Vector3 tiledPoint = WorldPointToTile(worldPoint);
+            return new Vector2(tiledPoint.x + 0.5f, tiledPoint.z + 0.5f);
         }
         return Vector2.zero;
     }
 
-    void SetTile(Vector2 tile, bool value)
+    public static Vector3 WorldPointToTile(Vector3 worldPoint)
+    {
+        Vector3 localPoint = new Vector3(worldPoint.x / tileSize, worldPoint.y, worldPoint.z / tileSize);
+        localPoint = new Vector3(Mathf.Floor(localPoint.x), localPoint.y, Mathf.Floor(localPoint.z));
+
+        return localPoint;
+    }
+
+    public static Vector3 TileToWorldPoint(Vector3 tile)
+    {
+        Vector3 result = new Vector3(tile.x * tileSize, tile.y, tile.z * tileSize);
+
+        return result;
+    }
+
+    private void SetTile(Vector2 tile, bool value)
     {
         if (value)
         {
@@ -96,7 +128,6 @@ public class Crypt : MonoBehaviour
     void DrawGrid(Color color, bool wire = false)
     {
         color.a = 0.5f;
-        Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = color;
         foreach (Vector2 tile in EditorTiles)
         {
@@ -104,11 +135,11 @@ public class Crypt : MonoBehaviour
         }
     }
 
-    void DrawTile(Vector2 tile, bool wire = false)
+    void DrawTile(Vector3 tile, bool wire = false)
     {
-        Vector2 pos = tile * tileSize;
-        Gizmos.DrawCube(new Vector3(pos.x + 0.5f * tileSize, 0, pos.y + 0.5f * tileSize), new Vector3(tileSize, 0.05f, tileSize));
+        Vector3 pos = tile * tileSize;
+        Gizmos.DrawCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
         if(wire)
-            Gizmos.DrawWireCube(new Vector3(pos.x + 0.5f * tileSize, 0, pos.y + 0.5f * tileSize), new Vector3(tileSize, 0.05f, tileSize));
+            Gizmos.DrawWireCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
     }
 }

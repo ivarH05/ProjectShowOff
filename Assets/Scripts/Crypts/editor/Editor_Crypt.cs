@@ -42,8 +42,8 @@ public class Editor_Crypt : Editor
     {
         EditorMouse.Lock(c.gameObject);
         c.isEditing = true;
-
     }
+
     void StopEdit(Crypt c)
     {
         EditorMouse.Unluck();
