@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Clip: {fileID: 8300000, guid: 06d4b6afa57573f4a981441acd05835a, type: 3}
   Type: 1
-  Volume: 1
+  Volume: 0.43
   Pitch: 1
   AudibleRange: 4.2
   FaintThreshold: 0.932

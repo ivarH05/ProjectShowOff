@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: 0348a4d791d460c459dcf7d69045de13, type: 2}
   _showGizmos: 0
 --- !u!114 &166252125
 MonoBehaviour:
@@ -289,11 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d14ee6fd2e7d40933d3f55804d669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: '1. open
-
-    2. creak
-
-    3. close'
+  Text: "1. open\n2. creak\n3. close\nyou might notice creak has an excessive range
+    - this is because  \nthe creak sound can have a lower volume depending on how
+    hard\nthe door is yanked, which influences the audibility range."
 --- !u!114 &166252126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,9 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac13170b257a994449913f662851d74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Open: {fileID: 0}
-  Creak: {fileID: 0}
-  Close: {fileID: 0}
+  Open: {fileID: 166252124}
+  Creak: {fileID: 166252128}
+  Close: {fileID: 166252127}
+  CreakFrequencyMultiplier: 5
+  SpeedPitchMultiplier: 0.9
 --- !u!114 &166252127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: 2a5ba82daaedb7d48ba3054b7d46e29a, type: 2}
   _showGizmos: 0
 --- !u!114 &166252128
 MonoBehaviour:
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: 973d90a950f9e9f479a269b927c2ee64, type: 2}
   _showGizmos: 0
 --- !u!1 &181597311
 GameObject:
