@@ -42,7 +42,7 @@ namespace Interactables
             public UnityEvent<Door, PlayerController> OnClose;
 
             public UnityEvent<Door, PlayerController> OnLock;
-            public UnityEvent<Door, PlayerController> OnUnluck;
+            public UnityEvent<Door, PlayerController> OnUnlock;
         }
 
 
@@ -77,7 +77,7 @@ namespace Interactables
                 else
                 {
                     if (state == DoorState.locked)
-                        events.OnUnluck.Invoke(this, controller);
+                        events.OnUnlock.Invoke(this, controller);
 
                     if (IsClosed)
                         state = DoorState.closed;
@@ -215,7 +215,7 @@ namespace Interactables
         private void Close()
         {
             SetAngle(0);
-            events.OnMove.Invoke(this, controller);
+            events.OnClose.Invoke(this, controller);
         }
 
         public override void OnInteract(PlayerController controller) { }
