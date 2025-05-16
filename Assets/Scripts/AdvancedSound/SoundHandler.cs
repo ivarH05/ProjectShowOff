@@ -13,14 +13,14 @@ namespace AdvancedSound
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PlaySound(Sound snd, Vector3 position, float volumeMultiplier)
+        public void PlaySound(Sound snd, Vector3 position, float volumeMultiplier = 1, float pitchMultiplier = 1)
         {
             var GO = new GameObject("Temp sound");
             GO.transform.position = position;
             var player = GO.AddComponent<AudioSource>();
             player.clip = snd.Clip;
             player.volume = snd.Volume * volumeMultiplier;
-            player.pitch = snd.Pitch;
+            player.pitch = snd.Pitch * pitchMultiplier;
             player.maxDistance = snd.AudibleRange;
             player.rolloffMode = AudioRolloffMode.Custom;
             player.SetCustomCurve(AudioSourceCurveType.SpatialBlend, new(new Keyframe(0, 1, 0, 0)));

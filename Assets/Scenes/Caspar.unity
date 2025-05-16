@@ -238,6 +238,9 @@ GameObject:
   - component: {fileID: 166252123}
   - component: {fileID: 166252125}
   - component: {fileID: 166252124}
+  - component: {fileID: 166252128}
+  - component: {fileID: 166252127}
+  - component: {fileID: 166252126}
   m_Layer: 6
   m_Name: DoorSounds
   m_TagString: Untagged
@@ -272,16 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound:
-    Clip: {fileID: 8300000, guid: 198e6af8b4660a242a8f0cea64e29d84, type: 3}
-    Type: 2
-    Volume: 1
-    Pitch: 1
-    AudibleRange: 9.28
-    FaintThreshold: 0.812
-    ModerateThreshold: 0.367
-    LoudThreshold: 0.161
-  _showGizmos: 1
+  _sound: {fileID: 0}
+  _showGizmos: 0
 --- !u!114 &166252125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,11 +289,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d14ee6fd2e7d40933d3f55804d669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: '1. close
+  Text: '1. open
 
     2. creak
 
-    3. open'
+    3. close'
+--- !u!114 &166252126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166252122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac13170b257a994449913f662851d74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Open: {fileID: 0}
+  Creak: {fileID: 0}
+  Close: {fileID: 0}
+--- !u!114 &166252127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166252122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 0}
+  _showGizmos: 0
+--- !u!114 &166252128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166252122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 0}
+  _showGizmos: 0
 --- !u!1 &181597311
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,15 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound:
-    Clip: {fileID: 8300000, guid: e3817c17f720b2d4ab6c4f3ab8c43faf, type: 3}
-    Type: 0
-    Volume: 0.1
-    Pitch: 1
-    AudibleRange: 10.39
-    FaintThreshold: 0.711
-    ModerateThreshold: 0.422
-    LoudThreshold: 0.151
+  _sound: {fileID: 0}
   _showGizmos: 1
 --- !u!4 &181597313
 Transform:
@@ -658,15 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound:
-    Clip: {fileID: 8300000, guid: e3817c17f720b2d4ab6c4f3ab8c43faf, type: 3}
-    Type: 0
-    Volume: 0.1
-    Pitch: 1
-    AudibleRange: 10.39
-    FaintThreshold: 0.711
-    ModerateThreshold: 0.422
-    LoudThreshold: 0.151
+  _sound: {fileID: 0}
   _showGizmos: 1
 --- !u!4 &884978760
 Transform:

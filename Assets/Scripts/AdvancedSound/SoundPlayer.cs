@@ -13,8 +13,7 @@ namespace AdvancedSound
         public void Play(float volume = 1, float pitch = 1)
         {
             var res = _sound;
-            res.Pitch *= pitch;
-            SoundHandler.Singleton.PlaySound(res, transform.position, volume);
+            SoundHandler.Singleton.PlaySound(res, transform.position, volume, pitch);
         }
 
 #if UNITY_EDITOR
@@ -22,6 +21,7 @@ namespace AdvancedSound
         private void OnDrawGizmosSelected()
         {
             if(!_showGizmos) return;
+            if (_sound == null) return;
             Gizmos.color = new(1, 1, 1, .25f);
             Gizmos.DrawWireSphere(transform.position, _sound.AudibleRange);
             Gizmos.color = new(1,1,0,.35f);
@@ -40,6 +40,34 @@ namespace AdvancedSound
                 base.OnInspectorGUI();
                 var snd = target as SoundPlayer;
 
+                if (snd._sound == null) return;
+
+                GUILayout.Label("Sound settings:");
+                EditorGUI.BeginChangeCheck();
+
+                var audRange = EditorGUILayout.FloatField("Audible range:", snd._sound.AudibleRange);
+                var faintThr = snd._sound.FaintThreshold; OptionalSlider(ref faintThr, 0, 1, "Faint threshold:");
+                var moderateThr = snd._sound.ModerateThreshold; OptionalSlider(ref moderateThr, 0, 1, "Moderate threshold:");
+                var loudThr = snd._sound.LoudThreshold; OptionalSlider(ref loudThr, 0, 1, "Loud threshold:");
+
+                void OptionalSlider(ref float value, float minValue, float maxValue, string name)
+                {
+                    GUILayout.BeginHorizontal();
+                    value = EditorGUILayout.FloatField(name, value);
+                    value = GUILayout.HorizontalSlider(value, minValue, maxValue, GUILayout.MinWidth(150));
+                    GUILayout.EndHorizontal();
+                }
+
+                if (EditorGUI.EndChangeCheck())
+                {
+                    Undo.RecordObject(snd._sound, "Change sound settings");
+                    snd._sound.AudibleRange = audRange;
+                    snd._sound.FaintThreshold = Mathf.Min(faintThr, 1);
+                    snd._sound.ModerateThreshold = Mathf.Min(moderateThr, 1);
+                    snd._sound.LoudThreshold = Mathf.Min(loudThr, 1);
+                    EditorUtility.SetDirty(snd._sound);
+                    SceneView.RepaintAll();
+                }
                 GUI.enabled = Application.isPlaying;
                 if (GUILayout.Button("Play sound (play mode only)"))
                     snd.Play();
