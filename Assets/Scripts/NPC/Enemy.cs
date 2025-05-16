@@ -1,5 +1,6 @@
 using Player;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace NPC
@@ -14,6 +15,12 @@ namespace NPC
             base.Start();
             events.OnHearPlayer.AddListener(OnHearPlayer);
             events.OnNoticePlayer.AddListener(OnNoticePlayer);
+        }
+        internal override void OnDestroy()
+        {
+            base.OnDestroy();
+            events.OnHearPlayer.RemoveListener(OnHearPlayer);
+            events.OnNoticePlayer.RemoveListener(OnNoticePlayer);
         }
 
         public Clue GetClue(int i) => clues[i];
@@ -38,5 +45,22 @@ namespace NPC
             character.SetBehaviourState<ChasingState>();
         }
         public void AddClue(Clue clue) { clues.Add(clue); }
+
+        internal override void OnDrawGizmos()
+        {
+            base.OnDrawGizmos();
+            Gizmos.matrix = Matrix4x4.identity;
+            Gizmos.color = Color.orange;
+            for (int i = 0; i < clues.Count; i++)
+                Gizmos.DrawWireSphere(clues[i].position, 0.15f);
+        }
+        internal override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+            Gizmos.matrix = Matrix4x4.identity;
+            Gizmos.color = Color.orange;
+            for (int i = 0; i < clues.Count; i++)
+                Gizmos.DrawSphere(clues[i].position, 0.25f);
+        }
     }
 }
