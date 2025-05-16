@@ -31,7 +31,7 @@ namespace NPC
             if (!defaultBehaviour)
                 return;
 
-            Clue clue = new Clue(player.transform.position, ClueType.PlayerHeard);
+            Clue clue = new Clue(player, ClueType.PlayerHeard);
             AddClue(clue);
         }
 
@@ -40,7 +40,7 @@ namespace NPC
             if (!defaultBehaviour)
                 return;
 
-            Clue clue = new Clue(player.transform.position, ClueType.PlayerSeen);
+            Clue clue = new Clue(player, ClueType.PlayerSeen);
             AddClue(clue);
             character.SetBehaviourState<ChasingState>();
         }
@@ -57,10 +57,34 @@ namespace NPC
         internal override void OnDrawGizmosSelected()
         {
             base.OnDrawGizmosSelected();
-            Gizmos.matrix = Matrix4x4.identity;
             Gizmos.color = Color.orange;
             for (int i = 0; i < clues.Count; i++)
-                Gizmos.DrawSphere(clues[i].position, 0.25f);
+                DrawClue(clues[i]);
+        }
+
+        void DrawClue(Clue clue)
+        {
+            Gizmos.matrix = Matrix4x4.identity;
+            Gizmos.DrawSphere(clue.position, 0.25f);
+            if (clue.type == ClueType.PlayerHeard || clue.direction == Vector3.zero)
+                return;
+
+            const float radius = 0.8f;
+
+            List<Vector3> points = new List<Vector3>() { Vector3.zero };
+            for (float a = -45; a <= 45; a += 10)
+            {
+                float rads = a * Mathf.Deg2Rad;
+                float x = Mathf.Sin(rads) * radius;
+                float z = Mathf.Cos(rads) * radius;
+
+                points.Add(new Vector3(x, 0f, z));
+            }
+
+            Quaternion rotation = Quaternion.LookRotation(clue.direction.normalized);
+            Gizmos.matrix = Matrix4x4.TRS(clue.position, rotation, Vector3.one);
+            Gizmos.DrawLineStrip(points.ToArray(), true);
+
         }
     }
 }

@@ -1,29 +1,43 @@
 using Player;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 namespace NPC
 {
     public class ChasingState : BehaviourState
     {
-        float lastSeenPlayer = 0;
+        private float _lastSeenTime = 0;
+        private PlayerController _trackingPlayer;
         public override void StartState(Character character)
         {
+            _trackingPlayer = null;
             character.events.WhileSeePlayer.AddListener(WhileSeePlayer);
         }
         public override void UpdateState(Character character)
         {
-            if (lastSeenPlayer > 1 && character.RemainingDistance < 0.1f)
-                character.SetBehaviourState<TrackingState>();
-            lastSeenPlayer += Time.deltaTime;
+            if (_lastSeenTime > 1 && character.RemainingDistance < 0.1f)
+                StopChasing(character);
+            _lastSeenTime += Time.deltaTime;
         }
         public override void StopState(Character character) 
         {
             character.events.WhileSeePlayer.RemoveListener(WhileSeePlayer);
         }
+
+        void StopChasing(Character character)
+        {
+            if (!(character is Enemy e))
+                return;
+            e.AddClue(new Clue(_trackingPlayer, ClueType.PlayerSeen));
+            character.SetBehaviourState<TrackingState>();
+        }
+
         void WhileSeePlayer(Character character, PlayerController player)
         {
+            if (_trackingPlayer == null)
+                _trackingPlayer = player;
             character.SetDestination(player.transform.position);
-            lastSeenPlayer = 0;
+            _lastSeenTime = 0;
         }
     }
 }
