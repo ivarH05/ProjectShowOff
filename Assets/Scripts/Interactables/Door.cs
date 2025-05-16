@@ -260,11 +260,16 @@ namespace Interactables
         
         private void OnDrawGizmos()
         {
+            if (Application.isPlaying)
+                return;
             DrawDoorGizmos();
         }
 
         private void OnDrawGizmosSelected()
         {
+            if (Application.isPlaying)
+                return;
+
             if (maxAngle < 0 || maxAngle > 180)
                 Gizmos.color = Color.red;
 
