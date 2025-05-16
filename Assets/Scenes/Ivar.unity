@@ -871,6 +871,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Enemy
   baseHealth: 100
+  _behaviourState: {fileID: 0}
+  visionRange: 12.5
+  fieldOfView: 100
+  eyeOffset: {x: 0, y: 1.5, z: 0.25}
   events:
     OnSpawn:
       m_PersistentCalls:
@@ -884,6 +888,19 @@ MonoBehaviour:
     OnDespawn:
       m_PersistentCalls:
         m_Calls: []
+    OnHearPlayer:
+      m_PersistentCalls:
+        m_Calls: []
+    OnNoticePlayer:
+      m_PersistentCalls:
+        m_Calls: []
+    OnLosePlayer:
+      m_PersistentCalls:
+        m_Calls: []
+    OnChangeState:
+      m_PersistentCalls:
+        m_Calls: []
+  defaultBehaviour: 1
 --- !u!195 &501709741
 NavMeshAgent:
   m_ObjectHideFlags: 0

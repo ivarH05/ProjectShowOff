@@ -1,3 +1,4 @@
+using GameManagement;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -33,6 +34,9 @@ namespace Player
         float _timeSinceLastFootCollider = 0;
 
         public Interactable ActiveInteractable { get { return InteractStrategy.activeInteractable; } }
+
+        private void Awake() { PlayerManager.RegisterPlayer(this); }
+        private void OnDestroy() { PlayerManager.UnregisterPlayer(this); }
 
         private void Start()
         {

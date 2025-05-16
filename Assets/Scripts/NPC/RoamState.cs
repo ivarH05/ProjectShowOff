@@ -8,7 +8,6 @@ namespace NPC
         public Vector2 PauseTimeRange = new Vector2(2, 5);
 
         private float _timer;
-        private Vector3 _DebugTargetPosition;
 
         public override void StartState(Character character) { }
         public override void UpdateState(Character character)
@@ -25,23 +24,12 @@ namespace NPC
 
         void RoamToNewSpot(Character character)
         {
-            Vector2 direction = Random.insideUnitCircle.normalized;
-            Vector3 relativePosition = new Vector3(direction.x, 0, direction.y) * Random.Range(DistanceRange.x, DistanceRange.y);
-            Vector3 nextPos = character.transform.position + relativePosition;
-            _DebugTargetPosition = nextPos;
+            Vector3 randomPosition = GetRandomPosition(DistanceRange.x, DistanceRange.y);
+            Vector3 nextPos = character.transform.position + randomPosition;
 
             Vector3 tiledPos = Crypt.GetClosestPoint(nextPos);
 
             character.SetDestination(tiledPos);
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, DistanceRange.x);
-            Gizmos.DrawWireSphere(transform.position, DistanceRange.y);
-
-            Gizmos.DrawSphere(_DebugTargetPosition, 0.1f);
         }
     }
 }
