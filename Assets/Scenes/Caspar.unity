@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 166252124}
   - component: {fileID: 166252128}
   - component: {fileID: 166252127}
+  - component: {fileID: 166252129}
   - component: {fileID: 166252126}
   m_Layer: 6
   m_Name: DoorSounds
@@ -289,9 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d14ee6fd2e7d40933d3f55804d669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: "1. open\n2. creak\n3. close\nyou might notice creak has an excessive range
-    - this is because  \nthe creak sound can have a lower volume depending on how
-    hard\nthe door is yanked, which influences the audibility range."
+  Text: "1. open\n2. creak\n3. close\n4. lock\nyou might notice creak has an excessive
+    range - this is because  \nthe creak sound can have a lower volume depending
+    on how hard\nthe door is yanked, which influences the audibility range."
 --- !u!114 &166252126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,8 +308,9 @@ MonoBehaviour:
   Open: {fileID: 166252124}
   Creak: {fileID: 166252128}
   Close: {fileID: 166252127}
+  Lock: {fileID: 166252129}
   CreakFrequencyMultiplier: 5
-  SpeedPitchMultiplier: 0.9
+  SpeedPitchMultiplier: 0.464
 --- !u!114 &166252127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +338,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sound: {fileID: 11400000, guid: 973d90a950f9e9f479a269b927c2ee64, type: 2}
+  _showGizmos: 0
+--- !u!114 &166252129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166252122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: f4125cf52c1ed4f42bd10df91d3dc02e, type: 2}
   _showGizmos: 0
 --- !u!1 &181597311
 GameObject:

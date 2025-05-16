@@ -9,8 +9,9 @@ namespace Interactables
         [SerializeField] SoundPlayer Open;
         [SerializeField] SoundPlayer Creak;
         [SerializeField] SoundPlayer Close;
-        [SerializeField] float CreakFrequencyMultiplier;
-        [SerializeField, Range(0f, .9f)] float SpeedPitchMultiplier = 1;
+        [SerializeField] SoundPlayer Lock;
+        [SerializeField] float CreakFrequencyMultiplier = 1;
+        [SerializeField, Range(0f, .9f)] float SpeedPitchMultiplier = .5f;
 
         Door _door;
         float _previousDoorAngle;
@@ -21,12 +22,16 @@ namespace Interactables
             _door = transform.parent.GetComponent<Door>();
             _door.events.OnOpen?.AddListener(DoorOpen);
             _door.events.OnClose?.AddListener(DoorClose);
+            _door.events.OnLock?.AddListener(DoorLock);
+            _door.events.OnUnlock?.AddListener(DoorLock);
             _previousDoorAngle = _door.CurrentAngle;
         }
         private void OnDisable()
         {
             _door.events.OnOpen?.RemoveListener(DoorOpen);
             _door.events.OnClose?.RemoveListener(DoorClose);
+            _door.events.OnLock?.RemoveListener(DoorLock);
+            _door.events.OnUnlock?.RemoveListener(DoorLock);
         }
 
         private void FixedUpdate()
@@ -39,7 +44,7 @@ namespace Interactables
         // 𝒞𝑅𝐸𝒜𝒦 level: ∞
         void HandleCreak(float delta)
         {
-            _creakCounter += delta * CreakFrequencyMultiplier * .01f; // magic constant to get reasonable values
+            _creakCounter += delta * CreakFrequencyMultiplier * .05f; // magic constant to get reasonable values
             if(_creakCounter > 1)
             {
                 _creakCounter = 0;
@@ -52,5 +57,6 @@ namespace Interactables
 
         void DoorOpen(Door d, PlayerController p) => Open?.Play();
         void DoorClose(Door d, PlayerController p) => Close?.Play();
+        void DoorLock(Door d, PlayerController p) => Lock?.Play();
     }
 }
