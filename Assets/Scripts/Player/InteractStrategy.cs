@@ -1,4 +1,5 @@
 using Player;
+using Interactables;
 using UnityEngine;
 
 namespace Player 

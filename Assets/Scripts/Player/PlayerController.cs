@@ -2,6 +2,7 @@ using GameManagement;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Interactables;
 
 namespace Player
 {
