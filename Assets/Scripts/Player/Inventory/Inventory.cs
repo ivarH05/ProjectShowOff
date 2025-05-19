@@ -5,18 +5,13 @@ using UnityEngine;
 namespace Player.Inventory
 {
     [RequireComponent(typeof(PlayerController))]
-    public class Inventory : MonoBehaviour
+    public class InventoryManager : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
+        public Slot[] slots;
+    }
 
-        }
+    public class Slot
+    {
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
