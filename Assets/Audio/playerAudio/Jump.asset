@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
   m_Name: Jump
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: aa3d7224a14acf3408a2eb097fcd0a7d, type: 3}
+  ClipSelection:
+  - {fileID: 8300000, guid: aa3d7224a14acf3408a2eb097fcd0a7d, type: 3}
+  SelectionMode: 0
   Type: 1
   Volume: 1
   Pitch: 1

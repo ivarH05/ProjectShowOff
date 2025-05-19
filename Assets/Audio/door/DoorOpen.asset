@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
   m_Name: DoorOpen
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 198e6af8b4660a242a8f0cea64e29d84, type: 3}
+  ClipSelection:
+  - {fileID: 8300000, guid: 198e6af8b4660a242a8f0cea64e29d84, type: 3}
+  SelectionMode: 0
   Type: 2
   Volume: 1
   Pitch: 1

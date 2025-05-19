@@ -18,7 +18,7 @@ namespace AdvancedSound
             var GO = new GameObject("Temp sound");
             GO.transform.position = position;
             var player = GO.AddComponent<AudioSource>();
-            player.clip = snd.Clip;
+            player.clip = snd.GetClip();
             player.volume = snd.Volume * volumeMultiplier;
             player.pitch = snd.Pitch * pitchMultiplier;
             player.maxDistance = snd.AudibleRange;

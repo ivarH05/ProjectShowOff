@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
   m_Name: DoorSlide
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 268197a43e8b53c408f11e5b5a1793a8, type: 3}
+  ClipSelection:
+  - {fileID: 8300000, guid: 268197a43e8b53c408f11e5b5a1793a8, type: 3}
+  SelectionMode: 0
   Type: 2
-  Volume: 1
+  Volume: 0.28
   Pitch: 1
   AudibleRange: 10.44
   FaintThreshold: 0.71629214
