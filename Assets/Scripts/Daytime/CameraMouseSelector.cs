@@ -13,6 +13,14 @@ namespace Daytime
         {
             _cam = GetComponent<Camera>();
         }
+        private void OnDisable()
+        {
+            if(_lastHovered != null)
+            {
+                _lastHovered.OnHoverEnd?.Invoke();
+                _lastHovered = null;
+            }
+        }
 
         private void Update()
         {
