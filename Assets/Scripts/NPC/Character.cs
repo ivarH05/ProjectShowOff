@@ -64,7 +64,10 @@ namespace NPC
                 if (seesPlayer)
                 {
                     if (visiblePlayers.Contains(player))
+                    {
+                        events.WhileSeePlayer.Invoke(this, player);
                         return;
+                    }
                     events.OnNoticePlayer.Invoke(this, player);
                     visiblePlayers.Add(player);
                 }
@@ -98,10 +101,14 @@ namespace NPC
         private bool SeesPlayer(PlayerController player)
         {
             Vector3 eyePos = transform.TransformPoint(eyeOffset);
+            Vector3 playerPos = player.transform.position;
+
+            if (Vector3.Distance(eyePos, playerPos) > visionRange + 2)
+                return false;
+
             Vector3 up = transform.up;
             Vector3 right = transform.right;
             Vector3 forwards = transform.forward;
-            Vector3 playerPos = player.transform.position;
 
             for (int i = 0; i < visionOffsets.Length; i++)
             {
@@ -121,11 +128,14 @@ namespace NPC
                 }
 
                 if (hit.transform.gameObject == player.gameObject)
+                {
                     Debug.DrawLine(eyePos, hit.point, Color.green);
+                    return true;
+                }
                 else
                     Debug.DrawLine(eyePos, hit.point, Color.red);
             }
-            return true;
+            return false;
         }
 
         internal virtual void OnDestroy()
@@ -137,6 +147,9 @@ namespace NPC
 
         public void SetBehaviourState<T>() where T : BehaviourState, new()
         {
+            if (_behaviourState is T)
+                return;
+
             _behaviourState?.StopState(this);
             T newState = GetComponent<T>();
             _behaviourState = newState == null ? transform.AddComponent<T>() : newState;
@@ -160,10 +173,18 @@ namespace NPC
             events.OnDeath.Invoke(this);
         }
 
-        private void OnDrawGizmos()
+        internal virtual void OnDrawGizmos()
         {
             Gizmos.matrix = Matrix4x4.TRS(transform.TransformPoint(eyeOffset), transform.rotation, transform.lossyScale);
-            Gizmos.DrawFrustum(Vector3.zero, fieldOfView, visionRange, 0.1f, 1f);
+            Gizmos.DrawFrustum(Vector3.zero, fieldOfView, 1, 0.1f, 1f);
+            Gizmos.DrawWireSphere(Vector3.zero, visionRange);
+        }
+
+        internal virtual void OnDrawGizmosSelected()
+        {
+            Gizmos.matrix = Matrix4x4.TRS(transform.TransformPoint(eyeOffset), transform.rotation, transform.lossyScale);
+            Gizmos.DrawFrustum(Vector3.zero, fieldOfView, 1, 0.1f, 1f);
+            Gizmos.DrawWireSphere(Vector3.zero, visionRange);
         }
 
         /**                 SUBCLASSES              */
@@ -178,6 +199,7 @@ namespace NPC
             [Space]
             public UnityEvent<Character, PlayerController> OnHearPlayer;
             public UnityEvent<Character, PlayerController> OnNoticePlayer;
+            public UnityEvent<Character, PlayerController> WhileSeePlayer;
             public UnityEvent<Character, PlayerController> OnLosePlayer;
             [Space]
             public UnityEvent<Character, BehaviourState> OnChangeState;
