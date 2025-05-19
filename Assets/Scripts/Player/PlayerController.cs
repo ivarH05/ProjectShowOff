@@ -1,3 +1,4 @@
+using GameManagement;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -33,6 +34,9 @@ namespace Player
         float _timeSinceLastFootCollider = 0;
 
         public Interactable ActiveInteractable { get { return InteractStrategy.activeInteractable; } }
+
+        private void Awake() { PlayerManager.RegisterPlayer(this); }
+        private void OnDestroy() { PlayerManager.UnregisterPlayer(this); }
 
         private void Start()
         {
@@ -91,6 +95,18 @@ namespace Player
             MoveStrategy?.StopStrategy(this);
             MoveStrategy = newStrategy;
             newStrategy?.StartStrategy(this);
+        }
+
+        public void DisableMovement()
+        {
+            MoveStrategy?.StopStrategy(this);
+            MoveStrategy = null; 
+        }
+
+        public void MovePosition(Vector3 position)
+        {
+            transform.position = position;
+            Body.MovePosition(position);
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();

@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4322272892429166820}
   - component: {fileID: 1397198483519223238}
+  - component: {fileID: 8863349070055409239}
   m_Layer: 6
   m_Name: TemplateDoor
   m_TagString: Untagged
@@ -134,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 2275285127103864161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -156,8 +157,41 @@ MonoBehaviour:
   hinge: {fileID: 1639219961229374538}
   startAngle: 0
   maxAngle: 120
+  events:
+    OnOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    OnMove:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClose:
+      m_PersistentCalls:
+        m_Calls: []
+    OnLock:
+      m_PersistentCalls:
+        m_Calls: []
+    OnUnluck:
+      m_PersistentCalls:
+        m_Calls: []
   state: 1
   isInFront: 0
+--- !u!114 &8863349070055409239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275285127103864161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0.45, y: 1, z: 0}
+  m_Area: 3
+  m_AffectedAgents: ffffffff
 --- !u!1 &6889591833506423066
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639219961229374538}
+  - component: {fileID: 3487589292313714857}
   m_Layer: 6
   m_Name: Hinge
   m_TagString: Untagged
@@ -190,3 +225,23 @@ Transform:
   - {fileID: 5334345037552625570}
   m_Father: {fileID: 4322272892429166820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3487589292313714857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889591833506423066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 1
+  m_GenerateLinks: 1
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
