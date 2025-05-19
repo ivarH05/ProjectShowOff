@@ -110,36 +110,31 @@ public class Crypt : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (isEditing)
-            DrawEditorGizmos();
+            DrawGrid(new Color(0.3f, 0.3f, 1f), true);
         else
-            DrawNormalGizmos();
+            DrawGrid(new Color(0.55f, 0.55f, 0.8f), true);
+    }
+    private void OnDrawGizmos()
+    {
+        DrawGrid(new Color(0.2f, 0.2f, 1f), false);
     }
 
-    void DrawNormalGizmos()
+    void DrawGrid(Color color, bool fill = false)
     {
-        DrawGrid(new Color(0.5f, 0.5f, 1f));
-    }
-
-    void DrawEditorGizmos()
-    {
-        DrawGrid(new Color(0.3f, 0.3f, 1f), true);
-    }
-
-    void DrawGrid(Color color, bool wire = false)
-    {
-        color.a = 0.5f;
+        if(fill)
+            color.a = 0.5f;
         Gizmos.color = color;
         foreach (Vector2 tile in EditorTiles)
         {
-            DrawTile(tile, wire);
+            DrawTile(tile, fill);
         }
     }
 
-    void DrawTile(Vector3 tile, bool wire = false)
+    void DrawTile(Vector3 tile, bool fill = false)
     {
         Vector3 pos = tile * tileSize;
-        Gizmos.DrawCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
-        if(wire)
-            Gizmos.DrawWireCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
+        Gizmos.DrawWireCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
+        if(fill)
+            Gizmos.DrawCube(new Vector3(pos.x, height, pos.y), new Vector3(tileSize, 0.05f, tileSize));
     }
 }
