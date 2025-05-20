@@ -390,7 +390,6 @@ GameObject:
   - component: {fileID: 4950453421432349984}
   - component: {fileID: 6442238028121122580}
   - component: {fileID: 3358319355176602932}
-  - component: {fileID: 4351869540720300607}
   - component: {fileID: 6987071137350571306}
   m_Layer: 0
   m_Name: PhysicsPlayer
@@ -773,18 +772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorSensitivity: 0.1
---- !u!114 &4351869540720300607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751486100137681171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca8d980f497d7543a4185f384b098d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6987071137350571306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,3 +784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca8d980f497d7543a4185f384b098d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorySize: 2
+  LeftHandPosition: {x: -0.25, y: -0.15, z: 0.35}
+  RightHandPosition: {x: 0.25, y: -0.15, z: 0.35}

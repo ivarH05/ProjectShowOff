@@ -3,14 +3,14 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Interactables;
-using Player.Inventory;
+using Player.InventoryManagement;
 
 namespace Player
 {
     /// <summary>
     /// Controls the player.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody), typeof(PlayerInput), typeof(InventoryManager))]
+    [RequireComponent(typeof(Rigidbody), typeof(PlayerInput), typeof(Inventory))]
     public class PlayerController : MonoBehaviour
     {
         [field: SerializeField] public MovementStrategy MoveStrategy { get; private set; }
@@ -20,7 +20,7 @@ namespace Player
         
         [SerializeField] float _coyoteTime = .2f;
 
-        public InventoryManager Inventory { get; private set; }
+        public Inventory Inventory { get; private set; }
         public Rigidbody Body {get; private set;}
         public CapsuleCollider MainCollider { get; private set;}
         public float CharacterHeight { get; private set; }
@@ -45,7 +45,7 @@ namespace Player
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-            Inventory = GetComponent<InventoryManager>();
+            Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
             CharacterHeight = MainCollider.height;
