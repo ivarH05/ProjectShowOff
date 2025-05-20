@@ -21,12 +21,13 @@ namespace CryptBuilder
         {
             return v.x * m.iHat + v.y * m.jHat;
         }
-        public static Matrix2x2 fromRotationAngleRad(float radians)
+        public static Matrix2x2 fromRotationAngleRad(float degrees)
         {
-            float c = Mathf.Cos(radians);
+            float radians = degrees * Mathf.Deg2Rad;
             float s = Mathf.Sin(radians);
-            Vector2 i = new Vector2(c, s);
-            Vector2 j = new Vector2(-s, c);
+            float c = Mathf.Cos(radians);
+            Vector2 i = new Vector2(c, -s);
+            Vector2 j = new Vector2(s, c);
             return new (i, j);
         }
     }

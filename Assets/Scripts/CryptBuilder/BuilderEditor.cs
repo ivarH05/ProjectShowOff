@@ -11,9 +11,19 @@ namespace CryptBuilder
             void OnSceneGUI()
             {
                 var b = (Builder)target;
-                DrawRectangle(b.TestRectangle);
-                var bb = b.TestRectangle.GetBounds();
+                Handles.color = b._heldRectangle.IsValid ? Color.white : Color.red;
+                DrawRectangle(b._heldRectangle);
+                var bb = b._heldRectangle.GetBounds();
+                Handles.color = Color.white;
                 DrawBoundingBox(bb);
+
+                Vector3 pos = b._heldRectangle.CenterPosition.To3D();
+                Vector3 scale = b._heldRectangle.HalfSize.To3D();
+                Quaternion rotation = Quaternion.AngleAxis(b._heldRectangle.Rotation, Vector3.up);
+                Handles.TransformHandle(ref pos, ref rotation, ref scale);
+                b._heldRectangle.CenterPosition = pos.To2D();
+                b._heldRectangle.HalfSize = scale.To2D();
+                b._heldRectangle.Rotation = rotation.eulerAngles.y;
             }
 
             static void DrawRectangle(RotatedRectangle rect)
@@ -31,6 +41,13 @@ namespace CryptBuilder
                 Handles.DrawLine(otherCorner1.To3D(), box.Maximum.To3D());
                 Handles.DrawLine(otherCorner2.To3D(), box.Maximum.To3D());
                 Handles.DrawLine(otherCorner2.To3D(), box.Minimum.To3D());
+            }
+
+            enum EditMode
+            {
+                DontEdit,
+                AddNew,
+                EditHeld
             }
         }
     }

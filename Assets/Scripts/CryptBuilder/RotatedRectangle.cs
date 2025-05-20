@@ -11,6 +11,8 @@ namespace CryptBuilder
         public Vector2 CenterPosition;
         public float Rotation;
 
+        public bool IsValid => HalfSize.x > 0 && HalfSize.y > 0;
+
         /// <summary>
         /// Gets each line that makes up the rectangle.
         /// </summary>

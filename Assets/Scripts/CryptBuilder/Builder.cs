@@ -5,6 +5,6 @@ namespace CryptBuilder
     public partial class Builder : MonoBehaviour
     {
         public BoundingNode RectangleTree {get; private set;}
-        public RotatedRectangle TestRectangle;
+        [SerializeField] RotatedRectangle _heldRectangle;
     }
 }
