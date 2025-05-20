@@ -94,6 +94,11 @@ namespace Interactables
 
         ////////// Standard behaviour
 
+        private void Start()
+        {
+            _angle = startAngle;
+        }
+
         private void Update()
         {
             if(_returningCamera)

@@ -1,11 +1,14 @@
 using Player;
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+namespace Interactables
 {
-    public abstract void OnInteract(PlayerController controller);
+    public abstract class Interactable : MonoBehaviour
+    {
+        public abstract void OnInteract(PlayerController controller);
 
-    public abstract void OnUseStart(PlayerController controller);
-    public abstract void OnUse(PlayerController controller);
-    public abstract void OnUseStop(PlayerController controller);
+        public abstract void OnUseStart(PlayerController controller);
+        public abstract void OnUse(PlayerController controller);
+        public abstract void OnUseStop(PlayerController controller);
+    }
 }

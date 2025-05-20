@@ -105,7 +105,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -424,6 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6817915385953658727}
+  - component: {fileID: 3268342148945292082}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Player
@@ -448,6 +449,66 @@ Transform:
   - {fileID: 4711002230998736426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3268342148945292082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549291064245748998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: 0
+  customPasses:
+  - rid: 7572577812419969284
+  injectionPoint: 2
+  m_TargetCamera: {fileID: 0}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 7572577812419969284
+      type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        filterFoldout: 1
+        rendererFoldout: 1
+        renderQueueType: 2
+        layerMask:
+          serializedVersion: 2
+          m_Bits: 640
+        sortingCriteria: 51
+        overrideMode: 1
+        overrideMaterial: {fileID: 0}
+        overrideMaterialPassIndex: 0
+        overrideMaterialPassName: Forward
+        overrideShader: {fileID: 0}
+        overrideShaderPassIndex: 0
+        overrideShaderPassName: Forward
+        overrideDepthState: 1
+        depthCompareFunction: 8
+        depthWrite: 1
+        overrideStencil: 0
+        stencilReferenceValue: 64
+        stencilWriteMask: 192
+        stencilReadMask: 192
+        stencilCompareFunction: 8
+        stencilPassOperation: 0
+        stencilFailOperation: 0
+        stencilDepthFailOperation: 0
+        shaderPass: 0
+        variableRateShading: 0
 --- !u!1 &8751486100137681171
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +527,7 @@ GameObject:
   - component: {fileID: 4950453421432349984}
   - component: {fileID: 6442238028121122580}
   - component: {fileID: 3358319355176602932}
+  - component: {fileID: 6987071137350571306}
   m_Layer: 0
   m_Name: PhysicsPlayer
   m_TagString: Player
@@ -848,3 +910,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorSensitivity: 0.1
+--- !u!114 &6987071137350571306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751486100137681171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca8d980f497d7543a4185f384b098d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 2
+  LeftHandPosition: {x: -0.25, y: -0.15, z: 0.35}
+  RightHandPosition: {x: 0.25, y: -0.15, z: 0.35}
