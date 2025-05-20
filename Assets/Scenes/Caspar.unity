@@ -1560,9 +1560,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TestRectangle:
-    Rotation: 5.7
-    HalfSize: {x: 2.2, y: 3.01}
-    CenterPosition: {x: 0, y: 0}
+    Rotation: 4.46
+    HalfSize: {x: 0.86, y: 3.01}
+    CenterPosition: {x: 3.07, y: 3.73}
 --- !u!4 &2142371743
 Transform:
   m_ObjectHideFlags: 0
