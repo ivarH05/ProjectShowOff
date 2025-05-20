@@ -4,6 +4,7 @@
     {
         Ambient,
         FootSteps,
+        DoorSound,
         Speech,
         MonsterSound,
     }
