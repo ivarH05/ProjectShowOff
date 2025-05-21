@@ -965,3 +965,4 @@ MonoBehaviour:
   inventorySize: 2
   LeftHandPosition: {x: -0.25, y: -0.2, z: 0.35}
   RightHandPosition: {x: 0.25, y: -0.1, z: 0.35}
+  BeginnersItem: {fileID: 11400000, guid: 4dc5596b29007e643a891eaff81f9ee7, type: 2}
