@@ -28,7 +28,8 @@ namespace NPC
         {
             if (!(character is Enemy e))
                 return;
-            e.AddClue(new Clue(_trackingPlayer, ClueType.PlayerSeen));
+            if(_trackingPlayer != null)
+                e.AddClue(new Clue(_trackingPlayer, ClueType.PlayerSeen));
             character.SetBehaviourState<TrackingState>();
         }
 

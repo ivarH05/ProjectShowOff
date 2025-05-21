@@ -277,7 +277,144 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followStrength: 50
-  _toFollow: {fileID: 6733907240510399710}
+  <ToFollow>k__BackingField: {fileID: 6733907240510399710}
+--- !u!1 &4991695685757974328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7446803083482448633}
+  - component: {fileID: 7130509921927863919}
+  - component: {fileID: 1606320665844056728}
+  - component: {fileID: 5509582804915653721}
+  - component: {fileID: 8895432613463078112}
+  - component: {fileID: 1995258094539024449}
+  - component: {fileID: 342552703170943634}
+  m_Layer: 0
+  m_Name: SoundPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7446803083482448633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.111, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6952636058268348437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7130509921927863919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5d14ee6fd2e7d40933d3f55804d669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: 'This player''s sound player has 4 sounds:
+
+    1. walking normally
+
+    2.
+    running
+
+    3. crouch walking
+
+    4. jumping
+
+    I disabled all of their gizmos
+    just so the screen isnt full of them'
+--- !u!114 &1606320665844056728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: a8549a1bd62efe740b20ad8b06840248, type: 2}
+  _showGizmos: 0
+--- !u!114 &5509582804915653721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: 7c8a2ad87b998ed469bfefe3f4f455c1, type: 2}
+  _showGizmos: 0
+--- !u!114 &8895432613463078112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: de9f69a737638434aa343a3345656b08, type: 2}
+  _showGizmos: 0
+--- !u!114 &1995258094539024449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: bf87c7ae8267b5648b6a0bfce0822996, type: 2}
+  _showGizmos: 0
+--- !u!114 &342552703170943634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991695685757974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619c083f209e12f4db725fdcb77a9456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Walk: {fileID: 1606320665844056728}
+  Crouch: {fileID: 8895432613463078112}
+  Run: {fileID: 5509582804915653721}
+  Jump: {fileID: 1995258094539024449}
+  RandomPitchRange: 0.4
+  WalkSpeedFootstepFloor: 0.22999999
+  FootstepFrequencyMultiplier: 0.7
 --- !u!1 &6549291064245748998
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +549,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6733907240510399710}
+  - {fileID: 7446803083482448633}
   m_Father: {fileID: 6817915385953658727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &7822485868537206984
@@ -607,11 +745,35 @@ MonoBehaviour:
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnItem0
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2776c80d-3c14-4091-8c56-d04ced07a2b0
     m_ActionName: 'Player/Previous[/Keyboard/1]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnItem1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba
     m_ActionName: 'Player/Next[/Keyboard/2]'
   - m_PersistentCalls:
@@ -686,6 +848,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c3a17056-942c-4478-a09c-51fa6fc58836
     m_ActionName: 'Player/Secondary Attack[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bfcdbf1f-9a2d-48c8-9bf5-66bffac14623
+    m_ActionName: 'Player/Drop[/Keyboard/g]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -785,5 +963,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 2
-  LeftHandPosition: {x: -0.25, y: -0.15, z: 0.35}
-  RightHandPosition: {x: 0.25, y: -0.15, z: 0.35}
+  LeftHandPosition: {x: -0.25, y: -0.2, z: 0.35}
+  RightHandPosition: {x: 0.25, y: -0.1, z: 0.35}

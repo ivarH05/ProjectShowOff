@@ -24,4 +24,10 @@ namespace AdvancedSound
         /// </summary>
         Loud = 3,
     }
+
+    public static class LoudnessFunctions
+    {
+        public static bool LouderThan(this Loudness loudness, Loudness other) => loudness > other;
+        public static bool LouderOrEqual(this Loudness loudness, Loudness other) => loudness >= other;
+    }
 }
