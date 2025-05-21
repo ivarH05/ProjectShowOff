@@ -2,27 +2,39 @@ using UnityEngine;
 
 public class DialogueTexts : MonoBehaviour
 {
-    public string[] NPC1;
-    public string[] NPC2;
+    public string[] Architect;
+    public string[] Artist;
+    public string[] Lamplighter;
+    public string[] Priest;
 
     public string[][] Dialogues;
 
     void Awake()
     {
-        NPC1 = new string[]{
+        Architect = new string[]{
             "skibidi skibidi hakhakhak",
             "Second line",
             "whatever"
         };
 
 
-        NPC2 = new string[]{
+       Artist = new string[]{
             "testing",
+            "NPC@ 2 ashw"
+        };
+        
+       Lamplighter = new string[]{
+            "RAAAAAAAAAAAAAA",
+            "NPC@ 2 ashw"
+        };
+
+        Priest = new string[]{
+            "RAAAAAAAAAAAAAA",
             "NPC@ 2 ashw"
         };
 
         Dialogues = new string[][]{
-            NPC1, NPC2
+            Architect, Artist, Lamplighter, Priest
         };
     }
 }

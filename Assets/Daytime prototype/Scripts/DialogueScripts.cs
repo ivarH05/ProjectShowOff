@@ -17,8 +17,7 @@ public class DialogueScripts : MonoBehaviour
 
     public enum MyEnum
     {
-        NPC1,
-        NPC2
+        Architect, Artist, Lamplighter, Priest
     }
 
     
