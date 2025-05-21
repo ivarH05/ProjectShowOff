@@ -18,6 +18,6 @@ MonoBehaviour:
   Volume: 1
   Pitch: 1
   AudibleRange: 1
-  FaintThreshold: 0
-  ModerateThreshold: 0
-  LoudThreshold: 0
+  FaintThreshold: 0.80952376
+  ModerateThreshold: 0.490476
+  LoudThreshold: 0.15238091
