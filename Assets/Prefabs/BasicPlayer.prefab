@@ -745,11 +745,35 @@ MonoBehaviour:
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnItem0
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2776c80d-3c14-4091-8c56-d04ced07a2b0
     m_ActionName: 'Player/Previous[/Keyboard/1]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnItem1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba
     m_ActionName: 'Player/Next[/Keyboard/2]'
   - m_PersistentCalls:
@@ -824,6 +848,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c3a17056-942c-4478-a09c-51fa6fc58836
     m_ActionName: 'Player/Secondary Attack[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6987071137350571306}
+        m_TargetAssemblyTypeName: Player.InventoryManagement.Inventory, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bfcdbf1f-9a2d-48c8-9bf5-66bffac14623
+    m_ActionName: 'Player/Drop[/Keyboard/g]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -923,5 +963,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 2
-  LeftHandPosition: {x: -0.25, y: -0.15, z: 0.35}
-  RightHandPosition: {x: 0.25, y: -0.15, z: 0.35}
+  LeftHandPosition: {x: -0.25, y: -0.2, z: 0.35}
+  RightHandPosition: {x: 0.25, y: -0.1, z: 0.35}
