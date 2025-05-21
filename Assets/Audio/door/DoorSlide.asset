@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoorSlide
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: 268197a43e8b53c408f11e5b5a1793a8, type: 3}
+  - {fileID: 8300000, guid: 2dc8a2893843db649a2652679ac82ab0, type: 3}
   SelectionMode: 0
   Type: 2
   Volume: 0.28

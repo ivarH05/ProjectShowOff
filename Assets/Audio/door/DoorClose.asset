@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoorClose
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: 9ba826f3decbbb045a76c0bcef275923, type: 3}
+  - {fileID: 8300000, guid: 6a59000970470db4dbbd7cce46e222c3, type: 3}
   SelectionMode: 0
   Type: 2
   Volume: 1
