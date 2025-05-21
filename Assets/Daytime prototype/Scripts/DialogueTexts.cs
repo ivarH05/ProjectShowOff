@@ -10,7 +10,7 @@ public class DialogueTexts : MonoBehaviour
     void Awake()
     {
         NPC1 = new string[]{
-            "Text is fundamental to visual novels, and generally quite important to storytelling-based games. This text may consist of dialogue labeled with the character that is saying it, and narration, which does not have a speaker. (For convenience, we will lump both dialogue and narration together as dialogue",
+            "skibidi skibidi hakhakhak",
             "Second line",
             "whatever"
         };
