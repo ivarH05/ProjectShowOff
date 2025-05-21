@@ -15,6 +15,7 @@ namespace Player.InventoryManagement
         public int inventorySize = 2;
         [SerializeField] private Vector3 LeftHandPosition;
         [SerializeField] private Vector3 RightHandPosition;
+        [SerializeField] private Item BeginnersItem;
 
         private Slot[] _slots;
         private int RightHandItem = 0;
@@ -29,6 +30,9 @@ namespace Player.InventoryManagement
             _slots = new Slot[inventorySize];
             for (int i = 0; i < inventorySize; i++)
                 _slots[i] = new Slot();
+
+            if (BeginnersItem != null)
+                PickupItem(BeginnersItem);
         }
 
         private void Update()
