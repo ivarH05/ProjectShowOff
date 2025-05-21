@@ -4,13 +4,20 @@ using UnityEngine;
 
 namespace Interactables
 {
+    [RequireComponent(typeof(Rigidbody))] 
     public class ItemObject : Interactable
     {
         public Item item;
+        public new Rigidbody rigidbody {  get; private set; }
+
+        private void Awake()
+        {
+            rigidbody = GetComponent<Rigidbody>();
+        }
+
         public override void OnInteract(PlayerController controller)
         {
             controller.Inventory.PickupItem(this);
-            Destroy(gameObject);
         }
 
         public override void OnUseStart(PlayerController controller) { }
