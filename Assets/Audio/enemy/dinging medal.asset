@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
   m_Name: dinging medal
   m_EditorClassIdentifier: 
-  ClipSelection: []
+  ClipSelection:
+  - {fileID: 0}
   SelectionMode: 0
   Type: 0
   Volume: 1
