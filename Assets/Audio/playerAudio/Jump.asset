@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Jump
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: aa3d7224a14acf3408a2eb097fcd0a7d, type: 3}
+  - {fileID: 8300000, guid: 460836f14df334d42ae4723e9139df13, type: 3}
   SelectionMode: 0
   Type: 1
-  Volume: 1
+  Volume: 0.1
   Pitch: 1
   AudibleRange: 15.77
   FaintThreshold: 0.932

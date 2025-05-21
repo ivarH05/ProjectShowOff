@@ -19,7 +19,7 @@ namespace AdvancedSound
 
         public AudioClip GetClip()
         {
-            if(ClipSelection == null)
+            if(ClipSelection == null || ClipSelection.Length < 1)
             {
                 Debug.LogError("Couldnt play audio: there were no clips.", this);
                 return null;
