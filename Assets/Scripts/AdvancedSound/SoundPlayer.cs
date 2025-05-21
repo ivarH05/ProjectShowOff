@@ -12,6 +12,10 @@ namespace AdvancedSound
         [SerializeField] Sound _sound;
         public void Play(float volume = 1, float pitch = 1)
         {
+            if(_sound == null)
+            {
+                Debug.LogError("Sound was null. Set an existing one, or create a new one using the create menu.", this);
+            }
             var res = _sound;
             SoundHandler.Singleton.PlaySound(res, transform.position, volume, pitch);
         }
