@@ -24,8 +24,12 @@ namespace Player.InventoryManagement
         public Item activeItem => _slots[RightHandItem].item;
         private Slot activeSlot => _slots[RightHandItem];
 
+        private new Camera camera;
+
         private void Awake()
         {
+            camera = Camera.main;
+
             player = GetComponent<PlayerController>();
             _slots = new Slot[inventorySize];
             for (int i = 0; i < inventorySize; i++)
@@ -77,9 +81,9 @@ namespace Player.InventoryManagement
         private void SwitchItemPositions()
         {
             if (_slots[LeftHandItem].Occupied)
-                _slots[LeftHandItem].handHeldObject.transform.position = GetLeftHandTargetLocation(new Vector3(0, -0.35f, 0));
+                _slots[LeftHandItem].handHeldObject.transform.localPosition = GetLeftHandTargetLocation(new Vector3(0, -0.35f, 0));
             if (_slots[RightHandItem].Occupied)
-                _slots[RightHandItem].handHeldObject.transform.position = GetRightHandTargetLocation(new Vector3(0, -0.25f, 0));
+                _slots[RightHandItem].handHeldObject.transform.localPosition = GetRightHandTargetLocation(new Vector3(0, -0.25f, 0));
         }
 
         private void LerpItems()
@@ -93,35 +97,26 @@ namespace Player.InventoryManagement
 
         private void LerpItem(GameObject obj, Vector3 pos, Vector3 euler)
         {
-            obj.transform.position = Vector3.Lerp(obj.transform.position, pos, Time.deltaTime * 20);
-            obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, Quaternion.Euler(euler), Time.deltaTime * 15);
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (player == null)
-                player = GetComponent<PlayerController>();
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(player.CameraTransform.TransformPoint(LeftHandPosition), 0.1f);
-            Gizmos.DrawWireSphere(player.CameraTransform.TransformPoint(RightHandPosition), 0.1f);
+            obj.transform.localPosition = Vector3.Lerp(obj.transform.localPosition, pos, Time.deltaTime * 40);
+            obj.transform.localRotation = Quaternion.Slerp(obj.transform.localRotation, Quaternion.Euler(euler), Time.deltaTime * 5);
         }
 
         private Vector3 GetLeftHandTargetLocation(Vector3 additionalOffset = default)
         {
             Vector3 offset = LeftHandPosition + additionalOffset;
             if (_slots[LeftHandItem].Occupied)
-                offset += _slots[LeftHandItem].item.baseOffset;
+                offset += _slots[LeftHandItem].item.baseLeftOffset;
 
-            return player.CameraTransform.TransformPoint(offset);
+            return offset;
         }
 
         private Vector3 GetRightHandTargetLocation(Vector3 additionalOffset = default)
         {
             Vector3 offset = RightHandPosition + additionalOffset;
             if (_slots[RightHandItem].Occupied)
-                offset += _slots[RightHandItem].item.baseOffset;
+                offset += _slots[RightHandItem].item.baseRightOffset;
 
-            return player.CameraTransform.TransformPoint(offset);
+            return offset;
         }
 
         private Vector3 GetLeftHandTargetRotation()
@@ -130,7 +125,7 @@ namespace Player.InventoryManagement
             if (_slots[LeftHandItem].Occupied)
                 offset = _slots[LeftHandItem].item.baseEulerAngles;
 
-            return player.CameraTransform.eulerAngles + offset;
+            return offset;
         }
 
         private Vector3 GetRightHandTargetRotation()
@@ -139,7 +134,7 @@ namespace Player.InventoryManagement
             if (_slots[RightHandItem].Occupied)
                 offset = _slots[RightHandItem].item.baseEulerAngles;
 
-            return player.CameraTransform.eulerAngles + offset;
+            return offset;
         }
 
         public struct Events
@@ -207,7 +202,7 @@ namespace Player.InventoryManagement
             {
                 item = i;
 
-                GameObject newObject = Instantiate(item.HandHeldPrefab);
+                GameObject newObject = Instantiate(item.HandHeldPrefab, Camera.main.transform);
                 newObject.transform.position = obj.transform.position;
                 newObject.transform.eulerAngles = obj.transform.eulerAngles;
 
@@ -222,7 +217,7 @@ namespace Player.InventoryManagement
             {
                 item = i;
 
-                GameObject newObject = Instantiate(item.HandHeldPrefab);
+                GameObject newObject = Instantiate(item.HandHeldPrefab, Camera.main.transform);
                 handHeldObject = newObject;
 
                 if (worldObject != null)

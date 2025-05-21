@@ -13,7 +13,7 @@ namespace Interactables
         [SerializeField] private GameObject placedStateObject;
         [SerializeField] private bool placed = false;
         [SerializeField] private bool CanRemove = false;
-        [SerializeField] private Events events;
+        public Events events;
 
 
         private void Start()
