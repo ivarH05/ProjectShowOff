@@ -10,16 +10,18 @@ namespace CryptBuilder
         public Vector2 Center => (Minimum + Maximum) * .5f;
         public Vector2 Size => Maximum - Minimum;
 
+        public bool IsValid => Size.x > 0 && Size.y > 0;
+
         /// <summary>
         /// Reshapes the bounding box to include a certain point, if it lies outside of the box.
         /// </summary>
-        public void GrowToInclude(Vector2 point)
+        public void GrowToInclude(in Vector2 point)
         {
             Minimum = Vector2.Min(point, Minimum);
             Maximum = Vector2.Max(point, Maximum);
         }
 
-        public void GrowToInclude(BoundingBox box)
+        public void GrowToInclude(in BoundingBox box)
         {
             GrowToInclude(box.Minimum);
             GrowToInclude(box.Maximum);

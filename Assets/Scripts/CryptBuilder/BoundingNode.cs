@@ -11,7 +11,7 @@ namespace CryptBuilder
         [field: SerializeField] public BoundingNode Parent { get; private set; }
         [field: SerializeField] public BoundingNode ChildA { get; private set; }
         [field: SerializeField] public BoundingNode ChildB { get; private set; }
-        public ReadOnlyCollection<RotatedRectangle> Rectangles => _rectangles.AsReadOnly();
+        public ReadOnlyCollection<RotatedRectangle> Rectangles => _rectangles?.AsReadOnly();
         [field:SerializeField] public BoundingBox Bounds { get; private set; }
 
         [SerializeField, HideInInspector] List<RotatedRectangle> _rectangles;
@@ -36,7 +36,12 @@ namespace CryptBuilder
                 // no rectangles, no children, just take the bounds of the parent
                 if (_rectangles == null || _rectangles.Count == 0)
                 {
-                    if (Parent == null) return;
+                    Debug.Log("no rectangles, no bounds");
+                    if (Parent == null)
+                    {
+                        Debug.Log("no parent either?");
+                        return;
+                    }
                     Bounds = new(Parent.Bounds.Center, Parent.Bounds.Center);
                     return;
                 }
@@ -52,13 +57,14 @@ namespace CryptBuilder
             }
             else
             {
-                Bounds = ChildA.Bounds;
-                Bounds.GrowToInclude(ChildB.Bounds);
+                var b = ChildA.Bounds;
+                b.GrowToInclude(ChildB.Bounds);
                 if (_rectangles != null)
                 {
                     foreach (var rect in _rectangles)
-                        Bounds.GrowToInclude(rect.GetBounds());
+                        b.GrowToInclude(rect.GetBounds());
                 }
+                Bounds = b;
             }
         }
 
@@ -69,8 +75,9 @@ namespace CryptBuilder
         /// <param name="precomputedBounds">The bounds of the rectangle to add.</param>
         public void AddRectangle(in RotatedRectangle rect, in BoundingBox precomputedBounds)
         {
-            Bounds.GrowToInclude(precomputedBounds.Minimum);
-            Bounds.GrowToInclude(precomputedBounds.Maximum);
+            var b = Bounds;
+            b.GrowToInclude(precomputedBounds);
+            Bounds = b;
             if (ChildA == null)
             {
                 // this node has not split
@@ -101,9 +108,11 @@ namespace CryptBuilder
             var rects = _rectangles;
             _rectangles = null;
             ChildA._rectangles = rects;
+            ChildB._rectangles = new();
             float thisBoundsMag = thisBoundsSize.sqrMagnitude;
 
-            for(int i = 0; i >= 0; i--)
+            Debug.Log("Splitting");
+            for(int i = rects.Count-1; i >= 0; i--)
             {
                 var rect = rects[i];
                 var b = rect.GetBounds();
@@ -112,18 +121,22 @@ namespace CryptBuilder
                     _rectangles ??= new();
                     _rectangles.Add(rect); // in the case that one of the rectangles is MASSIVE, add it to this instead of one of the children.
                     rects.RemoveAt(i);
+                    Debug.Log("to SELF");
                     continue;
                 }
 
                 float bCenterDist = _splitVertical ? b.Center.y : b.Center.x;
-                if(bCenterDist > _splitPosition)
+                if (bCenterDist > _splitPosition)
                 {
                     rects.RemoveAt(i);
                     ChildB._rectangles.Add(rect);
+                    Debug.Log("to B");
                 }
+                else Debug.Log("to A");
             }
             ChildA.RecalculateBoundsSelf();
             ChildB.RecalculateBoundsSelf();
+            RecalculateBoundsUpwardsRecursive();
         }
     }
 }
