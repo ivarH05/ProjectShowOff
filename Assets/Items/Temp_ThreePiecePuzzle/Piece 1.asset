@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1310474a398d14e44b9dd800acabbb74, type: 3}
-  m_Name: CandleItem
+  m_Name: Piece 1
   m_EditorClassIdentifier: 
-  DefaultWorldObjectPrefab: {fileID: 6237387486266629411, guid: 5e61906caaf8df94d8c2cc5114575ce3, type: 3}
-  HandHeldPrefab: {fileID: 5814229935532231473, guid: a4419ff5fa69a384cbc7e53e03e3aa07, type: 3}
-  baseRightOffset: {x: -0.13, y: -0.15, z: 0}
-  baseLeftOffset: {x: 0.07, y: 0.05, z: 0}
+  DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: b9096aa041e49934d8548201970c986a, type: 3}
+  HandHeldPrefab: {fileID: 9111433920995212162, guid: eebbc26c92f46c748832f9b7e5ba8c86, type: 3}
+  baseOffset: {x: 0, y: 0, z: 0}
   baseEulerAngles: {x: 0, y: 0, z: 0}
