@@ -2,13 +2,15 @@ using GameManagement;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Interactables;
+using Player.InventoryManagement;
 
 namespace Player
 {
     /// <summary>
     /// Controls the player.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody), typeof(PlayerInput))]
+    [RequireComponent(typeof(Rigidbody), typeof(PlayerInput), typeof(Inventory))]
     public class PlayerController : MonoBehaviour
     {
         [field: SerializeField] public MovementStrategy MoveStrategy { get; private set; }
@@ -18,16 +20,20 @@ namespace Player
         
         [SerializeField] float _coyoteTime = .2f;
 
+        public Inventory Inventory { get; private set; }
         public Rigidbody Body {get; private set;}
         public CapsuleCollider MainCollider { get; private set;}
         public float CharacterHeight { get; private set; }
+        /// <summary>
+        /// Relative to the top of the MainCollider.
+        /// </summary>
+        public float EyeOffset { get; private set; }
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
+        public bool SprintHeld { get; private set; }
+        public bool CrouchHeld { get; private set; }
 
-        PlayerInput _input;
         Vector2 _currentPlayerDirection;
-        bool _sprintHeld;
-        bool _crouchHeld;
         bool _attackHeld;
         
         int _collidersInFootTrigger;
@@ -42,10 +48,11 @@ namespace Player
         {
             Cursor.lockState = CursorLockMode.Locked;
 
+            Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
             CharacterHeight = MainCollider.height;
-            _input = GetComponent<PlayerInput>();
+            EyeOffset = CameraTransform.localPosition.y - MainCollider.height * .5f;
 
             MoveStrategy ??= GetComponent<Walk>();
             MoveStrategy?.StartStrategy(this);
@@ -132,16 +139,16 @@ namespace Player
         public void OnSprint(InputAction.CallbackContext context)
         {
             if(context.started)
-                _sprintHeld = true;
+                SprintHeld = true;
             if(context.canceled)
-                _sprintHeld = false;
+                SprintHeld = false;
         }
         public void OnCrouch(InputAction.CallbackContext context)
         {
             if(context.started)
-                _crouchHeld = true;
+                CrouchHeld = true;
             if(context.canceled)
-                _crouchHeld = false;
+                CrouchHeld = false;
         }
         public void OnJump(InputAction.CallbackContext context)
         {
@@ -162,7 +169,7 @@ namespace Player
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMoveUpdate(this, res, _sprintHeld, _crouchHeld);
+            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, CrouchHeld);
         }
 
         private void OnTriggerEnter(Collider other)

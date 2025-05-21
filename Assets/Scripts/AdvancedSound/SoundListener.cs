@@ -16,7 +16,7 @@ namespace AdvancedSound
         /// <summary>
         /// Anyone can call this. Try not doing that or im calling you a dog
         /// </summary>
-        public Action<Sound, Loudness> OnHearSound;
+        public Action<HeardSound> OnHearSound;
 
         private void OnEnable() => _listeners.Add(this);
         private void OnDisable() => _listeners.Remove(this);

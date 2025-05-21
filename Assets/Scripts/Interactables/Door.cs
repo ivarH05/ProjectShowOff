@@ -45,6 +45,10 @@ namespace Interactables
             public UnityEvent<Door, PlayerController> OnUnlock;
         }
 
+        /// <summary>
+        /// The angle of the door.
+        /// </summary>
+        public float CurrentAngle => _angle;
 
         /// <summary>
         /// check if door is closed or not
@@ -89,6 +93,11 @@ namespace Interactables
 
 
         ////////// Standard behaviour
+
+        private void Start()
+        {
+            _angle = startAngle;
+        }
 
         private void Update()
         {

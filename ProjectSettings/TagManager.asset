@@ -12,9 +12,9 @@ TagManager:
   - Water
   - UI
   - Interactables
-  - 
-  - 
-  - 
+  - FromCameraSelectable
+  - OutlinedOverlay
+  - ScreenOverlay
   - 
   - 
   - 
