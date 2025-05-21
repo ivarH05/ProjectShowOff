@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace CryptBuilder
 {
+    [Serializable]
     public struct BoundingBox
     {
         public Vector2 Minimum;

@@ -24,8 +24,7 @@ namespace CryptBuilder
                     rect.CenterPosition = new(Random.Range(0,66), Random.Range(0,66));
                     rect.HalfSize = new(Random.Range(1f,3),Random.Range(1f,3));
                     rect.Rotation = Random.Range(0, 360);
-                    b.RectangleTree.AddRectangle(rect, rect.GetBounds());
-                    b.RectangleTree.RecalculateBoundsUpwardsRecursive();
+                    b.RectangleTree.AddRectangle(rect);
                     SceneView.RepaintAll();
                 }
             }
@@ -38,8 +37,8 @@ namespace CryptBuilder
                 Handles.color = Color.white;
                 DrawBoundingBox(bb);
 
-                if(b.RectangleTree != null)
-                    DrawBoundingNode(b.RectangleTree, 0);
+                if(b.RectangleTree != null && b.RectangleTree.Nodes.Count > 1)
+                    DrawBoundingNode(1, b.RectangleTree, 0);
 
                 EditorGUI.BeginChangeCheck();
                 Vector3 pos = b._heldRectangle.CenterPosition.To3D();
@@ -67,11 +66,12 @@ namespace CryptBuilder
                 position = (ray.origin + ray.direction * t).To2D();
                 return true;
             }
-            static void DrawBoundingNode(BoundingNode node, int depth)
+            static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth)
             {
                 var col = Color.Lerp(Color.lawnGreen, Color.aquamarine, 1f / (.4f * depth + 1));
                 col.a = .4f;
                 Handles.color = col;
+                var node = owner.Nodes[nodeIndex];
                 DrawBoundingBox(node.Bounds);
                 if(node.Rectangles != null)
                 {
@@ -82,10 +82,10 @@ namespace CryptBuilder
                         DrawRectangle(r);
                     }
                 }
-                if(node.ChildA != null)
+                if(node.ChildAIndex > 0)
                 {
-                    DrawBoundingNode(node.ChildA, depth+1);
-                    DrawBoundingNode(node.ChildB, depth+1);
+                    DrawBoundingNode(node.ChildAIndex, owner, depth+1);
+                    DrawBoundingNode(node.ChildBIndex, owner, depth+1);
                 }
             }
             static void DrawRectangle(RotatedRectangle rect)
