@@ -4,7 +4,7 @@ namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
-        public BoundingNode RectangleTree {get; private set;}
+        [field:SerializeField] public RectangleCollection RectangleTree {get; private set;}
         [SerializeField] RotatedRectangle _heldRectangle;
     }
 }

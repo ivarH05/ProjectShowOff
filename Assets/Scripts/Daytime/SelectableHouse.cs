@@ -7,6 +7,7 @@ namespace Daytime
     public class SelectableHouse : MonoBehaviour
     {
         [SerializeField] Transform LookAtHouseTransform;
+        [SerializeField] DialogueRoot DialogueToShow;
 
         FromCameraSelectable _selectable;
         CameraMouseSelector _selector;
@@ -31,7 +32,7 @@ namespace Daytime
 
         void OnClick()
         {
-            if(DialogueRoot.Instance == null)
+            if(DialogueToShow == null)
             {
                 Debug.LogError("The DialogueRoot was missing, and thus dialogue could not be started.", this);
                 return;
@@ -44,7 +45,7 @@ namespace Daytime
             _selector = Camera.main.GetComponent<CameraMouseSelector>();
             _selector.enabled = false;
 
-            var dialogueRoot = DialogueRoot.Instance;
+            var dialogueRoot = DialogueToShow;
             dialogueRoot.Enable();
             dialogueRoot.OnDialogueDisable += DisabledDialogue;
 

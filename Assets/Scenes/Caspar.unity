@@ -1559,10 +1559,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc77a8e1bb8a3c9499e42fb6fa33ffcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RectangleTree>k__BackingField:
+    _rectangles: []
   _heldRectangle:
     HalfSize: {x: 2.1509485, y: 4.1039357}
-    CenterPosition: {x: -3.8569026, y: 15.605856}
-    Rotation: 262.30157
+    CenterPosition: {x: -4.910355, y: 9.978688}
+    Rotation: 0
 --- !u!4 &2142371743
 Transform:
   m_ObjectHideFlags: 0

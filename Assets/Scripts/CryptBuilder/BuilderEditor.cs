@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,25 @@ namespace CryptBuilder
         [CustomEditor(typeof(Builder))]
         class BuilderEditor : Editor
         {
+            public override void OnInspectorGUI()
+            {
+                base.OnInspectorGUI();
+                var b = (Builder)target;
+                if(GUILayout.Button("Reset crypt"))
+                {
+                    b.RectangleTree = new();
+                    SceneView.RepaintAll();
+                }
+                if(GUILayout.Button("Add random rect"))
+                {
+                    RotatedRectangle rect = new();
+                    rect.CenterPosition = new(Random.Range(0,66), Random.Range(0,66));
+                    rect.HalfSize = new(Random.Range(1f,3),Random.Range(1f,3));
+                    rect.Rotation = Random.Range(0, 360);
+                    b.RectangleTree.AddRectangle(rect);
+                    SceneView.RepaintAll();
+                }
+            }
             void OnSceneGUI()
             {
                 var b = (Builder)target;
@@ -16,6 +36,9 @@ namespace CryptBuilder
                 var bb = b._heldRectangle.GetBounds();
                 Handles.color = Color.white;
                 DrawBoundingBox(bb);
+
+                if(b.RectangleTree != null && b.RectangleTree.Nodes.Count > 1)
+                    DrawBoundingNode(1, b.RectangleTree, 0);
 
                 EditorGUI.BeginChangeCheck();
                 Vector3 pos = b._heldRectangle.CenterPosition.To3D();
@@ -32,6 +55,39 @@ namespace CryptBuilder
                 }
             }
 
+            static bool TryTracePlaneFromMouse(out Vector2 position)
+            {
+                var ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                position = default;
+                float t = ray.origin.y / -ray.direction.y;
+                if (t < 0 || float.IsNaN(t))
+                    return false;
+
+                position = (ray.origin + ray.direction * t).To2D();
+                return true;
+            }
+            static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth)
+            {
+                var col = Color.Lerp(Color.lawnGreen, Color.aquamarine, 1f / (.4f * depth + 1));
+                col.a = .4f;
+                Handles.color = col;
+                var node = owner.Nodes[nodeIndex];
+                DrawBoundingBox(node.Bounds);
+                if(node.Rectangles != null)
+                {
+                    col.a = 1f;
+                    Handles.color = col;
+                    foreach (var r in node.Rectangles)
+                    {
+                        DrawRectangle(r);
+                    }
+                }
+                if(node.ChildAIndex > 0)
+                {
+                    DrawBoundingNode(node.ChildAIndex, owner, depth+1);
+                    DrawBoundingNode(node.ChildBIndex, owner, depth+1);
+                }
+            }
             static void DrawRectangle(RotatedRectangle rect)
             {
                 foreach (var line in rect.GetLines())
@@ -41,12 +97,15 @@ namespace CryptBuilder
             }
             static void DrawBoundingBox(BoundingBox box)
             {
+                var ogcol = Handles.color;
+                if(!box.IsValid) Handles.color *= Color.pink;
                 Vector2 otherCorner1 = new(box.Minimum.x, box.Maximum.y);
                 Vector2 otherCorner2 = new(box.Maximum.x, box.Minimum.y);
                 Handles.DrawLine(otherCorner1.To3D(), box.Minimum.To3D());
                 Handles.DrawLine(otherCorner1.To3D(), box.Maximum.To3D());
                 Handles.DrawLine(otherCorner2.To3D(), box.Maximum.To3D());
                 Handles.DrawLine(otherCorner2.To3D(), box.Minimum.To3D());
+                Handles.color = ogcol;
             }
 
             enum EditMode

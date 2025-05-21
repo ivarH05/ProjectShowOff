@@ -8,20 +8,12 @@ namespace Daytime
     [RequireComponent(typeof(CanvasGroup))]
     public class DialogueRoot : MonoBehaviour
     {
-        public static DialogueRoot Instance {get; private set;}
-
         public event Action OnDialogueEnable;
         public event Action OnDialogueDisable;
 
         [SerializeField] float FadeAnimationLength = 1; 
 
         CanvasGroup _group;
-
-        private void Awake()
-        {
-            if (Instance != null) Debug.LogError("There was already a DialogueRoot in the scene! This one may not work correctly.", this);
-            else Instance = this;
-        }
 
         private void OnEnable()
         {

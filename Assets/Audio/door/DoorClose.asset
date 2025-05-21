@@ -16,9 +16,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6a59000970470db4dbbd7cce46e222c3, type: 3}
   SelectionMode: 0
   Type: 2
-  Volume: 1
+  Volume: 8326.4
   Pitch: 1
-  AudibleRange: 5.04
+  AudibleRange: 47
   FaintThreshold: 0.7
   ModerateThreshold: 0.4
   LoudThreshold: 0.25
