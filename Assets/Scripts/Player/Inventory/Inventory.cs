@@ -3,22 +3,25 @@ using Interactables;
 using UnityEngine;
 using Player.InventoryManagement;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using static UnityEditor.PlayerSettings;
 
 namespace Player.InventoryManagement
 {
     [RequireComponent(typeof(PlayerController))]
     public class Inventory : MonoBehaviour
     {
-        private Slot[] _slots;
-        private int _activeItem;
-
         public PlayerController player { get; private set; }
         public int inventorySize = 2;
         [SerializeField] private Vector3 LeftHandPosition;
         [SerializeField] private Vector3 RightHandPosition;
 
-        public Item activeItem => _slots[_activeItem].item;
-        private Slot activeSlot => _slots[_activeItem];
+        private Slot[] _slots;
+        private int RightHandItem = 0;
+        private int LeftHandItem = 1;
+
+        public Item activeItem => _slots[RightHandItem].item;
+        private Slot activeSlot => _slots[RightHandItem];
 
         private void Awake()
         {
@@ -32,14 +35,56 @@ namespace Player.InventoryManagement
         {
             LerpItems();
         }
+        public void OnItem0(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+                return;
+            if (RightHandItem == 0)
+                return;
+
+            RightHandItem = 0;
+            LeftHandItem = 1;
+
+            SwitchItemPositions();
+        }
+
+        public void OnItem1(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+                return;
+            if (RightHandItem == 1)
+                return;
+
+            RightHandItem = 1;
+            LeftHandItem = 0;
+
+            SwitchItemPositions();
+        }
+
+        public void OnDrop(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+                return;
+            if (!activeSlot.Occupied)
+                return;
+            activeSlot.DropItem(player);
+        }
+
+        private void SwitchItemPositions()
+        {
+            if (_slots[LeftHandItem].Occupied)
+                _slots[LeftHandItem].handHeldObject.transform.position = GetLeftHandTargetLocation(new Vector3(0, -0.35f, 0));
+            if (_slots[RightHandItem].Occupied)
+                _slots[RightHandItem].handHeldObject.transform.position = GetRightHandTargetLocation(new Vector3(0, -0.25f, 0));
+        }
 
         private void LerpItems()
         {
-            if (_slots[0].Occupied)
-                LerpItem(_slots[0].handHeldObject, GetLeftHandTargetLocation(), GetLeftHandTargetRotation());
+            if (_slots[RightHandItem].Occupied)
+                LerpItem(_slots[RightHandItem].handHeldObject, GetRightHandTargetLocation(), GetRightHandTargetRotation());
 
-            if (_slots[1].Occupied)
-                LerpItem(_slots[1].handHeldObject, GetRightHandTargetLocation(), GetRightHandTargetRotation());
+            if (_slots[LeftHandItem].Occupied)
+                LerpItem(_slots[LeftHandItem].handHeldObject, GetLeftHandTargetLocation(), GetLeftHandTargetRotation());
         }
 
         private void LerpItem(GameObject obj, Vector3 pos, Vector3 euler)
@@ -57,20 +102,20 @@ namespace Player.InventoryManagement
             Gizmos.DrawWireSphere(player.CameraTransform.TransformPoint(RightHandPosition), 0.1f);
         }
 
-        private Vector3 GetLeftHandTargetLocation()
+        private Vector3 GetLeftHandTargetLocation(Vector3 additionalOffset = default)
         {
-            Vector3 offset = LeftHandPosition;
-            if (_slots[0].Occupied)
-                offset += _slots[0].item.baseOffset;
+            Vector3 offset = LeftHandPosition + additionalOffset;
+            if (_slots[LeftHandItem].Occupied)
+                offset += _slots[LeftHandItem].item.baseOffset;
 
             return player.CameraTransform.TransformPoint(offset);
         }
 
-        private Vector3 GetRightHandTargetLocation()
+        private Vector3 GetRightHandTargetLocation(Vector3 additionalOffset = default)
         {
-            Vector3 offset = RightHandPosition;
-            if (_slots[1].Occupied)
-                offset += _slots[1].item.baseOffset;
+            Vector3 offset = RightHandPosition + additionalOffset;
+            if (_slots[RightHandItem].Occupied)
+                offset += _slots[RightHandItem].item.baseOffset;
 
             return player.CameraTransform.TransformPoint(offset);
         }
@@ -78,8 +123,8 @@ namespace Player.InventoryManagement
         private Vector3 GetLeftHandTargetRotation()
         {
             Vector3 offset = Vector3.zero;
-            if (_slots[0].Occupied)
-                offset = _slots[0].item.baseEulerAngles;
+            if (_slots[LeftHandItem].Occupied)
+                offset = _slots[LeftHandItem].item.baseEulerAngles;
 
             return player.CameraTransform.eulerAngles + offset;
         }
@@ -87,8 +132,8 @@ namespace Player.InventoryManagement
         private Vector3 GetRightHandTargetRotation()
         {
             Vector3 offset = Vector3.zero;
-            if (_slots[1].Occupied)
-                offset = _slots[1].item.baseEulerAngles;
+            if (_slots[RightHandItem].Occupied)
+                offset = _slots[RightHandItem].item.baseEulerAngles;
 
             return player.CameraTransform.eulerAngles + offset;
         }
@@ -112,9 +157,24 @@ namespace Player.InventoryManagement
             slot.SetItem(itemObject.item, itemObject);
         }
 
+        public void PickupItem(Item item)
+        {
+            Slot slot = GetEmptySlot();
+            if (slot == null)
+            {
+                DropItem(activeSlot);
+                slot = activeSlot;
+            }
+            slot.SetItem(item);
+        }
+        public void UseActiveItem()
+        {
+            activeSlot.Clear();
+        }
+
         private void DropItem(Slot slot)
         {
-            slot.Clear();
+            slot.DropItem(player);
         }
 
         private Slot GetEmptySlot()
@@ -130,12 +190,12 @@ namespace Player.InventoryManagement
             public Item item { get; private set; }
 
             public GameObject handHeldObject { get; private set; }
-            public GameObject worldObject { get; private set; }
+            public ItemObject worldObject { get; private set; }
 
             public void Clear()
             {
                 item = null;
-                if(handHeldObject != null)
+                if (handHeldObject != null)
                     Destroy(handHeldObject);
             }
 
@@ -143,11 +203,39 @@ namespace Player.InventoryManagement
             {
                 item = i;
 
-                GameObject newObject = Instantiate(item.Prefab);
+                GameObject newObject = Instantiate(item.HandHeldPrefab);
                 newObject.transform.position = obj.transform.position;
                 newObject.transform.eulerAngles = obj.transform.eulerAngles;
 
+                if (handHeldObject != null)
+                    Destroy(handHeldObject);
                 handHeldObject = newObject;
+
+                worldObject = obj;
+                worldObject.gameObject.SetActive(false);
+            }
+            public void SetItem(Item i)
+            {
+                item = i;
+
+                GameObject newObject = Instantiate(item.HandHeldPrefab);
+                handHeldObject = newObject;
+
+                if (worldObject != null)
+                    Destroy(worldObject.gameObject);
+
+                worldObject = Instantiate(item.DefaultWorldObjectPrefab).GetComponent<ItemObject>();
+                worldObject.gameObject.SetActive(false);
+            }
+
+            public void DropItem(PlayerController controller)
+            {
+                if(!Occupied) return;
+
+                worldObject.gameObject.SetActive(true);
+                worldObject.transform.position = controller.CameraTransform.position + controller.CameraTransform.forward * 0.25f;
+                worldObject.rigidbody.linearVelocity = controller.Body.linearVelocity + controller.CameraTransform.forward * 2.5f;
+                Clear();
             }
 
             public bool Occupied => item != null;
