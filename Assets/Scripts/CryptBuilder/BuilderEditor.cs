@@ -9,6 +9,7 @@ namespace CryptBuilder
     {
         [SerializeField] EditMode _editMode;
         [SerializeField] List<RotatedRectangle> _heldRectangles = new();
+        bool _debugShowBounds;
 
         [CustomEditor(typeof(Builder))]
         class BuilderEditor : Editor
@@ -18,11 +19,7 @@ namespace CryptBuilder
                 var b = (Builder)target;
                 if(b._heldRectangles.Count > 0)
                 {
-                    Undo.RecordObject(b, "Deselect rectangle");
-                    b._editMode = EditMode.DontEdit;
-                    foreach(RotatedRectangle rect in b._heldRectangles)
-                        b.RectangleTree.AddRectangle(rect);
-                    EditorUtility.SetDirty(b);
+                    DeselectHeld(b);
                 }
             }
             public override void OnInspectorGUI()
@@ -36,21 +33,22 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }
-                if (GUILayout.Button("Add random rect"))
-                {
-                    Undo.RecordObject(b, "Add random rectangle");
-                    RotatedRectangle rect = new();
-                    rect.CenterPosition = new(Random.Range(0,66), Random.Range(0,66));
-                    rect.HalfSize = new(Random.Range(1f,3),Random.Range(1f,3));
-                    rect.Rotation = Random.Range(0, 360);
-                    b.RectangleTree.AddRectangle(rect);
-                    SceneView.RepaintAll();
-                    EditorUtility.SetDirty(b);
-                }
                 if(GUILayout.Button("Add new rect"))
                 {
+                    DeselectHeld(b);
                     b._editMode = EditMode.AddNew;
                 }
+                if(GUILayout.Button("Toggle debug bounds"))
+                {
+                    b._debugShowBounds = !b._debugShowBounds;
+                    SceneView.RepaintAll() ;
+                }
+                if(GUILayout.Button("Regenerate tree (may improve performance)"))
+                {
+                    b.RectangleTree.Regenerate();
+                    SceneView.RepaintAll();
+                }
+
             }
             void OnSceneGUI()
             {
@@ -59,7 +57,7 @@ namespace CryptBuilder
                 if (b.RectangleTree == null || b.RectangleTree.Count < 2)
                     return;
                 
-                DrawBoundingNode(1, b.RectangleTree, 0);
+                DrawBoundingNode(1, b.RectangleTree, 0, b);
                 switch(b._editMode)
                 {
                     case EditMode.DontEdit:
@@ -67,6 +65,7 @@ namespace CryptBuilder
                         break;
 
                     case EditMode.AddNew:
+                        AddNew(b);
                         break;
 
                     case EditMode.EditHeld:
@@ -106,6 +105,59 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
             }
 
+            Vector2 clickPosition;
+            Vector2 dragPosition;
+            bool draggingNew;
+            void AddNew(Builder b)
+            {
+                switch (Event.current.type)
+                {
+                    case EventType.Repaint:
+                        if (!draggingNew) 
+                            return;
+
+                        Handles.color = Color.white;
+                        DrawBoundingBox(new(clickPosition, dragPosition));
+                        return;
+
+                    case EventType.MouseDown:
+                        if (Event.current.IsRightMouseButton()) 
+                            return;
+
+                        draggingNew = TryTracePlaneFromMouse(out clickPosition);
+                        dragPosition = clickPosition;
+                        if (draggingNew) 
+                            Event.current.Use();
+                        return;
+                    
+                    case EventType.MouseDrag:
+                        if (!TryTracePlaneFromMouse(out dragPosition)) 
+                            return;
+                        
+                        SceneView.RepaintAll();
+                        Event.current.Use();
+                        return;
+                    
+                    case EventType.MouseUp:
+                        if (!draggingNew) 
+                            return;
+
+                        Undo.RecordObject(b, "Add new rectangle");
+                        var size = dragPosition - clickPosition;
+                        size.x = Mathf.Abs(size.x);
+                        size.y = Mathf.Abs(size.y);
+                        var pos = (dragPosition + clickPosition) * .5f;
+                        RotatedRectangle n = default;
+                        n.HalfSize = .5f * size;
+                        n.CenterPosition = pos;
+                        b._heldRectangles.Add(n);
+                        b._editMode = EditMode.EditHeld;
+                        draggingNew = false;
+                        EditorUtility.SetDirty(b);
+                        return;
+                }
+            }
+
             float lastUniformScale = 1;
             void EditHeld(Builder b)
             {
@@ -128,12 +180,6 @@ namespace CryptBuilder
                     Vector3 pos = originalPos.To3D();
                     Vector3 scale = b._heldRectangles[0].HalfSize.To3D();
                     Quaternion rotation = Quaternion.AngleAxis(b._heldRectangles[0].Rotation, Vector3.up);
-                    for(int i = 0; i<b._heldRectangles.Count; i++)
-                    {
-                        var rect = b._heldRectangles[i];
-                        rect.CenterPosition -= originalPos;
-                        b._heldRectangles [i] = rect;
-                    }
 
                     float uniformScale = lastUniformScale;
                     if (b._heldRectangles.Count > 1)
@@ -155,6 +201,7 @@ namespace CryptBuilder
                         for(int i = 0; i<b._heldRectangles.Count; i++)
                         {
                             var rect = b._heldRectangles[i];
+                            rect.CenterPosition -= originalPos;
                             rect.CenterPosition *= transform;
                             rect.CenterPosition += posDif;
                             rect.HalfSize *= scaleDif;
@@ -163,13 +210,6 @@ namespace CryptBuilder
                         }
                         EditorUtility.SetDirty(b);
                     }
-                    else 
-                        for (int i = 0; i < b._heldRectangles.Count; i++)
-                        {
-                            var rect = b._heldRectangles[i];
-                            rect.CenterPosition += originalPos;
-                            b._heldRectangles[i] = rect;
-                        }
                 }
 
                 if(Event.current.type == EventType.KeyDown)
@@ -239,14 +279,19 @@ namespace CryptBuilder
                             }
                         }
                     }
-                    Undo.RecordObject(b, "Deselect rectangle(s)");
-                    b._editMode = EditMode.DontEdit;
-                    foreach(var rect in b._heldRectangles)
-                        b.RectangleTree.AddRectangle(rect);
-                    b._heldRectangles.Clear();
+                    DeselectHeld(b);
                     Event.current.Use();
-                    EditorUtility.SetDirty(b);
                 }
+            }
+
+            void DeselectHeld(Builder b)
+            {
+                Undo.RecordObject(b, "Deselect rectangle(s)");
+                b._editMode = EditMode.DontEdit;
+                foreach (var rect in b._heldRectangles)
+                    b.RectangleTree.AddRectangle(rect);
+                b._heldRectangles.Clear();
+                EditorUtility.SetDirty(b);
             }
 
             static bool TryTracePlaneFromMouse(out Vector2 position)
@@ -260,13 +305,14 @@ namespace CryptBuilder
                 position = (ray.origin + ray.direction * t).To2D();
                 return true;
             }
-            static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth)
+            static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth, Builder b)
             {
                 var col = Color.Lerp(Color.lawnGreen, Color.deepPink, Mathf.Exp(-depth * .2f));
                 col.a = .4f;
                 Handles.color = col;
                 var node = owner.Nodes[nodeIndex];
-                //DrawBoundingBox(node.Bounds);
+                if(b._debugShowBounds) 
+                    DrawBoundingBox(node.Bounds);
                 if(node.Rectangles != null)
                 {
                     col.a = 1f;
@@ -276,8 +322,8 @@ namespace CryptBuilder
                 }
                 if(node.ChildAIndex > 0)
                 {
-                    DrawBoundingNode(node.ChildAIndex, owner, depth+1);
-                    DrawBoundingNode(node.ChildBIndex, owner, depth+1);
+                    DrawBoundingNode(node.ChildAIndex, owner, depth+1, b);
+                    DrawBoundingNode(node.ChildBIndex, owner, depth+1, b);
                 }
             }
             static void DrawRectangle(RotatedRectangle rect)

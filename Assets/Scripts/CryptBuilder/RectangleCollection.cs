@@ -23,6 +23,33 @@ namespace CryptBuilder
             root.AddRectangle(rect, bounds, this);
         }
 
+        public void Regenerate()
+        {
+            var previousNodes = Nodes;
+            Nodes = new BoundingNode[Nodes.Length];
+            Count = 0;
+            Add(default);
+            Add(BoundingNode.CreateRoot(previousNodes[1].Bounds));
+            RecursiveReadd(1);
+
+            void RecursiveReadd(int index)
+            {
+                ref var node = ref previousNodes[index];
+                if (node.Rectangles != null)
+                {
+                    foreach (var rect in node.Rectangles)
+                    {
+                        AddRectangle(rect);
+                    }
+                }
+                if(node.ChildAIndex > 0)
+                {
+                    RecursiveReadd(node.ChildAIndex);
+                    RecursiveReadd(node.ChildBIndex);
+                }
+            }
+        }
+
         public void Add(BoundingNode node)
         {
             if(Nodes.Length <= Count)

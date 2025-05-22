@@ -27,10 +27,11 @@ namespace CryptBuilder
 
         const int SplitThreshold = 4;
 
-        public static BoundingNode CreateRoot()
+        public static BoundingNode CreateRoot(BoundingBox initialBounds = default)
         {
             var res = new BoundingNode();
             res._thisIndex = 1;
+            res._bounds = initialBounds;
             return res;
         }
 
