@@ -8,7 +8,7 @@ namespace CryptBuilder
     public class RectangleCollection
     {
         public BoundingNode[] Nodes = new BoundingNode[2];
-        public int Count { get; private set; }
+        [field:SerializeField, HideInInspector] public int Count { get; private set; }
 
         public void AddRectangle(RotatedRectangle rect)
         {

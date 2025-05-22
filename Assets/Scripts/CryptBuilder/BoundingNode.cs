@@ -51,10 +51,9 @@ namespace CryptBuilder
                 // no rectangles, no children, just take the bounds of the parent
                 if (_rectangles == null || _rectangles.Count == 0)
                 {
-                    Debug.Log("no rectangles, no bounds");
                     if (_parentIndex < 1)
                     {
-                        Debug.Log("no parent either?");
+                        Debug.Log("bounding node missing rectangles and parent while resizing");
                         return;
                     }
                     var parent = owner.Nodes[_parentIndex];

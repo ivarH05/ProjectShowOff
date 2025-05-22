@@ -1574,370 +1574,129 @@ MonoBehaviour:
       _childAIndex: 2
       _childBIndex: 3
       _bounds:
-        Minimum: {x: -0.8883084, y: -1.8946488}
-        Maximum: {x: 66.86417, y: 66.70596}
+        Minimum: {x: -2.2236047, y: 6.4305463}
+        Maximum: {x: 51.40881, y: 57.777714}
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 2
-      _childAIndex: 12
-      _childBIndex: 13
+      _childAIndex: 6
+      _childBIndex: 7
       _bounds:
-        Minimum: {x: 4.263137, y: -1.8946488}
-        Maximum: {x: 66.86417, y: 28.584812}
+        Minimum: {x: -2.2236047, y: 6.4305463}
+        Maximum: {x: 47.28901, y: 57.777714}
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 3
       _childAIndex: 4
       _childBIndex: 5
       _bounds:
-        Minimum: {x: -0.8883084, y: 31.741602}
-        Maximum: {x: 66.396545, y: 66.70596}
+        Minimum: {x: -0.97520256, y: 14.513435}
+        Maximum: {x: 51.40881, y: 54.093742}
       _rectangles: []
     - _parentIndex: 3
       _thisIndex: 4
-      _childAIndex: 16
-      _childBIndex: 17
-      _bounds:
-        Minimum: {x: -0.8883084, y: 33.61762}
-        Maximum: {x: 31.04788, y: 66.70596}
-      _rectangles: []
-    - _parentIndex: 3
-      _thisIndex: 5
-      _childAIndex: 6
-      _childBIndex: 7
-      _bounds:
-        Minimum: {x: 29.925312, y: 31.741602}
-        Maximum: {x: 66.396545, y: 66.63486}
-      _rectangles: []
-    - _parentIndex: 5
-      _thisIndex: 6
-      _childAIndex: 28
-      _childBIndex: 29
-      _bounds:
-        Minimum: {x: 41.248196, y: 31.741602}
-        Maximum: {x: 66.396545, y: 51.665176}
-      _rectangles: []
-    - _parentIndex: 5
-      _thisIndex: 7
       _childAIndex: 8
       _childBIndex: 9
       _bounds:
-        Minimum: {x: 29.925312, y: 47.628033}
-        Maximum: {x: 58.924393, y: 66.63486}
+        Minimum: {x: 36.06581, y: 14.513435}
+        Maximum: {x: 51.40881, y: 22.474018}
       _rectangles: []
-    - _parentIndex: 7
+    - _parentIndex: 3
+      _thisIndex: 5
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -0.97520256, y: 18.25769}
+        Maximum: {x: 45.508633, y: 54.093742}
+      _rectangles:
+      - HalfSize: {x: 1.4046805, y: 2.0229962}
+        CenterPosition: {x: 44, y: 52}
+        Rotation: 3
+      - HalfSize: {x: 5.134521, y: 11.448648}
+        CenterPosition: {x: 11.333106, y: 25.828074}
+        Rotation: 257.0454
+    - _parentIndex: 2
+      _thisIndex: 6
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 6.5622272, y: 6.4305463}
+        Maximum: {x: 11.437773, y: 9.569454}
+      _rectangles:
+      - HalfSize: {x: 1.44765, y: 2.3652496}
+        CenterPosition: {x: 9, y: 8}
+        Rotation: 267
+    - _parentIndex: 2
+      _thisIndex: 7
+      _childAIndex: 10
+      _childBIndex: 11
+      _bounds:
+        Minimum: {x: -2.2236047, y: 20.100918}
+        Maximum: {x: 47.28901, y: 57.777714}
+      _rectangles: []
+    - _parentIndex: 4
       _thisIndex: 8
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: 29.925312, y: 55.88576}
-        Maximum: {x: 36.07469, y: 62.11424}
-      _rectangles:
-      - HalfSize: {x: 2.25547, y: 2.3459764}
-        CenterPosition: {x: 33, y: 59}
-        Rotation: 27
-    - _parentIndex: 7
-      _thisIndex: 9
-      _childAIndex: 10
-      _childBIndex: 11
-      _bounds:
-        Minimum: {x: 42.489887, y: 47.628033}
-        Maximum: {x: 58.924393, y: 66.63486}
+        Minimum: {x: 36.06581, y: 14.513435}
+        Maximum: {x: 36.06581, y: 14.513435}
       _rectangles: []
-    - _parentIndex: 9
+    - _parentIndex: 4
+      _thisIndex: 9
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 51.40881, y: 22.474018}
+        Maximum: {x: 51.40881, y: 22.474018}
+      _rectangles: []
+    - _parentIndex: 7
       _thisIndex: 10
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: 42.489887, y: 47.628033}
-        Maximum: {x: 55.502594, y: 54.447174}
+        Minimum: {x: -1.357907, y: 32.33629}
+        Maximum: {x: 3.357907, y: 37.66371}
       _rectangles:
-      - HalfSize: {x: 1.3100233, y: 1.3807411}
-        CenterPosition: {x: 44, y: 53}
-        Rotation: 264
-      - HalfSize: {x: 2.6261117, y: 2.8295712}
-        CenterPosition: {x: 52, y: 51}
-        Rotation: 288
-    - _parentIndex: 9
+      - HalfSize: {x: 2.0774152, y: 2.42864}
+        CenterPosition: {x: 1, y: 35}
+        Rotation: 173
+    - _parentIndex: 7
       _thisIndex: 11
-      _childAIndex: 30
-      _childBIndex: 31
+      _childAIndex: 12
+      _childBIndex: 13
       _bounds:
-        Minimum: {x: 45.065083, y: 55.436813}
-        Maximum: {x: 58.924393, y: 66.63486}
+        Minimum: {x: -2.2236047, y: 20.100918}
+        Maximum: {x: 47.28901, y: 57.777714}
       _rectangles: []
-    - _parentIndex: 2
+    - _parentIndex: 11
       _thisIndex: 12
-      _childAIndex: 18
-      _childBIndex: 19
+      _childAIndex: 0
+      _childBIndex: 0
       _bounds:
-        Minimum: {x: 4.263137, y: -1.8946488}
-        Maximum: {x: 25.010712, y: 17.920008}
-      _rectangles: []
-    - _parentIndex: 2
+        Minimum: {x: -2.2236047, y: 38.416683}
+        Maximum: {x: 34.07965, y: 57.777714}
+      _rectangles:
+      - HalfSize: {x: 17.255077, y: 5.951505}
+        CenterPosition: {x: 15.928022, y: 48.0972}
+        Rotation: 347
+    - _parentIndex: 11
       _thisIndex: 13
-      _childAIndex: 14
-      _childBIndex: 15
-      _bounds:
-        Minimum: {x: 37.535664, y: -1.7492812}
-        Maximum: {x: 66.86417, y: 28.584812}
-      _rectangles: []
-    - _parentIndex: 13
-      _thisIndex: 14
-      _childAIndex: 22
-      _childBIndex: 23
-      _bounds:
-        Minimum: {x: 37.535664, y: -1.7492812}
-        Maximum: {x: 49.2791, y: 28.584812}
-      _rectangles: []
-    - _parentIndex: 13
-      _thisIndex: 15
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: 52.80861, y: 8.904323}
-        Maximum: {x: 66.86417, y: 21.246214}
+        Minimum: {x: 7.663486, y: 20.100918}
+        Maximum: {x: 47.28901, y: 53.852287}
       _rectangles:
-      - HalfSize: {x: 2.018706, y: 2.6984918}
-        CenterPosition: {x: 64, y: 19}
-        Rotation: 95
-      - HalfSize: {x: 1.0210195, y: 2.1570709}
-        CenterPosition: {x: 55, y: 10}
-        Rotation: 92
-    - _parentIndex: 4
-      _thisIndex: 16
-      _childAIndex: 20
-      _childBIndex: 21
-      _bounds:
-        Minimum: {x: -0.8883084, y: 33.61762}
-        Maximum: {x: 31.04788, y: 50.37251}
-      _rectangles: []
-    - _parentIndex: 4
-      _thisIndex: 17
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 8.294032, y: 52.203354}
-        Maximum: {x: 15.811748, y: 66.70596}
-      _rectangles:
-      - HalfSize: {x: 1.9427059, y: 2.0448716}
-        CenterPosition: {x: 13, y: 55}
-        Rotation: 231
-      - HalfSize: {x: 1.6109003, y: 2.2159169}
-        CenterPosition: {x: 11, y: 64}
-        Rotation: 315
-      - HalfSize: {x: 2.069649, y: 1.8956854}
-        CenterPosition: {x: 11, y: 57}
-        Rotation: 193
-    - _parentIndex: 12
-      _thisIndex: 18
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 4.263137, y: -1.8946488}
-        Maximum: {x: 16.483852, y: 10.333054}
-      _rectangles:
-      - HalfSize: {x: 2.078676, y: 1.1807084}
-        CenterPosition: {x: 6, y: 8}
-        Rotation: 73
-      - HalfSize: {x: 2.090574, y: 1.3483539}
-        CenterPosition: {x: 14, y: 2}
-        Rotation: 144
-      - HalfSize: {x: 1.5555543, y: 1.0859466}
-        CenterPosition: {x: 9, y: 0}
-        Rotation: 302
-    - _parentIndex: 12
-      _thisIndex: 19
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 13.346559, y: -0.87850654}
-        Maximum: {x: 25.010712, y: 17.920008}
-      _rectangles:
-      - HalfSize: {x: 1.5883113, y: 2.4783483}
-        CenterPosition: {x: 16, y: 1}
-        Rotation: 277
-      - HalfSize: {x: 2.0284607, y: 2.2935743}
-        CenterPosition: {x: 22, y: 15}
-        Rotation: 59
-    - _parentIndex: 16
-      _thisIndex: 20
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -0.8883084, y: 46.026867}
-        Maximum: {x: 4.4455733, y: 50.37251}
-      _rectangles:
-      - HalfSize: {x: 2.119191, y: 1.3571312}
-        CenterPosition: {x: 2, y: 48}
-        Rotation: 341
-      - HalfSize: {x: 1.1405318, y: 1.7465746}
-        CenterPosition: {x: 1, y: 49}
-        Rotation: 98
-    - _parentIndex: 16
-      _thisIndex: 21
-      _childAIndex: 24
-      _childBIndex: 25
-      _bounds:
-        Minimum: {x: 7.627801, y: 33.61762}
-        Maximum: {x: 31.04788, y: 48.346622}
-      _rectangles: []
-    - _parentIndex: 14
-      _thisIndex: 22
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 37.535664, y: -1.7492812}
-        Maximum: {x: 43.879593, y: 3.7492812}
-      _rectangles:
-      - HalfSize: {x: 2.7002516, y: 2.8328986}
-        CenterPosition: {x: 41, y: 1}
-        Rotation: 89
-      - HalfSize: {x: 2.4225106, y: 1.3806319}
-        CenterPosition: {x: 39, y: 1}
-        Rotation: 268
-    - _parentIndex: 14
-      _thisIndex: 23
-      _childAIndex: 26
-      _childBIndex: 27
-      _bounds:
-        Minimum: {x: 39.406593, y: 11.716195}
-        Maximum: {x: 49.2791, y: 28.584812}
-      _rectangles: []
-    - _parentIndex: 21
-      _thisIndex: 24
-      _childAIndex: 32
-      _childBIndex: 33
-      _bounds:
-        Minimum: {x: 7.627801, y: 33.61762}
-        Maximum: {x: 19.78165, y: 48.346622}
-      _rectangles: []
-    - _parentIndex: 21
-      _thisIndex: 25
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 24.95212, y: 34.282925}
-        Maximum: {x: 31.04788, y: 39.717075}
-      _rectangles:
-      - HalfSize: {x: 1.3159869, y: 2.8112664}
-        CenterPosition: {x: 28, y: 37}
-        Rotation: 54
-      - HalfSize: {x: 1.9957721, y: 1.973181}
-        CenterPosition: {x: 28, y: 37}
-        Rotation: 159
-    - _parentIndex: 23
-      _thisIndex: 26
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 42.7209, y: 11.716195}
-        Maximum: {x: 49.2791, y: 18.283804}
-      _rectangles:
-      - HalfSize: {x: 2.416019, y: 2.225361}
-        CenterPosition: {x: 46, y: 15}
-        Rotation: 46
-    - _parentIndex: 23
-      _thisIndex: 27
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 39.406593, y: 21.074265}
-        Maximum: {x: 47.618885, y: 28.584812}
-      _rectangles:
-      - HalfSize: {x: 1.2537799, y: 2.4684172}
-        CenterPosition: {x: 45, y: 23}
-        Rotation: 82
-      - HalfSize: {x: 2.6245446, y: 2.2235334}
-        CenterPosition: {x: 43, y: 24}
-        Rotation: 162
-      - HalfSize: {x: 2.5818746, y: 2.5320106}
-        CenterPosition: {x: 43, y: 25}
-        Rotation: 142
-    - _parentIndex: 6
-      _thisIndex: 28
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 41.248196, y: 31.741602}
-        Maximum: {x: 51.1165, y: 47.42099}
-      _rectangles:
-      - HalfSize: {x: 1.8292687, y: 2.7332268}
-        CenterPosition: {x: 44, y: 38}
-        Rotation: 203
-      - HalfSize: {x: 2.115134, y: 1.2001436}
-        CenterPosition: {x: 46, y: 45}
-        Rotation: 235
-      - HalfSize: {x: 1.7863305, y: 2.7462306}
-        CenterPosition: {x: 48, y: 35}
-        Rotation: 321
-    - _parentIndex: 6
-      _thisIndex: 29
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 61.60346, y: 46.334824}
-        Maximum: {x: 66.396545, y: 51.665176}
-      _rectangles:
-      - HalfSize: {x: 2.582367, y: 1.02369}
-        CenterPosition: {x: 64, y: 49}
-        Rotation: 52
-    - _parentIndex: 11
-      _thisIndex: 30
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 45.065083, y: 61.004684}
-        Maximum: {x: 50.14831, y: 66.63486}
-      _rectangles:
-      - HalfSize: {x: 1.0321434, y: 1.9198482}
-        CenterPosition: {x: 48, y: 63}
-        Rotation: 232
-      - HalfSize: {x: 1.0089762, y: 1.6606823}
-        CenterPosition: {x: 47, y: 65}
-        Rotation: 116
-    - _parentIndex: 11
-      _thisIndex: 31
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 49.684605, y: 55.436813}
-        Maximum: {x: 58.924393, y: 63.279778}
-      _rectangles:
-      - HalfSize: {x: 2.5478458, y: 2.0788877}
-        CenterPosition: {x: 56, y: 58}
-        Rotation: 168
-      - HalfSize: {x: 1.7233517, y: 1.6113929}
-        CenterPosition: {x: 52, y: 61}
-        Rotation: 328
-    - _parentIndex: 24
-      _thisIndex: 32
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 7.627801, y: 33.61762}
-        Maximum: {x: 19.78165, y: 42.384823}
-      _rectangles:
-      - HalfSize: {x: 1.1234987, y: 1.8387873}
-        CenterPosition: {x: 15, y: 37}
-        Rotation: 44
-      - HalfSize: {x: 2.7503457, y: 2.7647455}
-        CenterPosition: {x: 11, y: 37}
-        Rotation: 345
-      - HalfSize: {x: 1.0468514, y: 2.6627567}
-        CenterPosition: {x: 17, y: 40}
-        Rotation: 125
-    - _parentIndex: 24
-      _thisIndex: 33
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 9.575314, y: 43.653378}
-        Maximum: {x: 14.424686, y: 48.346622}
-      _rectangles:
-      - HalfSize: {x: 1.1618803, y: 2.2165763}
-        CenterPosition: {x: 12, y: 46}
-        Rotation: 48
+      - HalfSize: {x: 17.255077, y: 5.951505}
+        CenterPosition: {x: 25.815113, y: 44.171772}
+        Rotation: 347
+      - HalfSize: {x: 17.255077, y: 5.951505}
+        CenterPosition: {x: 29.137383, y: 29.781435}
+        Rotation: 347
+      - HalfSize: {x: 1.434026, y: 2.3980424}
+        CenterPosition: {x: 27, y: 35}
+        Rotation: 242
     - _parentIndex: 0
       _thisIndex: 0
       _childAIndex: 0
@@ -1954,234 +1713,13 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
+    <Count>k__BackingField: 14
+  _holdingRectangle: 1
+  _editMode: 2
   _heldRectangle:
-    HalfSize: {x: 2.1509485, y: 4.1039357}
-    CenterPosition: {x: -4.910355, y: 9.978688}
-    Rotation: 9.365487
+    HalfSize: {x: 17.255077, y: 5.951505}
+    CenterPosition: {x: 36.06581, y: 14.513435}
+    Rotation: 347
 --- !u!4 &2142371743
 Transform:
   m_ObjectHideFlags: 0
