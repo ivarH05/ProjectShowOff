@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
   m_Name: enemy notice
   m_EditorClassIdentifier: 
-  ClipSelection: []
+  ClipSelection:
+  - {fileID: 8300000, guid: ff2eef5b6b975774db4964cc4ded769d, type: 3}
   SelectionMode: 0
   Type: 0
   Volume: 1
   Pitch: 1
-  AudibleRange: 1
-  FaintThreshold: 0
-  ModerateThreshold: 0
-  LoudThreshold: 0
+  AudibleRange: 6
+  FaintThreshold: 0.6142857
+  ModerateThreshold: 0.4285712
+  LoudThreshold: 0.2

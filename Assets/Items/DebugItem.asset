@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1310474a398d14e44b9dd800acabbb74, type: 3}
   m_Name: DebugItem
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 9111433920995212162, guid: 1e7cff7726cf7e048827b0fe60707e1a, type: 3}
+  DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: d241db0f27386c843bfe220d3705466f, type: 3}
+  HandHeldPrefab: {fileID: 9111433920995212162, guid: 1e7cff7726cf7e048827b0fe60707e1a, type: 3}
   baseOffset: {x: 0, y: 0, z: 0}
   baseEulerAngles: {x: 0, y: 0, z: 0}
