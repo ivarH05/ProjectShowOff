@@ -1,0 +1,72 @@
+{
+    "Nodes": [
+        {
+            "GUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "DialogueText": "",
+            "Position": {
+                "x": 112.0,
+                "y": 29.0
+            },
+            "Options": []
+        },
+        {
+            "GUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
+            "DialogueText": "dafasdfa",
+            "Position": {
+                "x": 375.0,
+                "y": -9.0
+            },
+            "Options": []
+        },
+        {
+            "GUID": "436afb84-61b8-4d07-a897-1383a9ff057a",
+            "DialogueText": "zcv",
+            "Position": {
+                "x": 579.0,
+                "y": 212.0
+            },
+            "Options": []
+        },
+        {
+            "GUID": "1fb99813-b681-41e1-b610-9b8d15c1118c",
+            "DialogueText": "",
+            "Position": {
+                "x": 808.0,
+                "y": 73.0
+            },
+            "Options": []
+        }
+    ],
+    "Connections": [
+        {
+            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551"
+        },
+        {
+            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeIndex": 1,
+            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
+        },
+        {
+            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeIndex": 2,
+            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
+        },
+        {
+            "OutputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "1fb99813-b681-41e1-b610-9b8d15c1118c"
+        },
+        {
+            "OutputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
+            "OutputNodeIndex": 1,
+            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
+        },
+        {
+            "OutputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "1fb99813-b681-41e1-b610-9b8d15c1118c"
+        }
+    ]
+}

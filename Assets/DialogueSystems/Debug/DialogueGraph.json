@@ -1,0 +1,29 @@
+{
+    "Nodes": [
+        {
+            "GUID": "6aaf7117-bb9b-42a3-b84e-82c75a5d1815",
+            "DialogueText": "",
+            "Position": {
+                "x": 327.0,
+                "y": 177.0
+            },
+            "Options": []
+        },
+        {
+            "GUID": "c439f950-f7bc-427f-a1c7-1006a7dcf37c",
+            "DialogueText": "",
+            "Position": {
+                "x": 665.0,
+                "y": 160.0
+            },
+            "Options": []
+        }
+    ],
+    "Connections": [
+        {
+            "OutputNodeGUID": "6aaf7117-bb9b-42a3-b84e-82c75a5d1815",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "c439f950-f7bc-427f-a1c7-1006a7dcf37c"
+        }
+    ]
+}
