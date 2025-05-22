@@ -31,27 +31,40 @@ namespace CryptBuilder
             void OnSceneGUI()
             {
                 var b = (Builder)target;
-                Handles.color = b._heldRectangle.IsValid ? Color.white : Color.red;
-                DrawRectangle(b._heldRectangle);
-                var bb = b._heldRectangle.GetBounds();
-                Handles.color = Color.white;
-                DrawBoundingBox(bb);
 
                 if(b.RectangleTree != null && b.RectangleTree.Count > 1)
-                    DrawBoundingNode(1, b.RectangleTree, 0);
-
-                EditorGUI.BeginChangeCheck();
-                Vector3 pos = b._heldRectangle.CenterPosition.To3D();
-                Vector3 scale = b._heldRectangle.HalfSize.To3D();
-                Quaternion rotation = Quaternion.AngleAxis(b._heldRectangle.Rotation, Vector3.up);
-                Handles.TransformHandle(ref pos, ref rotation, ref scale);
-                if(EditorGUI.EndChangeCheck())
                 {
-                    Undo.RecordObject(b, "Change held rectangle transform");
-                    b._heldRectangle.CenterPosition = pos.To2D();
-                    b._heldRectangle.HalfSize = scale.To2D();
-                    b._heldRectangle.Rotation = rotation.eulerAngles.y;
-                    EditorUtility.SetDirty(b);
+                    DrawBoundingNode(1, b.RectangleTree, 0);
+                    if(TryTracePlaneFromMouse(out var mousePos))
+                    {
+                        if (b.RectangleTree.Nodes[1].TryGetRectangleAtPoint(mousePos, b.RectangleTree, out int rect, out int node))
+                        {
+                            Handles.color = Color.yellow;
+                            DrawRectangle(b.RectangleTree.Nodes[node].Rectangles[rect]);
+                        }
+                        if (Event.current.type == EventType.MouseMove)
+                            SceneView.RepaintAll();
+                    }
+                }
+
+                if(b._holdingRectangle)
+                {
+                    Handles.color = b._heldRectangle.IsValid ? Color.white : Color.red;
+                    DrawRectangle(b._heldRectangle);
+                    
+                    EditorGUI.BeginChangeCheck();
+                    Vector3 pos = b._heldRectangle.CenterPosition.To3D();
+                    Vector3 scale = b._heldRectangle.HalfSize.To3D();
+                    Quaternion rotation = Quaternion.AngleAxis(b._heldRectangle.Rotation, Vector3.up);
+                    Handles.TransformHandle(ref pos, ref rotation, ref scale);
+                    if(EditorGUI.EndChangeCheck())
+                    {
+                        Undo.RecordObject(b, "Change held rectangle transform");
+                        b._heldRectangle.CenterPosition = pos.To2D();
+                        b._heldRectangle.HalfSize = scale.To2D();
+                        b._heldRectangle.Rotation = rotation.eulerAngles.y;
+                        EditorUtility.SetDirty(b);
+                    }
                 }
             }
 
@@ -68,7 +81,7 @@ namespace CryptBuilder
             }
             static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth)
             {
-                var col = Color.Lerp(Color.lawnGreen, Color.aquamarine, 1f / (.4f * depth + 1));
+                var col = Color.Lerp(Color.lawnGreen, Color.blueViolet, Mathf.Exp(-depth * .2f));
                 col.a = .4f;
                 Handles.color = col;
                 var node = owner.Nodes[nodeIndex];
@@ -78,9 +91,7 @@ namespace CryptBuilder
                     col.a = 1f;
                     Handles.color = col;
                     foreach (var r in node.Rectangles)
-                    {
                         DrawRectangle(r);
-                    }
                 }
                 if(node.ChildAIndex > 0)
                 {

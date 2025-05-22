@@ -113,13 +113,59 @@ namespace CryptBuilder
             }
         }
 
+        /// <summary>
+        /// Removes a rectangle at a certain index.
+        /// </summary>
+        /// <param name="rectangleIndex">The index of the rectangle to remove.</param>
+        public void RemoveRectangle(int rectangleIndex, RectangleCollection owner)
+        {
+            _rectangles.RemoveAt(rectangleIndex);
+            RecalculateBoundsUpwardsRecursive(owner);
+        }
+
+        /// <summary>
+        /// Tries to hit test the bounding node and its children.
+        /// </summary>
+        /// <param name="point">The point to test for.</param>
+        /// <param name="rectIndex">The index of the rectangle, if found.</param>
+        /// <param name="nodeIndex">The index of the node that contains the found rectangle.</param>
+        /// <returns>Whether or not the point hit a rectangle.</returns>
+        public bool TryGetRectangleAtPoint(Vector2 point, RectangleCollection owner, out int rectIndex, out int nodeIndex)
+        {
+            rectIndex = default;
+            nodeIndex = ThisIndex;
+
+            if (_rectangles != null)
+            {
+                for (rectIndex = 0; rectIndex < _rectangles.Count; rectIndex++)
+                {
+                    if (_rectangles[rectIndex].ContainsPoint(point)) 
+                        return true;
+                }
+            }
+
+            if(_childAIndex > 0)
+            {
+                ref var ChildA = ref owner.Nodes[ChildAIndex];
+                if (ChildA.Bounds.ContainsPoint(point) && 
+                    ChildA.TryGetRectangleAtPoint(point, owner, out rectIndex, out nodeIndex)) 
+                    return true;
+
+                ref var ChildB = ref owner.Nodes[ChildBIndex];
+                if (ChildB.Bounds.ContainsPoint(point) &&
+                    ChildB.TryGetRectangleAtPoint(point, owner, out rectIndex, out nodeIndex)) 
+                    return true;
+            }
+            return false;
+        }
+
         void Split(RectangleCollection owner)
         {
             _childAIndex = owner.Count;
             owner.Add(default);
             _childBIndex = owner.Count;
             owner.Add(default);
-            owner.Nodes[ThisIndex] = this;
+            owner.Nodes[ThisIndex] = this; // fix for list rescale
             ref var ChildA = ref owner.Nodes[_childAIndex];             
             ref var ChildB = ref owner.Nodes[_childBIndex];
 
@@ -161,7 +207,7 @@ namespace CryptBuilder
             ChildA.RecalculateBoundsSelf(owner);
             ChildB.RecalculateBoundsSelf(owner);
             RecalculateBoundsUpwardsRecursive(owner);
-            owner.Nodes[ThisIndex] = this;
+            owner.Nodes[ThisIndex] = this; // fix for list rescale
         }
     }
 }

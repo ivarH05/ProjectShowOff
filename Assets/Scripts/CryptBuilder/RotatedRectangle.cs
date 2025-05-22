@@ -14,6 +14,20 @@ namespace CryptBuilder
         public bool IsValid => HalfSize.x > 0 && HalfSize.y > 0;
 
         /// <summary>
+        /// Tests wether a point lies within the rotated rectangle.
+        /// </summary>
+        public bool ContainsPoint(Vector2 point)
+        {
+            point -= CenterPosition;
+            if(Rotation != 0)
+            {
+                Matrix2x2 rotation = Matrix2x2.fromRotationAngleRad(-Rotation);
+                point *= rotation;
+            }
+            return Mathf.Abs(point.x) < HalfSize.x && Mathf.Abs(point.y) < HalfSize.y;
+        }
+
+        /// <summary>
         /// Gets each line that makes up the rectangle.
         /// </summary>
         public IEnumerable<LineSegment> GetLines()
