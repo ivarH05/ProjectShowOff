@@ -21,7 +21,7 @@ namespace CryptBuilder
             point -= CenterPosition;
             if(Rotation != 0)
             {
-                Matrix2x2 rotation = Matrix2x2.fromRotationAngleRad(-Rotation);
+                Matrix2x2 rotation = Matrix2x2.FromRotationAngle(-Rotation);
                 point *= rotation;
             }
             return Mathf.Abs(point.x) < HalfSize.x && Mathf.Abs(point.y) < HalfSize.y;
@@ -32,7 +32,7 @@ namespace CryptBuilder
         /// </summary>
         public IEnumerable<LineSegment> GetLines()
         {
-            Matrix2x2 rotation = Matrix2x2.fromRotationAngleRad(Rotation);
+            Matrix2x2 rotation = Matrix2x2.FromRotationAngle(Rotation);
             Vector2 forward = rotation.iHat * HalfSize.x;
             Vector2 right = rotation.jHat * HalfSize.y;
             Vector2 corner00 = CenterPosition - forward - right;
@@ -53,7 +53,7 @@ namespace CryptBuilder
             if (Rotation == 0) 
                 return new BoundingBox(CenterPosition - HalfSize, CenterPosition + HalfSize); // for free
 
-            Matrix2x2 rotation = Matrix2x2.fromRotationAngleRad(Rotation);
+            Matrix2x2 rotation = Matrix2x2.FromRotationAngle(Rotation);
             Vector2 forward = rotation.iHat * HalfSize.x;
             Vector2 right = rotation.jHat * HalfSize.y;
             Vector2 corner00 = CenterPosition - forward - right;

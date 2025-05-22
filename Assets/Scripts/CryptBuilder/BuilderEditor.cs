@@ -106,6 +106,7 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
             }
 
+            float lastUniformScale = 1;
             void EditHeld(Builder b)
             {
                 if (b._heldRectangles.Count < 1)
@@ -123,19 +124,38 @@ namespace CryptBuilder
                 if(!Event.current.shift)
                 {
                     EditorGUI.BeginChangeCheck();
-                    Vector3 pos = b._heldRectangles[0].CenterPosition.To3D();
+                    Vector2 originalPos = b._heldRectangles[0].CenterPosition;
+                    Vector3 pos = originalPos.To3D();
                     Vector3 scale = b._heldRectangles[0].HalfSize.To3D();
                     Quaternion rotation = Quaternion.AngleAxis(b._heldRectangles[0].Rotation, Vector3.up);
-                    Handles.TransformHandle(ref pos, ref rotation, ref scale);
+                    for(int i = 0; i<b._heldRectangles.Count; i++)
+                    {
+                        var rect = b._heldRectangles[i];
+                        rect.CenterPosition -= originalPos;
+                        b._heldRectangles [i] = rect;
+                    }
+
+                    float uniformScale = lastUniformScale;
+                    if (b._heldRectangles.Count > 1)
+                        Handles.TransformHandle(ref pos, ref rotation, ref uniformScale);
+                    else Handles.TransformHandle(ref pos, ref rotation, ref scale);
                     if (EditorGUI.EndChangeCheck())
                     {
                         Undo.RecordObject(b, "Transform held rectangle(s)");
-                        Vector2 posDif = pos.To2D() - b._heldRectangles[0].CenterPosition;
+                        Vector2 posDif = pos.To2D();
                         Vector2 scaleDif = scale.To2D() / b._heldRectangles[0].HalfSize;
+                        scaleDif *= uniformScale / lastUniformScale;
+                        lastUniformScale = uniformScale;
                         float rotationDif = rotation.eulerAngles.y - b._heldRectangles[0].Rotation;
+
+                        Matrix2x2 transform = Matrix2x2.FromRotationAngle(rotationDif);
+                        transform.iHat *= scaleDif.x;
+                        transform.jHat *= scaleDif.y;
+                        
                         for(int i = 0; i<b._heldRectangles.Count; i++)
                         {
                             var rect = b._heldRectangles[i];
+                            rect.CenterPosition *= transform;
                             rect.CenterPosition += posDif;
                             rect.HalfSize *= scaleDif;
                             rect.Rotation += rotationDif;
@@ -143,6 +163,13 @@ namespace CryptBuilder
                         }
                         EditorUtility.SetDirty(b);
                     }
+                    else 
+                        for (int i = 0; i < b._heldRectangles.Count; i++)
+                        {
+                            var rect = b._heldRectangles[i];
+                            rect.CenterPosition += originalPos;
+                            b._heldRectangles[i] = rect;
+                        }
                 }
 
                 if(Event.current.type == EventType.KeyDown)
@@ -151,7 +178,7 @@ namespace CryptBuilder
                     {
                         case KeyCode.Delete:
                         case KeyCode.Backspace:
-                            Undo.RecordObject(b, "Delete held rectangle");
+                            Undo.RecordObject(b, "Delete held rectangle(s)");
                             b._heldRectangles.Clear();
                             b._editMode = EditMode.DontEdit;
                             Event.current.Use();
@@ -161,9 +188,14 @@ namespace CryptBuilder
                         case KeyCode.C:
                             if (Event.current.control)
                             {
-                                Undo.RecordObject(b, "Duplicate held rectangle");
-                                foreach(var rect in b._heldRectangles)
+                                Undo.RecordObject(b, "Duplicate held rectangle(s)");
+                                for(int i = 0; i < b._heldRectangles.Count; i++)
+                                {
+                                    var rect = b._heldRectangles [i];
                                     b.RectangleTree.AddRectangle(rect);
+                                    rect.CenterPosition += Vector2.one;
+                                    b._heldRectangles [i] = rect;
+                                }
                                 EditorUtility.SetDirty(b);
                             }
                             return;
