@@ -8,12 +8,18 @@ namespace CryptBuilder
     [Serializable]
     public struct BoundingNode
     {
-        [field: SerializeField] public int ParentIndex { get; private set; }
-        [field: SerializeField] public int ThisIndex { get; private set; }
-        [field: SerializeField] public int ChildAIndex { get; private set; }
-        [field: SerializeField] public int ChildBIndex { get; private set; }
+        public int ParentIndex => _parentIndex;
+        public int ThisIndex => _thisIndex;
+        public int ChildAIndex => _childAIndex;
+        public int ChildBIndex => _childBIndex;
+        public BoundingBox Bounds => _bounds;
+
+        [SerializeField] int _parentIndex;
+        [SerializeField] int _thisIndex;
+        [SerializeField] int _childAIndex;
+        [SerializeField] int _childBIndex;
         public ReadOnlyCollection<RotatedRectangle> Rectangles => _rectangles?.AsReadOnly();
-        [field:SerializeField] public BoundingBox Bounds { get; private set; }
+        [SerializeField] BoundingBox _bounds;
 
         [SerializeField] List<RotatedRectangle> _rectangles;
         bool _splitVertical;
@@ -24,7 +30,7 @@ namespace CryptBuilder
         public static BoundingNode CreateRoot()
         {
             var res = new BoundingNode();
-            res.ThisIndex = 1;
+            res._thisIndex = 1;
             return res;
         }
 
@@ -34,25 +40,25 @@ namespace CryptBuilder
         public void RecalculateBoundsUpwardsRecursive(RectangleCollection owner)
         {
             RecalculateBoundsSelf(owner);
-            if(ParentIndex > 0)
-                owner.Nodes[ParentIndex].RecalculateBoundsUpwardsRecursive(owner);
+            if(_parentIndex > 0)
+                owner.Nodes[_parentIndex].RecalculateBoundsUpwardsRecursive(owner);
         }
 
         void RecalculateBoundsSelf(RectangleCollection owner)
         {
-            if (ChildAIndex < 1)
+            if (_childAIndex < 1)
             {
                 // no rectangles, no children, just take the bounds of the parent
                 if (_rectangles == null || _rectangles.Count == 0)
                 {
                     Debug.Log("no rectangles, no bounds");
-                    if (ParentIndex < 1)
+                    if (_parentIndex < 1)
                     {
                         Debug.Log("no parent either?");
                         return;
                     }
-                    var parent = owner.Nodes[ParentIndex];
-                    Bounds = new(parent.Bounds.Center, parent.Bounds.Center);
+                    var parent = owner.Nodes[_parentIndex];
+                    _bounds = new(parent._bounds.Center, parent._bounds.Center);
                     return;
                 }
                 Vector2 min = QuickVec.Max;
@@ -63,20 +69,20 @@ namespace CryptBuilder
                     min = Vector2.Min(min, b.Minimum);
                     max = Vector2.Max(max, b.Maximum);
                 }
-                Bounds = new(min, max);
+                _bounds = new(min, max);
             }
             else
             {
-                var ChildA = owner.Nodes[ChildAIndex];
-                var ChildB = owner.Nodes[ChildBIndex];
-                var b = ChildA.Bounds;
-                b.GrowToInclude(ChildB.Bounds);
+                ref var ChildA = ref owner.Nodes[_childAIndex];
+                ref var ChildB = ref owner.Nodes[_childBIndex];
+                var b = ChildA._bounds;
+                b.GrowToInclude(ChildB._bounds);
                 if (_rectangles != null)
                 {
                     foreach (var rect in _rectangles)
                         b.GrowToInclude(rect.GetBounds());
                 }
-                Bounds = b;
+                _bounds = b;
             }
         }
 
@@ -87,10 +93,10 @@ namespace CryptBuilder
         /// <param name="precomputedBounds">The bounds of the rectangle to add.</param>
         public void AddRectangle(in RotatedRectangle rect, in BoundingBox precomputedBounds, RectangleCollection owner)
         {
-            var b = Bounds;
+            var b = _bounds;
             b.GrowToInclude(precomputedBounds);
-            Bounds = b;
-            if (ChildAIndex < 1)
+            _bounds = b;
+            if (_childAIndex < 1)
             {
                 // this node has not split
                 _rectangles ??= new();
@@ -102,20 +108,29 @@ namespace CryptBuilder
             {
                 // node has split, send the AddRectangle over to the appropriate child
                 bool A = _splitVertical ? precomputedBounds.Center.y < _splitPosition : precomputedBounds.Center.x < _splitPosition;
-                if (A)
-                    owner.Nodes[ChildAIndex].AddRectangle(rect, precomputedBounds, owner);
-                else owner.Nodes[ChildBIndex].AddRectangle(rect, precomputedBounds, owner);
+                ref var child = ref owner.Nodes[A ? _childAIndex : _childBIndex];
+                child.AddRectangle(rect, precomputedBounds, owner);
             }
         }
 
         void Split(RectangleCollection owner)
         {
-            var ChildA = new BoundingNode(); ChildA.ParentIndex = ThisIndex;
-            var ChildB = new BoundingNode(); ChildB.ParentIndex = ThisIndex;
+            _childAIndex = owner.Count;
+            owner.Add(default);
+            _childBIndex = owner.Count;
+            owner.Add(default);
+            owner.Nodes[ThisIndex] = this;
+            ref var ChildA = ref owner.Nodes[_childAIndex];             
+            ref var ChildB = ref owner.Nodes[_childBIndex];
 
-            Vector2 thisBoundsSize = Bounds.Size;
+            ChildA._parentIndex = _thisIndex;
+            ChildB._parentIndex = _thisIndex;
+            ChildA._thisIndex = ChildAIndex;
+            ChildB._thisIndex = ChildBIndex;
+
+            Vector2 thisBoundsSize = _bounds.Size;
             _splitVertical = thisBoundsSize.y > thisBoundsSize.x;
-            _splitPosition = _splitVertical ? Bounds.Center.y : Bounds.Center.x;
+            _splitPosition = _splitVertical ? _bounds.Center.y : _bounds.Center.x;
 
             var rects = _rectangles;
             _rectangles = null;
@@ -143,16 +158,10 @@ namespace CryptBuilder
                 }
             }
 
-            ChildAIndex = owner.Nodes.Count;
-            ChildA.ThisIndex = owner.Nodes.Count;
-            owner.Nodes.Add(ChildA);
-            ChildBIndex = owner.Nodes.Count;
-            ChildB.ThisIndex = owner.Nodes.Count;
-            owner.Nodes.Add(ChildB);
-
-            owner.Nodes[ChildAIndex].RecalculateBoundsSelf(owner);
-            owner.Nodes[ChildBIndex].RecalculateBoundsSelf(owner);
+            ChildA.RecalculateBoundsSelf(owner);
+            ChildB.RecalculateBoundsSelf(owner);
             RecalculateBoundsUpwardsRecursive(owner);
+            owner.Nodes[ThisIndex] = this;
         }
     }
 }

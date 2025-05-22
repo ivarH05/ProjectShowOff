@@ -37,7 +37,7 @@ namespace CryptBuilder
                 Handles.color = Color.white;
                 DrawBoundingBox(bb);
 
-                if(b.RectangleTree != null && b.RectangleTree.Nodes.Count > 1)
+                if(b.RectangleTree != null && b.RectangleTree.Count > 1)
                     DrawBoundingNode(1, b.RectangleTree, 0);
 
                 EditorGUI.BeginChangeCheck();

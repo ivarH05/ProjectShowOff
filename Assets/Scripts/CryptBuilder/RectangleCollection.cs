@@ -7,18 +7,32 @@ namespace CryptBuilder
     [Serializable]
     public class RectangleCollection
     {
-        public List<BoundingNode> Nodes = new();
+        public BoundingNode[] Nodes = new BoundingNode[2];
+        public int Count { get; private set; }
 
         public void AddRectangle(RotatedRectangle rect)
         {
             var bounds = rect.GetBounds();
-            if(Nodes.Count < 2)
+            if(Count < 2)
             {
                 Debug.Log("empty tree");
-                Nodes.Add(default);
-                Nodes.Add(BoundingNode.CreateRoot());
+                Add(default);
+                Add(BoundingNode.CreateRoot());
             }
-            Nodes[1].AddRectangle(rect, bounds, this);
+            ref var root = ref Nodes[1];
+            root.AddRectangle(rect, bounds, this);
+        }
+
+        public void Add(BoundingNode node)
+        {
+            if(Nodes.Length <= Count)
+            {
+                var newArray = new BoundingNode[Nodes.Length * 2];
+                Nodes.CopyTo(newArray, 0);
+                Nodes = newArray;
+            }
+            Nodes[Count] = node;
+            Count++;
         }
     }
 }
