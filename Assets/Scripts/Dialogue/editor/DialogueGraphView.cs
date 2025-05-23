@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -87,6 +88,26 @@ namespace DialogueSystem
             {
                 RemoveElement(node);
             }
+        }
+
+        public override EventPropagation DeleteSelection()
+        {
+            var edgesToDelete = new List<Edge>();
+
+            foreach (var selectedElement in selection)
+            {
+                if (selectedElement is Node node)
+                    edgesToDelete.AddRange(node.Query<Port>().Build().SelectMany(port => port.connections));
+            }
+
+            foreach (var edge in edgesToDelete.Distinct())
+            {
+                edge.input?.Disconnect(edge);
+                edge.output?.Disconnect(edge);
+                RemoveElement(edge);
+            }
+
+            return base.DeleteSelection();
         }
     }
 }
