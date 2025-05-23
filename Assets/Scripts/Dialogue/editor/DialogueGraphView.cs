@@ -32,18 +32,22 @@ namespace DialogueSystem
             Vector2 worldPosition = contentViewContainer.WorldToLocal(this.LocalToWorld(mousePosition));
 
             var menu = new GenericMenu();
-            menu.AddItem(new GUIContent("Add Dialogue Node"), false, () => CreateNode("Dialogue Node", worldPosition));
+            menu.AddItem(new GUIContent("Add Dialogue Node"), false, () => CreateDefaultDialogueNode(worldPosition));
             menu.ShowAsContext();
         }
 
-        public DialogueNode CreateNode(string nodeName, Vector2 position)
+        public DialogueNode CreateEmptyDialogueNode(Vector2 position, string defaultText = "")
         {
-            DialogueNode node = new DialogueNode
-            {
-                title = nodeName,
-                GUID = System.Guid.NewGuid().ToString(),
+            DialogueNode node = DialogueNode.EmptyNode();
 
-            };
+            node.SetPosition(new Rect(position, new Vector2(200, 150)));
+            AddElement(node);
+            return node;
+        }
+
+        public DialogueNode CreateDefaultDialogueNode(Vector2 position, string defaultText = "")
+        {
+            DialogueNode node = DialogueNode.DefaultNode();
 
             node.SetPosition(new Rect(position, new Vector2(200, 150)));
             AddElement(node);

@@ -20,31 +20,50 @@ namespace DialogueSystem
 
         private TextField _dialogueTextField;
 
-        public DialogueNode()
+        private DialogueNode()
         {
+
             mainContainer.style.paddingLeft = 6;
             mainContainer.style.paddingRight = 6;
 
             SetColor(new Color(0.26f, 0.26f, 0.26f));
             CreateInputFields(inputContainer);
-            CreateOutputOption(mainContainer, "Continue");
 
             // Refresh UI to show changes
             RefreshExpandedState();
             RefreshPorts();
         }
 
+        public static DialogueNode DefaultNode(string defaultText = "")
+        {
+            DialogueNode node = new DialogueNode()
+            {
+                title = "Dialogue Node",
+                GUID = System.Guid.NewGuid().ToString(),
+            };
+            node.SetText(defaultText);
+            node.CreateOutputOption(node.mainContainer, "Continue");
+            return node;
+
+        }
+
+        public static DialogueNode EmptyNode(string defaultText = "")
+        {
+            DialogueNode node = new DialogueNode()
+            {
+                title = "Dialogue Node",
+                GUID = System.Guid.NewGuid().ToString(),
+            };
+            node.SetText(defaultText);
+            return node;
+        }
+
         public void SetText(string text)
         {
-            if(_dialogueTextField != null)
-                _dialogueTextField.value = text;
+            _dialogueTextField.value = text;
             dialogueText = text;
         }
 
-        public void CreateOutputOption(string value)
-        {
-            CreateOutputOption(mainContainer, value);
-        }
 
         void RemoveNodeOption(DialogueNodeOption option)
         {
@@ -76,8 +95,10 @@ namespace DialogueSystem
             textField.multiline = true;
             textField.style.minWidth = 150;
             textField.style.maxWidth = 350;
+            _dialogueTextField = textField;
         }
 
+        public void CreateOutputOption(string value) => CreateOutputOption(mainContainer, value);
         void CreateOutputOption(VisualElement parent, string value = "")
         {
             int index = options.Count;

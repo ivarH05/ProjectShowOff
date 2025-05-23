@@ -1,72 +1,99 @@
 {
     "Nodes": [
         {
-            "GUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
-            "DialogueText": "",
+            "GUID": "916ddfa1-4df6-4f1b-867c-4a9a474f574a",
+            "DialogueText": "t7",
             "Position": {
-                "x": 112.0,
-                "y": 29.0
+                "x": 687.0,
+                "y": 311.0
+            },
+            "Options": [
+                {
+                    "ResponseText": "t8",
+                    "index": 0
+                }
+            ]
+        },
+        {
+            "GUID": "a0a3a6b1-fef7-437f-af4e-b8b69a1ed331",
+            "DialogueText": "t4",
+            "Position": {
+                "x": 481.0,
+                "y": 136.0
+            },
+            "Options": [
+                {
+                    "ResponseText": "t5",
+                    "index": 0
+                },
+                {
+                    "ResponseText": "t6",
+                    "index": 1
+                }
+            ]
+        },
+        {
+            "GUID": "b93fd8bd-4a14-4a57-883a-48d99db4dbdf",
+            "DialogueText": "t9",
+            "Position": {
+                "x": 893.0,
+                "y": 206.0
             },
             "Options": []
         },
         {
-            "GUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
-            "DialogueText": "dafasdfa",
+            "GUID": "66fd0ab5-a49c-4f07-8fa3-7af2b13a9f94",
+            "DialogueText": "t0",
             "Position": {
-                "x": 375.0,
-                "y": -9.0
+                "x": 277.0,
+                "y": 146.0
             },
-            "Options": []
-        },
-        {
-            "GUID": "436afb84-61b8-4d07-a897-1383a9ff057a",
-            "DialogueText": "zcv",
-            "Position": {
-                "x": 579.0,
-                "y": 212.0
-            },
-            "Options": []
-        },
-        {
-            "GUID": "1fb99813-b681-41e1-b610-9b8d15c1118c",
-            "DialogueText": "",
-            "Position": {
-                "x": 808.0,
-                "y": 73.0
-            },
-            "Options": []
+            "Options": [
+                {
+                    "ResponseText": "t1",
+                    "index": 0
+                },
+                {
+                    "ResponseText": "t2",
+                    "index": 1
+                },
+                {
+                    "ResponseText": "t3",
+                    "index": 2
+                }
+            ]
         }
     ],
     "Connections": [
         {
-            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeGUID": "916ddfa1-4df6-4f1b-867c-4a9a474f574a",
             "OutputNodeIndex": 0,
-            "InputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551"
+            "InputNodeGUID": "b93fd8bd-4a14-4a57-883a-48d99db4dbdf"
         },
         {
-            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeGUID": "a0a3a6b1-fef7-437f-af4e-b8b69a1ed331",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "b93fd8bd-4a14-4a57-883a-48d99db4dbdf"
+        },
+        {
+            "OutputNodeGUID": "a0a3a6b1-fef7-437f-af4e-b8b69a1ed331",
             "OutputNodeIndex": 1,
-            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
+            "InputNodeGUID": "916ddfa1-4df6-4f1b-867c-4a9a474f574a"
         },
         {
-            "OutputNodeGUID": "ee09b92d-5012-4452-b9a6-1e6c0229d870",
+            "OutputNodeGUID": "66fd0ab5-a49c-4f07-8fa3-7af2b13a9f94",
+            "OutputNodeIndex": 0,
+            "InputNodeGUID": "a0a3a6b1-fef7-437f-af4e-b8b69a1ed331"
+        },
+        {
+            "OutputNodeGUID": "66fd0ab5-a49c-4f07-8fa3-7af2b13a9f94",
+            "OutputNodeIndex": 1,
+            "InputNodeGUID": "a0a3a6b1-fef7-437f-af4e-b8b69a1ed331"
+        },
+        {
+            "OutputNodeGUID": "66fd0ab5-a49c-4f07-8fa3-7af2b13a9f94",
             "OutputNodeIndex": 2,
-            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
-        },
-        {
-            "OutputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
-            "OutputNodeIndex": 0,
-            "InputNodeGUID": "1fb99813-b681-41e1-b610-9b8d15c1118c"
-        },
-        {
-            "OutputNodeGUID": "a1a5ff7a-8872-41d0-8598-5fcc3cb5e551",
-            "OutputNodeIndex": 1,
-            "InputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a"
-        },
-        {
-            "OutputNodeGUID": "436afb84-61b8-4d07-a897-1383a9ff057a",
-            "OutputNodeIndex": 0,
-            "InputNodeGUID": "1fb99813-b681-41e1-b610-9b8d15c1118c"
+            "InputNodeGUID": "916ddfa1-4df6-4f1b-867c-4a9a474f574a"
         }
     ]
 }

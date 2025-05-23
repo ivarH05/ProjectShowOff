@@ -53,8 +53,8 @@ namespace DialogueSystem
                 {
                     GUID = node.GUID,
                     DialogueText = node.dialogueText,
-                    Position = node.GetPosition().position
-
+                    Position = node.GetPosition().position,
+                    Options = newOptions,
                 });
             }
 
@@ -84,7 +84,7 @@ namespace DialogueSystem
             Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
             foreach (var nodeData in saveData.Nodes)
             {
-                DialogueNode node = graphView.CreateNode(nodeData.DialogueText, nodeData.Position);
+                DialogueNode node = graphView.CreateEmptyDialogueNode(nodeData.Position, nodeData.DialogueText);
                 node.GUID = nodeData.GUID;
                 node.SetText(nodeData.DialogueText);
                 nodeLookup[node.GUID] = node;
