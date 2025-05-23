@@ -507,6 +507,213 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270660489}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &345242748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345242750}
+  - component: {fileID: 345242749}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345242749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345242748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc77a8e1bb8a3c9499e42fb6fa33ffcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <RectangleTree>k__BackingField:
+    Nodes:
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 1
+      _childAIndex: 2
+      _childBIndex: 3
+      _bounds:
+        Minimum: {x: -105.784775, y: -32.328007}
+        Maximum: {x: 275.53564, y: 291.1132}
+      _rectangles: []
+    - _parentIndex: 1
+      _thisIndex: 2
+      _childAIndex: 4
+      _childBIndex: 5
+      _bounds:
+        Minimum: {x: -105.784775, y: -32.328007}
+        Maximum: {x: 95.80014, y: 200.35406}
+      _rectangles: []
+    - _parentIndex: 1
+      _thisIndex: 3
+      _childAIndex: 8
+      _childBIndex: 9
+      _bounds:
+        Minimum: {x: 88.829544, y: -26.40279}
+        Maximum: {x: 275.53564, y: 291.1132}
+      _rectangles: []
+    - _parentIndex: 2
+      _thisIndex: 4
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 22.733902, y: -32.328007}
+        Maximum: {x: 90.68034, y: 20.992619}
+      _rectangles:
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 56.707123, y: -5.667694}
+        Rotation: 0
+    - _parentIndex: 2
+      _thisIndex: 5
+      _childAIndex: 6
+      _childBIndex: 7
+      _bounds:
+        Minimum: {x: -105.784775, y: 59.45963}
+        Maximum: {x: 95.80014, y: 200.35406}
+      _rectangles: []
+    - _parentIndex: 5
+      _thisIndex: 6
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -105.784775, y: 59.45963}
+        Maximum: {x: -7.1231995, y: 200.35406}
+      _rectangles:
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: -71.811554, y: 86.11994}
+        Rotation: 0
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: -41.09642, y: 173.69376}
+        Rotation: 0
+    - _parentIndex: 5
+      _thisIndex: 7
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -12.018387, y: 72.271255}
+        Maximum: {x: 95.80014, y: 196.44928}
+      _rectangles:
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 21.954834, y: 98.93157}
+        Rotation: 0
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 61.82692, y: 169.78897}
+        Rotation: 0
+    - _parentIndex: 3
+      _thisIndex: 8
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 88.829544, y: -26.40279}
+        Maximum: {x: 269.61176, y: 103.62988}
+      _rectangles:
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 122.802765, y: 51.575645}
+        Rotation: 0
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 198.34294, y: 0.25752258}
+        Rotation: 0
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 235.63853, y: 76.969574}
+        Rotation: 0
+    - _parentIndex: 3
+      _thisIndex: 9
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 100.12541, y: 121.45726}
+        Maximum: {x: 275.53564, y: 291.1132}
+      _rectangles:
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 241.56242, y: 148.11757}
+        Rotation: 0
+      - HalfSize: {x: 33.97322, y: 26.660313}
+        CenterPosition: {x: 134.09863, y: 264.45288}
+        Rotation: 0
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    <Count>k__BackingField: 10
+  _editMode: 0
+  _heldRectangles: []
+--- !u!4 &345242750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345242748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661913977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1530,633 +1737,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4322272892429166820, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
   m_PrefabInstance: {fileID: 661913977}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2142371741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2142371743}
-  - component: {fileID: 2142371742}
-  m_Layer: 0
-  m_Name: cryptbuilder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2142371742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142371741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc77a8e1bb8a3c9499e42fb6fa33ffcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <RectangleTree>k__BackingField:
-    Nodes:
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 1
-      _childAIndex: 2
-      _childBIndex: 3
-      _bounds:
-        Minimum: {x: -63.47309, y: -24.77073}
-        Maximum: {x: 131.70177, y: 189.75699}
-      _rectangles: []
-    - _parentIndex: 1
-      _thisIndex: 2
-      _childAIndex: 4
-      _childBIndex: 5
-      _bounds:
-        Minimum: {x: -54.82576, y: -24.77073}
-        Maximum: {x: 131.70177, y: 115.515015}
-      _rectangles: []
-    - _parentIndex: 1
-      _thisIndex: 3
-      _childAIndex: 6
-      _childBIndex: 7
-      _bounds:
-        Minimum: {x: -63.47309, y: 74.77237}
-        Maximum: {x: 78.56962, y: 189.75699}
-      _rectangles: []
-    - _parentIndex: 2
-      _thisIndex: 4
-      _childAIndex: 8
-      _childBIndex: 9
-      _bounds:
-        Minimum: {x: -54.82576, y: -24.77073}
-        Maximum: {x: 16.898106, y: 62.745476}
-      _rectangles: []
-    - _parentIndex: 2
-      _thisIndex: 5
-      _childAIndex: 16
-      _childBIndex: 17
-      _bounds:
-        Minimum: {x: 2.9975586, y: 19.2543}
-        Maximum: {x: 131.70177, y: 115.515015}
-      _rectangles: []
-    - _parentIndex: 3
-      _thisIndex: 6
-      _childAIndex: 12
-      _childBIndex: 13
-      _bounds:
-        Minimum: {x: -63.47309, y: 74.77237}
-        Maximum: {x: 30.62831, y: 186.83128}
-      _rectangles: []
-    - _parentIndex: 3
-      _thisIndex: 7
-      _childAIndex: 10
-      _childBIndex: 11
-      _bounds:
-        Minimum: {x: -20.478157, y: 100.51318}
-        Maximum: {x: 78.56962, y: 189.75699}
-      _rectangles: []
-    - _parentIndex: 4
-      _thisIndex: 8
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -16.898106, y: -24.77073}
-        Maximum: {x: 16.898106, y: 24.77073}
-      _rectangles:
-      - HalfSize: {x: -16.898106, y: -24.77073}
-        CenterPosition: {x: 0, y: 0}
-        Rotation: 0
-      - HalfSize: {x: -16.898106, y: -24.77073}
-        CenterPosition: {x: 0, y: 0}
-        Rotation: 0
-      - HalfSize: {x: -16.898106, y: -24.77073}
-        CenterPosition: {x: 0, y: 0}
-        Rotation: 0
-    - _parentIndex: 4
-      _thisIndex: 9
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -54.82576, y: -8.505203}
-        Maximum: {x: 12.931818, y: 62.745476}
-      _rectangles:
-      - HalfSize: {x: 9.285995, y: 21.941908}
-        CenterPosition: {x: -32.040215, y: 46.346817}
-        Rotation: 264.05615
-      - HalfSize: {x: 10.465717, y: 34.875385}
-        CenterPosition: {x: -0.3997991, y: 27.120136}
-        Rotation: 175.22653
-    - _parentIndex: 7
-      _thisIndex: 10
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 21.82058, y: 100.51318}
-        Maximum: {x: 78.56962, y: 189.75699}
-      _rectangles:
-      - HalfSize: {x: 24.907804, y: 42.69726}
-        CenterPosition: {x: 50.1951, y: 145.13509}
-        Rotation: 175.22653
-    - _parentIndex: 7
-      _thisIndex: 11
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -20.478157, y: 173.33842}
-        Maximum: {x: 43.46158, y: 187.0005}
-      _rectangles:
-      - HalfSize: {x: 31.969868, y: 6.8310356}
-        CenterPosition: {x: 11.491711, y: 180.16946}
-        Rotation: 0
-    - _parentIndex: 6
-      _thisIndex: 12
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -63.47309, y: 74.77237}
-        Maximum: {x: 30.62831, y: 146.02304}
-      _rectangles:
-      - HalfSize: {x: 9.285995, y: 40.453396}
-        CenterPosition: {x: -10.312362, y: 110.45831}
-        Rotation: 266.53503
-      - HalfSize: {x: 10.465717, y: 34.875385}
-        CenterPosition: {x: -50.14147, y: 110.397705}
-        Rotation: 175.22653
-    - _parentIndex: 6
-      _thisIndex: 13
-      _childAIndex: 14
-      _childBIndex: 15
-      _bounds:
-        Minimum: {x: -46.519573, y: 124.85041}
-        Maximum: {x: -0.0016403198, y: 186.83128}
-      _rectangles:
-      - HalfSize: {x: 14.1635895, y: 30.391907}
-        CenterPosition: {x: -14.16523, y: 156.43938}
-        Rotation: 0
-      - HalfSize: {x: 14.1635895, y: 30.391907}
-        CenterPosition: {x: -14.16523, y: 156.43938}
-        Rotation: 0
-    - _parentIndex: 13
-      _thisIndex: 14
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -46.519573, y: 124.85041}
-        Maximum: {x: -1.5935249, y: 146.0407}
-      _rectangles:
-      - HalfSize: {x: 9.285995, y: 21.941908}
-        CenterPosition: {x: -24.05655, y: 135.44556}
-        Rotation: 266.53503
-    - _parentIndex: 13
-      _thisIndex: 15
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: -28.32882, y: 126.04747}
-        Maximum: {x: -0.0016403198, y: 186.83128}
-      _rectangles:
-      - HalfSize: {x: 14.1635895, y: 30.391907}
-        CenterPosition: {x: -14.16523, y: 156.43938}
-        Rotation: 0
-      - HalfSize: {x: 14.1635895, y: 30.391907}
-        CenterPosition: {x: -14.16523, y: 156.43938}
-        Rotation: 0
-      - HalfSize: {x: 14.1635895, y: 30.391907}
-        CenterPosition: {x: -14.16523, y: 156.43938}
-        Rotation: 0
-    - _parentIndex: 5
-      _thisIndex: 16
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 2.9975586, y: 19.2543}
-        Maximum: {x: 69.73842, y: 104.150116}
-      _rectangles:
-      - HalfSize: {x: 9.285995, y: 21.941908}
-        CenterPosition: {x: 25.460583, y: 53.233345}
-        Rotation: 266.53503
-      - HalfSize: {x: 9.285995, y: 21.941908}
-        CenterPosition: {x: 27.457195, y: 30.325373}
-        Rotation: 266.53503
-      - HalfSize: {x: 10.465717, y: 41.721703}
-        CenterPosition: {x: 55.83708, y: 61.70221}
-        Rotation: 175.22653
-    - _parentIndex: 5
-      _thisIndex: 17
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 83.38876, y: 63.768982}
-        Maximum: {x: 131.70177, y: 115.515015}
-      _rectangles:
-      - HalfSize: {x: 24.156506, y: 25.873018}
-        CenterPosition: {x: 107.545265, y: 89.642}
-        Rotation: 0
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    <Count>k__BackingField: 18
-  _editMode: 2
-  _heldRectangles:
-  - HalfSize: {x: 10.353009, y: 24.463152}
-    CenterPosition: {x: 105.51339, y: 201.63548}
-    Rotation: 174.58441
-  - HalfSize: {x: 10.353009, y: 24.463152}
-    CenterPosition: {x: 96.39016, y: 169.81364}
-    Rotation: 265.8009
-  - HalfSize: {x: 10.353009, y: 24.463152}
-    CenterPosition: {x: 110.680565, y: 137.67224}
-    Rotation: 175.38145
---- !u!4 &2142371743
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142371741}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.51, y: 2.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7676499613770020346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2230,4 +1810,4 @@ SceneRoots:
   - {fileID: 884978760}
   - {fileID: 1670522293}
   - {fileID: 661913977}
-  - {fileID: 2142371743}
+  - {fileID: 345242750}

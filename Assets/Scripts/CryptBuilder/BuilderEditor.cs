@@ -9,6 +9,7 @@ namespace CryptBuilder
     {
         [SerializeField] EditMode _editMode;
         [SerializeField] List<RotatedRectangle> _heldRectangles = new();
+        List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
 
         [CustomEditor(typeof(Builder))]
@@ -17,6 +18,7 @@ namespace CryptBuilder
             private void OnDisable()
             {
                 var b = (Builder)target;
+                if (b == null) return;
                 if(b._heldRectangles.Count > 0)
                 {
                     DeselectHeld(b);
@@ -54,11 +56,26 @@ namespace CryptBuilder
             {
                 var b = (Builder)target;
 
-                if (b.RectangleTree == null || b.RectangleTree.Count < 2)
-                    return;
-                
-                DrawBoundingNode(1, b.RectangleTree, 0, b);
-                switch(b._editMode)
+                if (!(b.RectangleTree == null || b.RectangleTree.Count < 2))
+                {
+                    DrawBoundingNode(1, b.RectangleTree, 0, b);
+                }
+
+                if(Event.current.type == EventType.KeyDown && 
+                    Event.current.keyCode == KeyCode.V && 
+                    Event.current.control && 
+                    b._rectangleClipboard.Count > 0)
+                {
+                    Undo.RecordObject(b, "Paste rectangle(s) from clipboard");
+                    DeselectHeld(b);
+                    b._editMode = EditMode.EditHeld;
+                    foreach(var rect in b._rectangleClipboard)
+                        b._heldRectangles.Add(rect);
+                    Event.current.Use();
+                    EditorUtility.SetDirty(b);
+                }
+
+                switch (b._editMode)
                 {
                     case EditMode.DontEdit:
                         DontEdit(b);
@@ -228,6 +245,19 @@ namespace CryptBuilder
                         case KeyCode.C:
                             if (Event.current.control)
                             {
+                                Undo.RecordObject(b, "Add held rectangle(s) to clipboard");
+                                b._rectangleClipboard.Clear();
+                                foreach (var rect in b._heldRectangles)
+                                    b._rectangleClipboard.Add(rect);
+
+                                EditorUtility.SetDirty(b);
+                                Event.current.Use();
+                            }
+                            return;
+
+                        case KeyCode.D:
+                            if(Event.current.control)
+                            {
                                 Undo.RecordObject(b, "Duplicate held rectangle(s)");
                                 for(int i = 0; i < b._heldRectangles.Count; i++)
                                 {
@@ -237,6 +267,7 @@ namespace CryptBuilder
                                     b._heldRectangles [i] = rect;
                                 }
                                 EditorUtility.SetDirty(b);
+                                Event.current.Use();
                             }
                             return;
                     }
