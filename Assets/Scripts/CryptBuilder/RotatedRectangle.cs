@@ -12,6 +12,32 @@ namespace CryptBuilder
         public float Rotation;
 
         public bool IsValid => HalfSize.x > 0 && HalfSize.y > 0;
+            
+        /// <summary>
+        /// Rounds the RotatedRectangle to a certain position.
+        /// </summary>
+        /// <param name="sizeRounding">The minimum size of a segment in size / position.</param>
+        /// <param name="rotationRounding">The minimum size of a rotation in degrees.</param>
+        public void Round(float sizeRounding, float rotationRounding)
+        {
+            if (sizeRounding == 0) sizeRounding = 1;
+            if (rotationRounding == 0) rotationRounding = 360;
+
+            float size = 1/sizeRounding;
+            float rotSize = 1/rotationRounding;
+
+            HalfSize *= size;
+            HalfSize = HalfSize.Round();
+            HalfSize *= sizeRounding;
+
+            CenterPosition *= size;
+            CenterPosition = CenterPosition.Round();
+            CenterPosition *= sizeRounding;
+
+            Rotation *= rotSize;
+            Rotation = Mathf.Round(Rotation);
+            Rotation *= rotationRounding;
+        }
 
         /// <summary>
         /// Tests wether a point lies within the rotated rectangle.

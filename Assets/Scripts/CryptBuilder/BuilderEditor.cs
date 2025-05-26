@@ -12,6 +12,9 @@ namespace CryptBuilder
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
 
+        [SerializeField] float _rectRounding = .25f;
+        [SerializeField] float _rectRotationRounding = .25f;
+
         [CustomEditor(typeof(Builder))]
         class BuilderEditor : Editor
         {
@@ -27,8 +30,12 @@ namespace CryptBuilder
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
+
                 var b = (Builder)target;
-                if(GUILayout.Button("Reset crypt"))
+                CryptHandles.RoundRectangleSize = b._rectRounding;
+                CryptHandles.RoundRectangleRotation = b._rectRotationRounding;
+                
+                if (GUILayout.Button("Reset crypt"))
                 {
                     Undo.RecordObject(b, "Reset crypt");
                     b.RectangleTree = new();
@@ -56,9 +63,11 @@ namespace CryptBuilder
             {
                 var b = (Builder)target;
 
+                CryptHandles.RoundRectangleSize = b._rectRounding;
+                CryptHandles.RoundRectangleRotation = b._rectRotationRounding;
                 if (!(b.RectangleTree == null || b.RectangleTree.Count < 2))
                 {
-                    DrawBoundingNode(1, b.RectangleTree, 0, b);
+                    CryptHandles.DrawBoundingNode(1, b.RectangleTree, 0, b._debugShowBounds);
                 }
 
                 if(Event.current.type == EventType.KeyDown && 
@@ -107,7 +116,7 @@ namespace CryptBuilder
                 {
                     Handles.color = Color.yellow;
                     var hovered = b.RectangleTree.Nodes[node].Rectangles[rect];
-                    DrawRectangle(hovered);
+                    CryptHandles.DrawRectangle(hovered);
                     if (Event.current.type == EventType.MouseDown && Event.current.button == (int)MouseButton.Left)
                     {
                         Undo.RecordObject(b, "Select rectangle");
@@ -134,7 +143,7 @@ namespace CryptBuilder
                             return;
 
                         Handles.color = Color.white;
-                        DrawBoundingBox(new(clickPosition, dragPosition));
+                        CryptHandles.DrawBoundingBox(new(clickPosition, dragPosition));
                         return;
 
                     case EventType.MouseDown:
@@ -187,7 +196,7 @@ namespace CryptBuilder
                 foreach (var rect in b._heldRectangles)
                 {
                     Handles.color = rect.IsValid ? Color.white : Color.red;
-                    DrawRectangle(rect);
+                    CryptHandles.DrawRectangle(rect);
                 }
 
                 if(!Event.current.shift)
@@ -262,6 +271,7 @@ namespace CryptBuilder
                                 for(int i = 0; i < b._heldRectangles.Count; i++)
                                 {
                                     var rect = b._heldRectangles [i];
+                                    rect.Round(b._rectRounding, b._rectRotationRounding);
                                     b.RectangleTree.AddRectangle(rect);
                                     rect.CenterPosition += Vector2.one;
                                     b._heldRectangles [i] = rect;
@@ -277,7 +287,7 @@ namespace CryptBuilder
                 {
                     Handles.color = Color.yellow;
                     var hovered = b.RectangleTree.Nodes[node].Rectangles[rectIndex];
-                    DrawRectangle(hovered);
+                    CryptHandles.DrawRectangle(hovered);
                 }
                 if(Event.current.type == EventType.MouseDown && Event.current.button == (int)MouseButton.Left)
                 {
@@ -303,6 +313,7 @@ namespace CryptBuilder
                                 b._heldRectangles.RemoveAt(i);
                                 if(b._heldRectangles.Count == 0)
                                     b._editMode = EditMode.DontEdit;
+                                rect.Round(b._rectRounding, b._rectRotationRounding);
                                 b.RectangleTree.AddRectangle(rect);
                                 Event.current.Use();
                                 EditorUtility.SetDirty(b);
@@ -320,7 +331,10 @@ namespace CryptBuilder
                 Undo.RecordObject(b, "Deselect rectangle(s)");
                 b._editMode = EditMode.DontEdit;
                 foreach (var rect in b._heldRectangles)
+                {
+                    rect.Round(b._rectRounding, b._rectRotationRounding);
                     b.RectangleTree.AddRectangle(rect);
+                }
                 b._heldRectangles.Clear();
                 EditorUtility.SetDirty(b);
             }
@@ -335,46 +349,6 @@ namespace CryptBuilder
 
                 position = (ray.origin + ray.direction * t).To2D();
                 return true;
-            }
-            static void DrawBoundingNode(int nodeIndex, RectangleCollection owner, int depth, Builder b)
-            {
-                var col = Color.Lerp(Color.lawnGreen, Color.deepPink, Mathf.Exp(-depth * .2f));
-                col.a = .4f;
-                Handles.color = col;
-                var node = owner.Nodes[nodeIndex];
-                if(b._debugShowBounds) 
-                    DrawBoundingBox(node.Bounds);
-                if(node.Rectangles != null)
-                {
-                    col.a = 1f;
-                    Handles.color = col;
-                    foreach (var r in node.Rectangles)
-                        DrawRectangle(r);
-                }
-                if(node.ChildAIndex > 0)
-                {
-                    DrawBoundingNode(node.ChildAIndex, owner, depth+1, b);
-                    DrawBoundingNode(node.ChildBIndex, owner, depth+1, b);
-                }
-            }
-            static void DrawRectangle(RotatedRectangle rect)
-            {
-                foreach (var line in rect.GetLines())
-                {
-                    Handles.DrawLine(line.A.To3D(), line.B.To3D());
-                }
-            }
-            static void DrawBoundingBox(BoundingBox box)
-            {
-                var ogcol = Handles.color;
-                if(!box.IsValid) Handles.color *= Color.pink;
-                Vector2 otherCorner1 = new(box.Minimum.x, box.Maximum.y);
-                Vector2 otherCorner2 = new(box.Maximum.x, box.Minimum.y);
-                Handles.DrawLine(otherCorner1.To3D(), box.Minimum.To3D());
-                Handles.DrawLine(otherCorner1.To3D(), box.Maximum.To3D());
-                Handles.DrawLine(otherCorner2.To3D(), box.Maximum.To3D());
-                Handles.DrawLine(otherCorner2.To3D(), box.Minimum.To3D());
-                Handles.color = ogcol;
             }
 
         }
