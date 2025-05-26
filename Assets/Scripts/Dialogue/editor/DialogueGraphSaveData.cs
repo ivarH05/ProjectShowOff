@@ -8,6 +8,7 @@ namespace DialogueSystem
     {
         public string GUID;
         public string DialogueText;
+        public NodeType type;
         public Vector2 Position;
         public List<OptionData> Options;
     }

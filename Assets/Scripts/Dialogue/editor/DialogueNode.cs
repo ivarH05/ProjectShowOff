@@ -8,144 +8,25 @@ using UnityEngine.UIElements;
 
 namespace DialogueSystem
 {
-    public class DialogueNode : Node
+    public enum NodeType { None, Text, Branch, Start, End }
+
+    public abstract class DialogueNode : Node
     {
         public string GUID;
 
-        public string dialogueText { get; private set; } = "";
-        public List<DialogueNodeOption> options = new List<DialogueNodeOption>();
+        public NodeType nodeType { get; internal set; }
 
-        [SerializeField]
-        private VisualElement _AddItemButton;
-
-        private TextField _dialogueTextField;
-
-        private DialogueNode()
+        internal DialogueNode()
         {
+            GUID = System.Guid.NewGuid().ToString();
 
             mainContainer.style.paddingLeft = 6;
             mainContainer.style.paddingRight = 6;
 
-            SetColor(new Color(0.26f, 0.26f, 0.26f));
-            CreateInputFields(inputContainer);
-
-            // Refresh UI to show changes
-            RefreshExpandedState();
-            RefreshPorts();
+            style.minWidth = 150;
         }
 
-        public static DialogueNode DefaultNode(string defaultText = "")
-        {
-            DialogueNode node = new DialogueNode()
-            {
-                title = "Dialogue Node",
-                GUID = System.Guid.NewGuid().ToString(),
-            };
-            node.SetText(defaultText);
-            node.CreateOutputOption(node.mainContainer, "Continue");
-            return node;
-
-        }
-
-        public static DialogueNode EmptyNode(string defaultText = "")
-        {
-            DialogueNode node = new DialogueNode()
-            {
-                title = "Dialogue Node",
-                GUID = System.Guid.NewGuid().ToString(),
-            };
-            node.SetText(defaultText);
-            return node;
-        }
-
-        public void SetText(string text)
-        {
-            _dialogueTextField.value = text;
-            dialogueText = text;
-        }
-
-
-        void RemoveNodeOption(DialogueNodeOption option)
-        {
-            foreach (var edge in option.port.connections.ToList())
-            {
-                edge.input?.Disconnect(edge);
-                edge.output?.Disconnect(edge);
-
-                edge.RemoveFromHierarchy();
-            }
-
-            option.port.DisconnectAll();
-            option.element.RemoveFromHierarchy();
-            options.Remove(option);
-            for (int i = 0; i < options.Count; i++)
-            {
-                DialogueNodeOption o = options[i];
-                o.label.text = $"Option {i}";
-            }
-        }
-
-        void CreateInputFields(VisualElement parent)
-        {
-            VisualElement horizontalContainer = CreateHorizontalContainer(parent);
-            CreateInputNode("", horizontalContainer);
-            CreateLabel("Input", horizontalContainer);
-
-            TextField textField = CreateTextField(dialogueText, parent, evt => { dialogueText = evt.newValue; });
-            textField.multiline = true;
-            textField.style.minWidth = 150;
-            textField.style.maxWidth = 350;
-            _dialogueTextField = textField;
-        }
-
-        public void CreateOutputOption(string value) => CreateOutputOption(mainContainer, value);
-        void CreateOutputOption(VisualElement parent, string value = "")
-        {
-            int index = options.Count;
-            DialogueNodeOption option = new DialogueNodeOption(this);
-            VisualElement container = new VisualElement();
-            parent.Add(container);
-
-            VisualElement labelContainer = CreateHorizontalContainer(container);
-            labelContainer.style.alignItems = Align.FlexStart;
-            labelContainer.style.justifyContent = Justify.FlexStart;
-            Label label = CreateLabel($"option {index}", labelContainer);
-
-            Button removeButton = new Button(() => { RemoveNodeOption(option); }) { text = "-" };
-            removeButton.style.width = 20;
-            labelContainer.Add(removeButton);
-
-
-            VisualElement valueContainer = CreateHorizontalContainer(container);
-            valueContainer.style.alignItems = Align.FlexEnd;
-            valueContainer.style.justifyContent = Justify.FlexEnd;
-
-            TextField textField = CreateTextField("", valueContainer, evt => { options[index].value = evt.newValue; });
-            textField.value = value;
-            textField.style.maxWidth = 330;
-            textField.style.minWidth = 130;
-            Port OutputPort = CreateOutputNode("", valueContainer);
-
-            ResetAddItemButtion();
-
-
-            option.element = container;
-            option.label = label;
-            option.port = OutputPort;
-            options.Add(option);
-        }
-
-        void ResetAddItemButtion()
-        {
-            if (_AddItemButton != null)
-                _AddItemButton.RemoveFromHierarchy();
-
-            Button addItemButton = new Button(() => { CreateOutputOption(mainContainer); }) { text = "Add Option" };
-            _AddItemButton = addItemButton;
-            mainContainer.Add(addItemButton);
-        }
-
-        void SetColor(Color color)
+        internal void SetColor(Color color)
         {
             inputContainer.style.backgroundColor = color;
             outputContainer.style.backgroundColor = color;
@@ -154,7 +35,7 @@ namespace DialogueSystem
             mainContainer.style.backgroundColor = color;
         }
 
-        TextField CreateTextField(string name, VisualElement parent, EventCallback<ChangeEvent<string>> evt)
+        internal TextField CreateTextField(string name, VisualElement parent, EventCallback<ChangeEvent<string>> evt)
         {
             Label label = new Label(name);
 
@@ -167,7 +48,7 @@ namespace DialogueSystem
             return textField;
         }
 
-        Label CreateLabel(string value, VisualElement parent)
+        internal Label CreateLabel(string value, VisualElement parent)
         {
             if (value == "")
                 return null;
@@ -177,7 +58,7 @@ namespace DialogueSystem
             return label;
         }
 
-        VisualElement CreateHorizontalContainer(VisualElement parent)
+        internal VisualElement CreateHorizontalContainer(VisualElement parent)
         {
             VisualElement horizontalContainer = new VisualElement();
             horizontalContainer.style.flexDirection = FlexDirection.Row;
@@ -186,7 +67,7 @@ namespace DialogueSystem
             return horizontalContainer;
         }
 
-        Port CreateInputNode(string name, VisualElement parent)
+        internal Port CreateInputPort(string name, VisualElement parent)
         {
             Port inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(float));
             inputPort.portName = name;
@@ -194,7 +75,7 @@ namespace DialogueSystem
             return inputPort;
         }
 
-        Port CreateOutputNode(string name, VisualElement parent)
+        internal Port CreateOutputPort(string name, VisualElement parent)
         {
             Port outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(float));
             outputPort.portName = name;

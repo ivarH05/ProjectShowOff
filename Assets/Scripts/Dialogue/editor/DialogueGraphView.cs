@@ -33,23 +33,46 @@ namespace DialogueSystem
             Vector2 worldPosition = contentViewContainer.WorldToLocal(this.LocalToWorld(mousePosition));
 
             var menu = new GenericMenu();
-            menu.AddItem(new GUIContent("Add Dialogue Node"), false, () => CreateDefaultDialogueNode(worldPosition));
+            menu.AddItem(new GUIContent("Dialogue"), false, () => CreateDefaultTextNode(worldPosition));
+            menu.AddItem(new GUIContent("Branch"), false, () => CreateDefaultBranchNode(worldPosition));
+            menu.AddItem(new GUIContent("Start"), false, () => CreateDefaultStartNode(worldPosition));
+            menu.AddItem(new GUIContent("End"), false, () => CreateDefaultEndNode(worldPosition));
             menu.ShowAsContext();
         }
 
-        public DialogueNode CreateEmptyDialogueNode(Vector2 position, string defaultText = "")
+        public DialogueNode CreateEmptyNode(NodeType type, Vector2 position)
         {
-            DialogueNode node = DialogueNode.EmptyNode();
+            switch (type)
+            {
+                case NodeType.Text:
+                    return CreateEmptyTextNode(position);
+                case NodeType.Branch:
+                    return CreateEmptyBranchNode(position);
+                case NodeType.Start:
+                    return CreateEmptyStartNode(position);
+                case NodeType.End:
+                    return CreateEmptyEndNode(position);
 
-            node.SetPosition(new Rect(position, new Vector2(200, 150)));
-            AddElement(node);
-            return node;
+                default:
+                    return null;
+            }
         }
 
-        public DialogueNode CreateDefaultDialogueNode(Vector2 position, string defaultText = "")
-        {
-            DialogueNode node = DialogueNode.DefaultNode();
+        public DialogueTextNode CreateEmptyTextNode(Vector2 position) => SetupNode(DialogueTextNode.EmptyNode(), position);
+        public DialogueTextNode CreateDefaultTextNode(Vector2 position) => SetupNode(DialogueTextNode.DefaultNode(), position);
 
+        public DialogueBranchNode CreateEmptyBranchNode(Vector2 position) => SetupNode(DialogueBranchNode.EmptyNode(), position);
+        public DialogueBranchNode CreateDefaultBranchNode(Vector2 position) => SetupNode(DialogueBranchNode.DefaultNode(), position);
+
+        public DialogueStartNode CreateEmptyStartNode(Vector2 position) => SetupNode(DialogueStartNode.EmptyNode(), position);
+        public DialogueStartNode CreateDefaultStartNode(Vector2 position) => SetupNode(DialogueStartNode.DefaultNode(), position);
+
+        public DialogueEndNode CreateEmptyEndNode(Vector2 position) => SetupNode(DialogueEndNode.EmptyNode(), position);
+        public DialogueEndNode CreateDefaultEndNode(Vector2 position) => SetupNode(DialogueEndNode.DefaultNode(), position);
+
+
+        private T SetupNode<T>(T node, Vector2 position) where T : DialogueNode
+        {
             node.SetPosition(new Rect(position, new Vector2(200, 150)));
             AddElement(node);
             return node;

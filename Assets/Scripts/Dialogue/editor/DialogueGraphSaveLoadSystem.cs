@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.StandaloneInputModule;
@@ -22,18 +24,27 @@ namespace DialogueSystem
             // Save nodes
             foreach (var node in graphView.nodes.OfType<DialogueNode>())
             {
-                List<OptionData> newOptions = new List<OptionData>();
-                var oldOptions = node.options;
-                for (int i = 0; i < oldOptions.Count; i++)
-                {
-                    var option = oldOptions[i];
-                    newOptions.Add(new OptionData()
-                    {
-                        index = i,
-                        ResponseText = option.value,
-                    });
+                List<OptionData> options = new List<OptionData>();
+                if (node is DialogueTextNode textNode)
+                    options = ExtractOptions(textNode);
 
-                    var connections = option.port.connections.ToArray();
+                saveData.Nodes.Add(new NodeData
+                {
+                    GUID = node.GUID,
+                    DialogueText = node is DialogueTextNode t ? t.dialogueText : "",
+                    Position = node.GetPosition().position,
+                    Options = options,
+                    type = node.nodeType,
+                });
+
+                List<Port> ports = node.mainContainer.Query<Port>().Build().ToList();
+
+                for (int i = 0; i < ports.Count; i++)
+                {
+                    Port port = ports[i];
+                    if (port.direction == Direction.Input)
+                        continue;
+                    var connections = port.connections.ToArray();
                     for (int j = 0; j < connections.Length; j++)
                     {
                         var connection = connections[j];
@@ -48,19 +59,31 @@ namespace DialogueSystem
                         });
                     }
                 }
-
-                saveData.Nodes.Add(new NodeData
-                {
-                    GUID = node.GUID,
-                    DialogueText = node.dialogueText,
-                    Position = node.GetPosition().position,
-                    Options = newOptions,
-                });
             }
+
+
 
             // Save to JSON
             var json = JsonUtility.ToJson(saveData, true); 
             File.WriteAllText(path, json);
+        }
+
+        private static List<OptionData> ExtractOptions(DialogueTextNode node)
+        {
+            List<OptionData> result = new List<OptionData>();
+
+            var oldOptions = node.options;
+            for (int i = 0; i < oldOptions.Count; i++)
+            {
+                var option = oldOptions[i];
+                result.Add(new OptionData()
+                {
+                    index = i,
+                    ResponseText = option.value,
+                });
+            }
+
+            return result;
         }
 
 
@@ -84,15 +107,17 @@ namespace DialogueSystem
             Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
             foreach (var nodeData in saveData.Nodes)
             {
-                DialogueNode node = graphView.CreateEmptyDialogueNode(nodeData.Position, nodeData.DialogueText);
+                DialogueNode node = graphView.CreateEmptyNode(nodeData.type, nodeData.Position);
                 node.GUID = nodeData.GUID;
-                node.SetText(nodeData.DialogueText);
                 nodeLookup[node.GUID] = node;
 
+                if (!(node is DialogueTextNode textNode))
+                    continue;
+                textNode.SetText(nodeData.DialogueText);
                 for (int i = 0; i < nodeData.Options.Count; i++)
                 {
                     OptionData option = nodeData.Options[i];
-                    node.CreateOutputOption(option.ResponseText);
+                    textNode.CreateOutputOption(option.ResponseText);
                 }
             }
 
@@ -102,7 +127,10 @@ namespace DialogueSystem
                 var outputNode = nodeLookup[connection.OutputNodeGUID];
                 var inputNode = nodeLookup[connection.InputNodeGUID];
 
-                var outputPort = outputNode.mainContainer.Query<Port>().Build().ToArray()[connection.OutputNodeIndex+1];
+                List<Port> ports = outputNode.mainContainer.Query<Port>().Build().ToList();
+
+                var outputPort = ports[connection.OutputNodeIndex];
+
                 var inputPort = inputNode.inputContainer.Q<Port>();
 
                 var edge = new Edge
