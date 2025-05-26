@@ -61,5 +61,11 @@ namespace CryptBuilder
             Nodes[Count] = node;
             Count++;
         }
+
+        public bool TryGetRectangleAtPoint(Vector2 point, out int nodeIndex, out int rectangleIndex)
+        {
+            float priority = 0;
+            return Nodes[1].TryGetRectangleAtPoint(point, this, ref priority, out nodeIndex, out rectangleIndex);
+        }
     }
 }

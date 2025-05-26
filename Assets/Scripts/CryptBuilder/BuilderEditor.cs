@@ -105,7 +105,7 @@ namespace CryptBuilder
 
                 if (!TryTracePlaneFromMouse(out var mousePos)) return false;
 
-                return b.RectangleTree.Nodes[1].TryGetRectangleAtPoint(mousePos, b.RectangleTree, out rect, out node);
+                return b.RectangleTree.TryGetRectangleAtPoint(mousePos, out rect, out node);
             }
 
             void DontEdit(Builder b)

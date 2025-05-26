@@ -42,7 +42,10 @@ namespace CryptBuilder
             {
                 for(float y = bounds.Minimum.y + .5f * _rectRounding; y < bounds.Maximum.y; y += _rectRounding)
                 {
-                    Gizmos.DrawLine(new(x,0,y), new(x,.3f,y));
+                    Vector2 point = new(x, y);
+                    if (RectangleTree.TryGetRectangleAtPoint(point, out int nodeI, out int rectI) && nodeI == nodeIndex && rectI == rectIndex)
+                        Debug.Log("wow");
+                        Gizmos.DrawLine(point.To3D(.3f*nodeI), point.To3D(.3f * (nodeI + 1)));
                 }
             }
 

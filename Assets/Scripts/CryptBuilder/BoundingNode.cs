@@ -130,33 +130,54 @@ namespace CryptBuilder
         /// <param name="rectIndex">The index of the rectangle, if found.</param>
         /// <param name="nodeIndex">The index of the node that contains the found rectangle.</param>
         /// <returns>Whether or not the point hit a rectangle.</returns>
-        public bool TryGetRectangleAtPoint(Vector2 point, RectangleCollection owner, out int rectIndex, out int nodeIndex)
+        public bool TryGetRectangleAtPoint(Vector2 point, RectangleCollection owner, ref float currentPriority, out int rectIndex, out int nodeIndex)
         {
             rectIndex = default;
-            nodeIndex = ThisIndex;
+            nodeIndex = default;
+            bool result = false;
 
             if (_rectangles != null)
             {
-                for (rectIndex = 0; rectIndex < _rectangles.Count; rectIndex++)
+                for (int i = 0; i < _rectangles.Count; i++)
                 {
-                    if (_rectangles[rectIndex].ContainsPoint(point)) 
-                        return true;
+                    var rect = _rectangles[i];
+                    var bounds = rect.GetBounds();
+                    float priority = bounds.Size.x * bounds.Size.y;
+                    if (priority > currentPriority && bounds.ContainsPoint(point) && rect.ContainsPoint(point))
+                    {
+                        rectIndex = i;
+                        nodeIndex = ThisIndex;
+                        currentPriority = priority;
+                        result = true;
+                    }
                 }
             }
 
             if(_childAIndex > 0)
             {
                 ref var ChildA = ref owner.Nodes[ChildAIndex];
-                if (ChildA.Bounds.ContainsPoint(point) && 
-                    ChildA.TryGetRectangleAtPoint(point, owner, out rectIndex, out nodeIndex)) 
-                    return true;
+                var childABounds = ChildA.Bounds;
+                if (childABounds.Size.x * childABounds.Size.y > currentPriority &&
+                    childABounds.ContainsPoint(point) && 
+                    ChildA.TryGetRectangleAtPoint(point, owner, ref currentPriority, out int rectA, out int nodeA))
+                {
+                    result = true;
+                    rectIndex = rectA;
+                    nodeIndex = nodeA;
+                }
 
                 ref var ChildB = ref owner.Nodes[ChildBIndex];
-                if (ChildB.Bounds.ContainsPoint(point) &&
-                    ChildB.TryGetRectangleAtPoint(point, owner, out rectIndex, out nodeIndex)) 
-                    return true;
+                var childBBounds = ChildB.Bounds;
+                if (childBBounds.Size.x * childBBounds.Size.y > currentPriority &&
+                    childBBounds.ContainsPoint(point) &&
+                    ChildB.TryGetRectangleAtPoint(point, owner, ref currentPriority, out int rectB, out int nodeB))
+                {
+                    result = true;
+                    rectIndex = rectB;
+                    nodeIndex = nodeB;
+                }
             }
-            return false;
+            return result;
         }
 
         void Split(RectangleCollection owner)
