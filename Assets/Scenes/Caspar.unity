@@ -564,29 +564,20 @@ MonoBehaviour:
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 3
-      _childAIndex: 6
-      _childBIndex: 7
+      _childAIndex: 8
+      _childBIndex: 9
       _bounds:
         Minimum: {x: 4, y: 10}
         Maximum: {x: 22, y: 22}
       _rectangles: []
     - _parentIndex: 2
       _thisIndex: 4
-      _childAIndex: 0
-      _childBIndex: 0
+      _childAIndex: 6
+      _childBIndex: 7
       _bounds:
         Minimum: {x: 4, y: 4}
-        Maximum: {x: 14, y: 10.25}
-      _rectangles:
-      - HalfSize: {x: 3, y: 2}
-        CenterPosition: {x: 6, y: 7}
-        Rotation: 270
-      - HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 9, y: 5.5}
-        Rotation: 270
-      - HalfSize: {x: 3, y: 2}
-        CenterPosition: {x: 12, y: 7.25}
-        Rotation: 270
+        Maximum: {x: 14, y: 10}
+      _rectangles: []
     - _parentIndex: 2
       _thisIndex: 5
       _childAIndex: 0
@@ -595,17 +586,42 @@ MonoBehaviour:
         Minimum: {x: 10, y: 0.99999976}
         Maximum: {x: 21, y: 11}
       _rectangles:
-      - HalfSize: {x: 3, y: 2}
-        CenterPosition: {x: 13, y: 3}
-        Rotation: 180
-      - HalfSize: {x: 5, y: 2}
-        CenterPosition: {x: 19, y: 6}
-        Rotation: 270
       - HalfSize: {x: 1, y: 1.75}
         CenterPosition: {x: 15.5, y: 7.25}
         Rotation: 270
-    - _parentIndex: 3
+      - HalfSize: {x: 5, y: 2}
+        CenterPosition: {x: 19, y: 6}
+        Rotation: 270
+      - HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 13, y: 3}
+        Rotation: 180
+    - _parentIndex: 4
       _thisIndex: 6
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 4, y: 4}
+        Maximum: {x: 11, y: 10}
+      _rectangles:
+      - HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 6, y: 7}
+        Rotation: 270
+      - HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 9, y: 5.5}
+        Rotation: 270
+    - _parentIndex: 4
+      _thisIndex: 7
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 9, y: 4}
+        Maximum: {x: 14, y: 10}
+      _rectangles:
+      - HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 12, y: 7}
+        Rotation: 270
+    - _parentIndex: 3
+      _thisIndex: 8
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -622,7 +638,7 @@ MonoBehaviour:
         CenterPosition: {x: 6.75, y: 13}
         Rotation: 270
     - _parentIndex: 3
-      _thisIndex: 7
+      _thisIndex: 9
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -814,23 +830,7 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    <Count>k__BackingField: 8
+    <Count>k__BackingField: 10
   _rectRounding: 0.25
   _rectRotationRounding: 90
   _editMode: 0

@@ -41,8 +41,8 @@ namespace CryptBuilder
         /// Tries to get the intersection time between two lines.
         /// </summary>
         /// <param name="other">The other line.</param>
-        /// <param name="t"></param>
-        /// <returns></returns>
+        /// <param name="t">The T of the intersection. The point can be found using Lerp(A,B,t).</param>
+        /// <returns>Whether or not there was an intersection.</returns>
         public bool TIntersection(LineSegment other, out float t)
         {
             // Directly stolen from https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection#Given_two_points_on_each_line_segment

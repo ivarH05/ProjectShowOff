@@ -31,10 +31,10 @@ namespace CryptBuilder
 
         public bool ContainsPoint(Vector2 point)
         {
-            if(point.x < Minimum.x) return false;
-            if(point.x > Maximum.x) return false;
-            if(point.y < Minimum.y) return false;
-            return point.y < Maximum.y;
+            if(point.x <= Minimum.x) return false;
+            if(point.x >= Maximum.x) return false;
+            if(point.y <= Minimum.y) return false;
+            return point.y <= Maximum.y;
         }
 
         public bool FullyContains(BoundingBox box) => ContainsPoint(box.Minimum) && ContainsPoint(box.Maximum);
