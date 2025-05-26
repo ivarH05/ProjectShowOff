@@ -36,6 +36,9 @@ namespace CryptBuilder
             foreach (var line in rect.GetLines())
             {
                 Handles.DrawLine(line.A.To3D(), line.B.To3D());
+                //Vector2 avgPos = line.A + line.B;
+                //avgPos *= .5f;
+                //Handles.DrawLine(avgPos.To3D(), (avgPos + line.Normal).To3D());
             }
         }
         public static void DrawBoundingBox(BoundingBox box)

@@ -5,15 +5,13 @@ using System.Collections.Generic;
 
 namespace CryptBuilder
 {
+#if UNITY_EDITOR
     public partial class Builder
     {
         [SerializeField] EditMode _editMode;
         [SerializeField] List<RotatedRectangle> _heldRectangles = new();
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
-
-        [SerializeField] float _rectRounding = .25f;
-        [SerializeField] float _rectRotationRounding = .25f;
 
         [CustomEditor(typeof(Builder))]
         class BuilderEditor : Editor
@@ -67,7 +65,7 @@ namespace CryptBuilder
                 CryptHandles.RoundRectangleRotation = b._rectRotationRounding;
                 if (!(b.RectangleTree == null || b.RectangleTree.Count < 2))
                 {
-                    CryptHandles.DrawBoundingNode(1, b.RectangleTree, 0, b._debugShowBounds);
+                    CryptHandles.DrawBoundingNode(1, b.RectangleTree, -1, b._debugShowBounds);
                 }
 
                 if(Event.current.type == EventType.KeyDown && 
@@ -359,4 +357,5 @@ namespace CryptBuilder
             EditHeld
         }
     }
+#endif
 }

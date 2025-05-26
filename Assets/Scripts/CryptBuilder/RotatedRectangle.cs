@@ -50,7 +50,7 @@ namespace CryptBuilder
                 Matrix2x2 rotation = Matrix2x2.FromRotationAngle(-Rotation);
                 point *= rotation;
             }
-            return Mathf.Abs(point.x) < HalfSize.x && Mathf.Abs(point.y) < HalfSize.y;
+            return Mathf.Abs(point.x) <= HalfSize.x && Mathf.Abs(point.y) <= HalfSize.y;
         }
 
         /// <summary>
