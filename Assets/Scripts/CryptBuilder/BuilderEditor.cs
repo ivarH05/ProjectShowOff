@@ -62,8 +62,7 @@ namespace CryptBuilder
                 {
                     if(GUILayout.Button("Delete generated crypt"))
                     {
-                        Undo.RecordObject(b._generatedCrypt, "[CryptBuilder] Delete generated crypt");
-                        DestroyImmediate(b._generatedCrypt);
+                        Undo.DestroyObjectImmediate(b._generatedCrypt);
                         b._generatedCrypt = null;
                         EditorUtility.SetDirty(b);
                     }
@@ -71,12 +70,12 @@ namespace CryptBuilder
                 else if(GUILayout.Button("Generate full crypt"))
                 {
                     b._generatedCrypt = new("Crypt");
+                    Undo.RegisterCreatedObjectUndo(b._generatedCrypt, "[CryptBuilder] Generate crypt");
                     b._generatedCrypt.transform.localPosition = b.transform.position;
                     CryptGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
                     gen.CryptRoot = b._generatedCrypt;
                     b.GenerateCrypt(gen);
-                    Undo.RegisterFullObjectHierarchyUndo(b._generatedCrypt, "[CryptBuilder] Generate crypt");
                 }
 
             }
