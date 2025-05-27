@@ -10,6 +10,7 @@ namespace CryptBuilder
     {
         [SerializeField, HideInInspector] EditMode _editMode;
         [SerializeField, HideInInspector] List<RotatedRectangle> _heldRectangles = new();
+        [SerializeField] GameObject _generatedCrypt;
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
 
@@ -57,11 +58,33 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }
+                if(b._generatedCrypt != null)
+                {
+                    if(GUILayout.Button("Delete generated crypt"))
+                    {
+                        Undo.RecordObject(b._generatedCrypt, "[CryptBuilder] Delete generated crypt");
+                        DestroyImmediate(b._generatedCrypt);
+                        b._generatedCrypt = null;
+                        EditorUtility.SetDirty(b);
+                    }
+                }
+                else if(GUILayout.Button("Generate full crypt"))
+                {
+                    b._generatedCrypt = new("Crypt");
+                    b._generatedCrypt.transform.localPosition = b.transform.position;
+                    CryptGenerator gen = new();
+                    gen.DefaultStyle = b._defaultStyle;
+                    gen.CryptRoot = b._generatedCrypt;
+                    b.GenerateCrypt(gen);
+                    Undo.RegisterFullObjectHierarchyUndo(b._generatedCrypt, "[CryptBuilder] Generate crypt");
+                }
 
             }
             void OnSceneGUI()
             {
                 var b = (Builder)target;
+
+                Handles.matrix = Matrix4x4.TRS(b.transform.position, Quaternion.identity, Vector3.one);
 
                 CryptHandles.RoundRectangleSize = b._rectRounding;
                 CryptHandles.RoundRectangleRotation = b._rectRotationRounding;
@@ -105,7 +128,7 @@ namespace CryptBuilder
                 rect = default;
                 node = default;
 
-                if (!TryTracePlaneFromMouse(out var mousePos)) return false;
+                if (!TryTracePlaneFromMouse(b, out var mousePos)) return false;
 
                 return b.RectangleTree.TryGetRectangleAtPoint(mousePos, out node, out rect);
             }
@@ -150,14 +173,14 @@ namespace CryptBuilder
                         if (Event.current.IsRightMouseButton()) 
                             return;
 
-                        draggingNew = TryTracePlaneFromMouse(out clickPosition);
+                        draggingNew = TryTracePlaneFromMouse(b, out clickPosition);
                         dragPosition = clickPosition;
                         if (draggingNew) 
                             Event.current.Use();
                         return;
                     
                     case EventType.MouseDrag:
-                        if (!TryTracePlaneFromMouse(out dragPosition)) 
+                        if (!TryTracePlaneFromMouse(b, out dragPosition)) 
                             return;
                         
                         SceneView.RepaintAll();
@@ -293,7 +316,7 @@ namespace CryptBuilder
                 {
                     if(Event.current.shift)
                     {
-                        if (!TryTracePlaneFromMouse(out var mousePos))
+                        if (!TryTracePlaneFromMouse(b, out var mousePos))
                             return;
                         if(GetRectAtMouse(b, out rectIndex, out node))
                         {
@@ -339,10 +362,11 @@ namespace CryptBuilder
                 EditorUtility.SetDirty(b);
             }
 
-            static bool TryTracePlaneFromMouse(out Vector2 position)
+            static bool TryTracePlaneFromMouse(Builder b, out Vector2 position)
             {
                 var ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
                 position = default;
+                ray.origin -= b.transform.position;
                 float t = ray.origin.y / -ray.direction.y;
                 if (t < 0 || float.IsNaN(t))
                     return false;

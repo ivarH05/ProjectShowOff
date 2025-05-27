@@ -7,6 +7,7 @@ namespace CryptBuilder
     [Serializable]
     public struct RotatedRectangle : IEquatable<RotatedRectangle>
     {
+        public CryptRoomStyle Style;
         public Vector2 HalfSize;
         public Vector2 CenterPosition;
         public float Rotation;
@@ -97,7 +98,11 @@ namespace CryptBuilder
 
         bool IEquatable<RotatedRectangle>.Equals(RotatedRectangle other)
         {
-            return Rotation == other.Rotation && CenterPosition == other.CenterPosition && HalfSize == other.HalfSize;
+            return 
+                Rotation == other.Rotation && 
+                CenterPosition == other.CenterPosition && 
+                HalfSize == other.HalfSize && 
+                Style == other.Style;
         }
         public override bool Equals(object obj)
         {
@@ -108,7 +113,7 @@ namespace CryptBuilder
         public static bool operator!= (RotatedRectangle b1, RotatedRectangle b2) => !(b1 == b2);
         public override int GetHashCode()
         {
-            return HashCode.Combine(Rotation, CenterPosition, HalfSize);
+            return HashCode.Combine(Rotation, CenterPosition, HalfSize, Style);
         }
     }
 }

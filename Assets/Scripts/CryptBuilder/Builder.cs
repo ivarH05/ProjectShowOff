@@ -9,6 +9,8 @@ namespace CryptBuilder
     {
         [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
         [SerializeField] float _rectRounding = .25f;
+        [SerializeField] CryptRoomStyle _defaultStyle;
+
         float _rectRotationRounding = 90;
 
         private void OnDrawGizmosSelected()
@@ -16,6 +18,7 @@ namespace CryptBuilder
             if (_rectRounding < 0.01f) 
                 return;
 
+            Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.identity, Vector3.one);
             GizmoGenerator gen = new();
             gen.RectRounding = _rectRounding;
             GenerateCrypt(gen);
@@ -88,7 +91,7 @@ namespace CryptBuilder
                 // the room will just generate double like whatever
             }
 
-            gen.OnNewRoom();
+            gen.OnNewRoom(rect);
 
             for (float x = bounds.Minimum.x + .5f*_rectRounding; x < bounds.Maximum.x; x += _rectRounding)
             {
@@ -133,7 +136,7 @@ namespace CryptBuilder
 
         public interface ICryptGenerator
         {
-            void OnNewRoom();
+            void OnNewRoom(RotatedRectangle room);
             void GenerateFloor(Vector2 point);
             void GenerateWall(Vector2 point, Vector2 normal);
         }
@@ -141,23 +144,13 @@ namespace CryptBuilder
         private struct GizmoGenerator : ICryptGenerator
         {
             public float RectRounding;
-            float _roomCount;
 
-            public void GenerateFloor(Vector2 point)
-            {
-                Gizmos.color = Color.white;
-                Gizmos.DrawLine(point.To3D(_roomCount), point.To3D(.1f + _roomCount));
-            }
-
+            public void OnNewRoom(RotatedRectangle room) {}
+            public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
             {
                 Gizmos.color = Color.orange;
                 Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
-            }
-
-            public void OnNewRoom()
-            {
-                _roomCount+=.1f;
             }
         }
     }
