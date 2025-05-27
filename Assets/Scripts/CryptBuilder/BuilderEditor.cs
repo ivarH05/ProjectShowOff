@@ -8,8 +8,8 @@ namespace CryptBuilder
 #if UNITY_EDITOR
     public partial class Builder
     {
-        [SerializeField] EditMode _editMode;
-        [SerializeField] List<RotatedRectangle> _heldRectangles = new();
+        [SerializeField, HideInInspector] EditMode _editMode;
+        [SerializeField, HideInInspector] List<RotatedRectangle> _heldRectangles = new();
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
 
@@ -35,7 +35,7 @@ namespace CryptBuilder
                 
                 if (GUILayout.Button("Reset crypt"))
                 {
-                    Undo.RecordObject(b, "Reset crypt");
+                    Undo.RecordObject(b, "[CryptBuilder] Reset crypt");
                     b.RectangleTree = new();
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
@@ -52,7 +52,7 @@ namespace CryptBuilder
                 }
                 if(GUILayout.Button("Regenerate tree (may improve performance, fixes rounding)"))
                 {
-                    Undo.RecordObject(b, "Regenerate crypt tree");
+                    Undo.RecordObject(b, "[CryptBuilder] Regenerate tree");
                     b.RectangleTree.Regenerate(b._rectRounding, b._rectRotationRounding);
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
@@ -75,7 +75,7 @@ namespace CryptBuilder
                     Event.current.control && 
                     b._rectangleClipboard.Count > 0)
                 {
-                    Undo.RecordObject(b, "Paste rectangle(s) from clipboard");
+                    Undo.RecordObject(b, "[CryptBuilder] Paste rectangle(s) from clipboard");
                     DeselectHeld(b);
                     b._editMode = EditMode.EditHeld;
                     foreach(var rect in b._rectangleClipboard)
@@ -119,7 +119,7 @@ namespace CryptBuilder
                     CryptHandles.DrawRectangle(hovered);
                     if (Event.current.type == EventType.MouseDown && Event.current.button == (int)MouseButton.Left)
                     {
-                        Undo.RecordObject(b, "Select rectangle");
+                        Undo.RecordObject(b, "[CryptBuilder] Select rectangle");
                         Event.current.Use();
                         b._heldRectangles.Add(hovered);
                         b._editMode = EditMode.EditHeld;
@@ -168,7 +168,7 @@ namespace CryptBuilder
                         if (!draggingNew) 
                             return;
 
-                        Undo.RecordObject(b, "Add new rectangle");
+                        Undo.RecordObject(b, "[CryptBuilder] Add new rectangle");
                         var size = dragPosition - clickPosition;
                         size.x = Mathf.Abs(size.x);
                         size.y = Mathf.Abs(size.y);
@@ -213,7 +213,7 @@ namespace CryptBuilder
                     else Handles.TransformHandle(ref pos, ref rotation, ref scale);
                     if (EditorGUI.EndChangeCheck())
                     {
-                        Undo.RecordObject(b, "Transform held rectangle(s)");
+                        Undo.RecordObject(b, "[CryptBuilder] Transform held rectangle(s)");
                         Vector2 posDif = pos.To2D();
                         Vector2 scaleDif = scale.To2D() / b._heldRectangles[0].HalfSize;
                         scaleDif *= uniformScale / lastUniformScale;
@@ -244,7 +244,7 @@ namespace CryptBuilder
                     {
                         case KeyCode.Delete:
                         case KeyCode.Backspace:
-                            Undo.RecordObject(b, "Delete held rectangle(s)");
+                            Undo.RecordObject(b, "[CryptBuilder] Delete held rectangle(s)");
                             b._heldRectangles.Clear();
                             b._editMode = EditMode.DontEdit;
                             Event.current.Use();
@@ -254,7 +254,7 @@ namespace CryptBuilder
                         case KeyCode.C:
                             if (Event.current.control)
                             {
-                                Undo.RecordObject(b, "Add held rectangle(s) to clipboard");
+                                Undo.RecordObject(b, "[CryptBuilder] Add held rectangle(s) to clipboard");
                                 b._rectangleClipboard.Clear();
                                 foreach (var rect in b._heldRectangles)
                                     b._rectangleClipboard.Add(rect);
@@ -267,7 +267,7 @@ namespace CryptBuilder
                         case KeyCode.D:
                             if(Event.current.control)
                             {
-                                Undo.RecordObject(b, "Duplicate held rectangle(s)");
+                                Undo.RecordObject(b, "[CryptBuilder] Duplicate held rectangle(s)");
                                 for(int i = 0; i < b._heldRectangles.Count; i++)
                                 {
                                     var rect = b._heldRectangles [i];
@@ -297,7 +297,7 @@ namespace CryptBuilder
                             return;
                         if(GetRectAtMouse(b, out rectIndex, out node))
                         {
-                            Undo.RecordObject(b, "Add rectangle to selection");
+                            Undo.RecordObject(b, "[CryptBuilder] Add rectangle to selection");
                             Event.current.Use();
                             b._heldRectangles.Add(b.RectangleTree.Nodes[node].Rectangles[rectIndex]);
                             b.RectangleTree.Nodes[node].RemoveRectangle(rectIndex, b.RectangleTree);
@@ -309,7 +309,7 @@ namespace CryptBuilder
                             var rect = b._heldRectangles[i];
                             if (rect.ContainsPoint(mousePos))
                             {
-                                Undo.RecordObject(b, "Deselect rectangle");
+                                Undo.RecordObject(b, "[CryptBuilder] Deselect rectangle");
                                 b._heldRectangles.RemoveAt(i);
                                 if(b._heldRectangles.Count == 0)
                                     b._editMode = EditMode.DontEdit;
@@ -328,7 +328,7 @@ namespace CryptBuilder
 
             void DeselectHeld(Builder b)
             {
-                Undo.RecordObject(b, "Deselect rectangle(s)");
+                Undo.RecordObject(b, "[CryptBuilder] Deselect rectangle(s)");
                 b._editMode = EditMode.DontEdit;
                 foreach (var rect in b._heldRectangles)
                 {

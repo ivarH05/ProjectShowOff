@@ -5,7 +5,7 @@ namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
-        [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
+        [field:SerializeField, HideInInspector] public RectangleCollection RectangleTree {get; private set; }
         [SerializeField] float _rectRounding = .25f;
         float _rectRotationRounding = 90;
 
@@ -46,8 +46,42 @@ namespace CryptBuilder
                     if (!(RectangleTree.TryGetRectangleAtPoint(point, out int nodeI, out int rectI) && nodeI == nodeIndex && rectI == rectIndex))
                         continue;
 
+                    GenerateFloor(point);
+
+                    Vector2 testEdge;
+                    Vector2 normal = new(1, 0);
+                    testEdge = point + normal * _rectRounding;
+                    if (testEdge.x > bounds.Maximum.x && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
+                        GenerateWall(testEdge, normal);
+
+                    normal = new(-1, 0);
+                    testEdge = point + normal * _rectRounding;
+                    if (testEdge.x < bounds.Minimum.x && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
+                        GenerateWall(testEdge, normal);
+
+                    normal = new(0, 1);
+                    testEdge = point + normal * _rectRounding;
+                    if (testEdge.y > bounds.Maximum.y && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
+                        GenerateWall(testEdge, normal);
+
+                    normal = new(0, -1);
+                    testEdge = point + normal * _rectRounding;
+                    if (testEdge.y < bounds.Minimum.y && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
+                        GenerateWall(testEdge, normal);
                 }
             }
+        }
+
+        void GenerateFloor(Vector2 point)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(point.To3D(), point.To3D(.1f));
+        }
+
+        void GenerateWall(Vector2 point, Vector2 normal)
+        {
+            Gizmos.color = Color.orange;
+            Gizmos.DrawLine(point.To3D(), (point + normal * _rectRounding * .5f).To3D());
         }
     }
 }
