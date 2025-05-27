@@ -1,87 +1,164 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
-        [field:SerializeField, HideInInspector] public RectangleCollection RectangleTree {get; private set; }
+        [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
         [SerializeField] float _rectRounding = .25f;
         float _rectRotationRounding = 90;
 
         private void OnDrawGizmosSelected()
         {
-            GenerateShapeRecursive(1);
+            if (_rectRounding < 0.01f) 
+                return;
 
-            void GenerateShapeRecursive(int nodeIndex)
+            GizmoGenerator gen = new();
+            gen.RectRounding = _rectRounding;
+            GenerateCrypt(gen);
+        }
+
+        /// <summary>
+        /// Generates the crypt using the given generator.
+        /// </summary>
+        public void GenerateCrypt<TGenerator>(TGenerator generator) where TGenerator : ICryptGenerator
+        {
+            GenerateShapeRecursive(1, ref generator);
+
+            void GenerateShapeRecursive(int nodeIndex, ref TGenerator gen)
             {
                 var node = RectangleTree.Nodes[nodeIndex];
                 var rects = node.Rectangles;
-                if(rects != null)
+                if (rects != null)
                 {
-                    for(int i = 0; i<rects.Count; i++)
+                    for (int i = 0; i < rects.Count; i++)
                     {
-                        GenerateTiles(nodeIndex, i);
+                        GenerateTiles(nodeIndex, i, ref gen);
                     }
                 }
-                if(node.ChildAIndex > 0)
+                if (node.ChildAIndex > 0)
                 {
-                    GenerateShapeRecursive(node.ChildAIndex);
-                    GenerateShapeRecursive(node.ChildBIndex);
+                    GenerateShapeRecursive(node.ChildAIndex, ref gen);
+                    GenerateShapeRecursive(node.ChildBIndex, ref gen);
                 }
             }
         }
 
-        void GenerateTiles(int nodeIndex, int rectIndex)
+        void GenerateTiles<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptGenerator
         {
             var node = RectangleTree.Nodes[nodeIndex];
             var rects = node.Rectangles;
             var rect = rects[rectIndex];
             var bounds = rect.GetBounds();
+            float thisPriority = bounds.Size.x * bounds.Size.y;
+
+            var contestingRects = RectangleTree.GetRectanglesIntersectingBox(bounds);
+            List<BoundingBox> higherPriorityRects = new();
+            foreach ((int cNode, int cRect) in contestingRects)
+            {
+                if (cNode == nodeIndex && cRect == rectIndex) 
+                    continue;
+
+                var contestRect = RectangleTree.Nodes[cNode].Rectangles[cRect].GetBounds();
+                var contestPriority = contestRect.Size.x * contestRect.Size.y;
+
+                if (contestPriority < thisPriority)
+                    continue;
+
+                if (contestPriority > thisPriority)
+                {
+                    higherPriorityRects.Add(contestRect);
+                    continue;
+                }
+
+                var contestCenter = contestRect.Center;
+                var thisCenter = bounds.Center;
+                if (contestCenter.y > thisCenter.y ||
+                    contestCenter.x > thisCenter.x ||
+                    contestRect.GetHashCode() > bounds.GetHashCode())
+                {
+                    higherPriorityRects.Add(contestRect);
+                    continue;
+                }
+
+                // if there are two literally equal rectangles, idk if i can do anything about it
+                // the room will just generate double like whatever
+            }
+
+            gen.OnNewRoom();
+
             for (float x = bounds.Minimum.x + .5f*_rectRounding; x < bounds.Maximum.x; x += _rectRounding)
             {
                 for(float y = bounds.Minimum.y + .5f * _rectRounding; y < bounds.Maximum.y; y += _rectRounding)
                 {
                     Vector2 point = new(x, y);
-                    if (!(RectangleTree.TryGetRectangleAtPoint(point, out int nodeI, out int rectI) && nodeI == nodeIndex && rectI == rectIndex))
-                        continue;
+                    bool lowerPriority = false;
+                    foreach (var r in higherPriorityRects)
+                        if (r.ContainsPoint(point))
+                        {
+                            lowerPriority = true;
+                            break;
+                        }
+                    if (lowerPriority) continue;
 
-                    GenerateFloor(point);
+                    gen.GenerateFloor(point);
 
                     Vector2 testEdge;
                     Vector2 normal = new(1, 0);
                     testEdge = point + normal * _rectRounding;
                     if (testEdge.x > bounds.Maximum.x && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
-                        GenerateWall(testEdge, normal);
+                        gen.GenerateWall(testEdge, normal);
 
                     normal = new(-1, 0);
                     testEdge = point + normal * _rectRounding;
                     if (testEdge.x < bounds.Minimum.x && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
-                        GenerateWall(testEdge, normal);
+                        gen.GenerateWall(testEdge, normal);
 
                     normal = new(0, 1);
                     testEdge = point + normal * _rectRounding;
                     if (testEdge.y > bounds.Maximum.y && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
-                        GenerateWall(testEdge, normal);
+                        gen.GenerateWall(testEdge, normal);
 
                     normal = new(0, -1);
                     testEdge = point + normal * _rectRounding;
                     if (testEdge.y < bounds.Minimum.y && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _))
-                        GenerateWall(testEdge, normal);
+                        gen.GenerateWall(testEdge, normal);
                 }
             }
         }
 
-        void GenerateFloor(Vector2 point)
+
+        public interface ICryptGenerator
         {
-            Gizmos.color = Color.white;
-            Gizmos.DrawLine(point.To3D(), point.To3D(.1f));
+            void OnNewRoom();
+            void GenerateFloor(Vector2 point);
+            void GenerateWall(Vector2 point, Vector2 normal);
         }
 
-        void GenerateWall(Vector2 point, Vector2 normal)
+        private struct GizmoGenerator : ICryptGenerator
         {
-            Gizmos.color = Color.orange;
-            Gizmos.DrawLine(point.To3D(), (point + normal * _rectRounding * .5f).To3D());
+            public float RectRounding;
+            float _roomCount;
+
+            public void GenerateFloor(Vector2 point)
+            {
+                Gizmos.color = Color.white;
+                Gizmos.DrawLine(point.To3D(_roomCount), point.To3D(.1f + _roomCount));
+            }
+
+            public void GenerateWall(Vector2 point, Vector2 normal)
+            {
+                Gizmos.color = Color.orange;
+                Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
+            }
+
+            public void OnNewRoom()
+            {
+                _roomCount+=.1f;
+            }
         }
     }
 }

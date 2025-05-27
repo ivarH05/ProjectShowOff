@@ -16,7 +16,7 @@ namespace CryptBuilder
             Handles.color = col;
             var node = owner.Nodes[nodeIndex];
             if (showBounds)
-                DrawBoundingBox(node.Bounds);
+                DrawBoundingBox(node.Bounds, .1f);
             if (node.Rectangles != null)
             {
                 col.a = 1f;
@@ -41,16 +41,16 @@ namespace CryptBuilder
                 //Handles.DrawLine(avgPos.To3D(), (avgPos + line.Normal).To3D());
             }
         }
-        public static void DrawBoundingBox(BoundingBox box)
+        public static void DrawBoundingBox(BoundingBox box, float height = 0)
         {
             var ogcol = Handles.color;
             if (!box.IsValid) Handles.color *= Color.pink;
             Vector2 otherCorner1 = new(box.Minimum.x, box.Maximum.y);
             Vector2 otherCorner2 = new(box.Maximum.x, box.Minimum.y);
-            Handles.DrawLine(otherCorner1.To3D(), box.Minimum.To3D());
-            Handles.DrawLine(otherCorner1.To3D(), box.Maximum.To3D());
-            Handles.DrawLine(otherCorner2.To3D(), box.Maximum.To3D());
-            Handles.DrawLine(otherCorner2.To3D(), box.Minimum.To3D());
+            Handles.DrawLine(otherCorner1.To3D(height), box.Minimum.To3D(height));
+            Handles.DrawLine(otherCorner1.To3D(height), box.Maximum.To3D(height));
+            Handles.DrawLine(otherCorner2.To3D(height), box.Maximum.To3D(height));
+            Handles.DrawLine(otherCorner2.To3D(height), box.Minimum.To3D(height));
             Handles.color = ogcol;
         }
     }

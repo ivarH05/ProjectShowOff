@@ -15,7 +15,6 @@ namespace CryptBuilder
             var bounds = rect.GetBounds();
             if(Count < 2)
             {
-                Debug.Log("empty tree");
                 Add(default);
                 Add(BoundingNode.CreateRoot());
             }
@@ -67,6 +66,33 @@ namespace CryptBuilder
         {
             float priority = 0;
             return Nodes[1].TryGetRectangleAtPoint(point, this, ref priority, out rectangleIndex, out nodeIndex);
+        }
+
+        public List<(int nodeIndex, int rectIndex)> GetRectanglesIntersectingBox(BoundingBox box)
+        {
+            List<(int, int)> res = new();
+            RecursiveRectBoxSearch(1);
+
+            void RecursiveRectBoxSearch(int nodeIndex)
+            {
+                var node = Nodes[nodeIndex];
+
+                if (!node.Bounds.Intersects(box)) return;
+
+                var rects = node.Rectangles;
+                if(rects != null)
+                    for (int i = 0; i < rects.Count; i++)
+                        if (rects[i].GetBounds().Intersects(box))
+                            res.Add((nodeIndex, i));
+
+                if(node.ChildAIndex > 0)
+                {
+                    RecursiveRectBoxSearch(node.ChildAIndex);
+                    RecursiveRectBoxSearch(node.ChildBIndex);
+                }
+            }
+
+            return res;
         }
     }
 }
