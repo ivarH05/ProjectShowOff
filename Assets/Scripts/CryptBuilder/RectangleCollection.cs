@@ -23,7 +23,7 @@ namespace CryptBuilder
             root.AddRectangle(rect, bounds, this);
         }
 
-        public void Regenerate()
+        public void Regenerate(float sizeRounding = 0, float rotationRounding = 0)
         {
             var previousNodes = Nodes;
             Nodes = new BoundingNode[Nodes.Length];
@@ -39,6 +39,7 @@ namespace CryptBuilder
                 {
                     foreach (var rect in node.Rectangles)
                     {
+                        rect.Round(sizeRounding, rotationRounding);
                         AddRectangle(rect);
                     }
                 }
@@ -65,7 +66,7 @@ namespace CryptBuilder
         public bool TryGetRectangleAtPoint(Vector2 point, out int nodeIndex, out int rectangleIndex)
         {
             float priority = 0;
-            return Nodes[1].TryGetRectangleAtPoint(point, this, ref priority, out nodeIndex, out rectangleIndex);
+            return Nodes[1].TryGetRectangleAtPoint(point, this, ref priority, out rectangleIndex, out nodeIndex);
         }
     }
 }

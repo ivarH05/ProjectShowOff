@@ -581,11 +581,11 @@ MonoBehaviour:
       - HalfSize: {x: 3, y: 2}
         CenterPosition: {x: 6, y: 7}
         Rotation: 270
-      - HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 9, y: 5.5}
-        Rotation: 270
       - HalfSize: {x: 3, y: 2}
         CenterPosition: {x: 12, y: 7}
+        Rotation: 270
+      - HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 9, y: 5.5}
         Rotation: 270
     - _parentIndex: 2
       _thisIndex: 5
@@ -595,15 +595,15 @@ MonoBehaviour:
         Minimum: {x: 10, y: 0.99999976}
         Maximum: {x: 21, y: 11}
       _rectangles:
-      - HalfSize: {x: 3, y: 2}
-        CenterPosition: {x: 13, y: 3}
-        Rotation: 180
-      - HalfSize: {x: 5, y: 2}
-        CenterPosition: {x: 19, y: 6}
-        Rotation: 270
       - HalfSize: {x: 1, y: 2}
         CenterPosition: {x: 15.5, y: 7}
         Rotation: 270
+      - HalfSize: {x: 5, y: 2}
+        CenterPosition: {x: 19, y: 6}
+        Rotation: 270
+      - HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 13, y: 3}
+        Rotation: 180
     - _parentIndex: 3
       _thisIndex: 6
       _childAIndex: 0
@@ -615,11 +615,11 @@ MonoBehaviour:
       - HalfSize: {x: 4, y: 3}
         CenterPosition: {x: 5, y: 18}
         Rotation: 270
-      - HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 9, y: 15.5}
-        Rotation: 270
       - HalfSize: {x: 3, y: 1}
         CenterPosition: {x: 6.5, y: 13}
+        Rotation: 270
+      - HalfSize: {x: 1.5, y: 2}
+        CenterPosition: {x: 9, y: 17}
         Rotation: 270
     - _parentIndex: 3
       _thisIndex: 7
@@ -630,13 +630,13 @@ MonoBehaviour:
         Maximum: {x: 22, y: 21}
       _rectangles:
       - HalfSize: {x: 1, y: 4.5}
-        CenterPosition: {x: 16, y: 14}
+        CenterPosition: {x: 16, y: 20}
         Rotation: 270
       - HalfSize: {x: 3, y: 6}
         CenterPosition: {x: 16, y: 17}
         Rotation: 270
       - HalfSize: {x: 1, y: 4.5}
-        CenterPosition: {x: 16, y: 20}
+        CenterPosition: {x: 16, y: 14}
         Rotation: 270
     - _parentIndex: 0
       _thisIndex: 0

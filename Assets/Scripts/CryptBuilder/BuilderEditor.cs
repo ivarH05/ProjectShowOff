@@ -50,10 +50,12 @@ namespace CryptBuilder
                     b._debugShowBounds = !b._debugShowBounds;
                     SceneView.RepaintAll() ;
                 }
-                if(GUILayout.Button("Regenerate tree (may improve performance)"))
+                if(GUILayout.Button("Regenerate tree (may improve performance, fixes rounding)"))
                 {
-                    b.RectangleTree.Regenerate();
+                    Undo.RecordObject(b, "Regenerate crypt tree");
+                    b.RectangleTree.Regenerate(b._rectRounding, b._rectRotationRounding);
                     SceneView.RepaintAll();
+                    EditorUtility.SetDirty(b);
                 }
 
             }
@@ -105,7 +107,7 @@ namespace CryptBuilder
 
                 if (!TryTracePlaneFromMouse(out var mousePos)) return false;
 
-                return b.RectangleTree.TryGetRectangleAtPoint(mousePos, out rect, out node);
+                return b.RectangleTree.TryGetRectangleAtPoint(mousePos, out node, out rect);
             }
 
             void DontEdit(Builder b)
