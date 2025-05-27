@@ -10,7 +10,7 @@ namespace DialogueSystem
         EventData eventData;
         internal DialogueEventNode() : base()
         {
-            nodeType = NodeType.Branch;
+            nodeType = NodeType.Event;
             title = "Event";
 
             SetColor(new Color(0.35f, 0.17f, 0.27f));
@@ -59,7 +59,7 @@ namespace DialogueSystem
         public override NodeData SaveData()
         {
             EventNodeData data = new EventNodeData(base.SaveData());
-            data.eventData = eventData;
+            data.onRun = eventData.onRun;
             return data;
         }
 
@@ -68,7 +68,10 @@ namespace DialogueSystem
             base.LoadData(data);
             if (!(data is EventNodeData d))
                 return;
-            eventData = d.eventData;
+            eventData.onRun = d.onRun;
+
+            RefreshExpandedState();
+            RefreshPorts();
         }
     }
     
@@ -82,7 +85,8 @@ namespace DialogueSystem
             this.Position = data.Position;
         }
 
-        public EventData eventData;
+        [SerializeField]
+        public DialogueEvent onRun = new DialogueEvent();
     }
 
     [System.Serializable]

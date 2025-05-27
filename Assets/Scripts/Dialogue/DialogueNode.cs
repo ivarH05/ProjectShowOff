@@ -97,7 +97,7 @@ namespace DialogueSystem
 
         public virtual void LoadData(NodeData data)
         {
-            GUID = data.GUID;
+            this.GUID = data.GUID;
             nodeType = data.type;
         }
     }

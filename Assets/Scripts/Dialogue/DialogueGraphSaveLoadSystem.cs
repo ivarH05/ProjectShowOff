@@ -14,13 +14,19 @@ namespace DialogueSystem
 {
     public static class SaveLoadSystem
     {
+
         public static void Save(DialogueGraphView graphView)
         {
-            string path = EditorUtility.SaveFilePanel("Save Dialogue Graph", "Assets", "DialogueGraph", "json");
-            if (path == null || path == "")
+            string path = EditorUtility.SaveFilePanel("Save Dialogue Graph", "Assets", "DialogueGraph", "asset");
+            if (string.IsNullOrEmpty(path))
                 return;
 
-            var saveData = new GraphSaveData();
+            path = "Assets" + path.Substring(Application.dataPath.Length);
+            Save(graphView, path);
+        }
+        public static void Save(DialogueGraphView graphView, string path)
+        {
+            Dialogue saveData = ScriptableObject.CreateInstance<Dialogue>();
 
             foreach (var node in graphView.nodes.OfType<DialogueNode>())
             {
@@ -34,9 +40,7 @@ namespace DialogueSystem
                 saveData.Nodes.Add(nodeData);
             }
 
-
-            var json = JsonUtility.ToJson(saveData, true); 
-            File.WriteAllText(path, json);
+            AssetDatabase.CreateAsset(saveData, path);
         }
 
         private static List<ConnectionData> ExtractConnections(DialogueNode node)
@@ -90,26 +94,31 @@ namespace DialogueSystem
 
         public static void Load(DialogueGraphView graphView)
         {
-            string path = EditorUtility.OpenFilePanel("Load Dialogue Graph", "Assets", "json");
-
-            if (path == null)
+            string path = EditorUtility.OpenFilePanel("Load Dialogue Graph", "Assets", "asset");
+            if (string.IsNullOrEmpty(path))
                 return;
+            path = "Assets" + path.Substring(Application.dataPath.Length);
 
+            Load(graphView, path);
+        }
+
+
+        public static void Load(DialogueGraphView graphView, string path)
+        {
             if (!File.Exists(path)) 
                 return;
 
-            // Clear existing graph
             graphView.ClearGraph();
 
-            var json = File.ReadAllText(path);
-            var saveData = JsonUtility.FromJson<GraphSaveData>(json);
+            var saveData = AssetDatabase.LoadAssetAtPath<Dialogue>(path);
 
-            // First recreate all nodes
             Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
             foreach (var nodeData in saveData.Nodes)
             {
                 DialogueNode node = graphView.CreateEmptyNode(nodeData.type, nodeData.Position);
                 node.LoadData(nodeData);
+
+                nodeLookup.Add(node.GUID, node);
 
                 if (!(node is DialogueTextNode textNode))
                     continue;
@@ -121,7 +130,6 @@ namespace DialogueSystem
                 }
             }
 
-            // Then recreate all edges
             foreach (var connection in saveData.Connections)
             {
                 var outputNode = nodeLookup[connection.OutputNodeGUID];

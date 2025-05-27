@@ -25,6 +25,9 @@ namespace DialogueSystem
 
             CreateDefaultStartNode(new Vector2(200, 250));
             CreateDefaultEndNode(new Vector2(700, 250));
+
+
+            SaveLoadSystem.Load(this, "Assets/Temp/DialogueBackup.asset");
         }
 
         private void OnContextClick(MouseDownEvent evt)
@@ -151,6 +154,11 @@ namespace DialogueSystem
                 }
                 return base.canDeleteSelection;
             }
+        }
+
+        public void Save()
+        {
+            SaveLoadSystem.Save(this);
         }
     }
 }

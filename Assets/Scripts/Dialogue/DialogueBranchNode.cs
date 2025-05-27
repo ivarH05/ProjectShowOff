@@ -62,7 +62,7 @@ namespace DialogueSystem
         public override NodeData SaveData()
         {
             BranchNodeData data = new BranchNodeData(base.SaveData());
-            data.branchData = branchData;
+            data.flag = branchData.flag;
             return data;
         }
 
@@ -71,7 +71,7 @@ namespace DialogueSystem
             base.LoadData(data);
             if (!(data is BranchNodeData d))
                 return;
-            branchData = d.branchData;
+            branchData.flag = d.flag;
         }
     }
 
@@ -85,7 +85,8 @@ namespace DialogueSystem
             this.Position = data.Position;
         }
 
-        public BranchData branchData;
+        [SerializeReference]
+        public DialogueConditionFlag flag;
     }
 
     [System.Serializable]

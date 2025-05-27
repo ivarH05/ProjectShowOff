@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.PackageManager.UI;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -10,14 +11,11 @@ namespace DialogueSystem
     {
         private DialogueGraphView graphView;
 
-
         [MenuItem("Window/Dialogue Graph")]
         public static void OpenDialogueGraphEditor()
         {
             DialogueGraphEditor window = GetWindow<DialogueGraphEditor>("Dialogue Graph Editor");
             window.Show();
-
-
         }
 
         public void CreateGUI()
@@ -29,6 +27,8 @@ namespace DialogueSystem
             };
             graphView.StretchToParentSize();
             rootVisualElement.Add(graphView);
+
+            AssemblyReloadEvents.beforeAssemblyReload += () => { SaveLoadSystem.Save(graphView, "Assets/Temp/DialogueBackup.asset"); };
 
             // Create a toolbar with Save and Load buttons
             var toolbar = new Toolbar();

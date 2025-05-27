@@ -138,7 +138,7 @@ namespace DialogueSystem
             base.LoadData(data);
             if (!(data is TextNodeData d))
                 return;
-            dialogueText = d.dialogueText;
+            SetText(d.dialogueText);
         }
     }
 

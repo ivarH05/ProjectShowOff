@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: DialogueBackup
+  m_EditorClassIdentifier: 
+  Nodes:
+  - rid: 7572577879504978179
+  - rid: 7572577879504978180
+  - rid: 7572577879504978181
+  - rid: 7572577879504978182
+  - rid: 7572577879504978183
+  - rid: 7572577879504978184
+  Connections:
+  - OutputNodeGUID: 87aedba3-45d6-4656-8d87-0e7743340d4f
+    OutputNodeIndex: 1
+    InputNodeGUID: 157f7381-9b67-4829-bd18-4b31c480203b
+  - OutputNodeGUID: 157f7381-9b67-4829-bd18-4b31c480203b
+    OutputNodeIndex: 1
+    InputNodeGUID: cb52a8e1-d6a8-4a6b-8d50-8cf5ca653d7b
+  - OutputNodeGUID: d032e504-65bf-4c71-b81f-88f708d4f297
+    OutputNodeIndex: 0
+    InputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
+  - OutputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
+    OutputNodeIndex: 1
+    InputNodeGUID: 157f7381-9b67-4829-bd18-4b31c480203b
+  - OutputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
+    OutputNodeIndex: 2
+    InputNodeGUID: cb52a8e1-d6a8-4a6b-8d50-8cf5ca653d7b
+  - OutputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
+    OutputNodeIndex: 1
+    InputNodeGUID: 87aedba3-45d6-4656-8d87-0e7743340d4f
+  - OutputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
+    OutputNodeIndex: 2
+    InputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
+  references:
+    version: 2
+    RefIds:
+    - rid: 7572577879504978179
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 87aedba3-45d6-4656-8d87-0e7743340d4f
+        type: 5
+        Position: {x: 540, y: 88}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
+          _boolean: 0
+    - rid: 7572577879504978180
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 157f7381-9b67-4829-bd18-4b31c480203b
+        type: 5
+        Position: {x: 778, y: 185}
+        onRun:
+          type: 0
+          flag: {fileID: 0}
+          _boolean: 1
+    - rid: 7572577879504978181
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d032e504-65bf-4c71-b81f-88f708d4f297
+        type: 3
+        Position: {x: 221, y: 206}
+    - rid: 7572577879504978182
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 44111226-5f42-40a2-b054-0551eb3b4c35
+        type: 1
+        Position: {x: 572, y: 231}
+        dialogueText: 123
+        Options:
+        - ResponseText: 456
+          index: 0
+        - ResponseText: 789
+          index: 1
+    - rid: 7572577879504978183
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: cb52a8e1-d6a8-4a6b-8d50-8cf5ca653d7b
+        type: 4
+        Position: {x: 1019, y: 351}
+    - rid: 7572577879504978184
+      type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
+        type: 2
+        Position: {x: 384, y: 206}
+        flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}

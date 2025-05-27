@@ -7,9 +7,13 @@ namespace DialogueSystem
     [System.Serializable]
     public class DialogueEvent
     {
+        [SerializeField]
         public DialogueEventType type = DialogueEventType.SetConditionFlag;
 
+        [SerializeField]
         public DialogueConditionFlag flag;
+
+        [SerializeField]
         public bool _boolean = true;
 
         public void Run()
