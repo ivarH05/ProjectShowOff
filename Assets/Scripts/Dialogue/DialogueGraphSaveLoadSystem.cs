@@ -21,12 +21,13 @@ namespace DialogueSystem
 
             var saveData = new GraphSaveData();
 
-            // Save nodes
             foreach (var node in graphView.nodes.OfType<DialogueNode>())
             {
                 List<OptionData> options = new List<OptionData>();
                 if (node is DialogueTextNode textNode)
                     options = ExtractOptions(textNode);
+
+                saveData.Connections.AddRange(ExtractConnections(node));
 
                 saveData.Nodes.Add(new NodeData
                 {
@@ -36,36 +37,41 @@ namespace DialogueSystem
                     Options = options,
                     type = node.nodeType,
                 });
-
-                List<Port> ports = node.mainContainer.Query<Port>().Build().ToList();
-
-                for (int i = 0; i < ports.Count; i++)
-                {
-                    Port port = ports[i];
-                    if (port.direction == Direction.Input)
-                        continue;
-                    var connections = port.connections.ToArray();
-                    for (int j = 0; j < connections.Length; j++)
-                    {
-                        var connection = connections[j];
-                        var inputNode = FindParentOfType<DialogueNode>(connection.input);
-
-                        saveData.Connections.Add(new ConnectionData
-                        {
-                            OutputNodeGUID = node.GUID,
-                            OutputNodeIndex = i,
-                            InputNodeGUID = inputNode.GUID
-
-                        });
-                    }
-                }
             }
 
 
-
-            // Save to JSON
             var json = JsonUtility.ToJson(saveData, true); 
             File.WriteAllText(path, json);
+        }
+
+        private static List<ConnectionData> ExtractConnections(DialogueNode node)
+        {
+            List<ConnectionData> result = new List<ConnectionData>();
+
+            List<Port> ports = node.mainContainer.Query<Port>().Build().ToList();
+
+            for (int i = 0; i < ports.Count; i++)
+            {
+                Port port = ports[i];
+                if (port.direction == Direction.Input)
+                    continue;
+
+                var connections = port.connections.ToArray();
+                for (int j = 0; j < connections.Length; j++)
+                {
+                    var connection = connections[j];
+                    var inputNode = FindParentOfType<DialogueNode>(connection.input);
+
+                    result.Add(new ConnectionData
+                    {
+                        OutputNodeGUID = node.GUID,
+                        OutputNodeIndex = i,
+                        InputNodeGUID = inputNode.GUID
+                    });
+                }
+            }
+
+            return result;
         }
 
         private static List<OptionData> ExtractOptions(DialogueTextNode node)

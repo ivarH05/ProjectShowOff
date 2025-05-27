@@ -12,7 +12,7 @@ namespace DialogueSystem
         public DialogueGraphView()
         {
             this.StretchToParentSize();
-            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale * 4);
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
@@ -22,6 +22,9 @@ namespace DialogueSystem
             grid.StretchToParentSize();
 
             this.RegisterCallback<MouseDownEvent>(OnContextClick);
+
+            CreateDefaultStartNode(new Vector2(200, 250));
+            CreateDefaultEndNode(new Vector2(700, 250));
         }
 
         private void OnContextClick(MouseDownEvent evt)
@@ -33,10 +36,10 @@ namespace DialogueSystem
             Vector2 worldPosition = contentViewContainer.WorldToLocal(this.LocalToWorld(mousePosition));
 
             var menu = new GenericMenu();
-            menu.AddItem(new GUIContent("Dialogue"), false, () => CreateDefaultTextNode(worldPosition));
             menu.AddItem(new GUIContent("Branch"), false, () => CreateDefaultBranchNode(worldPosition));
-            menu.AddItem(new GUIContent("Start"), false, () => CreateDefaultStartNode(worldPosition));
+            menu.AddItem(new GUIContent("Dialogue"), false, () => CreateDefaultTextNode(worldPosition));
             menu.AddItem(new GUIContent("End"), false, () => CreateDefaultEndNode(worldPosition));
+            menu.AddItem(new GUIContent("Event"), false, () => CreateDefaultEventNode(worldPosition));
             menu.ShowAsContext();
         }
 
@@ -52,6 +55,8 @@ namespace DialogueSystem
                     return CreateEmptyStartNode(position);
                 case NodeType.End:
                     return CreateEmptyEndNode(position);
+                case NodeType.Event:
+                    return CreateEmptyEventNode(position);
 
                 default:
                     return null;
@@ -69,6 +74,9 @@ namespace DialogueSystem
 
         public DialogueEndNode CreateEmptyEndNode(Vector2 position) => SetupNode(DialogueEndNode.EmptyNode(), position);
         public DialogueEndNode CreateDefaultEndNode(Vector2 position) => SetupNode(DialogueEndNode.DefaultNode(), position);
+
+        public DialogueEventNode CreateEmptyEventNode(Vector2 position) => SetupNode(DialogueEventNode.EmptyNode(), position);
+        public DialogueEventNode CreateDefaultEventNode(Vector2 position) => SetupNode(DialogueEventNode.DefaultNode(), position);
 
 
         private T SetupNode<T>(T node, Vector2 position) where T : DialogueNode
@@ -131,6 +139,18 @@ namespace DialogueSystem
             }
 
             return base.DeleteSelection();
+        }
+        protected override bool canDeleteSelection
+        {
+            get
+            {
+                foreach (var selected in selection)
+                {
+                    if (selected is DialogueStartNode)
+                        return false;
+                }
+                return base.canDeleteSelection;
+            }
         }
     }
 }

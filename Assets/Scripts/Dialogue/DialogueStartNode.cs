@@ -10,7 +10,7 @@ namespace DialogueSystem
             nodeType = NodeType.Start;
             title = "Start";
 
-            SetColor(new Color(0.2f, 0.3f, 0.2f));
+            SetColor(new Color(0.17f, 0.3f, 0.17f));
 
             CreateOutputPort("Start", outputContainer);
         }

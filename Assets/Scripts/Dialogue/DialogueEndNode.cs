@@ -8,9 +8,9 @@ namespace DialogueSystem
         internal DialogueEndNode() : base()
         {
             nodeType = NodeType.End;
-            title = "Dialogue Node";
+            title = "End";
 
-            SetColor(new Color(0.3f, 0.2f, 0.2f));
+            SetColor(new Color(0.32f, 0.15f, 0.18f));
 
             CreateInputPort("End", inputContainer);
         }

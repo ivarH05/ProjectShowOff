@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 namespace DialogueSystem
 {
-    public enum NodeType { None, Text, Branch, Start, End }
+    public enum NodeType { None, Text, Branch, Start, End, Event }
 
     public abstract class DialogueNode : Node
     {
