@@ -4,16 +4,6 @@ using UnityEngine;
 namespace DialogueSystem
 {
     [System.Serializable]
-    public class NodeData
-    {
-        public string GUID;
-        public string DialogueText;
-        public NodeType type;
-        public Vector2 Position;
-        public List<OptionData> Options;
-    }
-
-    [System.Serializable]
     public class OptionData
     {
         public string ResponseText;

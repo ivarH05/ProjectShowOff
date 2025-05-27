@@ -12,7 +12,7 @@ namespace DialogueSystem
         public DialogueGraphView()
         {
             this.StretchToParentSize();
-            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale * 4);
+            SetupZoom(ContentZoomer.DefaultMinScale / 8, ContentZoomer.DefaultMaxScale * 256);
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());

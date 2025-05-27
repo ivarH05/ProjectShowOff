@@ -8,7 +8,7 @@ namespace DialogueSystem
 {
     public class DialogueBranchNode : DialogueNode
     {
-        BranchData data;
+        BranchData branchData;
         internal DialogueBranchNode() : base()
         {
             nodeType = NodeType.Branch;
@@ -39,13 +39,13 @@ namespace DialogueSystem
         }
         internal void CreateBranchSettings(VisualElement parent)
         {
-            data = ScriptableObject.CreateInstance<BranchData>();
+            branchData = ScriptableObject.CreateInstance<BranchData>();
 
             var imguiContainer = new IMGUIContainer(() =>
             {
-                if (data == null) return;
+                if (branchData == null) return;
 
-                SerializedObject so = new SerializedObject(data);
+                SerializedObject so = new SerializedObject(branchData);
                 so.Update();
 
                 SerializedProperty prop = so.FindProperty("flag");
@@ -58,6 +58,34 @@ namespace DialogueSystem
             RefreshExpandedState();
             RefreshPorts();
         }
+
+        public override NodeData SaveData()
+        {
+            BranchNodeData data = new BranchNodeData(base.SaveData());
+            data.branchData = branchData;
+            return data;
+        }
+
+        public override void LoadData(NodeData data)
+        {
+            base.LoadData(data);
+            if (!(data is BranchNodeData d))
+                return;
+            branchData = d.branchData;
+        }
+    }
+
+    [System.Serializable]
+    public class BranchNodeData : NodeData
+    {
+        public BranchNodeData(NodeData data)
+        {
+            this.type = data.type;
+            this.GUID = data.GUID;
+            this.Position = data.Position;
+        }
+
+        public BranchData branchData;
     }
 
     [System.Serializable]

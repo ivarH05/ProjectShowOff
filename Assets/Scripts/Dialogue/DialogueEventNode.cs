@@ -7,7 +7,7 @@ namespace DialogueSystem
 {
     public class DialogueEventNode : DialogueNode
     {
-        EventData data;
+        EventData eventData;
         internal DialogueEventNode() : base()
         {
             nodeType = NodeType.Branch;
@@ -35,13 +35,13 @@ namespace DialogueSystem
         }
         internal void CreateEventSettings(VisualElement parent)
         {
-            data = ScriptableObject.CreateInstance<EventData>();
+            eventData = ScriptableObject.CreateInstance<EventData>();
 
             var imguiContainer = new IMGUIContainer(() =>
             {
-                if (data == null) return;
+                if (eventData == null) return;
 
-                SerializedObject so = new SerializedObject(data);
+                SerializedObject so = new SerializedObject(eventData);
                 so.Update();
 
                 SerializedProperty prop = so.FindProperty("onRun");
@@ -55,6 +55,34 @@ namespace DialogueSystem
             RefreshExpandedState();
             RefreshPorts();
         }
+
+        public override NodeData SaveData()
+        {
+            EventNodeData data = new EventNodeData(base.SaveData());
+            data.eventData = eventData;
+            return data;
+        }
+
+        public override void LoadData(NodeData data)
+        {
+            base.LoadData(data);
+            if (!(data is EventNodeData d))
+                return;
+            eventData = d.eventData;
+        }
+    }
+    
+    [System.Serializable]
+    public class EventNodeData : NodeData
+    {
+        public EventNodeData(NodeData data)
+        {
+            this.type = data.type;
+            this.GUID = data.GUID;
+            this.Position = data.Position;
+        }
+
+        public EventData eventData;
     }
 
     [System.Serializable]

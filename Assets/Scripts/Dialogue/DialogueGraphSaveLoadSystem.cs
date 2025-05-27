@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.StandaloneInputModule;
 
+
 namespace DialogueSystem
 {
     public static class SaveLoadSystem
@@ -23,20 +24,14 @@ namespace DialogueSystem
 
             foreach (var node in graphView.nodes.OfType<DialogueNode>())
             {
-                List<OptionData> options = new List<OptionData>();
+                NodeData nodeData = node.SaveData();
+
                 if (node is DialogueTextNode textNode)
-                    options = ExtractOptions(textNode);
+                    ((TextNodeData)nodeData).Options = ExtractOptions(textNode);
 
                 saveData.Connections.AddRange(ExtractConnections(node));
 
-                saveData.Nodes.Add(new NodeData
-                {
-                    GUID = node.GUID,
-                    DialogueText = node is DialogueTextNode t ? t.dialogueText : "",
-                    Position = node.GetPosition().position,
-                    Options = options,
-                    type = node.nodeType,
-                });
+                saveData.Nodes.Add(nodeData);
             }
 
 
@@ -114,15 +109,14 @@ namespace DialogueSystem
             foreach (var nodeData in saveData.Nodes)
             {
                 DialogueNode node = graphView.CreateEmptyNode(nodeData.type, nodeData.Position);
-                node.GUID = nodeData.GUID;
-                nodeLookup[node.GUID] = node;
+                node.LoadData(nodeData);
 
                 if (!(node is DialogueTextNode textNode))
                     continue;
-                textNode.SetText(nodeData.DialogueText);
-                for (int i = 0; i < nodeData.Options.Count; i++)
+                TextNodeData textNodeData = (TextNodeData)nodeData;
+                for (int i = 0; i < textNodeData.Options.Count; i++)
                 {
-                    OptionData option = nodeData.Options[i];
+                    OptionData option = textNodeData.Options[i];
                     textNode.CreateOutputOption(option.ResponseText);
                 }
             }

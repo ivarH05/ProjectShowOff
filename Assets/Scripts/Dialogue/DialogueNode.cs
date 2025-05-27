@@ -82,6 +82,32 @@ namespace DialogueSystem
             parent.Add(outputPort);
             return outputPort;
         }
+
+        public virtual NodeData SaveData()
+        {
+            return new NodeData
+            {
+                GUID = GUID,
+                //DialogueText = "", //node is DialogueTextNode t ? t.dialogueText : 
+                Position = GetPosition().position,
+                //Options = options,
+                type = nodeType,
+            };
+        }
+
+        public virtual void LoadData(NodeData data)
+        {
+            GUID = data.GUID;
+            nodeType = data.type;
+        }
+    }
+
+    [System.Serializable]
+    public class NodeData
+    {
+        public string GUID;
+        public NodeType type;
+        public Vector2 Position;
     }
 
     public class DialogueNodeOption

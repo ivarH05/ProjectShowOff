@@ -126,5 +126,33 @@ namespace DialogueSystem
             _AddItemButton = addItemButton;
             mainContainer.Add(addItemButton);
         }
+        public override NodeData SaveData()
+        {
+            TextNodeData data = new TextNodeData(base.SaveData());
+            data.dialogueText = dialogueText;
+            return data;
+        }
+
+        public override void LoadData(NodeData data)
+        {
+            base.LoadData(data);
+            if (!(data is TextNodeData d))
+                return;
+            dialogueText = d.dialogueText;
+        }
+    }
+
+    [System.Serializable]
+    public class TextNodeData : NodeData
+    {
+        public TextNodeData(NodeData data)
+        {
+            this.type = data.type;
+            this.GUID = data.GUID;
+            this.Position = data.Position;
+        }
+
+        public string dialogueText;
+        public List<OptionData> Options;
     }
 }
