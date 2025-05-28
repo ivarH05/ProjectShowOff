@@ -46,8 +46,6 @@ namespace Player
 
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-
             Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
