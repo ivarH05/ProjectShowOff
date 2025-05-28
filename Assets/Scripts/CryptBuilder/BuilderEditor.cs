@@ -10,7 +10,7 @@ namespace CryptBuilder
     {
         [SerializeField, HideInInspector] EditMode _editMode;
         [SerializeField, HideInInspector] List<RotatedRectangle> _heldRectangles = new();
-        [SerializeField] GameObject _generatedCrypt;
+        [SerializeField, HideInInspector] GameObject _generatedCrypt;
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
 
@@ -51,7 +51,12 @@ namespace CryptBuilder
                     b._debugShowBounds = !b._debugShowBounds;
                     SceneView.RepaintAll() ;
                 }
-                if(GUILayout.Button("Regenerate tree (may improve performance, fixes rounding)"))
+                if(GUILayout.Button("Toggle show walls (may improve performance)"))
+                {
+                    b._showWallGizmos = !b._showWallGizmos;
+                    SceneView.RepaintAll() ;
+                }
+                if (GUILayout.Button("Regenerate tree (may improve performance, fixes rounding)"))
                 {
                     Undo.RecordObject(b, "[CryptBuilder] Regenerate tree");
                     b.RectangleTree.Regenerate(b._rectRounding, b._rectRotationRounding);

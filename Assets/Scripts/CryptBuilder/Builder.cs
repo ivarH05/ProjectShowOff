@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace CryptBuilder
 {
@@ -12,10 +10,11 @@ namespace CryptBuilder
         [SerializeField] CryptRoomStyle _defaultStyle;
 
         float _rectRotationRounding = 90;
+        bool _showWallGizmos = true;
 
         private void OnDrawGizmosSelected()
         {
-            if (_rectRounding < 0.01f) 
+            if (_rectRounding < 0.01f || !_showWallGizmos) 
                 return;
 
             Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.identity, Vector3.one);

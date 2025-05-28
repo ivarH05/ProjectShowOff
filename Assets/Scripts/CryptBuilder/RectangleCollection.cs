@@ -34,6 +34,19 @@ namespace CryptBuilder
             void RecursiveReadd(int index)
             {
                 ref var node = ref previousNodes[index];
+                if(node.ChildAIndex > 0)
+                {
+                    if(UnityEngine.Random.value < .5f)
+                    {
+                        RecursiveReadd(node.ChildAIndex);
+                        RecursiveReadd(node.ChildBIndex);
+                    }
+                    else
+                    {
+                        RecursiveReadd(node.ChildBIndex);
+                        RecursiveReadd(node.ChildAIndex);
+                    }
+                }
                 if (node.Rectangles != null)
                 {
                     foreach (var rect in node.Rectangles)
@@ -41,11 +54,6 @@ namespace CryptBuilder
                         rect.Round(sizeRounding, rotationRounding);
                         AddRectangle(rect);
                     }
-                }
-                if(node.ChildAIndex > 0)
-                {
-                    RecursiveReadd(node.ChildAIndex);
-                    RecursiveReadd(node.ChildBIndex);
                 }
             }
         }
