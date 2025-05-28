@@ -9,9 +9,11 @@ namespace DialogueSystem
     [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/Dialogue")]
     public class Dialogue : ScriptableObject
     {
+        [TextArea(5, 15)]
+        public string Description;
+        [Space]
         [SerializeReference]
         public List<NodeData> Nodes = new List<NodeData>();
         public List<ConnectionData> Connections = new List<ConnectionData>();
-        public string a;
     }
 }
