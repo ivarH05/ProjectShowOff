@@ -33,14 +33,25 @@ namespace CryptBuilder
                 var b = (Builder)target;
                 CryptHandles.RoundRectangleSize = b._rectRounding;
                 CryptHandles.RoundRectangleRotation = b._rectRotationRounding;
-                
-                if (GUILayout.Button("Reset crypt"))
+
+                if(b._heldRectangles.Count == 1)
                 {
-                    Undo.RecordObject(b, "[CryptBuilder] Reset crypt");
-                    b.RectangleTree = new();
-                    SceneView.RepaintAll();
-                    EditorUtility.SetDirty(b);
+                    var rectCurrent = b._heldRectangles[0];
+                    
+                    EditorGUILayout.BeginHorizontal();
+                    GUILayout.Label("Set selected room's style:");
+                    var newStyle = EditorGUILayout.ObjectField(rectCurrent.Style, typeof(CryptRoomStyle), false);
+                    EditorGUILayout.EndHorizontal();
+
+                    if (newStyle != rectCurrent.Style)
+                    {
+                        Undo.RecordObject(b, "[CryptBuilder] Set selected room's style");
+                        rectCurrent.Style = (CryptRoomStyle)newStyle;
+                        b._heldRectangles[0] = rectCurrent;
+                        EditorUtility.SetDirty(b);
+                    }
                 }
+                
                 if(GUILayout.Button("Add new rect"))
                 {
                     DeselectHeld(b);
@@ -60,6 +71,13 @@ namespace CryptBuilder
                 {
                     Undo.RecordObject(b, "[CryptBuilder] Regenerate tree");
                     b.RectangleTree.Regenerate(b._rectRounding, b._rectRotationRounding);
+                    SceneView.RepaintAll();
+                    EditorUtility.SetDirty(b);
+                }
+                if (GUILayout.Button("Reset crypt"))
+                {
+                    Undo.RecordObject(b, "[CryptBuilder] Reset crypt");
+                    b.RectangleTree = new();
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }

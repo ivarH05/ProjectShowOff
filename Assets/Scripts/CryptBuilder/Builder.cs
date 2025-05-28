@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace CryptBuilder
@@ -144,11 +145,22 @@ namespace CryptBuilder
         {
             public float RectRounding;
 
-            public void OnNewRoom(RotatedRectangle room) {}
+            public void OnNewRoom(RotatedRectangle room) 
+            {
+                if (room.Style == null)
+                    Gizmos.color = Color.gray3;
+                else
+                {
+                    var id = GlobalObjectId.GetGlobalObjectIdSlow(room.Style);
+                    var seed = (uint)id.GetHashCode();
+                    Unity.Mathematics.Random rand = new(seed);
+                    float hue = rand.NextFloat();
+                    Gizmos.color = Color.HSVToRGB(hue, 1, .7f);
+                }
+            }
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
             {
-                Gizmos.color = Color.orange;
                 Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
             }
         }
