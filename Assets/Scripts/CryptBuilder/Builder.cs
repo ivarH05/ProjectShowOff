@@ -50,7 +50,13 @@ namespace CryptBuilder
             }
         }
 
-        void GenerateTiles<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptGenerator
+        /// <summary>
+        /// Generates the tiles for a single room.
+        /// </summary>
+        /// <param name="nodeIndex">The index of the node.</param>
+        /// <param name="rectIndex">The index of the room in the node's rectangle list.</param>
+        /// <param name="gen">The generator to use.</param>
+        public void GenerateTiles<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptGenerator
         {
             var node = RectangleTree.Nodes[nodeIndex];
             var rects = node.Rectangles;

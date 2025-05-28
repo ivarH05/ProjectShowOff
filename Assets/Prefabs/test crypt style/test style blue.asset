@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46add80a1fe643244adcc37bd73e03fe, type: 3}
   m_Name: test style blue
   m_EditorClassIdentifier: 
-  TilePrefab: {fileID: 1808051665107411577, guid: 4891ffcaf27e99444ade9c95e9db94d2, type: 3}
-  WallPrefab: {fileID: 2529809563243432532, guid: fec80f62bef767b41b50cce6e774ea3e, type: 3}
+  TilePrefabs:
+  - {fileID: 1808051665107411577, guid: 4891ffcaf27e99444ade9c95e9db94d2, type: 3}
+  WallPrefabs:
+  - {fileID: 2529809563243432532, guid: fec80f62bef767b41b50cce6e774ea3e, type: 3}
+  CeilingPrefabs: []

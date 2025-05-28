@@ -556,46 +556,22 @@ MonoBehaviour:
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 2
-      _childAIndex: 6
-      _childBIndex: 7
+      _childAIndex: 4
+      _childBIndex: 5
       _bounds:
         Minimum: {x: 5.5, y: 2}
         Maximum: {x: 22.5, y: 13}
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 3
-      _childAIndex: 4
-      _childBIndex: 5
+      _childAIndex: 6
+      _childBIndex: 7
       _bounds:
         Minimum: {x: 3.5, y: 12}
         Maximum: {x: 23.5, y: 23}
       _rectangles: []
-    - _parentIndex: 3
-      _thisIndex: 4
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 7, y: 12}
-        Maximum: {x: 12.5, y: 20}
-      _rectangles:
-      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
-        HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 10.5, y: 19}
-        Rotation: 270
-      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
-        HalfSize: {x: 3, y: 1}
-        CenterPosition: {x: 8, y: 15}
-        Rotation: 270
-    - _parentIndex: 3
-      _thisIndex: 5
-      _childAIndex: 8
-      _childBIndex: 9
-      _bounds:
-        Minimum: {x: 3.5, y: 14}
-        Maximum: {x: 23.5, y: 23}
-      _rectangles: []
     - _parentIndex: 2
-      _thisIndex: 6
+      _thisIndex: 4
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -615,7 +591,7 @@ MonoBehaviour:
         CenterPosition: {x: 10.5, y: 7.5}
         Rotation: 270
     - _parentIndex: 2
-      _thisIndex: 7
+      _thisIndex: 5
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -623,31 +599,39 @@ MonoBehaviour:
         Maximum: {x: 22.5, y: 13}
       _rectangles:
       - Style: {fileID: 0}
-        HalfSize: {x: 5, y: 2}
-        CenterPosition: {x: 20.5, y: 8}
-        Rotation: 270
+        HalfSize: {x: 3, y: 2.5}
+        CenterPosition: {x: 14.5, y: 4.5}
+        Rotation: 0
       - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
         HalfSize: {x: 1, y: 2}
         CenterPosition: {x: 17, y: 9}
         Rotation: 270
       - Style: {fileID: 0}
-        HalfSize: {x: 3, y: 2.5}
-        CenterPosition: {x: 14.5, y: 4.5}
-        Rotation: 0
-    - _parentIndex: 5
-      _thisIndex: 8
+        HalfSize: {x: 5, y: 2}
+        CenterPosition: {x: 20.5, y: 8}
+        Rotation: 270
+    - _parentIndex: 3
+      _thisIndex: 6
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: 3.5, y: 14}
-        Maximum: {x: 13.5, y: 22}
+        Minimum: {x: 3.5, y: 12}
+        Maximum: {x: 12.5, y: 22}
       _rectangles:
       - Style: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
         HalfSize: {x: 4, y: 3}
         CenterPosition: {x: 6.5, y: 18}
         Rotation: 270
-    - _parentIndex: 5
-      _thisIndex: 9
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 10.5, y: 19}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 3, y: 1}
+        CenterPosition: {x: 8, y: 15}
+        Rotation: 270
+    - _parentIndex: 3
+      _thisIndex: 7
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -714,7 +698,23 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    <Count>k__BackingField: 10
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    <Count>k__BackingField: 8
   _rectRounding: 0.5
   _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
   _editMode: 0

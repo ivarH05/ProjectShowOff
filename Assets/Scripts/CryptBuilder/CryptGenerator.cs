@@ -13,18 +13,20 @@ namespace CryptBuilder
         
         public void GenerateFloor(Vector2 point)
         {
-            if (_currentStyle?.TilePrefab == null) return;
+            var prefabs = _currentStyle?.TilePrefabs;
+            if (prefabs == null || prefabs.Length < 1) return;
 
-            var floorInstance = Object.Instantiate(_currentStyle.TilePrefab, _currentRoom.transform);
+            var floorInstance = Object.Instantiate(prefabs[Random.Range(0, prefabs.Length)], _currentRoom.transform);
             floorInstance.transform.localPosition = point.To3D();
         }
 
         public void GenerateWall(Vector2 point, Vector2 normal)
         {
-            if (_currentStyle?.WallPrefab == null) return;
+            var prefabs = _currentStyle?.WallPrefabs;
+            if (prefabs == null || prefabs.Length < 1) return;
 
             var floorInstance = Object.Instantiate(
-                _currentStyle.WallPrefab, 
+                prefabs[Random.Range(0, prefabs.Length)], 
                 default, 
                 Quaternion.AngleAxis(Mathf.Atan2(normal.y, -normal.x) * Mathf.Rad2Deg, Vector3.up), 
                 _currentRoom.transform);
