@@ -12,188 +12,147 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  Nodes:
-  - rid: 7572577999243182099
-  - rid: 7572577999243182100
-  - rid: 7572577999243182101
-  - rid: 7572577999243182102
-  - rid: 7572577999243182103
-  - rid: 7572577999243182104
-  - rid: 7572577999243182105
-  - rid: 7572577999243182106
-  - rid: 7572577999243182107
-  - rid: 7572577999243182108
-  - rid: 7572577999243182109
-  - rid: 7572577999243182110
-  - rid: 7572577999243182111
-  - rid: 7572577999243182112
-  Connections:
-  - OutputNodeGUID: d032e504-65bf-4c71-b81f-88f708d4f297
+  Description: 
+  _nodes:
+  - rid: 7572578020629414145
+  - rid: 7572578020629414146
+  - rid: 7572578020629414147
+  - rid: 7572578020629414148
+  - rid: 7572578020629414149
+  - rid: 7572578020629414150
+  - rid: 7572578020629414151
+  - rid: 7572578020629414152
+  - rid: 7572578020629414153
+  - rid: 7572578020629414154
+  - rid: 7572578020629414155
+  - rid: 7572578020629414156
+  _connections:
+  - OutputNodeGUID: 9e56aaf9-673c-432d-b27b-3e55148d8b25
     OutputNodeIndex: 0
-    InputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
-  - OutputNodeGUID: ffc3d0ab-e43c-4f50-9fdb-59b6d10a4595
+    InputNodeGUID: 3bf62a41-b5fd-46b8-88ae-65a7b2928627
+  - OutputNodeGUID: 9e56aaf9-673c-432d-b27b-3e55148d8b25
     OutputNodeIndex: 1
-    InputNodeGUID: d36f7e4b-253e-45bf-aecb-7c0b90b3b572
-  - OutputNodeGUID: ffc3d0ab-e43c-4f50-9fdb-59b6d10a4595
-    OutputNodeIndex: 2
-    InputNodeGUID: 883041aa-e66f-47fc-96d5-629683aacfba
-  - OutputNodeGUID: 883041aa-e66f-47fc-96d5-629683aacfba
-    OutputNodeIndex: 1
-    InputNodeGUID: f40aad23-019c-46a0-b687-397ad7634a02
-  - OutputNodeGUID: f40aad23-019c-46a0-b687-397ad7634a02
-    OutputNodeIndex: 1
-    InputNodeGUID: e1f5f624-dcdc-49e9-b5bf-ce707692b2d7
-  - OutputNodeGUID: d36f7e4b-253e-45bf-aecb-7c0b90b3b572
-    OutputNodeIndex: 1
-    InputNodeGUID: b2b09445-80df-48db-a2ae-d1d57abc8dbf
-  - OutputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
-    OutputNodeIndex: 1
-    InputNodeGUID: d0fe2f9c-ee7d-4ea2-94a7-97d029dd5074
-  - OutputNodeGUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
-    OutputNodeIndex: 2
-    InputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
-  - OutputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
-    OutputNodeIndex: 1
-    InputNodeGUID: 17401116-4015-48eb-9c47-548d0b711b1f
-  - OutputNodeGUID: 44111226-5f42-40a2-b054-0551eb3b4c35
-    OutputNodeIndex: 2
-    InputNodeGUID: 42e89d6a-4497-4374-a6ee-41fae7eb0e6e
-  - OutputNodeGUID: 17401116-4015-48eb-9c47-548d0b711b1f
-    OutputNodeIndex: 1
-    InputNodeGUID: d36f7e4b-253e-45bf-aecb-7c0b90b3b572
-  - OutputNodeGUID: 42e89d6a-4497-4374-a6ee-41fae7eb0e6e
-    OutputNodeIndex: 1
-    InputNodeGUID: cb52a8e1-d6a8-4a6b-8d50-8cf5ca653d7b
-  - OutputNodeGUID: d0fe2f9c-ee7d-4ea2-94a7-97d029dd5074
-    OutputNodeIndex: 1
-    InputNodeGUID: 2bb7f2cb-7fa6-496e-82dc-7749b8cd1370
-  - OutputNodeGUID: d0fe2f9c-ee7d-4ea2-94a7-97d029dd5074
-    OutputNodeIndex: 2
-    InputNodeGUID: ffc3d0ab-e43c-4f50-9fdb-59b6d10a4595
-  a: 
+    InputNodeGUID: 133b4ea7-4d75-47a6-90ac-870150541ef9
+  - OutputNodeGUID: 18c97bb1-edcd-4f33-8024-fd2a6964552d
+    OutputNodeIndex: 0
+    InputNodeGUID: 3eb58c4e-e72e-4a4c-b4cf-ea4f8cefb625
+  - OutputNodeGUID: 18206ddd-0a05-432a-92be-366909aa055a
+    OutputNodeIndex: 0
+    InputNodeGUID: 3151101f-a14c-44a7-b4dd-110a22d9fa44
+  - OutputNodeGUID: 3151101f-a14c-44a7-b4dd-110a22d9fa44
+    OutputNodeIndex: 0
+    InputNodeGUID: 9e56aaf9-673c-432d-b27b-3e55148d8b25
   references:
     version: 2
     RefIds:
-    - rid: 7572577999243182099
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: d032e504-65bf-4c71-b81f-88f708d4f297
-        type: 3
-        Position: {x: 221, y: 206}
-    - rid: 7572577999243182100
+    - rid: 7572578020629414145
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: ffc3d0ab-e43c-4f50-9fdb-59b6d10a4595
+        GUID: 9e56aaf9-673c-432d-b27b-3e55148d8b25
         type: 1
-        Position: {x: 783, y: 60}
-        dialogueText: If i give you another one, will you leave?
+        Position: {x: 287, y: 232}
+        dialogueText: You want a fish?
         Options:
-        - ResponseText: Yes
+        - ResponseText: Sure
           index: 0
-        - ResponseText: No
+        - ResponseText: Nah
           index: 1
-    - rid: 7572577999243182101
+        - ResponseText: Whats a fish?
+          index: 2
+    - rid: 7572578020629414146
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3eb58c4e-e72e-4a4c-b4cf-ea4f8cefb625
+        type: 1
+        Position: {x: 288, y: 62}
+        dialogueText: What you turned deaf now?
+        Options:
+        - ResponseText: no
+          index: 0
+    - rid: 7572578020629414147
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3bf62a41-b5fd-46b8-88ae-65a7b2928627
+        type: 1
+        Position: {x: 492, y: 133}
+        dialogueText: Then stop wasting my time
+        Options:
+        - ResponseText: Okay
+          index: 0
+    - rid: 7572578020629414148
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 133b4ea7-4d75-47a6-90ac-870150541ef9
+        type: 1
+        Position: {x: 493, y: 400}
+        dialogueText: its... its a fish...
+        Options:
+        - ResponseText: oh... yeah sure
+          index: 0
+    - rid: 7572578020629414149
       type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: 883041aa-e66f-47fc-96d5-629683aacfba
+        GUID: bd00fbaf-0014-4312-8448-bf26cee7e5d9
         type: 5
-        Position: {x: 1053, y: 179}
+        Position: {x: 700, y: 305}
         onRun:
           type: 1
           flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
           _boolean: 1
-    - rid: 7572577999243182102
+    - rid: 7572578020629414150
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: f40aad23-019c-46a0-b687-397ad7634a02
+        GUID: c1e169e8-a3e4-4e6c-9a28-1b7d48c06a64
         type: 1
-        Position: {x: 1287, y: 180}
-        dialogueText: "Welp, then you dont deserve this one either. \nnow, beat it. "
+        Position: {x: 933, y: 305}
+        dialogueText: Aight, here you go
         Options:
-        - ResponseText: (leave)
+        - ResponseText: Thanks!
           index: 0
-    - rid: 7572577999243182103
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: e1f5f624-dcdc-49e9-b5bf-ce707692b2d7
-        type: 4
-        Position: {x: 1562, y: 264}
-    - rid: 7572577999243182104
+    - rid: 7572578020629414151
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: d36f7e4b-253e-45bf-aecb-7c0b90b3b572
+        GUID: b1d345e7-2347-43d7-a84c-4defd58785ce
         type: 1
-        Position: {x: 1039, y: 323}
-        dialogueText: Aight, here you go kid!
+        Position: {x: 1137, y: 209}
+        dialogueText: Now, screw off kid.
         Options:
-        - ResponseText: Thanks
+        - ResponseText: (screw off)
           index: 0
-    - rid: 7572577999243182105
+    - rid: 7572578020629414152
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: b2b09445-80df-48db-a2ae-d1d57abc8dbf
+        GUID: c3317038-36d2-4ad2-baa6-46fc1617696e
         type: 4
-        Position: {x: 1230, y: 394}
-    - rid: 7572577999243182106
+        Position: {x: 1341, y: 279}
+    - rid: 7572578020629414153
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 2403d907-4fa7-483a-8024-b1b53f9d60f0
+        type: 4
+        Position: {x: 290, y: -14}
+    - rid: 7572578020629414154
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 18c97bb1-edcd-4f33-8024-fd2a6964552d
+        type: 1
+        Position: {x: 37, y: -73}
+        dialogueText: You have already had a fish. get lost kid.
+        Options:
+        - ResponseText: (get lost)
+          index: 0
+        - ResponseText: (stay)
+          index: 1
+    - rid: 7572578020629414155
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 18206ddd-0a05-432a-92be-366909aa055a
+        type: 3
+        Position: {x: -293, y: 232}
+    - rid: 7572578020629414156
       type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: bc1aa814-ac17-454b-93c7-def7e6fd3cb8
+        GUID: 3151101f-a14c-44a7-b4dd-110a22d9fa44
         type: 2
-        Position: {x: 377, y: 206}
+        Position: {x: -127, y: 204}
         flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
-    - rid: 7572577999243182107
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 44111226-5f42-40a2-b054-0551eb3b4c35
-        type: 1
-        Position: {x: 540, y: 275}
-        dialogueText: Hey kid, you want a fish?
-        Options:
-        - ResponseText: Yes
-          index: 0
-        - ResponseText: No
-          index: 1
-    - rid: 7572577999243182108
-      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 17401116-4015-48eb-9c47-548d0b711b1f
-        type: 5
-        Position: {x: 745, y: 278}
-        onRun:
-          type: 1
-          flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
-          _boolean: 1
-    - rid: 7572577999243182109
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 42e89d6a-4497-4374-a6ee-41fae7eb0e6e
-        type: 1
-        Position: {x: 746, y: 427}
-        dialogueText: Ok, then stop wasting my time!
-        Options:
-        - ResponseText: (leave)
-          index: 0
-    - rid: 7572577999243182110
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: cb52a8e1-d6a8-4a6b-8d50-8cf5ca653d7b
-        type: 4
-        Position: {x: 949, y: 497}
-    - rid: 7572577999243182111
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 2bb7f2cb-7fa6-496e-82dc-7749b8cd1370
-        type: 4
-        Position: {x: 795, y: -17}
-    - rid: 7572577999243182112
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: d0fe2f9c-ee7d-4ea2-94a7-97d029dd5074
-        type: 1
-        Position: {x: 540, y: -58}
-        dialogueText: I already gave you a fish, screw off kid.
-        Options:
-        - ResponseText: (Screw off)
-          index: 0
-        - ResponseText: (Stay)
-          index: 1

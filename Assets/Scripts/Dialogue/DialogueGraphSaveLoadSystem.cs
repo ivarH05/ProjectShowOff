@@ -24,9 +24,18 @@ namespace DialogueSystem
             path = "Assets" + path.Substring(Application.dataPath.Length);
             Save(graphView, path);
         }
+
         public static void Save(DialogueGraphView graphView, string path)
         {
             Dialogue saveData = ScriptableObject.CreateInstance<Dialogue>();
+
+            if (File.Exists(path))
+                saveData = AssetDatabase.LoadAssetAtPath<Dialogue>(path);
+            else
+                AssetDatabase.CreateAsset(saveData, path);
+
+            saveData.Connections.Clear();
+            saveData.Nodes.Clear();
 
             foreach (var node in graphView.nodes.OfType<DialogueNode>())
             {
@@ -40,7 +49,6 @@ namespace DialogueSystem
                 saveData.Nodes.Add(nodeData);
             }
 
-            AssetDatabase.CreateAsset(saveData, path);
         }
 
         private static List<ConnectionData> ExtractConnections(DialogueNode node)
@@ -49,6 +57,7 @@ namespace DialogueSystem
 
             List<Port> ports = node.mainContainer.Query<Port>().Build().ToList();
 
+            int index = 0;
             for (int i = 0; i < ports.Count; i++)
             {
                 Port port = ports[i];
@@ -64,10 +73,11 @@ namespace DialogueSystem
                     result.Add(new ConnectionData
                     {
                         OutputNodeGUID = node.GUID,
-                        OutputNodeIndex = i,
+                        OutputNodeIndex = index,
                         InputNodeGUID = inputNode.GUID
                     });
                 }
+                index++;
             }
 
             return result;
@@ -136,6 +146,14 @@ namespace DialogueSystem
                 var inputNode = nodeLookup[connection.InputNodeGUID];
 
                 List<Port> ports = outputNode.mainContainer.Query<Port>().Build().ToList();
+                for (int i = 0; i < ports.Count; i++)
+                {
+                    Port port = ports[i];
+                    if (port.direction != Direction.Input)
+                        continue;
+                    ports.RemoveAt(i);
+                    i--;
+                }
 
                 var outputPort = ports[connection.OutputNodeIndex];
 

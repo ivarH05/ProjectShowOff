@@ -109,6 +109,37 @@ namespace DialogueSystem
 
             return compatiblePorts;
         }
+
+        public void ResetGraph(bool prompt = false)
+        {
+            if (prompt)
+            {
+                int option = EditorUtility.DisplayDialogComplex(
+                    "Unsaved Changes",
+                    "You have unsaved changes. What would you like to do?",
+                    "Save",        // option 0
+                    "Don't Save",  // option 1
+                    "Cancel"       // option 2
+                );
+                switch (option)
+                {
+                    case 0:
+                        SaveLoadSystem.Save(this);
+                        break;
+
+                    case 1:
+                        break;
+
+                    case 2:
+                        return;
+                }
+            }
+            ClearGraph();
+
+            CreateDefaultStartNode(new Vector2(200, 250));
+            CreateDefaultEndNode(new Vector2(700, 250));
+        }
+
         public void ClearGraph()
         {
             foreach (var edge in edges.ToList())

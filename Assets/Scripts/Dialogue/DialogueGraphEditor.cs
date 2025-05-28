@@ -42,9 +42,14 @@ namespace DialogueSystem
             {
                 text = "Load"
             };
+            var ResetButton = new Button(() => graphView.ResetGraph(true))
+            {
+                text = "Reset"
+            };
 
             toolbar.Add(saveButton);
             toolbar.Add(loadButton);
+            toolbar.Add(ResetButton);
 
             rootVisualElement.Add(toolbar);
         }
