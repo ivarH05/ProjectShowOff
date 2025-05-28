@@ -147,21 +147,26 @@ namespace CryptBuilder
 
             public void OnNewRoom(RotatedRectangle room) 
             {
-                if (room.Style == null)
-                    Gizmos.color = Color.gray3;
-                else
-                {
-                    var id = GlobalObjectId.GetGlobalObjectIdSlow(room.Style);
-                    var seed = (uint)id.GetHashCode();
-                    Unity.Mathematics.Random rand = new(seed);
-                    float hue = rand.NextFloat();
-                    Gizmos.color = Color.HSVToRGB(hue, 1, .7f);
-                }
+                Gizmos.color = GetStyleColor(room.Style);
             }
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
             {
                 Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
+            }
+        }
+
+        public static Color GetStyleColor(CryptRoomStyle style)
+        {
+            if (style == null)
+                return Color.gray3;
+            else
+            {
+                var id = GlobalObjectId.GetGlobalObjectIdSlow(style);
+                var seed = (uint)id.GetHashCode();
+                Unity.Mathematics.Random rand = new(seed);
+                float hue = rand.NextFloat();
+                return Color.HSVToRGB(hue, 1, .7f);
             }
         }
     }

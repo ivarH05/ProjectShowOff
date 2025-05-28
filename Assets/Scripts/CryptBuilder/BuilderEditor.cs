@@ -13,6 +13,7 @@ namespace CryptBuilder
         [SerializeField, HideInInspector] GameObject _generatedCrypt;
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
+        CryptRoomStyle _brushStyle;
 
         [CustomEditor(typeof(Builder))]
         class BuilderEditor : Editor
@@ -39,7 +40,7 @@ namespace CryptBuilder
                     var rectCurrent = b._heldRectangles[0];
                     
                     EditorGUILayout.BeginHorizontal();
-                    GUILayout.Label("Set selected room's style:");
+                    GUILayout.Label("Selected room's style:");
                     var newStyle = EditorGUILayout.ObjectField(rectCurrent.Style, typeof(CryptRoomStyle), false);
                     EditorGUILayout.EndHorizontal();
 
@@ -56,6 +57,24 @@ namespace CryptBuilder
                 {
                     DeselectHeld(b);
                     b._editMode = EditMode.AddNew;
+                }
+                if (b._editMode != EditMode.StyleBrush)
+                {
+                    if (GUILayout.Button("Style brush"))
+                    {
+                        DeselectHeld(b);
+                        b._editMode = EditMode.StyleBrush;
+                    }
+                }
+                else
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    GUILayout.Label("Brush style:");
+                    b._brushStyle = (CryptRoomStyle)EditorGUILayout.ObjectField(b._brushStyle, typeof(CryptRoomStyle), false);
+                    EditorGUILayout.EndHorizontal();
+
+                    if (GUILayout.Button("Disable style brush"))
+                        b._editMode = default;
                 }
                 if(GUILayout.Button("Toggle debug bounds"))
                 {
@@ -142,6 +161,42 @@ namespace CryptBuilder
                     case EditMode.EditHeld:
                         EditHeld(b);
                         break;
+
+                    case EditMode.StyleBrush:
+                        StyleBrush(b);
+                        break;
+                }
+            }
+
+            void StyleBrush(Builder b)
+            {
+                if (Event.current.type == EventType.MouseMove)
+                    SceneView.RepaintAll();
+
+                bool useEvent = (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) && Event.current.button == (int)MouseButton.Left;
+                if(useEvent)
+                {
+                    Event.current.Use();
+                }
+
+                if (GetRectAtMouse(b, out int rect, out int node))
+                {
+                    Handles.color = GetStyleColor(b._brushStyle);
+                    var hovered = b.RectangleTree.Nodes[node].Rectangles[rect];
+                    CryptHandles.DrawRectangle(hovered);
+
+                    if (hovered.Style == b._brushStyle)
+                        return;
+
+                    if (useEvent)
+                    {
+                        Undo.RecordObject(b, "[CryptBuilder] Set style with brush");
+                        Event.current.Use();
+                        b.RectangleTree.Nodes[node].RemoveRectangle(rect, b.RectangleTree);
+                        hovered.Style = b._brushStyle;
+                        b.RectangleTree.AddRectangle(hovered);
+                        EditorUtility.SetDirty(b);
+                    }
                 }
             }
 
@@ -402,7 +457,8 @@ namespace CryptBuilder
         {
             DontEdit = default,
             AddNew,
-            EditHeld
+            EditHeld,
+            StyleBrush
         }
     }
 #endif
