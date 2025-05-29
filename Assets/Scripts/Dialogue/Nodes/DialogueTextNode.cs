@@ -12,6 +12,8 @@ namespace DialogueSystem
         [SerializeField]
         private VisualElement _AddItemButton;
         private TextField _dialogueTextField;
+        private TextField _speakerField;
+        public string speakerText { get; private set; } = "";
         public string dialogueText { get; private set; } = "";
         public List<DialogueNodeOption> options = new List<DialogueNodeOption>();
 
@@ -38,6 +40,12 @@ namespace DialogueSystem
             DialogueTextNode node = new DialogueTextNode();
             node.SetText(defaultText);
             return node;
+        }
+
+        public void SetSpeaker(string text)
+        {
+            _speakerField.value = text;
+            speakerText = text;
         }
 
         public void SetText(string text)
@@ -73,7 +81,11 @@ namespace DialogueSystem
             CreateInputPort("", horizontalContainer);
             CreateLabel("Input", horizontalContainer);
 
-            TextField textField = CreateTextField(dialogueText, parent, evt => { dialogueText = evt.newValue; });
+            TextField speakerField = CreateTextField("Speaker", parent, evt => { speakerText = evt.newValue; });
+            speakerField.style.width = 100;
+            _speakerField = speakerField;
+
+            TextField textField = CreateTextField("Dialogue", parent, evt => { dialogueText = evt.newValue; });
             textField.multiline = true;
             textField.style.minWidth = 150;
             textField.style.maxWidth = 350;
@@ -130,6 +142,7 @@ namespace DialogueSystem
         {
             TextNodeData data = new TextNodeData(base.SaveData());
             data.dialogueText = dialogueText;
+            data.speaker = speakerText;
             return data;
         }
 
@@ -139,6 +152,7 @@ namespace DialogueSystem
             if (!(data is TextNodeData d))
                 return;
             SetText(d.dialogueText);
+            SetSpeaker(d.speaker);
         }
     }
 
@@ -151,7 +165,7 @@ namespace DialogueSystem
             this.GUID = data.GUID;
             this.Position = data.Position;
         }
-
+        public string speaker;
         public string dialogueText;
         public List<OptionData> Options;
     }
