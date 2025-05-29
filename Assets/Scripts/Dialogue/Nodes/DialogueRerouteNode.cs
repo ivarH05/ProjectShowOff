@@ -18,7 +18,6 @@ namespace DialogueSystem
         {
             DialogueRerouteNode node = new DialogueRerouteNode();
             return node;
-
         }
 
         public static DialogueRerouteNode EmptyNode()
