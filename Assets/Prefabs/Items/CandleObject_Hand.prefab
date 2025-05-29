@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6742505299641808162}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: FirePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8862819917235380132}
   - component: {fileID: 7588271708671123523}
   - component: {fileID: 2665746469728302606}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Candle1UV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8212619426200091529}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: CandleObject_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 4614940657478324885}
   - component: {fileID: 8958108525523375339}
   - component: {fileID: 8588235398877670045}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

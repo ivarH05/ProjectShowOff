@@ -43,6 +43,18 @@ namespace Player.InventoryManagement
         {
             LerpItems();
         }
+
+        public void SwitchItem(InputAction.CallbackContext context)
+        {
+            if (context.ReadValue<Vector2>().y < 0)
+                return;
+            if (RightHandItem == 0)
+                (RightHandItem, LeftHandItem) = (1, 0);
+            else
+                (RightHandItem, LeftHandItem) = (0, 1);
+
+            SwitchItemPositions();
+        }
         public void OnItem0(InputAction.CallbackContext context)
         {
             if (!context.started)

@@ -38,6 +38,11 @@ namespace DialogueSystem
                 text = "Save"
             };
 
+            var saveAsButton = new Button(() => SaveLoadSystem.SaveAs(graphView))
+            {
+                text = "Save as"
+            };
+
             var loadButton = new Button(() => SaveLoadSystem.Load(graphView))
             {
                 text = "Load"
@@ -48,10 +53,21 @@ namespace DialogueSystem
             };
 
             toolbar.Add(saveButton);
+            toolbar.Add(saveAsButton);
             toolbar.Add(loadButton);
             toolbar.Add(ResetButton);
 
             rootVisualElement.Add(toolbar);
+        }
+        void OnGUI()
+        {
+            Event e = Event.current;
+
+            if ((e.control || e.command) && e.type == EventType.KeyDown && e.keyCode == KeyCode.S)
+            {
+                e.Use();
+                SaveLoadSystem.Save(graphView);
+            }
         }
     }
 }

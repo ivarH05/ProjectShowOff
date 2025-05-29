@@ -1,6 +1,7 @@
 using DialogueSystem;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,6 +13,7 @@ namespace DialogueSystem
         [SerializeField]
         private VisualElement _AddItemButton;
         private TextField _dialogueTextField;
+        private CharacterData characterData;
         public string dialogueText { get; private set; } = "";
         public List<DialogueNodeOption> options = new List<DialogueNodeOption>();
 
@@ -73,11 +75,32 @@ namespace DialogueSystem
             CreateInputPort("", horizontalContainer);
             CreateLabel("Input", horizontalContainer);
 
-            TextField textField = CreateTextField(dialogueText, parent, evt => { dialogueText = evt.newValue; });
+            characterData = ScriptableObject.CreateInstance<CharacterData>();
+
+            var imguiContainer = new IMGUIContainer(() =>
+            {
+                if (characterData == null) return;
+
+                SerializedObject so = new SerializedObject(characterData);
+                so.Update();
+
+                SerializedProperty prop = so.FindProperty("speaker");
+                EditorGUILayout.PropertyField(prop, GUIContent.none, true);
+                so.ApplyModifiedProperties();
+            });
+
+            parent.Add(imguiContainer);
+
+
+
+            TextField textField = CreateTextField("Dialogue", parent, evt => { dialogueText = evt.newValue; });
             textField.multiline = true;
             textField.style.minWidth = 150;
             textField.style.maxWidth = 350;
             _dialogueTextField = textField;
+
+            RefreshExpandedState();
+            RefreshPorts();
         }
 
         public void CreateOutputOption(string value) => CreateOutputOption(mainContainer, value);
@@ -130,6 +153,7 @@ namespace DialogueSystem
         {
             TextNodeData data = new TextNodeData(base.SaveData());
             data.dialogueText = dialogueText;
+            data.speaker = characterData.speaker;
             return data;
         }
 
@@ -139,6 +163,7 @@ namespace DialogueSystem
             if (!(data is TextNodeData d))
                 return;
             SetText(d.dialogueText);
+            characterData.speaker = d.speaker;
         }
     }
 
@@ -151,8 +176,15 @@ namespace DialogueSystem
             this.GUID = data.GUID;
             this.Position = data.Position;
         }
-
+        public Character speaker;
         public string dialogueText;
         public List<OptionData> Options;
+    }
+
+    [System.Serializable]
+    public class CharacterData : ScriptableObject
+    {
+        [SerializeField]
+        public Character speaker;
     }
 }
