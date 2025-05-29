@@ -28,6 +28,7 @@ namespace DialogueSystem
 
 
             SaveLoadSystem.Load(this, "Assets/Temp/DialogueBackup.asset");
+            SaveLoadSystem.ClearPath();
         }
 
         private void OnContextClick(MouseDownEvent evt)
@@ -39,10 +40,11 @@ namespace DialogueSystem
             Vector2 worldPosition = contentViewContainer.WorldToLocal(this.LocalToWorld(mousePosition));
 
             var menu = new GenericMenu();
-            menu.AddItem(new GUIContent("Branch"), false, () => CreateDefaultBranchNode(worldPosition));
             menu.AddItem(new GUIContent("Dialogue"), false, () => CreateDefaultTextNode(worldPosition));
-            menu.AddItem(new GUIContent("End"), false, () => CreateDefaultEndNode(worldPosition));
+            menu.AddItem(new GUIContent("Reroute"), false, () => CreateDefaultRerouteNode(worldPosition));
+            menu.AddItem(new GUIContent("Branch"), false, () => CreateDefaultBranchNode(worldPosition));
             menu.AddItem(new GUIContent("Event"), false, () => CreateDefaultEventNode(worldPosition));
+            menu.AddItem(new GUIContent("End"), false, () => CreateDefaultEndNode(worldPosition));
             menu.ShowAsContext();
         }
 
@@ -60,6 +62,8 @@ namespace DialogueSystem
                     return CreateEmptyEndNode(position);
                 case NodeType.Event:
                     return CreateEmptyEventNode(position);
+                case NodeType.Reroute:
+                    return CreateEmptyRerouteNode(position);
 
                 default:
                     return null;
@@ -80,6 +84,9 @@ namespace DialogueSystem
 
         public DialogueEventNode CreateEmptyEventNode(Vector2 position) => SetupNode(DialogueEventNode.EmptyNode(), position);
         public DialogueEventNode CreateDefaultEventNode(Vector2 position) => SetupNode(DialogueEventNode.DefaultNode(), position);
+
+        public DialogueRerouteNode CreateEmptyRerouteNode(Vector2 position) => SetupNode(DialogueRerouteNode.EmptyNode(), position);
+        public DialogueRerouteNode CreateDefaultRerouteNode(Vector2 position) => SetupNode(DialogueRerouteNode.DefaultNode(), position);
 
 
         private T SetupNode<T>(T node, Vector2 position) where T : DialogueNode
@@ -135,6 +142,7 @@ namespace DialogueSystem
                 }
             }
             ClearGraph();
+            SaveLoadSystem.ClearPath();
 
             CreateDefaultStartNode(new Vector2(200, 250));
             CreateDefaultEndNode(new Vector2(700, 250));

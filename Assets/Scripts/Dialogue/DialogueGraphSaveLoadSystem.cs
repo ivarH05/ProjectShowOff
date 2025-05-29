@@ -14,8 +14,11 @@ namespace DialogueSystem
 {
     public static class SaveLoadSystem
     {
+        private static string lastPath = "";
 
-        public static void Save(DialogueGraphView graphView)
+        public static void ClearPath() => lastPath = "";
+
+        public static void SaveAs(DialogueGraphView graphView)
         {
             string path = EditorUtility.SaveFilePanel("Save Dialogue Graph", "Assets", "DialogueGraph", "asset");
             if (string.IsNullOrEmpty(path))
@@ -23,6 +26,15 @@ namespace DialogueSystem
 
             path = "Assets" + path.Substring(Application.dataPath.Length);
             Save(graphView, path);
+
+            lastPath = path;
+        }
+        public static void Save(DialogueGraphView graphView)
+        {
+            if (lastPath == "")
+                SaveAs(graphView);
+            else
+                Save(graphView, lastPath);
         }
 
         public static void Save(DialogueGraphView graphView, string path)
@@ -49,6 +61,8 @@ namespace DialogueSystem
                 saveData.Nodes.Add(nodeData);
             }
 
+            EditorUtility.SetDirty(saveData);
+            AssetDatabase.SaveAssets();
         }
 
         private static List<ConnectionData> ExtractConnections(DialogueNode node)
@@ -110,6 +124,7 @@ namespace DialogueSystem
             path = "Assets" + path.Substring(Application.dataPath.Length);
 
             Load(graphView, path);
+            lastPath = path;
         }
 
 
@@ -169,6 +184,7 @@ namespace DialogueSystem
 
                 graphView.AddElement(edge);
             }
+            ClearPath();
         }
 
         public static T FindParentOfType<T>(VisualElement element) where T : VisualElement
