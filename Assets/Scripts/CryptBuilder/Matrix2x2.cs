@@ -21,7 +21,9 @@ namespace CryptBuilder
         {
             return v.x * m.iHat + v.y * m.jHat;
         }
-        public static Matrix2x2 fromRotationAngleRad(float degrees)
+        public static Matrix2x2 operator *(Matrix2x2 m, float scale) => new(m.iHat * scale, m.jHat * scale);
+
+        public static Matrix2x2 FromRotationAngle(float degrees)
         {
             float radians = degrees * Mathf.Deg2Rad;
             float s = Mathf.Sin(radians);

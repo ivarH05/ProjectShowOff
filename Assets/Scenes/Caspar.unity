@@ -507,6 +507,234 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270660489}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &345242748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345242750}
+  - component: {fileID: 345242749}
+  m_Layer: 0
+  m_Name: crypt generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345242749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345242748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc77a8e1bb8a3c9499e42fb6fa33ffcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <RectangleTree>k__BackingField:
+    Nodes:
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 1
+      _childAIndex: 2
+      _childBIndex: 3
+      _bounds:
+        Minimum: {x: 3.5, y: 2}
+        Maximum: {x: 23.5, y: 23}
+      _rectangles: []
+    - _parentIndex: 1
+      _thisIndex: 2
+      _childAIndex: 6
+      _childBIndex: 7
+      _bounds:
+        Minimum: {x: 5.5, y: 2}
+        Maximum: {x: 22.5, y: 13}
+      _rectangles: []
+    - _parentIndex: 1
+      _thisIndex: 3
+      _childAIndex: 4
+      _childBIndex: 5
+      _bounds:
+        Minimum: {x: 3.5, y: 12}
+        Maximum: {x: 23.5, y: 23}
+      _rectangles: []
+    - _parentIndex: 3
+      _thisIndex: 4
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 7, y: 12}
+        Maximum: {x: 12.5, y: 20}
+      _rectangles:
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 10.5, y: 19}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 3, y: 1}
+        CenterPosition: {x: 8, y: 15}
+        Rotation: 270
+    - _parentIndex: 3
+      _thisIndex: 5
+      _childAIndex: 8
+      _childBIndex: 9
+      _bounds:
+        Minimum: {x: 3.5, y: 14}
+        Maximum: {x: 23.5, y: 23}
+      _rectangles: []
+    - _parentIndex: 2
+      _thisIndex: 6
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 5.5, y: 6}
+        Maximum: {x: 15.5, y: 12}
+      _rectangles:
+      - Style: {fileID: 0}
+        HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 13.5, y: 9}
+        Rotation: 270
+      - Style: {fileID: 0}
+        HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 7.5, y: 9}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 10.5, y: 7.5}
+        Rotation: 270
+    - _parentIndex: 2
+      _thisIndex: 7
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 11.5, y: 2}
+        Maximum: {x: 22.5, y: 13}
+      _rectangles:
+      - Style: {fileID: 0}
+        HalfSize: {x: 5, y: 2}
+        CenterPosition: {x: 20.5, y: 8}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 17, y: 9}
+        Rotation: 270
+      - Style: {fileID: 0}
+        HalfSize: {x: 3, y: 2.5}
+        CenterPosition: {x: 14.5, y: 4.5}
+        Rotation: 0
+    - _parentIndex: 5
+      _thisIndex: 8
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 3.5, y: 14}
+        Maximum: {x: 13.5, y: 22}
+      _rectangles:
+      - Style: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
+        HalfSize: {x: 4, y: 3}
+        CenterPosition: {x: 6.5, y: 18}
+        Rotation: 270
+    - _parentIndex: 5
+      _thisIndex: 9
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 11.5, y: 15}
+        Maximum: {x: 23.5, y: 23}
+      _rectangles:
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 4.5}
+        CenterPosition: {x: 17.5, y: 22}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 4.5}
+        CenterPosition: {x: 17.5, y: 16}
+        Rotation: 270
+      - Style: {fileID: 0}
+        HalfSize: {x: 3, y: 6}
+        CenterPosition: {x: 17.5, y: 19}
+        Rotation: 270
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    <Count>k__BackingField: 10
+  _rectRounding: 0.5
+  _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
+  _editMode: 0
+  _heldRectangles: []
+  _generatedCrypt: {fileID: 0}
+--- !u!4 &345242750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345242748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.97, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661913977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1530,56 +1758,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4322272892429166820, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
   m_PrefabInstance: {fileID: 661913977}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2142371741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2142371743}
-  - component: {fileID: 2142371742}
-  m_Layer: 0
-  m_Name: cryptbuilder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2142371742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142371741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc77a8e1bb8a3c9499e42fb6fa33ffcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <RectangleTree>k__BackingField:
-    _rectangles: []
-  _heldRectangle:
-    HalfSize: {x: 2.1509485, y: 4.1039357}
-    CenterPosition: {x: -4.910355, y: 9.978688}
-    Rotation: 0
---- !u!4 &2142371743
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142371741}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9, y: 2.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7676499613770020346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1606,7 +1784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16.04
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1653,4 +1831,4 @@ SceneRoots:
   - {fileID: 884978760}
   - {fileID: 1670522293}
   - {fileID: 661913977}
-  - {fileID: 2142371743}
+  - {fileID: 345242750}

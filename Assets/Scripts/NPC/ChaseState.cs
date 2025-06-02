@@ -1,6 +1,5 @@
 using Player;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 namespace NPC
 {
