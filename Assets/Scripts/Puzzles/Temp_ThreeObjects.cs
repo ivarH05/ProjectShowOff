@@ -1,7 +1,6 @@
 using Interactables;
 using Player;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using UnityEngine.SceneManagement;
 
 namespace Puzzles

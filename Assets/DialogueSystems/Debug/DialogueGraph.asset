@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: DialogueGraph
+  m_EditorClassIdentifier: 
+  Description: 'aaa
+
+'
+  _nodes:
+  - rid: 3240237242636042530
+  - rid: 3240237242636042531
+  - rid: 3240237242636042532
+  - rid: 3240237242636042533
+  - rid: 3240237242636042534
+  - rid: 3240237242636042535
+  - rid: 3240237242636042536
+  - rid: 3240237242636042537
+  - rid: 3240237242636042538
+  - rid: 3240237242636042539
+  - rid: 3240237242636042540
+  _connections:
+  - OutputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
+    OutputNodeIndex: 0
+    InputNodeGUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
+  - OutputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
+    OutputNodeIndex: 1
+    InputNodeGUID: ec46ef5a-161d-4c39-82e1-d000982551f1
+  - OutputNodeGUID: ec46ef5a-161d-4c39-82e1-d000982551f1
+    OutputNodeIndex: 0
+    InputNodeGUID: 11242770-1d92-4f87-9c25-e55310c45139
+  - OutputNodeGUID: 11242770-1d92-4f87-9c25-e55310c45139
+    OutputNodeIndex: 1
+    InputNodeGUID: 02a54210-bb14-4218-912b-ae9c502cff66
+  - OutputNodeGUID: 02a54210-bb14-4218-912b-ae9c502cff66
+    OutputNodeIndex: 0
+    InputNodeGUID: ccdeffc2-ca51-42ee-8226-ba646f660ffe
+  - OutputNodeGUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
+    OutputNodeIndex: 0
+    InputNodeGUID: c03b2c96-2877-4227-8bd2-26328640c3aa
+  - OutputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+    OutputNodeIndex: 0
+    InputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
+  - OutputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+    OutputNodeIndex: 1
+    InputNodeGUID: f6a6d12b-c828-4ec7-8409-5280861be274
+  - OutputNodeGUID: 9c34b998-4e85-416c-b4b1-431df7b1577b
+    OutputNodeIndex: 0
+    InputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3240237242636042530
+      type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 83e6388f-ca46-48de-999d-62f56803d275
+        type: 2
+        Position: {x: 128, y: 310}
+        flag: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
+    - rid: 3240237242636042531
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f6a6d12b-c828-4ec7-8409-5280861be274
+        type: 4
+        Position: {x: 128, y: 430}
+    - rid: 3240237242636042532
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 27801616-e657-44c2-becc-61492a7f0d4a
+        type: 4
+        Position: {x: 1147, y: 220}
+    - rid: 3240237242636042533
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c03b2c96-2877-4227-8bd2-26328640c3aa
+        type: 4
+        Position: {x: 561, y: 106}
+    - rid: 3240237242636042534
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ec46ef5a-161d-4c39-82e1-d000982551f1
+        type: 5
+        Position: {x: 289, y: 370}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
+          _boolean: 1
+    - rid: 3240237242636042535
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 11242770-1d92-4f87-9c25-e55310c45139
+        type: 1
+        Position: {x: 520, y: 370}
+        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
+        dialogueText: Aight, here. now go throw rocks at bystanders or something
+        Options:
+        - ResponseText: thanks
+          index: 0
+        - ResponseText: why?
+          index: 1
+    - rid: 3240237242636042536
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 02a54210-bb14-4218-912b-ae9c502cff66
+        type: 1
+        Position: {x: 882, y: 502}
+        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
+        dialogueText: 'Because i said so. wait, never mind.
+
+          dont tell
+          them i told you to. got it?'
+        Options:
+        - ResponseText: sure
+          index: 0
+    - rid: 3240237242636042537
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ccdeffc2-ca51-42ee-8226-ba646f660ffe
+        type: 1
+        Position: {x: 1116, y: 502}
+        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 3240237242636042538
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
+        type: 1
+        Position: {x: 289, y: 59}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: You have already had a fish. get lost kiddo.
+        Options:
+        - ResponseText: (get lost)
+          index: 0
+        - ResponseText: (stay)
+          index: 1
+        - ResponseText: no hablas anglais
+          index: 2
+    - rid: 3240237242636042539
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+        type: 1
+        Position: {x: -111, y: 246}
+        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
+        dialogueText: What do you want?
+        Options:
+        - ResponseText: A fish please
+          index: 0
+        - ResponseText: Never mind
+          index: 1
+    - rid: 3240237242636042540
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9c34b998-4e85-416c-b4b1-431df7b1577b
+        type: 3
+        Position: {x: -272, y: 246}
