@@ -34,6 +34,7 @@ namespace Player
         public bool CrouchHeld { get; private set; }
 
         Vector2 _currentPlayerDirection;
+        Vector2 _previousLookVector;
         bool _attackHeld;
         
         int _collidersInFootTrigger;
@@ -115,7 +116,11 @@ namespace Player
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
-        public void OnLook(InputAction.CallbackContext context) => MouseStrategy?.OnLook(this, context.ReadValue<Vector2>());
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            var val = context.ReadValue<Vector2>();
+            MouseStrategy?.OnLook(this, val);
+        }
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (context.started)

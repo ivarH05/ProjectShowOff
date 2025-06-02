@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -5,7 +6,6 @@ using System.Collections.Generic;
 
 namespace CryptBuilder
 {
-#if UNITY_EDITOR
     public partial class Builder
     {
         [SerializeField, HideInInspector] EditMode _editMode;
@@ -382,5 +382,5 @@ namespace CryptBuilder
             EditHeld
         }
     }
-#endif
 }
+#endif

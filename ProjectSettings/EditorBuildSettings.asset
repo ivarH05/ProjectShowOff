@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Crypt1.0.unity
+    guid: 9a253fc69be07a045b8d7ad32809966c
+  - enabled: 0
     path: Assets/Scenes/Crypt_HDRP_Blockout.unity
     guid: 2050bc111bae7c246ab07c067bbe44a9
   m_configObjects:
