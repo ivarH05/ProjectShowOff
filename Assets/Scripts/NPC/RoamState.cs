@@ -1,3 +1,4 @@
+using Crypts;
 using UnityEngine;
 
 namespace NPC

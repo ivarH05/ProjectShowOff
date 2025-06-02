@@ -1,6 +1,7 @@
 using Player;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using Crypts;
 
 namespace NPC
 {
