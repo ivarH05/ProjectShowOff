@@ -471,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345242750}
   - component: {fileID: 345242749}
+  - component: {fileID: 345242751}
   m_Layer: 0
   m_Name: crypt generator
   m_TagString: Untagged
@@ -521,7 +522,7 @@ MonoBehaviour:
       _childAIndex: 6
       _childBIndex: 7
       _bounds:
-        Minimum: {x: 3.5, y: 6.5}
+        Minimum: {x: 3.5, y: 12}
         Maximum: {x: 23.5, y: 23}
       _rectangles: []
     - _parentIndex: 2
@@ -530,15 +531,15 @@ MonoBehaviour:
       _childBIndex: 0
       _bounds:
         Minimum: {x: 3.5, y: 0.99999994}
-        Maximum: {x: 15.5, y: 12}
+        Maximum: {x: 12.5, y: 12}
       _rectangles:
-      - Style: {fileID: 0}
-        HalfSize: {x: 3, y: 2}
-        CenterPosition: {x: 13.5, y: 9}
-        Rotation: 270
       - Style: {fileID: 0}
         HalfSize: {x: 5.5, y: 3}
         CenterPosition: {x: 6.5, y: 6.5}
+        Rotation: 270
+      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
+        HalfSize: {x: 1, y: 2}
+        CenterPosition: {x: 10.5, y: 7.5}
         Rotation: 270
     - _parentIndex: 2
       _thisIndex: 5
@@ -549,24 +550,28 @@ MonoBehaviour:
         Maximum: {x: 22.5, y: 13}
       _rectangles:
       - Style: {fileID: 0}
-        HalfSize: {x: 3, y: 2.5}
-        CenterPosition: {x: 14.5, y: 4.5}
-        Rotation: 0
+        HalfSize: {x: 5, y: 2}
+        CenterPosition: {x: 20.5, y: 8}
+        Rotation: 270
       - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
         HalfSize: {x: 1, y: 2}
         CenterPosition: {x: 17, y: 9}
         Rotation: 270
       - Style: {fileID: 0}
-        HalfSize: {x: 5, y: 2}
-        CenterPosition: {x: 20.5, y: 8}
+        HalfSize: {x: 3, y: 2.5}
+        CenterPosition: {x: 14.5, y: 4.5}
+        Rotation: 0
+      - Style: {fileID: 0}
+        HalfSize: {x: 3, y: 2}
+        CenterPosition: {x: 13.5, y: 9}
         Rotation: 270
     - _parentIndex: 3
       _thisIndex: 6
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: 7, y: 12}
-        Maximum: {x: 12.5, y: 20}
+        Minimum: {x: 3.5, y: 12}
+        Maximum: {x: 12.5, y: 22}
       _rectangles:
       - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
         HalfSize: {x: 1, y: 2}
@@ -576,48 +581,12 @@ MonoBehaviour:
         HalfSize: {x: 3, y: 1}
         CenterPosition: {x: 8, y: 15}
         Rotation: 270
-    - _parentIndex: 3
-      _thisIndex: 7
-      _childAIndex: 8
-      _childBIndex: 9
-      _bounds:
-        Minimum: {x: 3.5, y: 6.5}
-        Maximum: {x: 23.5, y: 23}
-      _rectangles: []
-    - _parentIndex: 7
-      _thisIndex: 8
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 8.5, y: 6.5}
-        Maximum: {x: 12.5, y: 8.5}
-      _rectangles:
-      - Style: {fileID: 11400000, guid: 00bd91b8f0a8ef44b80b63cef6b41cff, type: 2}
-        HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 10.5, y: 7.5}
-        Rotation: 270
-    - _parentIndex: 7
-      _thisIndex: 9
-      _childAIndex: 10
-      _childBIndex: 11
-      _bounds:
-        Minimum: {x: 3.5, y: 14}
-        Maximum: {x: 23.5, y: 23}
-      _rectangles: []
-    - _parentIndex: 9
-      _thisIndex: 10
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 3.5, y: 14}
-        Maximum: {x: 9.5, y: 22}
-      _rectangles:
       - Style: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
         HalfSize: {x: 4, y: 3}
         CenterPosition: {x: 6.5, y: 18}
         Rotation: 270
-    - _parentIndex: 9
-      _thisIndex: 11
+    - _parentIndex: 3
+      _thisIndex: 7
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -668,7 +637,39 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    <Count>k__BackingField: 12
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    - _parentIndex: 0
+      _thisIndex: 0
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: 0, y: 0}
+        Maximum: {x: 0, y: 0}
+      _rectangles: []
+    <Count>k__BackingField: 8
   _rectRounding: 0.5
   _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
   _editMode: 0
@@ -683,12 +684,26 @@ Transform:
   m_GameObject: {fileID: 345242748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.97, y: 0, z: 0}
+  m_LocalPosition: {x: 13.3, y: 0, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &345242751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345242748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd428d43b453243418a3153451fefc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lowDetailRange: 25.5
+  _highDetailRange: 10
 --- !u!1001 &661913977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1421,7 +1436,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.1794, y: 0, z: -3.63463}
-  m_LocalScale: {x: 11.45, y: 1, z: 21.161}
+  m_LocalScale: {x: 1.5, y: 1, z: 21.161}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1016413443}
