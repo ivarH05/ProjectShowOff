@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices.WindowsRuntime;
+
 using UnityEngine;
 
 namespace Player
@@ -31,7 +31,7 @@ namespace Player
             _currentMouse += lookDelta * _sensitivity;
             _currentMouse.y = ClampedAngle(_currentMouse.y);
             
-            controller.transform.localRotation = Quaternion.Euler(0, _currentMouse.x, 0);
+            controller.Body.rotation = Quaternion.Euler(0, _currentMouse.x, 0);
             controller.CameraTransform.localRotation = Quaternion.Euler(_currentMouse.y, 0, 0);
         }
 

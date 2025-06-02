@@ -11584,6 +11584,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 792225688}
     m_Modifications:
+    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
       propertyPath: m_Name
       value: Piece 2_World
@@ -12290,6 +12302,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 792225688}
     m_Modifications:
+    - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: b9096aa041e49934d8548201970c986a, type: 3}
       propertyPath: m_Name
       value: Piece 1_World
@@ -20043,6 +20067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 799970161}
     m_Modifications:
+    - target: {fileID: 385772487244092945, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4749a2a824e376d47aa7031087c2c978, type: 2}
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: TemplateDoor
@@ -30472,6 +30500,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 799970161}
     m_Modifications:
+    - target: {fileID: 385772487244092945, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4749a2a824e376d47aa7031087c2c978, type: 2}
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: TemplateDoor (3)
@@ -35413,6 +35445,14 @@ PrefabInstance:
     - target: {fileID: 6987071137350571306, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: LeftHandPosition.y
       value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351754827435334254, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: _crouchAnimationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351754827435334254, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: _crouchSpeedMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49835,6 +49875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 799970161}
     m_Modifications:
+    - target: {fileID: 385772487244092945, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4749a2a824e376d47aa7031087c2c978, type: 2}
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: TemplateDoor (4)
@@ -50091,6 +50135,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 799970161}
     m_Modifications:
+    - target: {fileID: 385772487244092945, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4749a2a824e376d47aa7031087c2c978, type: 2}
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: TemplateDoor (2)
@@ -52346,6 +52394,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 792225688}
     m_Modifications:
+    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
       propertyPath: m_Name
       value: Piece 3_World

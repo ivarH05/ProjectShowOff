@@ -1,10 +1,7 @@
-using Player;
 using Interactables;
 using UnityEngine;
-using Player.InventoryManagement;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static UnityEditor.PlayerSettings;
 
 namespace Player.InventoryManagement
 {
