@@ -9,7 +9,7 @@ public class Crypt : MonoBehaviour
     public float height;
 
     [HideInInspector] public bool isEditing = false;
-    [SerializeField] private List<Vector2> EditorTiles;
+    [SerializeField] private List<Vector2> EditorTiles = new();
 
     private bool _isSelecting = true;
     private const float tileSize = 0.5f;
