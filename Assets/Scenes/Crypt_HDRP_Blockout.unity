@@ -47335,6 +47335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 537942186}
     m_Modifications:
+    - target: {fileID: 1013611752022821525, guid: 54f78242971b3134db425bffbd03afe0, type: 3}
+      propertyPath: priority
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6435554259810561339, guid: 54f78242971b3134db425bffbd03afe0, type: 3}
       propertyPath: m_Name
       value: TemplateCoffin

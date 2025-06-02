@@ -4169,6 +4169,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 936849530}
     m_Modifications:
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueSystem.DialogueConditionFlag, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: events.OnUnlock.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: TemplateDoor

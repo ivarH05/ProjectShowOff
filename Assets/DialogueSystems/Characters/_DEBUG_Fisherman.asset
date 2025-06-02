@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
-  m_Name: FishExtended
+  m_Script: {fileID: 11500000, guid: 4f2b072f8a47b8a4e8e42f39cad01ada, type: 3}
+  m_Name: _DEBUG_Fisherman
   m_EditorClassIdentifier: 
-  Description: 
-  _nodes: []
-  _connections: []
-  references:
-    version: 2
-    RefIds: []
+  name: Fisherman
+  sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
