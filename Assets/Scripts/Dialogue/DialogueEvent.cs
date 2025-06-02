@@ -16,7 +16,7 @@ namespace DialogueSystem
         [SerializeField]
         public bool _boolean = true;
 
-        public void Run()
+        public void Invoke()
         {
             switch (type)
             {

@@ -12,5 +12,10 @@ namespace DialogueSystem
         {
             DialogueManager.SetFlag(this, value);
         }
+
+        public bool Get()
+        {
+            return DialogueManager.IsTrue(this);
+        }
     }
 }
