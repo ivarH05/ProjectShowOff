@@ -16,17 +16,17 @@ MonoBehaviour:
 
 '
   _nodes:
-  - rid: 3240237242636042541
-  - rid: 3240237242636042542
-  - rid: 3240237242636042543
-  - rid: 3240237242636042544
-  - rid: 3240237242636042545
-  - rid: 3240237242636042546
-  - rid: 3240237242636042547
-  - rid: 3240237242636042548
-  - rid: 3240237242636042549
-  - rid: 3240237242636042550
-  - rid: 3240237242636042551
+  - rid: 5382439327691440392
+  - rid: 5382439327691440393
+  - rid: 5382439327691440394
+  - rid: 5382439327691440395
+  - rid: 5382439327691440396
+  - rid: 5382439327691440397
+  - rid: 5382439327691440398
+  - rid: 5382439327691440399
+  - rid: 5382439327691440400
+  - rid: 5382439327691440401
+  - rid: 5382439327691440402
   _connections:
   - OutputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
     OutputNodeIndex: 0
@@ -58,32 +58,32 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3240237242636042541
+    - rid: 5382439327691440392
       type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 83e6388f-ca46-48de-999d-62f56803d275
         type: 2
         Position: {x: 128, y: 310}
         flag: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
-    - rid: 3240237242636042542
+    - rid: 5382439327691440393
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: f6a6d12b-c828-4ec7-8409-5280861be274
         type: 4
         Position: {x: 128, y: 430}
-    - rid: 3240237242636042543
+    - rid: 5382439327691440394
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 27801616-e657-44c2-becc-61492a7f0d4a
         type: 4
         Position: {x: 1147, y: 220}
-    - rid: 3240237242636042544
+    - rid: 5382439327691440395
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: c03b2c96-2877-4227-8bd2-26328640c3aa
         type: 4
         Position: {x: 561, y: 106}
-    - rid: 3240237242636042545
+    - rid: 5382439327691440396
       type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: ec46ef5a-161d-4c39-82e1-d000982551f1
@@ -91,9 +91,9 @@ MonoBehaviour:
         Position: {x: 289, y: 370}
         onRun:
           type: 1
-          flag: {fileID: 11400000, guid: c99e83785c738c8438c072b254be4a7f, type: 2}
+          flag: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
           _boolean: 1
-    - rid: 3240237242636042546
+    - rid: 5382439327691440397
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 11242770-1d92-4f87-9c25-e55310c45139
@@ -106,7 +106,7 @@ MonoBehaviour:
           index: 0
         - ResponseText: why?
           index: 1
-    - rid: 3240237242636042547
+    - rid: 5382439327691440398
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 02a54210-bb14-4218-912b-ae9c502cff66
@@ -120,7 +120,7 @@ MonoBehaviour:
         Options:
         - ResponseText: sure
           index: 0
-    - rid: 3240237242636042548
+    - rid: 5382439327691440399
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: ccdeffc2-ca51-42ee-8226-ba646f660ffe
@@ -131,7 +131,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 3240237242636042549
+    - rid: 5382439327691440400
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
@@ -146,7 +146,7 @@ MonoBehaviour:
           index: 1
         - ResponseText: no hablas anglais
           index: 2
-    - rid: 3240237242636042550
+    - rid: 5382439327691440401
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
@@ -159,7 +159,7 @@ MonoBehaviour:
           index: 0
         - ResponseText: Never mind
           index: 1
-    - rid: 3240237242636042551
+    - rid: 5382439327691440402
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 9c34b998-4e85-416c-b4b1-431df7b1577b
