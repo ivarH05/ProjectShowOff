@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
-using System.Linq;
-using UnityEngine.UIElements.Experimental;
-using Unity.VisualScripting;
+#endif
 
 namespace Crypts
 {
@@ -64,6 +63,7 @@ namespace Crypts
 
         private Vector2 GetAimingTile(Vector2 mousePosition)
         {
+    #if UNITY_EDITOR
             Ray ray = HandleUtility.GUIPointToWorldRay(mousePosition);
             Plane XZPlane = new Plane(Vector3.up, new Vector3(0, height, 0));
 
@@ -73,6 +73,7 @@ namespace Crypts
                 Vector3 tiledPoint = WorldPointToTile(worldPoint);
                 return new Vector2(tiledPoint.x + 0.5f, tiledPoint.z + 0.5f);
             }
+    #endif
             return Vector2.zero;
         }
 
@@ -105,8 +106,10 @@ namespace Crypts
                     return;
                 EditorTiles.Remove(tile);
             }
+    #if UNITY_EDITOR
             EditorApplication.QueuePlayerLoopUpdate();
             EditorApplication.RepaintProjectWindow();
+    #endif
         }
 
         private void OnDrawGizmosSelected()
