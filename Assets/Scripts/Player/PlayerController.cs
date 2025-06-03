@@ -33,6 +33,8 @@ namespace Player
         public bool SprintHeld { get; private set; }
         public bool CrouchHeld { get; private set; }
 
+        [SerializeField] private bool LockCursor;
+
         Vector2 _currentPlayerDirection;
         Vector2 _previousLookVector;
         bool _attackHeld;
@@ -40,13 +42,16 @@ namespace Player
         int _collidersInFootTrigger;
         float _timeSinceLastFootCollider = 0;
 
-        public Interactable ActiveInteractable { get { return InteractStrategy.activeInteractable; } }
+        public Interactable ActiveInteractable { get { return InteractStrategy?.activeInteractable; } }
 
         private void Awake() { PlayerManager.RegisterPlayer(this); }
         private void OnDestroy() { PlayerManager.UnregisterPlayer(this); }
 
         private void Start()
         {
+            if (LockCursor)
+                Cursor.lockState = CursorLockMode.Locked;
+
             Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
@@ -134,6 +139,13 @@ namespace Player
                 InteractStrategy?.OnAttackStop(this);
             }
         }
+
+        public void StopInteraction()
+        {
+            _attackHeld = false;
+            InteractStrategy?.OnAttackStop(this);
+        }
+
         public void OnAttackSecondary(InputAction.CallbackContext context) 
         {
             if(context.started)

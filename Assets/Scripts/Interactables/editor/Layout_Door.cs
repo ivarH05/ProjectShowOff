@@ -19,10 +19,18 @@ namespace interactables
             if (d.IsLocked)
             {
                 if (GUILayout.Button("Unlock"))
+                {
+                    Undo.RecordObject(target, "Unlocking door");
+                    EditorUtility.SetDirty(target);
                     Unlock();
+                }
             }
             else if (GUILayout.Button("Lock"))
+            {
+                Undo.RecordObject(target, "Locking door");
+                EditorUtility.SetDirty(target);
                 Lock();
+            }
 
             if(d.startAngle > d.maxAngle) 
                 EditorGUILayout.HelpBox("Start angle is higher than the max angle", MessageType.Warning);

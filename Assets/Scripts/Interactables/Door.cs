@@ -1,10 +1,16 @@
+using GameManagement;
 using Player;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Interactables
 {
+    [RequireComponent(typeof(NavMeshObstacle))]
     public class Door : Interactable
     {
         [Header("Setup")]
@@ -19,16 +25,17 @@ namespace Interactables
         [Space]
         public Events events = new Events();
 
+        [SerializeField]
         [HideInInspector]
-        public DoorState state;
-
+        private DoorState state;
         [HideInInspector]
         public bool isInFront = false;
+
         private bool _returningCamera = false;
         private float _angle;
-
         private PlayerController controller;
         private Vector3 _originalCameraPosition;
+        private NavMeshObstacle _obstacle;
 
 
         const float DoorSwingSpeed = 5;
@@ -69,6 +76,8 @@ namespace Interactables
 
             set
             {
+                if(_obstacle != null) 
+                    _obstacle.enabled = value;
                 if (value)
                 {
                     if(state != DoorState.locked)
@@ -96,6 +105,8 @@ namespace Interactables
         private void Start()
         {
             _angle = startAngle;
+            _obstacle = GetComponent<NavMeshObstacle>();
+            _obstacle.enabled = IsLocked;
         }
 
         private void Update()
@@ -103,6 +114,39 @@ namespace Interactables
             if(_returningCamera)
                 ReturnCamera();
             HandleRotation();
+        }
+
+        private float _tempAngle;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (IsLocked)
+                return;
+
+            if (!other.CompareTag("Enemy"))
+                return;
+
+            _tempAngle = _angle;
+
+            for (int i = 0; i < PlayerManager.PlayerCount; i++)
+            {
+                PlayerController player = PlayerManager.GetPlayer(i);
+                if (player.ActiveInteractable == this)
+                    player.StopInteraction();
+            }
+            
+
+            SetAngle(maxAngle);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (IsLocked)
+                return;
+
+            if (!other.CompareTag("Enemy"))
+                return;
+
+            SetAngle(_tempAngle);
         }
 
         private void ReturnCamera()

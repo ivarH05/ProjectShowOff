@@ -15,7 +15,13 @@ namespace DialogueSystem
         private Dialogue _activeDialogue;
         private NodeData activeNode;
 
-        public Events events;
+        public Events events = new Events();
+
+
+        public void Awake()
+        {
+            gameObject.SetActive(false);
+        }
 
         public void SetDialogue(Dialogue dialogue)
         {
