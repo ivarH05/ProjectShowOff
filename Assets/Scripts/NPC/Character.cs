@@ -29,14 +29,13 @@ namespace NPC
 
 
         /**                 PRIVATES              */
-        private NavMeshAgent _agent;
         private HashSet<PlayerController> visiblePlayers = new HashSet<PlayerController>();
 
         /**                 UNSERIALIZED PUBLICS              */
         public float health { get; private set; }
-        public Character character { get; private set; }
-        public float RemainingDistance => _agent.remainingDistance;
-        public void SetDestination(Vector3 destination) => _agent.SetDestination(destination);
+        public NavMeshAgent agent { get; private set; }
+        public float RemainingDistance => agent.remainingDistance;
+        public void SetDestination(Vector3 destination) => agent.SetDestination(destination);
 
 
         /**                 METHODS              */
@@ -44,7 +43,7 @@ namespace NPC
         internal virtual void Start()
         {
             AddCharacter(this);
-            _agent = GetComponent<NavMeshAgent>();
+            agent = GetComponent<NavMeshAgent>();
             GetComponent<SoundListener>().OnHearSound += sound => { events.OnHearSound.Invoke(this, sound); };
 
             events.OnSpawn.Invoke(this);

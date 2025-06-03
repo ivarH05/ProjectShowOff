@@ -20,6 +20,7 @@ namespace NPC
         Enemy enemy;
         public override void StartState(Character character)
         {
+            base.StartState(character);
             if (!(character is Enemy e))
             {
                 character.SetBehaviourState<RoamState>();

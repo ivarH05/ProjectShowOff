@@ -1,5 +1,8 @@
+using GameManagement;
 using Player;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -103,6 +106,37 @@ namespace Interactables
             if(_returningCamera)
                 ReturnCamera();
             HandleRotation();
+        }
+
+        private float _tempAngle;
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("Trigger");
+            if (!other.CompareTag("Enemy"))
+                return;
+
+            Debug.Log("Open");
+            _tempAngle = _angle;
+
+            for (int i = 0; i < PlayerManager.PlayerCount; i++)
+            {
+                PlayerController player = PlayerManager.GetPlayer(i);
+                if (player.ActiveInteractable == this)
+                    player.StopInteraction();
+            }
+            
+
+            SetAngle(maxAngle);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            Debug.Log("Trigger");
+            if (!other.CompareTag("Enemy"))
+                return;
+
+            Debug.Log("Close");
+            SetAngle(_tempAngle);
         }
 
         private void ReturnCamera()

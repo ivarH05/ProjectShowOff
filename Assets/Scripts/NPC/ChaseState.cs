@@ -9,6 +9,7 @@ namespace NPC
         private PlayerController _trackingPlayer;
         public override void StartState(Character character)
         {
+            base.StartState(character);
             _trackingPlayer = null;
             character.events.WhileSeePlayer.AddListener(WhileSeePlayer);
         }
