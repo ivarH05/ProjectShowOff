@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 4322272892429166820}
   - component: {fileID: 1397198483519223238}
   - component: {fileID: 8863349070055409239}
+  - component: {fileID: 5403789149975257138}
+  - component: {fileID: 1440549990991382520}
   m_Layer: 6
   m_Name: TemplateDoor
   m_TagString: Untagged
@@ -191,7 +193,19 @@ MonoBehaviour:
         m_Calls: []
     OnUnlock:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
+          m_TargetAssemblyTypeName: DialogueSystem.DialogueConditionFlag, Assembly-CSharp
+          m_MethodName: Set
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   state: 1
   isInFront: 0
 --- !u!114 &8863349070055409239
@@ -211,6 +225,43 @@ MonoBehaviour:
   m_Center: {x: 0.45, y: 1, z: 0}
   m_Area: 3
   m_AffectedAgents: ffffffff
+--- !u!65 &5403789149975257138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275285127103864161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0.45, y: 1, z: 0}
+--- !u!208 &1440549990991382520
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275285127103864161}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.4, y: 0.9, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.45, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6889591833506423066
 GameObject:
   m_ObjectHideFlags: 0

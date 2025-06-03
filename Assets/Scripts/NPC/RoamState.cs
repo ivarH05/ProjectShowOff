@@ -10,7 +10,6 @@ namespace NPC
 
         private float _timer;
 
-        public override void StartState(Character character) { }
         public override void UpdateState(Character character)
         {
             if(character.RemainingDistance < 0.1f)
