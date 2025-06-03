@@ -227,6 +227,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102993976}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &158363339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6733907240510399710, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+  m_PrefabInstance: {fileID: 7676499613770020346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &166252122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1521,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156403294}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1366515520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6340187229796959029, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+  m_PrefabInstance: {fileID: 7676499613770020346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28b11b00a3db24bb050ddc08a38a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370699519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1581,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1375027090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375027091}
+  - component: {fileID: 1375027092}
+  m_Layer: 0
+  m_Name: HeadBobber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375027091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375027090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 158363339}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375027092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375027090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f02240c90863b449a9377465c2c671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 1366515520}
+  _frequency: 8
+  _magnitude: 0.05
+  _speedThreshold: 0.3
+  _windupSpeed: 1
+  _idleBobStrength: 0.3
+  _idleBobFrequency: 1
 --- !u!1 &1591252298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2073,10 @@ PrefabInstance:
       propertyPath: FootstepFrequencyMultiplier
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1293516364214325606, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: <ToFollow>k__BackingField
+      value: 
+      objectReference: {fileID: 1375027091}
     - target: {fileID: 6549291064245748998, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2053,6 +2124,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6733907240510399710, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1375027091}
     - targetCorrespondingSourceObject: {fileID: 4711002230998736426, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1024932663}
