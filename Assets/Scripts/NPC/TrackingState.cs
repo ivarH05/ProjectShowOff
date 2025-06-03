@@ -45,11 +45,7 @@ namespace NPC
 
         private void ContinueCurrentSearch()
         {
-            Vector3 randomPosition = GetRandomPosition(SearchDistanceRange.x, SearchDistanceRange.y);
-            Vector3 nextPos = _currentClue.position + randomPosition;  
-                
-
-            SetDestination(nextPos);
+            SetDestination(_currentClue.GetPositionInBounds(5));
 
             _pauseTimer = Random.Range(PauseTimeRange.x, PauseTimeRange.y);
         }
@@ -59,7 +55,7 @@ namespace NPC
             int randomIndex = Random.Range(0, enemy.ClueCount);
             Clue clue = enemy.GetClue(randomIndex);
 
-            if (_searchedCount >= 3 || clue == _currentClue)
+            if (_searchedCount >= 10 || clue == _currentClue)
             {
                 enemy.SetBehaviourState<RoamState>();
                 return;
@@ -75,7 +71,7 @@ namespace NPC
             _pauseTimer = Random.Range(PauseTimeRange.x, PauseTimeRange.y);
             _currentClue = clue;
 
-            SetDestination(clue.position);
+            SetDestination(clue.GetPositionInBounds());
         }
 
         void SetDestination(Vector3 point)

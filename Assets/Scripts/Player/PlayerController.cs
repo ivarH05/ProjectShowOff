@@ -33,6 +33,8 @@ namespace Player
         public bool SprintHeld { get; private set; }
         public bool CrouchHeld { get; private set; }
 
+        [SerializeField] private bool LockCursor;
+
         Vector2 _currentPlayerDirection;
         Vector2 _previousLookVector;
         bool _attackHeld;
@@ -47,6 +49,9 @@ namespace Player
 
         private void Start()
         {
+            if (LockCursor)
+                Cursor.lockState = CursorLockMode.Locked;
+
             Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();

@@ -110,6 +110,9 @@ GameObject:
   - component: {fileID: 7235618406783406126}
   - component: {fileID: 8380461598599521750}
   - component: {fileID: 3038148825689784841}
+  - component: {fileID: 2754816502108321629}
+  - component: {fileID: 20174979089927318}
+  - component: {fileID: 1904525555041889860}
   m_Layer: 0
   m_Name: TemplateEnemy
   m_TagString: Untagged
@@ -125,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3795288592143832252}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.09, y: 0.025, z: 13.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -187,7 +190,7 @@ MonoBehaviour:
     OnDespawn:
       m_PersistentCalls:
         m_Calls: []
-    OnHearPlayer:
+    OnHearSound:
       m_PersistentCalls:
         m_Calls: []
     OnNoticePlayer:
@@ -202,6 +205,8 @@ MonoBehaviour:
     OnChangeState:
       m_PersistentCalls:
         m_Calls: []
+  _audioBehaviourStrategy: {fileID: 20174979089927318}
+  _visionBehaviourStrategy: {fileID: 1904525555041889860}
   defaultBehaviour: 1
 --- !u!114 &7235618406783406126
 MonoBehaviour:
@@ -245,6 +250,43 @@ MonoBehaviour:
   SearchTimeRange: {x: 15, y: 35}
   PauseTimeRange: {x: 0.5, y: 2}
   StayOnTiles: 0
+--- !u!114 &2754816502108321629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795288592143832252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8605fcfddd084c0468d6a2980b88c7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &20174979089927318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795288592143832252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b69c03898ff424a9511af447d5620b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingErrorMargin: 2.5
+--- !u!114 &1904525555041889860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795288592143832252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dada57163ab9244b3cd97570f26dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7024960081871414273
 PrefabInstance:
   m_ObjectHideFlags: 0
