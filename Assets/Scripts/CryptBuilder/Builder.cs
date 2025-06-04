@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace CryptBuilder
@@ -10,10 +11,11 @@ namespace CryptBuilder
         [SerializeField] CryptRoomStyle _defaultStyle;
 
         float _rectRotationRounding = 90;
+        bool _showWallGizmos = true;
 
         private void OnDrawGizmosSelected()
         {
-            if (_rectRounding < 0.01f) 
+            if (_rectRounding < 0.01f || !_showWallGizmos) 
                 return;
 
             Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.identity, Vector3.one);
@@ -143,12 +145,28 @@ namespace CryptBuilder
         {
             public float RectRounding;
 
-            public void OnNewRoom(RotatedRectangle room) {}
+            public void OnNewRoom(RotatedRectangle room) 
+            {
+                Gizmos.color = GetStyleColor(room.Style);
+            }
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
             {
-                Gizmos.color = Color.orange;
                 Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
+            }
+        }
+
+        public static Color GetStyleColor(CryptRoomStyle style)
+        {
+            if (style == null)
+                return Color.gray3;
+            else
+            {
+                var id = GlobalObjectId.GetGlobalObjectIdSlow(style);
+                var seed = (uint)id.GetHashCode();
+                Unity.Mathematics.Random rand = new(seed);
+                float hue = rand.NextFloat();
+                return Color.HSVToRGB(hue, 1, .7f);
             }
         }
     }

@@ -4,7 +4,8 @@ namespace NPC
 {
     public abstract class BehaviourState : MonoBehaviour
     {
-        public abstract void StartState(Character character);
+        public float speed = 4;
+        public virtual void StartState(Character character) { character.agent.speed = speed; }
         public abstract void UpdateState(Character character);
         public abstract void StopState(Character character);
 
