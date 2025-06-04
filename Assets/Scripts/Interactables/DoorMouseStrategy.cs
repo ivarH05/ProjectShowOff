@@ -20,5 +20,23 @@ namespace Interactables
 
         }
         public override void StopStrategy(PlayerController controller) { }
+
+
+
+        public override void OnPeekLeftStart(PlayerController controller)
+        {
+        }
+
+        public override void OnPeekLeftStop(PlayerController controller)
+        {
+        }
+
+        public override void OnPeekRightStart(PlayerController controller)
+        {
+        }
+
+        public override void OnPeekRightStop(PlayerController controller)
+        {
+        }
     }
 }

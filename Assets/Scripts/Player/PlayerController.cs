@@ -140,6 +140,21 @@ namespace Player
             }
         }
 
+        public void OnPeekLeft(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                MouseStrategy.OnPeekLeftStart(this);
+            if (context.canceled)
+                MouseStrategy.OnPeekLeftStop(this);
+        }
+        public void OnPeekRight(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                MouseStrategy.OnPeekRightStart(this);
+            if (context.canceled)
+                MouseStrategy.OnPeekRightStop(this);
+        }
+
         public void StopInteraction()
         {
             _attackHeld = false;

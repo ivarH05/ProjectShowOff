@@ -1,8 +1,5 @@
-using OpenCover.Framework.Model;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static DialogueSystem.Dialogue;
 
 namespace DialogueSystem
 {
