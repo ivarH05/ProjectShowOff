@@ -37,7 +37,7 @@ namespace CryptBuilder
         {
             _currentRoom = new GameObject($"Room {_roomCount}");
             _currentRoom.transform.SetParent(CryptRoot.transform, false);
-            _currentStyle = room.Style == null ? DefaultStyle : room.Style;
+            _currentStyle = room.Room?.Style == null ? DefaultStyle : room.Room.Style;
             _roomCount++;
         }
     }

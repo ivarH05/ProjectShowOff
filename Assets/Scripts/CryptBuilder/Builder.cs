@@ -153,7 +153,7 @@ namespace CryptBuilder
 
             public void OnNewRoom(RotatedRectangle room) 
             {
-                Gizmos.color = GetStyleColor(room.Style);
+                Gizmos.color = GetStyleColor(room.Room?.Style);
             }
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
