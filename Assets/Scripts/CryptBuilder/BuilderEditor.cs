@@ -3,7 +3,6 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Windows;
 
 namespace CryptBuilder
 {
@@ -107,7 +106,23 @@ namespace CryptBuilder
                 GUILayout.Label("Danger zone");
                 if(GUILayout.Button("(Re)generate hitboxes"))
                 {
-
+                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate hitboxes");
+                    HitboxGenerator gen = new();
+                    gen.TileScale = b._rectRounding;
+                    b.GenerateSurfaces(gen);
+                    EditorUtility.SetDirty(b);
+                }
+                if(GUILayout.Button("Clear hitboxes"))
+                {
+                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Delete hitboxes");
+                    foreach (var node in b.RectangleTree.Nodes)
+                    {
+                        var rectses = node.Rectangles;
+                        if (rectses == null) continue;
+                        foreach (var r in rectses)
+                            Undo.DestroyObjectImmediate(r.Room.Colliders);
+                    }
+                    EditorUtility.SetDirty(b);
                 }
                 if(GUILayout.Button("(Re)generate full crypt"))
                 {
@@ -115,7 +130,7 @@ namespace CryptBuilder
                     foreach (var node in b.RectangleTree.Nodes)
                     {
                         var rectses = node.Rectangles;
-                        if(rectses != null)
+                        if (rectses == null) continue;
                         foreach (var r in rectses)
                         {
                             if(r.Room != null)
@@ -132,7 +147,7 @@ namespace CryptBuilder
                     foreach(var node in b.RectangleTree.Nodes)
                     {
                         var rectses = node.Rectangles;
-                        if(rectses != null)
+                        if (rectses == null) continue;
                         foreach(var r in rectses)
                             Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
                     }
@@ -385,9 +400,12 @@ namespace CryptBuilder
                             rect.CenterPosition += posDif;
                             rect.HalfSize *= scaleDif;
                             rect.Rotation += rotationDif;
-                            rect.Room.transform.rotation = Quaternion.Euler(0, rect.Rotation, 0);
-                            rect.Room.transform.localPosition = rect.CenterPosition.To3D();
                             b._heldRectangles[i] = rect;
+
+                            var rounded = rect;
+                            rounded.Round(b._rectRounding, b._rectRotationRounding);
+                            rect.Room.transform.rotation = Quaternion.Euler(0, rounded.Rotation, 0);
+                            rect.Room.transform.localPosition = rounded.CenterPosition.To3D();
                         }
                         EditorUtility.SetDirty(b);
                     }
@@ -520,6 +538,55 @@ namespace CryptBuilder
             AddNew,
             EditHeld,
             StyleBrush
+        }
+        struct HitboxGenerator : ICryptSurfaceGenerator
+        {
+            public float TileScale;
+            RotatedRectangle _room;
+            Vector2 _tileOffset;
+            bool _validRoom;
+            public void GenerateFloor(BoundingBox shape)
+            {
+                if (!_validRoom) return;
+
+                var col = _room.Room.Colliders.AddComponent<BoxCollider>();
+                var scale = shape.Size;
+
+                col.size = new(scale.x, 1f, scale.y);
+                col.center = new(0, -.5f, 0);
+            }
+
+            public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
+            {
+                if (!_validRoom) return;
+
+                start -= _tileOffset;
+                end -= _tileOffset;
+
+                var col = _room.Room.Colliders.AddComponent<BoxCollider>();
+                float length = Vector2.Distance(start, end);
+
+                Vector2 direction = (start - end);
+                normal *= TileScale;
+                col.size = new(Mathf.Abs(direction.x) + Mathf.Abs(normal.x), 4, Mathf.Abs(direction.y) + Mathf.Abs(normal.y));
+                Vector2 center = .5f * (start + end + normal);
+                col.center = new(center.x, 1, center.y);
+            }
+
+            public void OnNewRoom(RotatedRectangle room)
+            {
+                _validRoom = room.Room != null;
+                if (!_validRoom)
+                    Debug.LogError("Room is missing a generated room object! Click \"Regenerate rooms\" on the cryptbuilder.");
+                else
+                {
+                    Undo.DestroyObjectImmediate(room.Room.Colliders);
+                    _tileOffset = room.CenterPosition;
+                    room.Room.Colliders.transform.rotation = Quaternion.identity;
+                }
+
+                _room = room;
+            }
         }
     }
 }

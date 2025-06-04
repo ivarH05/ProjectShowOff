@@ -17,7 +17,7 @@ namespace CryptBuilder
                 return _generatedChildren;
             }
         }
-        GameObject _generatedChildren;
+        [SerializeField, HideInInspector] GameObject _generatedChildren;
 
         public GameObject Colliders
         {
@@ -31,6 +31,6 @@ namespace CryptBuilder
                 return _colliders;
             }
         }
-        GameObject _colliders;
+        [SerializeField, HideInInspector] GameObject _colliders;
     }
 }

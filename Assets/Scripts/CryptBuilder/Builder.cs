@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CryptBuilder
 {
@@ -25,20 +26,25 @@ namespace CryptBuilder
             GizmoGenerator gen = new();
             gen.RectRounding = _rectRounding;
             GenerateCrypt(gen);
-            GenerateSurfacesRecursive(1, ref gen);
+            GenerateSurfaces(gen);
+        }
 
-            void GenerateSurfacesRecursive<TGenerator>(int nodeIndex, ref TGenerator generator) where TGenerator : ICryptSurfaceGenerator
+        public void GenerateSurfaces<TGenerator>(TGenerator generator) where TGenerator : ICryptSurfaceGenerator
+        {
+            GenerateSurfacesRecursive(1, ref generator);
+
+            void GenerateSurfacesRecursive(int nodeIndex, ref TGenerator gen)
             {
                 var node = RectangleTree.Nodes[nodeIndex];
                 var rects = node.Rectangles;
-                if(rects != null)
+                if (rects != null)
                 {
-                    for(int i = 0; i<rects.Count;i++)
+                    for (int i = 0; i < rects.Count; i++)
                     {
                         GenerateSurfaces(nodeIndex, i, ref gen);
                     }
                 }
-                if(node.ChildAIndex > 0)
+                if (node.ChildAIndex > 0)
                 {
                     GenerateSurfacesRecursive(node.ChildAIndex, ref gen);
                     GenerateSurfacesRecursive(node.ChildBIndex, ref gen);
