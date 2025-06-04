@@ -509,6 +509,17 @@
                 },
                 {
                     "name": "",
+                    "id": "457b4d47-1fb5-4c61-b66c-0bce3b4d0dbc",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d879bcd7-1eef-4ba0-bb38-c44bfa8fbf98",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",

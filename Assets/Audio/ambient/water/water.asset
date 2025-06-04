@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
+  m_Name: water
+  m_EditorClassIdentifier: 
+  ClipSelection:
+  - {fileID: 8300000, guid: 115eecfe683e9b54abf8e486047eebde, type: 3}
+  - {fileID: 8300000, guid: 77f1897112c0bba42ab0537a606d3f2b, type: 3}
+  - {fileID: 8300000, guid: 2610ff071c39ba842bcf5cbb44a2f9aa, type: 3}
+  - {fileID: 8300000, guid: 7992cc60392c7e54ea18bd8449777640, type: 3}
+  - {fileID: 8300000, guid: 5c89ba40bb7c13441a918c3af670ba74, type: 3}
+  - {fileID: 8300000, guid: bb849b0c00e73e9469e881d9dd6e73a6, type: 3}
+  SelectionMode: 1
+  Type: 0
+  Volume: 0.28
+  Pitch: 1
+  AudibleRange: 40
+  FaintThreshold: 0.502
+  ModerateThreshold: 0.155
+  LoudThreshold: 0.032

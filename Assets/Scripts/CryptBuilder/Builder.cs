@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace CryptBuilder
@@ -27,7 +29,7 @@ namespace CryptBuilder
         /// <summary>
         /// Generates the crypt using the given generator.
         /// </summary>
-        public void GenerateCrypt<TGenerator>(TGenerator generator) where TGenerator : ICryptGenerator
+        public void GenerateCrypt<TGenerator>(TGenerator generator) where TGenerator : ICryptTileGenerator
         {
             GenerateShapeRecursive(1, ref generator);
 
@@ -50,47 +52,15 @@ namespace CryptBuilder
             }
         }
 
-        void GenerateTiles<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptGenerator
+        /// <summary>
+        /// Generates the tiles for a single room.
+        /// </summary>
+        /// <param name="nodeIndex">The index of the node.</param>
+        /// <param name="rectIndex">The index of the rectangle in the node's rectangle list.</param>
+        /// <param name="gen">The generator to use.</param>
+        public void GenerateTiles<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptTileGenerator
         {
-            var node = RectangleTree.Nodes[nodeIndex];
-            var rects = node.Rectangles;
-            var rect = rects[rectIndex];
-            var bounds = rect.GetBounds();
-            float thisPriority = bounds.Size.x * bounds.Size.y;
-
-            var contestingRects = RectangleTree.GetRectanglesIntersectingBox(bounds);
-            List<BoundingBox> higherPriorityRects = new();
-            foreach ((int cNode, int cRect) in contestingRects)
-            {
-                if (cNode == nodeIndex && cRect == rectIndex) 
-                    continue;
-
-                var contestRect = RectangleTree.Nodes[cNode].Rectangles[cRect].GetBounds();
-                var contestPriority = contestRect.Size.x * contestRect.Size.y;
-
-                if (contestPriority < thisPriority)
-                    continue;
-
-                if (contestPriority > thisPriority)
-                {
-                    higherPriorityRects.Add(contestRect);
-                    continue;
-                }
-
-                var contestCenter = contestRect.Center;
-                var thisCenter = bounds.Center;
-                if (contestCenter.y > thisCenter.y ||
-                    contestCenter.x > thisCenter.x ||
-                    contestRect.GetHashCode() > bounds.GetHashCode())
-                {
-                    higherPriorityRects.Add(contestRect);
-                    continue;
-                }
-
-                // if there are two literally equal rectangles, idk if i can do anything about it
-                // the room will just generate double like whatever
-            }
-
+            var higherPriorityRects = GetIntersectingHigherPriorityBoxes(nodeIndex, rectIndex, out var rect, out var bounds);
             gen.OnNewRoom(rect);
 
             for (float x = bounds.Minimum.x + .5f*_rectRounding; x < bounds.Maximum.x; x += _rectRounding)
@@ -133,21 +103,103 @@ namespace CryptBuilder
             }
         }
 
+        /// <summary>
+        /// Generates the surfaces of a certain room. Floors may overlap - walls don't.
+        /// </summary>
+        /// <param name="nodeIndex">The index of the node containing the room.</param>
+        /// <param name="rectIndex">The index of the rectangle in the node's rectangle list.</param>
+        /// <param name="gen">The generator to use.</param>
+        public void GenerateSurfaces<TGenerator>(int nodeIndex, int rectIndex, ref TGenerator gen) where TGenerator : ICryptSurfaceGenerator
+        {
+            var higherPriorityRects = GetIntersectingHigherPriorityBoxes(nodeIndex, rectIndex, out var rect, out var bounds);
+            gen.OnNewRoom(rect);
 
-        public interface ICryptGenerator
+            gen.GenerateFloor(bounds);
+
+            void GenerateWall(Vector2 start, Vector2 direction, float boundsLength, Vector2 normal)
+            {
+                float wallStart = -1;
+                float wallEnd = -1;
+                for (float i = 0; i < boundsLength; i += _rectRounding)
+                {
+                    Vector2 point = start + direction * i;
+                    bool lowerPriority = false;
+                    foreach (var r in higherPriorityRects)
+                        if (r.ContainsPoint(point))
+                        {
+                            lowerPriority = true;
+                            break;
+                        }
+
+
+                }
+            }
+        }
+
+        List<BoundingBox> GetIntersectingHigherPriorityBoxes(int nodeIndex, int rectIndex, out RotatedRectangle rect, out BoundingBox rectBounds)
+        {
+            var node = RectangleTree.Nodes[nodeIndex];
+            var rects = node.Rectangles;
+            rect = rects[rectIndex];
+            var bounds = rect.GetBounds();
+            rectBounds = bounds;
+            float thisPriority = bounds.Size.x * bounds.Size.y;
+
+            var contestingRects = RectangleTree.GetRectanglesIntersectingBox(bounds);
+            List<BoundingBox> higherPriorityRects = new();
+            foreach ((int cNode, int cRect) in contestingRects)
+            {
+                if (cNode == nodeIndex && cRect == rectIndex)
+                    continue;
+
+                var contestRect = RectangleTree.Nodes[cNode].Rectangles[cRect].GetBounds();
+                var contestPriority = contestRect.Size.x * contestRect.Size.y;
+
+                if (contestPriority < thisPriority)
+                    continue;
+
+                if (contestPriority > thisPriority)
+                {
+                    higherPriorityRects.Add(contestRect);
+                    continue;
+                }
+
+                var contestCenter = contestRect.Center;
+                var thisCenter = bounds.Center;
+                if (contestCenter.y > thisCenter.y ||
+                    contestCenter.x > thisCenter.x ||
+                    contestRect.GetHashCode() > bounds.GetHashCode())
+                {
+                    higherPriorityRects.Add(contestRect);
+                    continue;
+                }
+
+                // if there are two literally equal rectangles, idk if i can do anything about it
+                // the room will just generate double like whatever
+            }
+            return higherPriorityRects;
+        }
+
+        public interface ICryptSurfaceGenerator
+        {
+            void OnNewRoom(RotatedRectangle room);
+            void GenerateFloor(BoundingBox shape);
+            void GenerateWall(Vector2 start, Vector2 end, Vector2 normal);
+        }
+        public interface ICryptTileGenerator
         {
             void OnNewRoom(RotatedRectangle room);
             void GenerateFloor(Vector2 point);
             void GenerateWall(Vector2 point, Vector2 normal);
         }
 
-        private struct GizmoGenerator : ICryptGenerator
+        private struct GizmoGenerator : ICryptTileGenerator
         {
             public float RectRounding;
 
             public void OnNewRoom(RotatedRectangle room) 
             {
-                Gizmos.color = GetStyleColor(room.Style);
+                Gizmos.color = GetStyleColor(room.Room?.Style);
             }
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
@@ -158,6 +210,7 @@ namespace CryptBuilder
 
         public static Color GetStyleColor(CryptRoomStyle style)
         {
+#if UNITY_EDITOR
             if (style == null)
                 return Color.gray3;
             else
@@ -168,6 +221,9 @@ namespace CryptBuilder
                 float hue = rand.NextFloat();
                 return Color.HSVToRGB(hue, 1, .7f);
             }
+#else
+            return Color.gray3;
+#endif
         }
     }
 }

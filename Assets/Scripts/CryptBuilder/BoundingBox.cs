@@ -42,8 +42,8 @@ namespace CryptBuilder
 
         public bool Intersects(BoundingBox other)
         {
-            if(ContainsPoint(other.Maximum) || ContainsPoint(other.Minimum)) return true;
-            return other.ContainsPoint(Minimum) || other.ContainsPoint(Maximum);
+            return Minimum.x <= other.Maximum.x && Maximum.x >= other.Minimum.x &&
+                Minimum.y <= other.Maximum.y && Maximum.y >= other.Minimum.y;
         }
 
         bool IEquatable<BoundingBox>.Equals(BoundingBox other)
