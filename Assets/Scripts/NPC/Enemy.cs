@@ -119,6 +119,7 @@ namespace NPC
                 DrawClue(clues[i]);
             Gizmos.color = Color.red;
 
+            Gizmos.matrix = Matrix4x4.identity;
             Gizmos.DrawSphere(agent.destination, 0.2f);
 #endif  
         }

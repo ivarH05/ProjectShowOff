@@ -26,7 +26,11 @@ namespace Player
                 controller.CameraTransform.eulerAngles.x);
         }
 
-        public override void StopStrategy(PlayerController controller) { }
+        public override void StopStrategy(PlayerController controller)
+        {
+            peekDirection = 0;
+            _peekController.SetDirection(0);
+        }
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {
