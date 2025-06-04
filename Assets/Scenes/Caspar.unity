@@ -521,7 +521,6 @@ GameObject:
   m_Component:
   - component: {fileID: 345242750}
   - component: {fileID: 345242749}
-  - component: {fileID: 345242751}
   m_Layer: 0
   m_Name: crypt generator
   m_TagString: Untagged
@@ -581,7 +580,7 @@ MonoBehaviour:
       _childBIndex: 0
       _bounds:
         Minimum: {x: 4, y: 0.99999994}
-        Maximum: {x: 13, y: 12}
+        Maximum: {x: 13.5, y: 12}
       _rectangles:
       - Room: {fileID: 1660398548}
         HalfSize: {x: 5.5, y: 3}
@@ -589,7 +588,7 @@ MonoBehaviour:
         Rotation: 270
       - Room: {fileID: 1882431738}
         HalfSize: {x: 1, y: 2}
-        CenterPosition: {x: 11, y: 7.5}
+        CenterPosition: {x: 11.5, y: 9}
         Rotation: 270
     - _parentIndex: 2
       _thisIndex: 5
@@ -879,20 +878,6 @@ Transform:
   - {fileID: 536797468}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &345242751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345242748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd428d43b453243418a3153451fefc68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lowDetailRange: 27.12
-  _highDetailRange: 10
 --- !u!1 &536797466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2544,7 @@ Transform:
   m_GameObject: {fileID: 1882431737}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 11.234543, y: 0, z: 7.5}
+  m_LocalPosition: {x: 11.499999, y: 0, z: 8.906878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
