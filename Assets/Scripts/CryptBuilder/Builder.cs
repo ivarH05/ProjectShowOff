@@ -11,6 +11,7 @@ namespace CryptBuilder
         [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
         [SerializeField] float _rectRounding = .25f;
         [SerializeField] CryptRoomStyle _defaultStyle;
+        [SerializeField, Tooltip("Should be a unit quad")] GameObject _floorWallHitbox;
 
         float _rectRotationRounding = 90;
         bool _showWallGizmos = true;

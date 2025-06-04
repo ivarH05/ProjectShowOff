@@ -31,7 +31,10 @@ namespace CryptBuilder
             {
                 GameObject room = new GameObject("Room", typeof(CryptRoom));
                 room.transform.SetParent(b.transform);
+                room.transform.position = rect.CenterPosition.To3D() + b.transform.position;
+                room.transform.rotation = Quaternion.Euler(0, rect.Rotation, 0);
                 rect.Room = room.GetComponent<CryptRoom>();
+                Undo.RegisterCreatedObjectUndo(room, "[CryptGenerator] Created room object");
             }
             public override void OnInspectorGUI()
             {
@@ -110,16 +113,44 @@ namespace CryptBuilder
                 {
                     Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate crypt");
                     foreach (var node in b.RectangleTree.Nodes)
-                        foreach (var r in node.Rectangles)
+                    {
+                        var rectses = node.Rectangles;
+                        if(rectses != null)
+                        foreach (var r in rectses)
                         {
                             if(r.Room != null)
                                 Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
                         }
+                    }
                     CryptGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
                     b.GenerateCrypt(gen);
                 }
-
+                if(GUILayout.Button("Regenerate rooms"))
+                {
+                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Regenerate rooms");
+                    List<RotatedRectangle> rects = new();
+                    for(int i = b.transform.childCount - 1; i >= 0; i--)
+                        Undo.DestroyObjectImmediate(b.transform.GetChild(i).gameObject);
+                    
+                    foreach (var node in b.RectangleTree.Nodes)
+                    {
+                        var rectses = node.Rectangles;
+                        if(rectses != null)
+                        foreach (var r in rectses)
+                        {
+                            var rect = r;
+                            CreateRectangleGameObject(ref rect, b);
+                            rects.Add(r);
+                        }
+                    }
+                    b.RectangleTree = new();
+                    foreach(var r in rects)
+                    {
+                        b.RectangleTree.AddRectangle(r);
+                    }
+                    EditorUtility.SetDirty(b);
+                }
             }
             void OnSceneGUI()
             {
