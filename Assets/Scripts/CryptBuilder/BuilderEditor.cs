@@ -61,7 +61,8 @@ namespace CryptBuilder
                         EditorUtility.SetDirty(b);
                     }
                 }
-                
+
+                GUILayout.Label("Tools");
                 if(GUILayout.Button("Add new rect"))
                 {
                     DeselectHeld(b);
@@ -85,6 +86,7 @@ namespace CryptBuilder
                     if (GUILayout.Button("Disable style brush"))
                         b._editMode = default;
                 }
+                GUILayout.Label("Debug");
                 if(GUILayout.Button("Toggle debug bounds"))
                 {
                     b._debugShowBounds = !b._debugShowBounds;
@@ -102,12 +104,10 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }
-                if(GUILayout.Button("Delete generated crypt"))
+                GUILayout.Label("Danger zone");
+                if(GUILayout.Button("(Re)generate hitboxes"))
                 {
-                    foreach(var node in b.RectangleTree.Nodes)
-                        foreach(var r in node.Rectangles)
-                            Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
-                    EditorUtility.SetDirty(b);
+
                 }
                 if(GUILayout.Button("(Re)generate full crypt"))
                 {
@@ -125,6 +125,18 @@ namespace CryptBuilder
                     CryptGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
                     b.GenerateCrypt(gen);
+                    EditorUtility.SetDirty(b);
+                }
+                if (GUILayout.Button("Delete generated crypt"))
+                {
+                    foreach(var node in b.RectangleTree.Nodes)
+                    {
+                        var rectses = node.Rectangles;
+                        if(rectses != null)
+                        foreach(var r in rectses)
+                            Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
+                    }
+                    EditorUtility.SetDirty(b);
                 }
                 if(GUILayout.Button("Regenerate rooms"))
                 {
@@ -141,7 +153,7 @@ namespace CryptBuilder
                         {
                             var rect = r;
                             CreateRectangleGameObject(ref rect, b);
-                            rects.Add(r);
+                            rects.Add(rect);
                         }
                     }
                     b.RectangleTree = new();

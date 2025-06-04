@@ -8,8 +8,8 @@ namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
-        [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
-        [SerializeField] float _rectRounding = .25f;
+        [field:SerializeField, HideInInspector] public RectangleCollection RectangleTree {get; private set; }
+        [SerializeField] float _rectRounding = .5f;
         [SerializeField] CryptRoomStyle _defaultStyle;
         [SerializeField, Tooltip("Should be a unit quad")] GameObject _floorWallHitbox;
 

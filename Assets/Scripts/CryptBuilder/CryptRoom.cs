@@ -11,12 +11,26 @@ namespace CryptBuilder
             {
                 if(_generatedChildren == null)
                 {
-                    _generatedChildren = new GameObject("Generated children (may be deleted)");
+                    _generatedChildren = new GameObject("Generated children");
                     _generatedChildren.transform.SetParent(transform, false);
                 }
                 return _generatedChildren;
             }
         }
         GameObject _generatedChildren;
+
+        public GameObject Colliders
+        {
+            get
+            {
+                if(_colliders == null)
+                {
+                    _colliders = new GameObject("Generated colliders");
+                    _colliders.transform.SetParent(transform, false);
+                }
+                return _colliders;
+            }
+        }
+        GameObject _colliders;
     }
 }
