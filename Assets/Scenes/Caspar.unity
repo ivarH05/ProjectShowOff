@@ -852,7 +852,6 @@ MonoBehaviour:
   _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
   _editMode: 0
   _heldRectangles: []
-  _generatedCrypt: {fileID: 0}
 --- !u!4 &345242750
 Transform:
   m_ObjectHideFlags: 0
@@ -892,7 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd428d43b453243418a3153451fefc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lowDetailRange: 25.5
+  _lowDetailRange: 27.12
   _highDetailRange: 10
 --- !u!1 &536797466
 GameObject:

@@ -11,7 +11,6 @@ namespace CryptBuilder
     {
         [SerializeField, HideInInspector] EditMode _editMode;
         [SerializeField, HideInInspector] List<RotatedRectangle> _heldRectangles = new();
-        [SerializeField, HideInInspector] GameObject _generatedCrypt;
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
         CryptRoomStyle _brushStyle;
@@ -100,30 +99,24 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }
-                if (GUILayout.Button("Reset crypt"))
+                if(GUILayout.Button("Delete generated crypt"))
                 {
-                    Undo.RecordObject(b, "[CryptBuilder] Reset crypt");
-                    b.RectangleTree = new();
-                    SceneView.RepaintAll();
+                    foreach(var node in b.RectangleTree.Nodes)
+                        foreach(var r in node.Rectangles)
+                            Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
                     EditorUtility.SetDirty(b);
                 }
-                if(b._generatedCrypt != null)
+                if(GUILayout.Button("(Re)generate full crypt"))
                 {
-                    if(GUILayout.Button("Delete generated crypt"))
-                    {
-                        Undo.DestroyObjectImmediate(b._generatedCrypt);
-                        b._generatedCrypt = null;
-                        EditorUtility.SetDirty(b);
-                    }
-                }
-                else if(GUILayout.Button("Generate full crypt"))
-                {
-                    b._generatedCrypt = new("Crypt");
-                    Undo.RegisterCreatedObjectUndo(b._generatedCrypt, "[CryptBuilder] Generate crypt");
-                    b._generatedCrypt.transform.localPosition = b.transform.position;
+                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate crypt");
+                    foreach (var node in b.RectangleTree.Nodes)
+                        foreach (var r in node.Rectangles)
+                        {
+                            if(r.Room != null)
+                                Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
+                        }
                     CryptGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
-                    gen.CryptRoot = b._generatedCrypt;
                     b.GenerateCrypt(gen);
                 }
 
