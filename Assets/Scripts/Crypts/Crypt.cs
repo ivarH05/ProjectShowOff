@@ -11,7 +11,7 @@ namespace Crypts
         public float height;
 
         [HideInInspector] public bool isEditing = false;
-        [SerializeField] private List<Vector2> EditorTiles;
+        [SerializeField] private List<Vector2> EditorTiles = new List<Vector2>();
 
         private bool _isSelecting = true;
         private const float tileSize = 0.5f;

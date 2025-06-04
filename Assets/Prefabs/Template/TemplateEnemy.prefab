@@ -108,8 +108,8 @@ GameObject:
   - component: {fileID: 5651134977073616535}
   - component: {fileID: 2802933306193397277}
   - component: {fileID: 7235618406783406126}
-  - component: {fileID: 8380461598599521750}
   - component: {fileID: 3038148825689784841}
+  - component: {fileID: 8380461598599521750}
   - component: {fileID: 2754816502108321629}
   - component: {fileID: 20174979089927318}
   - component: {fileID: 1904525555041889860}
@@ -220,20 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc82469100276d144a0fe56c0ea3bcd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.5
   DistanceRange: {x: 5, y: 15}
   PauseTimeRange: {x: 2, y: 5}
---- !u!114 &8380461598599521750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795288592143832252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da8d3e51e7e1c4498d203a7544c08a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3038148825689784841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,10 +235,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791053bd7b3acbd47825c23d7ce34ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SearchDistanceRange: {x: 0, y: 5}
-  SearchTimeRange: {x: 15, y: 35}
+  speed: 3.5
+  SearchTimeRange: {x: 2, y: 5}
   PauseTimeRange: {x: 0.5, y: 2}
   StayOnTiles: 0
+--- !u!114 &8380461598599521750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795288592143832252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da8d3e51e7e1c4498d203a7544c08a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!114 &2754816502108321629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b69c03898ff424a9511af447d5620b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearingErrorMargin: 2.5
+  hearingErrorMargin: 1.5
+  hearingThreshold: 0.2
 --- !u!114 &1904525555041889860
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Windows;
 
 namespace CryptBuilder
 {
@@ -10,7 +11,6 @@ namespace CryptBuilder
     {
         [SerializeField, HideInInspector] EditMode _editMode;
         [SerializeField, HideInInspector] List<RotatedRectangle> _heldRectangles = new();
-        [SerializeField, HideInInspector] GameObject _generatedCrypt;
         List<RotatedRectangle> _rectangleClipboard = new();
         bool _debugShowBounds;
         CryptRoomStyle _brushStyle;
@@ -27,6 +27,12 @@ namespace CryptBuilder
                     DeselectHeld(b);
                 }
             }
+            static void CreateRectangleGameObject(ref RotatedRectangle rect, Builder b)
+            {
+                GameObject room = new GameObject("Room", typeof(CryptRoom));
+                room.transform.SetParent(b.transform);
+                rect.Room = room.GetComponent<CryptRoom>();
+            }
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
@@ -41,13 +47,13 @@ namespace CryptBuilder
                     
                     EditorGUILayout.BeginHorizontal();
                     GUILayout.Label("Selected room's style:");
-                    var newStyle = EditorGUILayout.ObjectField(rectCurrent.Style, typeof(CryptRoomStyle), false);
+                    var newStyle = EditorGUILayout.ObjectField(rectCurrent.Room?.Style, typeof(CryptRoomStyle), false);
                     EditorGUILayout.EndHorizontal();
 
-                    if (newStyle != rectCurrent.Style)
+                    if (newStyle != rectCurrent.Room.Style)
                     {
                         Undo.RecordObject(b, "[CryptBuilder] Set selected room's style");
-                        rectCurrent.Style = (CryptRoomStyle)newStyle;
+                        rectCurrent.Room.Style = (CryptRoomStyle)newStyle;
                         b._heldRectangles[0] = rectCurrent;
                         EditorUtility.SetDirty(b);
                     }
@@ -93,30 +99,24 @@ namespace CryptBuilder
                     SceneView.RepaintAll();
                     EditorUtility.SetDirty(b);
                 }
-                if (GUILayout.Button("Reset crypt"))
+                if(GUILayout.Button("Delete generated crypt"))
                 {
-                    Undo.RecordObject(b, "[CryptBuilder] Reset crypt");
-                    b.RectangleTree = new();
-                    SceneView.RepaintAll();
+                    foreach(var node in b.RectangleTree.Nodes)
+                        foreach(var r in node.Rectangles)
+                            Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
                     EditorUtility.SetDirty(b);
                 }
-                if(b._generatedCrypt != null)
+                if(GUILayout.Button("(Re)generate full crypt"))
                 {
-                    if(GUILayout.Button("Delete generated crypt"))
-                    {
-                        Undo.DestroyObjectImmediate(b._generatedCrypt);
-                        b._generatedCrypt = null;
-                        EditorUtility.SetDirty(b);
-                    }
-                }
-                else if(GUILayout.Button("Generate full crypt"))
-                {
-                    b._generatedCrypt = new("Crypt");
-                    Undo.RegisterCreatedObjectUndo(b._generatedCrypt, "[CryptBuilder] Generate crypt");
-                    b._generatedCrypt.transform.localPosition = b.transform.position;
+                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate crypt");
+                    foreach (var node in b.RectangleTree.Nodes)
+                        foreach (var r in node.Rectangles)
+                        {
+                            if(r.Room != null)
+                                Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
+                        }
                     CryptGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
-                    gen.CryptRoot = b._generatedCrypt;
                     b.GenerateCrypt(gen);
                 }
 
@@ -143,7 +143,12 @@ namespace CryptBuilder
                     DeselectHeld(b);
                     b._editMode = EditMode.EditHeld;
                     foreach(var rect in b._rectangleClipboard)
-                        b._heldRectangles.Add(rect);
+                    {
+                        var r = rect;
+                        CreateRectangleGameObject(ref r, b);
+                        r.Room.Style = rect.Room.Style;
+                        b._heldRectangles.Add(r);
+                    }
                     Event.current.Use();
                     EditorUtility.SetDirty(b);
                 }
@@ -185,7 +190,7 @@ namespace CryptBuilder
                     var hovered = b.RectangleTree.Nodes[node].Rectangles[rect];
                     CryptHandles.DrawRectangle(hovered);
 
-                    if (hovered.Style == b._brushStyle)
+                    if (hovered.Room.Style == b._brushStyle)
                         return;
 
                     if (useEvent)
@@ -193,7 +198,9 @@ namespace CryptBuilder
                         Undo.RecordObject(b, "[CryptBuilder] Set style with brush");
                         Event.current.Use();
                         b.RectangleTree.Nodes[node].RemoveRectangle(rect, b.RectangleTree);
-                        hovered.Style = b._brushStyle;
+                        if (hovered.Room == null)
+                            CreateRectangleGameObject(ref hovered, b);
+                        hovered.Room.Style = b._brushStyle;
                         b.RectangleTree.AddRectangle(hovered);
                         EditorUtility.SetDirty(b);
                     }
@@ -221,6 +228,8 @@ namespace CryptBuilder
                     {
                         Undo.RecordObject(b, "[CryptBuilder] Select rectangle");
                         Event.current.Use();
+                        if (hovered.Room == null)
+                            CreateRectangleGameObject(ref hovered, b);
                         b._heldRectangles.Add(hovered);
                         b._editMode = EditMode.EditHeld;
                         b.RectangleTree.Nodes[node].RemoveRectangle(rect, b.RectangleTree);
@@ -276,6 +285,7 @@ namespace CryptBuilder
                         RotatedRectangle n = default;
                         n.HalfSize = .5f * size;
                         n.CenterPosition = pos;
+                        CreateRectangleGameObject(ref n, b);
                         b._heldRectangles.Add(n);
                         b._editMode = EditMode.EditHeld;
                         draggingNew = false;
@@ -332,6 +342,8 @@ namespace CryptBuilder
                             rect.CenterPosition += posDif;
                             rect.HalfSize *= scaleDif;
                             rect.Rotation += rotationDif;
+                            rect.Room.transform.rotation = Quaternion.Euler(0, rect.Rotation, 0);
+                            rect.Room.transform.localPosition = rect.CenterPosition.To3D();
                             b._heldRectangles[i] = rect;
                         }
                         EditorUtility.SetDirty(b);
@@ -345,6 +357,9 @@ namespace CryptBuilder
                         case KeyCode.Delete:
                         case KeyCode.Backspace:
                             Undo.RecordObject(b, "[CryptBuilder] Delete held rectangle(s)");
+                            foreach(var rect in b._heldRectangles)
+                                Undo.DestroyObjectImmediate(rect.Room.gameObject);
+                            
                             b._heldRectangles.Clear();
                             b._editMode = EditMode.DontEdit;
                             Event.current.Use();
@@ -371,9 +386,12 @@ namespace CryptBuilder
                                 for(int i = 0; i < b._heldRectangles.Count; i++)
                                 {
                                     var rect = b._heldRectangles [i];
+                                    var r = rect;
                                     rect.Round(b._rectRounding, b._rectRotationRounding);
                                     b.RectangleTree.AddRectangle(rect);
                                     rect.CenterPosition += Vector2.one;
+                                    CreateRectangleGameObject(ref rect, b);
+                                    rect.Room.Style = r.Room.Style;
                                     b._heldRectangles [i] = rect;
                                 }
                                 EditorUtility.SetDirty(b);

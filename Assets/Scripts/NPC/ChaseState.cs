@@ -7,6 +7,8 @@ namespace NPC
     {
         private float _lastSeenTime = 0;
         private PlayerController _trackingPlayer;
+
+        private Clue currentClue = null;
         public override void StartState(Character character)
         {
             base.StartState(character);
@@ -28,8 +30,9 @@ namespace NPC
         {
             if (!(character is Enemy e))
                 return;
-            if(_trackingPlayer != null)
-                e.AddClue(new Clue(_trackingPlayer, ClueType.PlayerSeen));
+            if(_trackingPlayer != null && currentClue != null)
+                e.AddClue(currentClue);
+            currentClue = null;
             character.SetBehaviourState<TrackingState>();
         }
 
@@ -38,6 +41,7 @@ namespace NPC
             if (_trackingPlayer == null)
                 _trackingPlayer = player;
             character.SetDestination(player.transform.position);
+            currentClue = new Clue(player, ClueType.PlayerSeen);
             _lastSeenTime = 0;
         }
     }
