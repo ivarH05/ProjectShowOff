@@ -15,7 +15,6 @@ namespace Player
         [SerializeField] private CameraPeekController _peekController;
 
         private int peekDirection;
-        private float peekFactor;
 
         Vector2 _currentMouse = new Vector2();
 
