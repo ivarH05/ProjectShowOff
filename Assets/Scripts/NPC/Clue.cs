@@ -12,18 +12,27 @@ namespace NPC
 
         public Clue(PlayerController player, ClueType type)
         {
-            position = player.transform.position;
-            if(type == ClueType.PlayerSeen)
-                direction = player.Body.linearVelocity.normalized;
-            time = Time.time;
-            this.type = type;
+            Update(player, type);
         }
+
+        public Color color = Color.orange;
 
         public Vector3 position = Vector3.zero;
         public Vector3 direction = Vector3.zero;
         public float errorMargin;
         public float time;
+        public float lingerTime = 120;
         public ClueType type;
+
+        public void Update(PlayerController player, ClueType type)
+        {
+            position = player.transform.position;
+            if (type == ClueType.PlayerSeen)
+                direction = player.Body.linearVelocity.normalized;
+            time = Time.time;
+            lingerTime = 250;
+            this.type = type;
+        }
 
         public Vector3 GetPositionInBounds()
         {

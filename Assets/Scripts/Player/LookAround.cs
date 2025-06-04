@@ -15,7 +15,6 @@ namespace Player
         [SerializeField] private CameraPeekController _peekController;
 
         private int peekDirection;
-        private float peekFactor;
 
         Vector2 _currentMouse = new Vector2();
 
@@ -26,7 +25,11 @@ namespace Player
                 controller.CameraTransform.eulerAngles.x);
         }
 
-        public override void StopStrategy(PlayerController controller) { }
+        public override void StopStrategy(PlayerController controller)
+        {
+            peekDirection = 0;
+            _peekController.SetDirection(0);
+        }
 
         public override void OnLook(PlayerController controller, Vector2 lookDelta)
         {

@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 180919421261951938}
   m_Father: {fileID: 6952636058268348437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4212247613486300053
@@ -97,7 +98,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -277,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followStrength: 50
-  <ToFollow>k__BackingField: {fileID: 6733907240510399710}
+  <ToFollow>k__BackingField: {fileID: 180919421261951938}
 --- !u!1 &4991695685757974328
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ MonoBehaviour:
   Jump: {fileID: 1995258094539024449}
   RandomPitchRange: 0.4
   WalkSpeedFootstepFloor: 0.22999999
-  FootstepFrequencyMultiplier: 0.7
+  FootstepFrequencyMultiplier: 0.3
 --- !u!1 &6549291064245748998
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +510,75 @@ MonoBehaviour:
         stencilDepthFailOperation: 0
         shaderPass: 0
         variableRateShading: 0
+--- !u!1 &7804848498632083473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180919421261951938}
+  - component: {fileID: 2509759039312286855}
+  - component: {fileID: 2167502791730525165}
+  m_Layer: 0
+  m_Name: PeekOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180919421261951938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804848498632083473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6733907240510399710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2509759039312286855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804848498632083473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8eabd94be891f4bad3755d949ac516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0.2
+  rotation: 13
+  speed: 10
+--- !u!135 &2167502791730525165
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804848498632083473}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8751486100137681171
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +950,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b0bd1544-e076-4ff4-b219-79d3a4b8b956
     m_ActionName: 'Player/Scroll[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6340187229796959029}
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
+        m_MethodName: OnPeekLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aa905aac-10ba-43af-95cb-17d5de3bd131
+    m_ActionName: 'Player/PeekLeft[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6340187229796959029}
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
+        m_MethodName: OnPeekRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2da2d06b-335d-474c-aad1-9c20cff984e1
+    m_ActionName: 'Player/PeekRight[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -902,6 +1004,7 @@ MonoBehaviour:
   <InteractStrategy>k__BackingField: {fileID: 6442238028121122580}
   <CameraTransform>k__BackingField: {fileID: 6733907240510399710}
   _coyoteTime: 0.2
+  LockCursor: 1
 --- !u!114 &7351754827435334254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,10 +1021,10 @@ MonoBehaviour:
   _inAirSpeedMultiplier: 0.05
   _turnSmoothness: 10
   _sprintMultiplier: 2.48
-  _crouchSpeedMultiplier: 0.3
+  _crouchSpeedMultiplier: 0.5
   _crouchHeightMultiplier: 0.5
   _crouchJumpHeightMultiplier: 0.4
-  _crouchAnimationSpeed: 2
+  _crouchAnimationSpeed: 4
   _jumpForce: 5.03
   _jumpCooldown: 0.5
 --- !u!114 &4950453421432349984
@@ -939,6 +1042,7 @@ MonoBehaviour:
   _maximumVerticalAngle: 90
   _sensitivity: 0.05
   _flipVertical: 1
+  _peekController: {fileID: 2509759039312286855}
 --- !u!114 &6442238028121122580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691899e4d2c5b004b89cfdc781527c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorSensitivity: 0.1
+  _doorSensitivity: 0.1
+  _peekMultiplier: 0.25
+  _peekController: {fileID: 2509759039312286855}
 --- !u!114 &6987071137350571306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +1085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 2
-  LeftHandPosition: {x: -0.25, y: -0.2, z: 0.35}
+  LeftHandPosition: {x: -0.2, y: -0.3, z: 0.35}
   RightHandPosition: {x: 0.25, y: -0.1, z: 0.35}
   BeginnersItem: {fileID: 11400000, guid: 4dc5596b29007e643a891eaff81f9ee7, type: 2}

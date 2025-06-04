@@ -7,8 +7,7 @@ namespace NPC
 {
     public class TrackingState : BehaviourState
     {
-        public Vector2 SearchDistanceRange = new Vector2(0, 5);
-        public Vector2 SearchTimeRange = new Vector2(15, 35);
+        public Vector2 SearchTimeRange = new Vector2(2, 5);
         public Vector2 PauseTimeRange = new Vector2(0.5f, 2);
         public bool StayOnTiles = true;
 
@@ -70,6 +69,10 @@ namespace NPC
         {
             _searchTimer = Random.Range(SearchTimeRange.x, SearchTimeRange.y);
             _pauseTimer = Random.Range(PauseTimeRange.x, PauseTimeRange.y);
+
+            if(_currentClue != null)
+                _currentClue.color = Color.orange;
+            clue.color = Color.green;
             _currentClue = clue;
 
             SetDestination(clue.GetPositionInBounds());
