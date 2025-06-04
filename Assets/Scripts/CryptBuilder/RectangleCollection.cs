@@ -13,7 +13,7 @@ namespace CryptBuilder
         public void AddRectangle(RotatedRectangle rect)
         {
             var bounds = rect.GetBounds();
-            if(Count < 2)
+            if (Count < 2)
             {
                 Add(default);
                 Add(BoundingNode.CreateRoot());

@@ -5,9 +5,9 @@ using UnityEngine;
 namespace CryptBuilder
 {
     [Serializable]
-    public struct RotatedRectangle : IEquatable<RotatedRectangle>
+    public struct RotatedRectangle
     {
-        public CryptRoomStyle Style;
+        public CryptRoom Room;
         public Vector2 HalfSize;
         public Vector2 CenterPosition;
         public float Rotation;
@@ -94,26 +94,6 @@ namespace CryptBuilder
             Vector2 max = Vector2.Max( Vector2.Max(corner00, corner01), Vector2.Max(corner10, corner11));
             Vector2 min = Vector2.Min( Vector2.Min(corner00, corner01), Vector2.Min(corner10, corner11));
             return new BoundingBox(min, max);
-        }
-
-        bool IEquatable<RotatedRectangle>.Equals(RotatedRectangle other)
-        {
-            return 
-                Rotation == other.Rotation && 
-                CenterPosition == other.CenterPosition && 
-                HalfSize == other.HalfSize && 
-                Style == other.Style;
-        }
-        public override bool Equals(object obj)
-        {
-            if(obj is BoundingBox b) return Equals(b); 
-            return false;
-        }
-        public static bool operator== (RotatedRectangle b1, RotatedRectangle b2) { return (b1 as IEquatable<RotatedRectangle>).Equals(b2); }
-        public static bool operator!= (RotatedRectangle b1, RotatedRectangle b2) => !(b1 == b2);
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Rotation, CenterPosition, HalfSize, Style);
         }
     }
 }
