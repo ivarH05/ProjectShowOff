@@ -76,26 +76,19 @@ namespace NPC
             for (int i = 0; i < clues.Count; i++)
             {
                 Clue clue = clues[i];
-                if (ShouldKeepClue(clue))
+                if (Time.time - clue.time < clue.lingerTime)
                     newClues.Add(clue);
             }
             clues = newClues;
         }
 
-        internal virtual bool ShouldKeepClue(Clue clue)
+        public void AddClue(Clue clue) 
         {
-            float timeElapsed = Time.time - clue.time;
-            switch (clue.type)
-            {
-                case ClueType.PlayerSeen:
-                    return timeElapsed < 300;
-                case ClueType.PlayerHeard:
-                    return timeElapsed < 100 - clue.errorMargin * 25;
-            }
-            return true;
+            if (clues.Count > 1)
+                clues[clues.Count - 1].color = Color.orange;
+            clue.color = Color.green;
+            clues.Add(clue); 
         }
-
-        public void AddClue(Clue clue) { clues.Add(clue); }
         public Clue GetClue(int i) => clues[i];
         public int ClueCount => clues.Count;
 
@@ -104,6 +97,9 @@ namespace NPC
         {
 #if UNITY_EDITOR
             base.OnDrawGizmos();
+
+            if (!Application.isPlaying) return;
+
             Gizmos.matrix = Matrix4x4.identity;
             Gizmos.color = Color.orange;
             for (int i = 0; i < clues.Count; i++)
@@ -115,21 +111,25 @@ namespace NPC
         {
 #if UNITY_EDITOR
             base.OnDrawGizmosSelected();
+
+            if (!Application.isPlaying) return;
+
             Gizmos.color = Color.orange;
             for (int i = 0; i < clues.Count; i++)
                 DrawClue(clues[i]);
-#endif
+            Gizmos.color = Color.red;
+
+            Gizmos.DrawSphere(agent.destination, 0.2f);
+#endif  
         }
 
         void DrawClue(Clue clue)
         {
             Gizmos.matrix = Matrix4x4.identity;
+            Gizmos.color = clue.color;
             Gizmos.DrawSphere(clue.position, 0.25f);
             if (clue.direction != Vector3.zero)
                 DrawDirectionCone(clue);
-
-            if (clue.type == ClueType.PlayerHeard)
-                DrawSoundIndicator(clue);
 
             if (clue.errorMargin > 0.25f)
                 DrawClueErrorMargin(clue);
@@ -140,25 +140,11 @@ namespace NPC
             float timeElapsed = Time.time - clue.time;
             float squaredLerpFactor = Mathf.Sqrt(timeElapsed);
 
-            Color color = Color.orange;
-            color.a = Mathf.Clamp(1 - squaredLerpFactor, 0.25f, 1);
+            Color color = clue.color;
+            color.a = Mathf.Clamp(1 - squaredLerpFactor, 0.05f, 1);
             Gizmos.color = color;
             Gizmos.matrix = Matrix4x4.identity;
             Gizmos.DrawWireSphere(clue.position, clue.errorMargin);
-        }
-
-        void DrawSoundIndicator(Clue clue)
-        {
-            float timeElapsed = Time.time - clue.time;
-            if (timeElapsed > 1)
-                return;
-            float squaredLerpFactor = Mathf.Sqrt(timeElapsed);
-
-            Color color = Color.orange;
-            color.a = 1 - squaredLerpFactor;
-            Gizmos.color = color;
-            Gizmos.matrix = Matrix4x4.identity;
-            Gizmos.DrawWireSphere(clue.position, 10 * squaredLerpFactor);
         }
 
         void DrawDirectionCone(Clue clue)
