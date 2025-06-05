@@ -137,7 +137,7 @@ namespace CryptBuilder
                                 Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
                         }
                     }
-                    CryptGenerator gen = new();
+                    CryptHighDetailGenerator gen = new();
                     gen.DefaultStyle = b._defaultStyle;
                     b.GenerateCrypt(gen);
                     EditorUtility.SetDirty(b);

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CryptBuilder
 {
-    public struct CryptGenerator : Builder.ICryptTileGenerator
+    public struct CryptHighDetailGenerator : Builder.ICryptTileGenerator
     {
         public CryptRoomStyle DefaultStyle;
 

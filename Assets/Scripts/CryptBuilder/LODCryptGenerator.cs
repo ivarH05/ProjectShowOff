@@ -54,8 +54,10 @@ namespace CryptBuilder
                 SafeDestroy(r.Room.GeneratedChildren);
                 r.Room.CurrentLOD = CryptRoom.LOD.None;
             }
-            var generator = new CryptGenerator();
-            generator.DefaultStyle = _crypt.DefaultStyle;
+            var generatorH = new CryptHighDetailGenerator();
+            generatorH.DefaultStyle = _crypt.DefaultStyle;
+            var generatorL = new CryptLowDetailGenerator();
+            generatorL.DefaultStyle = _crypt.DefaultStyle;
 
             foreach ((int node, int rect) in _currentLowDetailRects)
             {
@@ -68,13 +70,13 @@ namespace CryptBuilder
                         {
                             r.Room.CurrentLOD = CryptRoom.LOD.LowDetail;
                             SafeDestroy(r.Room.GeneratedChildren);
-                            // create low detail
+                            _crypt.GenerateSurfaces(node, rect, ref generatorL);
                         }
                         else
                         {
                             r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
                             SafeDestroy(r.Room.GeneratedChildren);
-                            _crypt.GenerateTiles(node, rect, ref generator);
+                            _crypt.GenerateTiles(node, rect, ref generatorH);
                         }
                         break;
 
@@ -84,7 +86,7 @@ namespace CryptBuilder
                         
                         r.Room.CurrentLOD = CryptRoom.LOD.LowDetail;
                         SafeDestroy(r.Room.GeneratedChildren);
-                        // downgrade detail
+                        _crypt.GenerateSurfaces(node, rect, ref generatorL);
                         break;
 
                     case CryptRoom.LOD.LowDetail:
@@ -93,7 +95,7 @@ namespace CryptBuilder
 
                         r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
                         SafeDestroy(r.Room.GeneratedChildren);
-                        _crypt.GenerateTiles(node, rect, ref generator);
+                        _crypt.GenerateTiles(node, rect, ref generatorH);
                         break;
                 }
             }
