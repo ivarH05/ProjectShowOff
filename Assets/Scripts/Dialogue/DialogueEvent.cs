@@ -1,20 +1,25 @@
+using AdvancedSound;
 using UnityEngine;
 
 namespace DialogueSystem
 {
-    public enum DialogueEventType { Disabled, SetConditionFlag }
+    public enum DialogueEventType { Disabled, SetConditionFlag, PlaySound, ShakeCamera, AdvanceTime }
 
     [System.Serializable]
     public class DialogueEvent
     {
-        [SerializeField]
         public DialogueEventType type = DialogueEventType.SetConditionFlag;
 
-        [SerializeField]
+        // set condition flag
         public DialogueConditionFlag flag;
+        public bool flagValue = true;
 
-        [SerializeField]
-        public bool _boolean = true;
+        // play sound
+        public Sound sound;
+
+        // camera shake
+        public float shakeMagnitude;
+
 
         public void Invoke()
         {
@@ -23,7 +28,7 @@ namespace DialogueSystem
                 case DialogueEventType.Disabled:
                     break;
                 case DialogueEventType.SetConditionFlag:
-                    flag.Set(_boolean);
+                    flag.Set(flagValue);
                     break;
             }
         }
