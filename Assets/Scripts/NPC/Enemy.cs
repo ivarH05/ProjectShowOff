@@ -142,7 +142,8 @@ namespace NPC
             float squaredLerpFactor = Mathf.Sqrt(timeElapsed);
 
             Color color = clue.color;
-            color.a = Mathf.Clamp(1 - squaredLerpFactor, 0.05f, 1);
+            if(clue.color == Color.orange)
+                color.a = Mathf.Clamp(1 - squaredLerpFactor, 0.01f, 1);
             Gizmos.color = color;
             Gizmos.matrix = Matrix4x4.identity;
             Gizmos.DrawWireSphere(clue.position, clue.errorMargin);
