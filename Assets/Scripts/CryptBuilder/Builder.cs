@@ -9,6 +9,9 @@ namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
+        public CryptRoomStyle DefaultStyle => _defaultStyle;
+        public float RectRounding => _rectRounding;
+
         [field:SerializeField, HideInInspector] public RectangleCollection RectangleTree {get; private set; }
         [SerializeField] float _rectRounding = .5f;
         [SerializeField] CryptRoomStyle _defaultStyle;

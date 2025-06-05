@@ -5,6 +5,8 @@ namespace CryptBuilder
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;
+        public LOD CurrentLOD;
+
         public GameObject GeneratedChildren
         {
             get
@@ -32,5 +34,10 @@ namespace CryptBuilder
             }
         }
         [SerializeField, HideInInspector] GameObject _colliders;
+
+        public enum LOD
+        {
+            None, LowDetail, HighDetail
+        }
     }
 }
