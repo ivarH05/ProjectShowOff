@@ -41,6 +41,11 @@ namespace DialogueSystem
             {
                 if (eventData == null) return;
 
+                if(eventData.onRun.type == DialogueEventType.Disabled)
+                    SetColor(new Color(0.4f, 0.1f, 0.1f));
+                else
+                    SetColor(new Color(0.35f, 0.17f, 0.27f));
+
                 SerializedObject so = new SerializedObject(eventData);
                 so.Update();
 
