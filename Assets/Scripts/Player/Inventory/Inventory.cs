@@ -87,6 +87,15 @@ namespace Player.InventoryManagement
             activeSlot.DropItem(player);
         }
 
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (!context.canceled)
+                return;
+            if (!activeSlot.Occupied)
+                return;
+            ThrowActiveItem();
+        }
+
         private void SwitchItemPositions()
         {
             if (_slots[LeftHandItem].Occupied)
@@ -180,6 +189,11 @@ namespace Player.InventoryManagement
             activeSlot.Clear();
         }
 
+        private void ThrowActiveItem()
+        {
+            activeSlot.DropItem(player, 10);
+        }
+
         private void DropItem(Slot slot)
         {
             slot.DropItem(player);
@@ -236,13 +250,13 @@ namespace Player.InventoryManagement
                 worldObject.gameObject.SetActive(false);
             }
 
-            public void DropItem(PlayerController controller)
+            public void DropItem(PlayerController controller, float Velocity = 2.5f)
             {
                 if(!Occupied) return;
 
                 worldObject.gameObject.SetActive(true);
                 worldObject.transform.position = controller.CameraTransform.position + controller.CameraTransform.forward * 0.25f;
-                worldObject.rigidbody.linearVelocity = controller.Body.linearVelocity + controller.CameraTransform.forward * 2.5f;
+                worldObject.rigidbody.linearVelocity = controller.Body.linearVelocity + controller.CameraTransform.forward * Velocity;
                 Clear();
             }
 
