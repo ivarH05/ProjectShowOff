@@ -19,12 +19,28 @@ namespace CryptBuilder
         List<(int, int)> _currentHighDetailRects = new();
         float _updateTime = 0;
 
+        private void Awake()
+        {
+            if(_crypt == null)
+            {
+                Debug.LogError("LODCryptGenerator wants to have a crypt assigned! It will not generate anything if this is missing.");
+            }
+        }
         private void Update()
         {
             _updateTime += Time.deltaTime;
             if(_updateTime > _updateIntervalSeconds)
             {
-                UpdateLOD();
+                try
+                {
+                    UpdateLOD();
+                }
+                catch(System.Exception)
+                {
+                    // something went wrong with generation, so clear the cache
+                    _currentHighDetailRects.Clear();
+                    _currentLowDetailRects.Clear();
+                }
                 _updateTime = 0;
             }
         }
@@ -40,6 +56,8 @@ namespace CryptBuilder
 
         void UpdateLOD()
         {
+            if (_crypt == null) return;
+
             var oldLowDetail = _currentLowDetailRects;
             var oldHighDetail = _currentHighDetailRects;
             _currentLowDetailRects = GetRectanglesInRange(_lowDetailRange);
