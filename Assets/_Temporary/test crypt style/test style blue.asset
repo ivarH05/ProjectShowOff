@@ -17,3 +17,6 @@ MonoBehaviour:
   WallPrefabs:
   - {fileID: 2529809563243432532, guid: fec80f62bef767b41b50cce6e774ea3e, type: 3}
   CeilingPrefabs: []
+  LowDetailFloor: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}
+  LowDetailCeiling: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}
+  LowDetailWall: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}

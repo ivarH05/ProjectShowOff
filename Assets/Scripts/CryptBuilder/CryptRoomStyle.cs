@@ -8,6 +8,9 @@ namespace CryptBuilder
         public GameObject[] TilePrefabs;
         public GameObject[] WallPrefabs;
         public GameObject[] CeilingPrefabs;
+        public Material LowDetailFloor;
+        public Material LowDetailCeiling;
+        public Material LowDetailWall;
     }
 }
 
