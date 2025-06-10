@@ -61,7 +61,7 @@ namespace AdvancedSound
             StartCoroutine(DestroyIfStopped());
             IEnumerator DestroyIfStopped()
             {
-                while (player.isPlaying)
+                while (player != null && player.isPlaying)
                     yield return new WaitForFixedUpdate();
                 Destroy(GO);
             }

@@ -17,11 +17,11 @@ namespace Daytime
         private void OnEnable()
         {
             _selectable = GetComponent<FromCameraSelectable>();
-            _selectable.OnClicked += OnClick;
+            _selectable.OnClicked.AddListener(OnClick);
         }
         private void OnDisable()
         {
-            _selectable.OnClicked -= OnClick;
+            _selectable.OnClicked.AddListener(OnClick);
         }
 
         public void ResetCamera()

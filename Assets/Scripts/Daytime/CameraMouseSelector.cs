@@ -35,7 +35,8 @@ namespace Daytime
             var ray = _cam.ScreenPointToRay(mouse.position.ReadValue());
             if(
                 Physics.Raycast(ray, out var info, float.MaxValue, 1 << 7) &&
-                info.transform.TryGetComponent<FromCameraSelectable>(out var comp))
+                info.transform.TryGetComponent<FromCameraSelectable>(out var comp) &&
+                comp.enabled)
             {
                 if(_lastHovered == comp)
                 {
