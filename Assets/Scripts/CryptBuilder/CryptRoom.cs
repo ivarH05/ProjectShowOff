@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CryptBuilder
@@ -6,7 +7,7 @@ namespace CryptBuilder
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;
-        public LOD CurrentLOD;
+        [NonSerialized] public LOD CurrentLOD;
 
         private void Awake()
         {
