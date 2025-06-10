@@ -2,10 +2,18 @@ using UnityEngine;
 
 namespace CryptBuilder
 {
+    [ExecuteInEditMode]
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;
         public LOD CurrentLOD;
+
+        private void Awake()
+        {
+            CurrentLOD = LOD.None;
+            if(_generatedChildren != null)
+                DestroyImmediate(_generatedChildren);
+        }
 
         public GameObject GeneratedChildren
         {
@@ -14,6 +22,7 @@ namespace CryptBuilder
                 if(_generatedChildren == null)
                 {
                     _generatedChildren = new GameObject("Generated children");
+                    _generatedChildren.hideFlags = HideFlags.HideAndDontSave;
                     _generatedChildren.transform.SetParent(transform, false);
                 }
                 return _generatedChildren;
@@ -34,6 +43,12 @@ namespace CryptBuilder
             }
         }
         [SerializeField, HideInInspector] GameObject _colliders;
+
+        private void OnDestroy()
+        {
+            if (_generatedChildren != null)
+                DestroyImmediate(_generatedChildren);
+        }
 
         public enum LOD
         {
