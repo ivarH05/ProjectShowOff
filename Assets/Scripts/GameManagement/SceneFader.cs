@@ -24,6 +24,8 @@ namespace GameManagement
 
         public void TransitionScene()
         {
+            if (_fadeTimer >= 0) return;
+
             _group.blocksRaycasts = true;
             Time.timeScale = 0;
             _fadeTimer = 0;
