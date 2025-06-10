@@ -3,18 +3,10 @@ using UnityEngine;
 
 namespace CryptBuilder
 {
-    [ExecuteInEditMode]
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;
         [NonSerialized] public LOD CurrentLOD;
-
-        private void Awake()
-        {
-            CurrentLOD = LOD.None;
-            if(_generatedChildren != null)
-                DestroyImmediate(_generatedChildren);
-        }
 
         public GameObject GeneratedChildren
         {

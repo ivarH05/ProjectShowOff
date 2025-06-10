@@ -33,10 +33,6 @@ namespace CryptBuilder
             _updates = 0;
         }
 
-        private void OnGUI()
-        {
-        }
-
         private void Update()
         {
             _updateTime += Time.deltaTime;
