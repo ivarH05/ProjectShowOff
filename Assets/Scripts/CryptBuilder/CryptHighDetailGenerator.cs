@@ -41,8 +41,17 @@ namespace CryptBuilder
             {
                 _tileOffset = room.Room.transform.position.To2D() - room.CenterPosition;
             }
+
             _currentRoom = room;
             _currentStyle = room.Room?.Style == null ? DefaultStyle : room.Room.Style;
+            
+            var prefabs = _currentStyle?.WallPrefabs;
+            if (prefabs == null || prefabs.Length < 1)
+                Debug.LogError("missing wall prefabs");
+
+            prefabs = _currentStyle?.TilePrefabs;
+            if (prefabs == null || prefabs.Length < 1)
+                Debug.LogError("missing tile prefabs");
         }
     }
 }

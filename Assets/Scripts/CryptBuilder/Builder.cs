@@ -222,8 +222,7 @@ namespace CryptBuilder
                 var contestCenter = contestRect.Center;
                 var thisCenter = bounds.Center;
                 if (contestCenter.y > thisCenter.y ||
-                    contestCenter.x > thisCenter.x ||
-                    contestRect.GetHashCode() > bounds.GetHashCode())
+                    (contestCenter.y == thisCenter.y && contestCenter.x > thisCenter.x))
                 {
                     higherPriorityRects.Add(contestRect);
                     continue;

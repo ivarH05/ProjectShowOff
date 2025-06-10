@@ -21,6 +21,8 @@ namespace CryptBuilder
 
         private void Awake()
         {
+            Debug.developerConsoleEnabled = true;
+            Debug.developerConsoleVisible = true;
             if(_crypt == null)
             {
                 Debug.LogError("LODCryptGenerator wants to have a crypt assigned! It will not generate anything if this is missing.");
@@ -45,15 +47,6 @@ namespace CryptBuilder
             }
         }
         
-        void SafeDestroy(Object obj)
-        {
-#if UNITY_EDITOR
-            DestroyImmediate(obj);
-#else
-            Destroy(obj);
-#endif
-        }
-
         void UpdateLOD()
         {
             if (_crypt == null) return;
@@ -68,8 +61,9 @@ namespace CryptBuilder
                 if(_currentLowDetailRects.Contains((node, rect)))
                     continue;
 
+                // destroy rooms out of range
                 var r = _crypt.RectangleTree.Nodes[node].Rectangles[rect];
-                SafeDestroy(r.Room.GeneratedChildren);
+                DestroyImmediate(r.Room.GeneratedChildren);
                 r.Room.CurrentLOD = CryptRoom.LOD.None;
             }
             var generatorH = new CryptHighDetailGenerator();
@@ -86,14 +80,16 @@ namespace CryptBuilder
                     case CryptRoom.LOD.None:
                         if(!highDetail)
                         {
+                            // create low detail room
                             r.Room.CurrentLOD = CryptRoom.LOD.LowDetail;
-                            SafeDestroy(r.Room.GeneratedChildren);
+                            DestroyImmediate(r.Room.GeneratedChildren);
                             _crypt.GenerateSurfaces(node, rect, ref generatorL);
                         }
                         else
                         {
+                            // create high detail room
                             r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
-                            SafeDestroy(r.Room.GeneratedChildren);
+                            DestroyImmediate(r.Room.GeneratedChildren);
                             _crypt.GenerateTiles(node, rect, ref generatorH);
                         }
                         break;
@@ -102,8 +98,9 @@ namespace CryptBuilder
                         if (highDetail)
                             continue;
                         
+                        // downgrade detail
                         r.Room.CurrentLOD = CryptRoom.LOD.LowDetail;
-                        SafeDestroy(r.Room.GeneratedChildren);
+                        DestroyImmediate(r.Room.GeneratedChildren);
                         _crypt.GenerateSurfaces(node, rect, ref generatorL);
                         break;
 
@@ -111,8 +108,9 @@ namespace CryptBuilder
                         if (!highDetail)
                             continue;
 
+                        // upgrade detail
                         r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
-                        SafeDestroy(r.Room.GeneratedChildren);
+                        DestroyImmediate(r.Room.GeneratedChildren);
                         _crypt.GenerateTiles(node, rect, ref generatorH);
                         break;
                 }
