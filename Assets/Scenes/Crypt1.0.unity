@@ -165,7 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 176124565}
 --- !u!1 &10436592
@@ -1863,7 +1862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1732468743}
 --- !u!1001 &117516426
@@ -2354,7 +2352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1949575628}
 --- !u!1 &176124565
@@ -2960,7 +2957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 616398676}
 --- !u!1 &194663762
@@ -3168,7 +3164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2076069941}
 --- !u!1001 &238428553
@@ -3274,7 +3269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 897461733}
 --- !u!1 &246962538
@@ -3323,7 +3317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1252106966}
 --- !u!1 &256731433
@@ -3469,7 +3462,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 597354702}
 --- !u!1 &277471465
@@ -3518,7 +3510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1166307658}
 --- !u!1 &280990111
@@ -3567,7 +3558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1294934725}
 --- !u!1001 &313342945
@@ -3678,7 +3668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 406529839}
 --- !u!1 &358103320
@@ -3727,7 +3716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 960967369}
 --- !u!1 &362735013
@@ -3776,7 +3764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1872437873}
 --- !u!1 &369534282
@@ -3825,7 +3812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 491193598}
 --- !u!1 &369600754
@@ -4328,7 +4314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 373640325}
 --- !u!1 &404223742
@@ -4802,7 +4787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 484541509}
 --- !u!1 &440729822
@@ -5170,7 +5154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1420418004}
 --- !u!1 &461516263
@@ -5219,7 +5202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1007725963}
 --- !u!1001 &473604278
@@ -5230,18 +5212,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 411045895}
     m_Modifications:
-    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246274432831506644, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: 8f8407b2b59b1a5459421bce8b2fed52, type: 3}
       propertyPath: m_Name
       value: Piece 3_World
@@ -5337,7 +5307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1221621045}
 --- !u!1 &484541509
@@ -5712,7 +5681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 381929079}
 --- !u!1 &491513919
@@ -5858,7 +5826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 64473871}
 --- !u!1 &506663090
@@ -5907,7 +5874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2015186754}
 --- !u!1 &523192534
@@ -5956,7 +5922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 404223742}
 --- !u!1 &536207500
@@ -6159,7 +6124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2021877348}
 --- !u!1001 &552335805
@@ -6733,7 +6697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 635088032}
 --- !u!1 &616398676
@@ -6879,7 +6842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 536207500}
 --- !u!1 &632608683
@@ -6928,7 +6890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1706294505}
 --- !u!1 &634536197
@@ -6977,7 +6938,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 10436592}
 --- !u!1 &635088032
@@ -7566,7 +7526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1000477313}
 --- !u!1 &701757547
@@ -7734,7 +7693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 99791840}
 --- !u!1 &722155064
@@ -7990,7 +7948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1395597632}
 --- !u!1001 &745840092
@@ -8001,18 +7958,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 411045895}
     m_Modifications:
-    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246274432831506644, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
       propertyPath: m_Name
       value: Piece 2_World
@@ -8108,7 +8053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 256731433}
 --- !u!1 &749162752
@@ -8157,7 +8101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 440729822}
 --- !u!1 &761803886
@@ -8400,7 +8343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 761803886}
 --- !u!1 &822186633
@@ -8808,7 +8750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1547563563}
 --- !u!1001 &855482677
@@ -8989,7 +8930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1638087860}
 --- !u!1 &872922532
@@ -9243,7 +9183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 369600754}
 --- !u!1 &897461733
@@ -9672,7 +9611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1015367436}
 --- !u!1 &923929508
@@ -10399,7 +10337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1638180343}
 --- !u!1 &999998047
@@ -10448,7 +10385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 945244491}
 --- !u!1 &1000477313
@@ -11129,7 +11065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 377159118}
 --- !u!1 &1066523898
@@ -11540,7 +11475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1238207404}
 --- !u!1 &1134364303
@@ -11624,7 +11558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1503588214}
 --- !u!1 &1166307658
@@ -11867,7 +11800,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 665981910}
 --- !u!1 &1229394862
@@ -11916,7 +11848,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1693269129}
 --- !u!1 &1233423388
@@ -11965,7 +11896,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 491513919}
 --- !u!1 &1238207404
@@ -13622,7 +13552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1660744912}
 --- !u!1 &1423749763
@@ -13671,7 +13600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1415752789}
 --- !u!1 &1424599791
@@ -13720,7 +13648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 34639045}
 --- !u!1001 &1444893209
@@ -13841,7 +13768,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1828518607}
 --- !u!1 &1449593173
@@ -13890,7 +13816,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1896623328}
 --- !u!1 &1450765791
@@ -13939,7 +13864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 765318966}
 --- !u!1 &1450908450
@@ -14173,7 +14097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 971721378}
 --- !u!1 &1495311292
@@ -14849,7 +14772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1066523898}
 --- !u!1 &1521893033
@@ -14898,7 +14820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 2
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1295686351}
 --- !u!1 &1525258257
@@ -14947,7 +14868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 186047284}
 --- !u!1 &1547563563
@@ -15093,7 +15013,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 124660450}
 --- !u!1 &1556415819
@@ -15280,7 +15199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 701757547}
 --- !u!114 &1559899842 stripped
@@ -15345,7 +15263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1319770524}
 --- !u!1001 &1562695945
@@ -15451,7 +15368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1635666907}
 --- !u!1 &1596995438
@@ -15500,7 +15416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 825582210}
 --- !u!1 &1605714267
@@ -15549,7 +15464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1071304007}
 --- !u!1 &1606546507
@@ -15997,7 +15911,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 45976952}
 --- !u!1 &1646517642
@@ -16046,7 +15959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 23861045}
 --- !u!1 &1660744912
@@ -16465,7 +16377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1699886416}
 --- !u!1 &1686799125
@@ -16498,7 +16409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 70371174}
 --- !u!4 &1686799127
@@ -16660,7 +16570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 111288116}
 --- !u!1 &1699886416
@@ -17064,7 +16973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 592144337}
 --- !u!1001 &1720352869
@@ -17272,7 +17180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 194663762}
 --- !u!1001 &1741131568
@@ -17284,16 +17191,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 411045895}
     m_Modifications:
     - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
-      propertyPath: m_Size.x
-      value: 2
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246274432831506644, guid: b9096aa041e49934d8548201970c986a, type: 3}
-      propertyPath: m_Size.z
-      value: 2
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3659759394038980453, guid: b9096aa041e49934d8548201970c986a, type: 3}
       propertyPath: m_Name
@@ -17390,7 +17293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1450908450}
 --- !u!1 &1781933768
@@ -17439,7 +17341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1709477238}
 --- !u!1 &1788457947
@@ -17488,7 +17389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1090213208}
 --- !u!224 &1817275727 stripped
@@ -19699,7 +19599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 85437716}
 --- !u!4 &1896161312 stripped
@@ -19850,7 +19749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1672134255}
 --- !u!1 &1911336095
@@ -19899,7 +19797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 176484281}
 --- !u!1 &1922032348
@@ -20072,7 +19969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 872922532}
 --- !u!1 &1938539289
@@ -20121,7 +20017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 0
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 75147325}
 --- !u!1 &1938613560
@@ -20304,7 +20199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1306000305}
 --- !u!4 &1987025244 stripped
@@ -20803,7 +20697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 822186633}
 --- !u!1 &2050947653
@@ -20852,7 +20745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1398716847}
 --- !u!1 &2053826326
@@ -21366,7 +21258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 722155064}
 --- !u!1 &2099224331
@@ -21415,7 +21306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 978441556}
 --- !u!1 &2100316317
@@ -21464,7 +21354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 579368209}
 --- !u!1 &2101513596
@@ -21513,7 +21402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  CurrentLOD: 1
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1504329261}
 --- !u!1 &2140030570
