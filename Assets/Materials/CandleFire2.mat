@@ -46,7 +46,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _ZTestTransparent
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -164,9 +164,9 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _BlueFade: 0.44
-    - _BlueFalloff: 0.9
-    - _BlueMultiplier: 36.12
+    - _BlueFade: 0.94
+    - _BlueFalloff: 0.59
+    - _BlueMultiplier: 31.9
     - _CoatMask: 0
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
@@ -224,6 +224,8 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PerPixelSorting: 0
+    - _RandomWindFalloff: 8.02
+    - _RandomWindStrength: 0.41
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -267,6 +269,7 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
+    - _WindAffectedOffset: 0.19
     - _YellowFade: 2.31
     - _YellowFalloff: 1.92
     - _YellowHoleOffset: 1.03
@@ -287,12 +290,15 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _RandomWindSpeed: {r: 3.52123, g: 2.7856162, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+    - _WindVector: {r: 0, g: 0, b: 0, a: 0}
+    - _WindVelocity: {r: -2.69, g: 1.14, b: -1.72, a: 0}
     - _YellowGlow: {r: 1, g: 0.62733454, b: 0.35294116, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
