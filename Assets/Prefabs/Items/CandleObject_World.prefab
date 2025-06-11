@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 8397292113783045528}
   - component: {fileID: 5968955647399154342}
   - component: {fileID: 192943358888865389}
+  - component: {fileID: 1970370973585381268}
   m_Layer: 6
   m_Name: CandleObject_World
   m_TagString: Untagged
@@ -441,6 +442,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.35, z: 0.1}
   m_Center: {x: 0, y: 0.12, z: 0.06}
+--- !u!65 &1970370973585381268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237387486266629411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6103424952252868725
 PrefabInstance:
   m_ObjectHideFlags: 0
