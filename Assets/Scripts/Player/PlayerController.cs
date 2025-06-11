@@ -19,6 +19,7 @@ namespace Player
         [field: SerializeField] public Transform CameraTransform { get; private set; }
         
         [SerializeField] float _coyoteTime = .2f;
+        [SerializeField] float _fastCrouchThresholdSeconds = .2f;
 
         public Inventory Inventory { get; private set; }
         public Rigidbody Body {get; private set;}
@@ -31,7 +32,8 @@ namespace Player
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
         public bool SprintHeld { get; private set; }
-        public bool CrouchHeld { get; private set; }
+        public CrouchState Crouch { get; private set; }
+        public event Action OnFastCrouch;
 
         [SerializeField] private bool LockCursor;
 
@@ -41,6 +43,7 @@ namespace Player
         
         int _collidersInFootTrigger;
         float _timeSinceLastFootCollider = 0;
+        double _timeCrouchStartHeld = float.MinValue;
 
         public Interactable ActiveInteractable { get { return InteractStrategy?.activeInteractable; } }
 
@@ -176,9 +179,22 @@ namespace Player
         public void OnCrouch(InputAction.CallbackContext context)
         {
             if(context.started)
-                CrouchHeld = true;
-            if(context.canceled)
-                CrouchHeld = false;
+            {
+                if (Crouch != CrouchState.CrouchFast)
+                {
+                    _timeCrouchStartHeld = Time.realtimeSinceStartupAsDouble;
+                    Crouch = CrouchState.CrouchSlow;
+                }
+            }
+            if (context.canceled)
+            {
+                if (_timeCrouchStartHeld > Time.realtimeSinceStartupAsDouble - _fastCrouchThresholdSeconds)
+                {
+                    Crouch = CrouchState.CrouchFast;
+                    OnFastCrouch?.Invoke();
+                }
+                else Crouch = CrouchState.Standing;
+            }
         }
         public void OnJump(InputAction.CallbackContext context)
         {
@@ -199,7 +215,7 @@ namespace Player
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, CrouchHeld);
+            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, Crouch);
         }
 
         private void OnTriggerEnter(Collider other)

@@ -8800,6 +8800,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 6340187229796959029, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: _fastCrouchThresholdSeconds
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6549291064245748998, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8845,6 +8849,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6952636058268348437, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952636058268348437, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.70710653
       objectReference: {fileID: 0}
@@ -8868,6 +8876,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7351754827435334254, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
+      propertyPath: _settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 274329eb0b1884845b092fec05adce4b, type: 2}
     - target: {fileID: 7351754827435334254, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: _crouchAnimationSpeed
       value: 4
