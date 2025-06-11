@@ -6,11 +6,14 @@ namespace DialogueSystem
     [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/Dialogue")]
     public class Dialogue : ScriptableObject
     {
+        public Character ConnectedNPC;
         [TextArea(5, 15)]
         public string Description;
 
+        [HideInInspector]
         [SerializeReference]
         private List<NodeData> _nodes = new List<NodeData>();
+        [HideInInspector]
         [SerializeField]
         public List<ConnectionData> _connections = new List<ConnectionData>();
 
