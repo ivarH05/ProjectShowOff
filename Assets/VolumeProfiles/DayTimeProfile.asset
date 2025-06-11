@@ -1,27 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8770240182628194565
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: 
-  active: 1
-  lift:
-    m_OverrideState: 1
-    m_Value: {x: 0.90999997, y: 0.91450006, z: 1, w: -0.019817572}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.98716664, z: 0.89, w: -0.08600968}
-  gain:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9458333, z: 0.87, w: 0.05235552}
 --- !u!114 &-7724654706381055090
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -42,7 +20,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   exposure:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   multiplier:
     m_OverrideState: 0
@@ -138,17 +116,17 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
   colorSaturation:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.35
   alphaSaturation:
     m_OverrideState: 0
     m_Value: 1
   alphaMultiplier:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.912
   horizonTint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.9362695, g: 0.7783019, b: 1, a: 1}
   zenithTint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -251,19 +229,19 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 0
   maximumHeight:
     m_OverrideState: 0
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 100
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
-    m_OverrideState: 0
-    m_Value: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
@@ -484,7 +462,6 @@ MonoBehaviour:
   - {fileID: -2932190937829518653}
   - {fileID: 1032458718724551256}
   - {fileID: 7882928170702965405}
-  - {fileID: -8770240182628194565}
 --- !u!114 &1032458718724551256
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -673,13 +650,13 @@ MonoBehaviour:
     m_Value: 0
   compensation:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   limitMin:
     m_OverrideState: 1
     m_Value: 0
   limitMax:
     m_OverrideState: 1
-    m_Value: 13.5
+    m_Value: 15
   curveMap:
     m_OverrideState: 0
     m_Value:
