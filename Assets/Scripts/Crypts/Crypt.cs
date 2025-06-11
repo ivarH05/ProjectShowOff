@@ -51,6 +51,11 @@ namespace Crypts
             return TileToWorldPoint(closestPoint);
         }
 
+        public static Vector3 GetRandomPoint()
+        {
+            return TileToWorldPoint(_tiles[Random.Range(0, _tiles.Count)]);
+        }
+
         public void EditorMouseDown(Vector2 mousePosition)
         {
             Vector2 pos = GetAimingTile(mousePosition);
