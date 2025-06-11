@@ -235,6 +235,8 @@ namespace Player.InventoryManagement
 
                 worldObject = obj;
                 worldObject.gameObject.SetActive(false);
+
+                item.OnPickUp.Invoke();
             }
             public void SetItem(Item i)
             {
@@ -248,11 +250,15 @@ namespace Player.InventoryManagement
 
                 worldObject = Instantiate(item.DefaultWorldObjectPrefab).GetComponent<ItemObject>();
                 worldObject.gameObject.SetActive(false);
+
+                item.OnPickUp.Invoke();
             }
 
             public void DropItem(PlayerController controller, float Velocity = 2.5f)
             {
                 if(!Occupied) return;
+
+                item.OnLose.Invoke();
 
                 worldObject.gameObject.SetActive(true);
                 worldObject.transform.position = controller.CameraTransform.position + controller.CameraTransform.forward * 0.25f;
