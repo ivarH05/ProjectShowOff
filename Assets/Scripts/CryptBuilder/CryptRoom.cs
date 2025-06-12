@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace CryptBuilder
 {
+    [SelectionBase]
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;

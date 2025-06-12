@@ -10,9 +10,11 @@ namespace Player
         [SerializeField] SoundPlayer Crouch;
         [SerializeField] SoundPlayer Run;
         [SerializeField] SoundPlayer Jump;
+        
         [SerializeField] float RandomPitchRange;
         [SerializeField, Range(0, 1)] float WalkSpeedFootstepFloor = .2f;
         [SerializeField] float FootstepFrequencyMultiplier;
+
         [SerializeField] Gradient _loudnessColorGradient;
         [SerializeField] Graphic _loudnessIndicator;
         [SerializeField] float _indicatorFadeoutSpeed = 1;
@@ -24,6 +26,16 @@ namespace Player
         float _footstepCounter;
         float _currentLoudness;
         float _smoothCurrentLoudness;
+
+        /// <summary>
+        /// Adds a sound to the handler, and displays how loud it was to the player.
+        /// </summary>
+        /// <param name="range">The sound's faint range.</param>
+        public void AddSound(float range)
+        {
+            float loudness = 1 - Mathf.Exp(-range * _indicatorSensitivity);
+            _currentLoudness = Mathf.Max(_currentLoudness, loudness);
+        }
 
         private void Start()
         {
@@ -59,23 +71,22 @@ namespace Player
             {
                 if (Crouch == null) return;
                 Crouch.Play(1, GetRandomPitch());
-                _currentLoudness = Mathf.Max(RangeToLoudness(Crouch.FaintRangeAtFullVolume), _currentLoudness);
+                AddSound(Crouch.FaintRangeAtFullVolume);
                 return;
             }
             if(_controller.SprintHeld)
             {
                 if (Run == null) return;
                 Run.Play(1, GetRandomPitch());
-                _currentLoudness = Mathf.Max(RangeToLoudness(Run.FaintRangeAtFullVolume), _currentLoudness);
+                AddSound(Run.FaintRangeAtFullVolume);
                 return;
             }
             if(Walk == null) return;
             Walk.Play(1, GetRandomPitch());
-            _currentLoudness = Mathf.Max(RangeToLoudness(Walk.FaintRangeAtFullVolume), _currentLoudness);
+            AddSound(Walk.FaintRangeAtFullVolume);
         }
 
         float GetRandomPitch() => 1 + (Random.value - .5f) * RandomPitchRange;
-        float RangeToLoudness(float range) => 1-Mathf.Exp(-range * _indicatorSensitivity);
 
         void UpdateLoudnessIndicator()
         {
@@ -90,7 +101,7 @@ namespace Player
         {
             if(Jump == null) return;
             Jump.Play(1, GetRandomPitch());
-            _currentLoudness = Mathf.Max(RangeToLoudness(Jump.FaintRangeAtFullVolume), _currentLoudness);
+            AddSound(Jump.FaintRangeAtFullVolume);
         }
     }
 }
