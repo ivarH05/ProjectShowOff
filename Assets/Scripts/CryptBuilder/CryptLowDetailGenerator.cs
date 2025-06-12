@@ -11,6 +11,8 @@ namespace CryptBuilder
         RotatedRectangle _currentRoom;
         Vector2 _tileOffset;
         bool _validRoom;
+        float _priority;
+        float _roomHeight;
 
         GameObject CreateQuad(Material mat)
         {
@@ -31,12 +33,15 @@ namespace CryptBuilder
         {
             if (!_validRoom) return;
 
-            float priority = shape.Size.x * shape.Size.y;
-            priority = Mathf.Exp(-.02f*priority);
             var quad = CreateQuad(_currentStyle.LowDetailFloor);
             quad.transform.localScale = new Vector3(shape.Size.x, shape.Size.y, 1);
-            quad.transform.localPosition = Vector3.up * -.1f * priority;
+            quad.transform.localPosition = Vector3.up * -_priority;
             quad.transform.rotation = Quaternion.Euler(90,0,0);
+
+            var quad2 = CreateQuad(_currentStyle.LowDetailCeiling);
+            quad2.transform.localScale = new Vector3(shape.Size.x, shape.Size.y, 1);
+            quad2.transform.localPosition = Vector3.up * (_priority + _roomHeight);
+            quad2.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
 
         public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
@@ -50,8 +55,8 @@ namespace CryptBuilder
             Vector2 center = .5f * (start + end);
 
             var quad = CreateQuad(_currentStyle.LowDetailWall);
-            quad.transform.localScale = new Vector3(length, 4, 1);
-            quad.transform.localPosition = new(center.x, 1, center.y);
+            quad.transform.localScale = new Vector3(length, _roomHeight + 2*_priority, 1);
+            quad.transform.localPosition = new(center.x, .5f* _roomHeight, center.y);
             quad.transform.rotation = Quaternion.Euler(0, angle, 0);
         }
 
@@ -67,6 +72,17 @@ namespace CryptBuilder
             }
             _currentRoom = room;
             _currentStyle = room.Room?.Style == null ? DefaultStyle : room.Room.Style;
+            if (_currentStyle == null)
+            {
+                _validRoom = false;
+                return;
+            }
+
+            var shape = room.GetBounds();
+            _priority = shape.Size.x * shape.Size.y;
+            _priority = Mathf.Exp(-.02f * _priority) * .01f;
+
+            _roomHeight = _currentStyle.WallHeight != 0 ? _currentStyle.WallHeight : 2;
         }
     }
 }

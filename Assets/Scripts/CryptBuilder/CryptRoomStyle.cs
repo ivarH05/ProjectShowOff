@@ -11,6 +11,7 @@ namespace CryptBuilder
         public Material LowDetailFloor;
         public Material LowDetailCeiling;
         public Material LowDetailWall;
+        public float WallHeight;
     }
 }
 
