@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Player.InventoryManagement
 {
-    [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item")]
+    [CreateAssetMenu(fileName = "Item", menuName = "Interactables/Item")]
     public class Item : ScriptableObject
     {
         public GameObject DefaultWorldObjectPrefab;
