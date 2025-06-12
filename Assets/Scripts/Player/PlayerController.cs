@@ -150,6 +150,9 @@ namespace Player
 
         public void OnAim(InputAction.CallbackContext context)
         {
+            if (_attackHeld)
+                return;
+
             if (context.started)
                 AimHeld = true;
             if (context.canceled)
