@@ -3,11 +3,29 @@ using UnityEngine;
 
 namespace CryptBuilder
 {
-    [SelectionBase]
+    [SelectionBase, ExecuteInEditMode]
     public class CryptRoom : MonoBehaviour
     {
         public CryptRoomStyle Style;
         [NonSerialized] public LOD CurrentLOD;
+
+        private void Awake()
+        {
+            GameObject gen = DisabledAtDistanceChildren;
+        }
+        public GameObject DisabledAtDistanceChildren
+        {
+            get
+            {
+                if(_disabledAtDistance == null)
+                {
+                    _disabledAtDistance = new("Disabled at distance");
+                    _disabledAtDistance.transform.SetParent(transform, false);
+                }
+                return _disabledAtDistance;
+            }
+        }
+        [SerializeField, HideInInspector] GameObject _disabledAtDistance;
 
         public GameObject GeneratedChildren
         {

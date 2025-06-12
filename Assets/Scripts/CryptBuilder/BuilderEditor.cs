@@ -124,35 +124,6 @@ namespace CryptBuilder
                     }
                     EditorUtility.SetDirty(b);
                 }
-                if(GUILayout.Button("(Re)generate full crypt"))
-                {
-                    Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate crypt");
-                    foreach (var node in b.RectangleTree.Nodes)
-                    {
-                        var rectses = node.Rectangles;
-                        if (rectses == null) continue;
-                        foreach (var r in rectses)
-                        {
-                            if(r.Room != null)
-                                Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
-                        }
-                    }
-                    CryptHighDetailGenerator gen = new();
-                    gen.DefaultStyle = b._defaultStyle;
-                    b.GenerateCrypt(gen);
-                    EditorUtility.SetDirty(b);
-                }
-                if (GUILayout.Button("Delete generated crypt"))
-                {
-                    foreach(var node in b.RectangleTree.Nodes)
-                    {
-                        var rectses = node.Rectangles;
-                        if (rectses == null) continue;
-                        foreach(var r in rectses)
-                            Undo.DestroyObjectImmediate(r.Room.GeneratedChildren);
-                    }
-                    EditorUtility.SetDirty(b);
-                }
                 if(GUILayout.Button("Regenerate rooms"))
                 {
                     Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Regenerate rooms");
