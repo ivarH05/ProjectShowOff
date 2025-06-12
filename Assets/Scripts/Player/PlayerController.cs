@@ -32,6 +32,7 @@ namespace Player
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
         public bool SprintHeld { get; private set; }
         public bool CrouchHeld { get; private set; }
+        public bool AimHeld { get; private set; }
 
         [SerializeField] private bool LockCursor;
 
@@ -126,8 +127,15 @@ namespace Player
             var val = context.ReadValue<Vector2>();
             MouseStrategy?.OnLook(this, val);
         }
+
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if (AimHeld)
+            {
+                Inventory.OnThrow(context);
+                return;
+            }
+
             if (context.started)
             {
                 _attackHeld = true;
@@ -138,6 +146,14 @@ namespace Player
                 _attackHeld = false;
                 InteractStrategy?.OnAttackStop(this);
             }
+        }
+
+        public void OnAim(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                AimHeld = true;
+            if (context.canceled)
+                AimHeld = false;
         }
 
         public void OnPeekLeft(InputAction.CallbackContext context)
