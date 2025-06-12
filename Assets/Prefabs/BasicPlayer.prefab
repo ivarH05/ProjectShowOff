@@ -416,6 +416,40 @@ MonoBehaviour:
   RandomPitchRange: 0.4
   WalkSpeedFootstepFloor: 0.22999999
   FootstepFrequencyMultiplier: 0.3
+  _loudnessColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  _loudnessIndicator: {fileID: 0}
+  _indicatorFadeoutSpeed: 1
+  _indicatorSensitivity: 1
+  _indicatorSmoothness: 2
 --- !u!1 &6549291064245748998
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +632,7 @@ GameObject:
   - component: {fileID: 6442238028121122580}
   - component: {fileID: 3358319355176602932}
   - component: {fileID: 6987071137350571306}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PhysicsPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1020,6 +1054,7 @@ MonoBehaviour:
   <InteractStrategy>k__BackingField: {fileID: 6442238028121122580}
   <CameraTransform>k__BackingField: {fileID: 6733907240510399710}
   _coyoteTime: 0.2
+  _fastCrouchThresholdSeconds: 0.2
   LockCursor: 1
 --- !u!114 &7351754827435334254
 MonoBehaviour:
@@ -1033,16 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a986b37db4a28424e8aaa89249fe8d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.3
-  _inAirSpeedMultiplier: 0.05
-  _turnSmoothness: 10
-  _sprintMultiplier: 2.48
-  _crouchSpeedMultiplier: 0.5
-  _crouchHeightMultiplier: 0.5
-  _crouchJumpHeightMultiplier: 0.4
-  _crouchAnimationSpeed: 4
-  _jumpForce: 5.03
-  _jumpCooldown: 0.5
+  _settings: {fileID: 0}
 --- !u!114 &4950453421432349984
 MonoBehaviour:
   m_ObjectHideFlags: 0
