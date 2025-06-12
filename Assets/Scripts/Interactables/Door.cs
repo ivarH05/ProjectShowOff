@@ -22,6 +22,8 @@ namespace Interactables
         [Range(0, 180)] 
         public float maxAngle = 120;
 
+        public bool flipped = false;
+
         [Space]
         public Events events = new Events();
 
@@ -33,6 +35,8 @@ namespace Interactables
 
         private bool _returningCamera = false;
         private float _angle;
+        private float _currentAngle;
+
         private PlayerController controller;
         private Vector3 _originalCameraPosition;
         private NavMeshObstacle _obstacle;
@@ -63,6 +67,8 @@ namespace Interactables
         {
             get { return _angle < 1; }
         }
+
+        private int SwingDirection { get => flipped ? -1 : 1; }
 
         /// <summary>
         /// check if the door is fully locked, also usable to lock and unlock it
@@ -174,7 +180,7 @@ namespace Interactables
 
         private void HandleRotation()
         {
-            float nextAngle = Mathf.Lerp(hinge.localEulerAngles.y, _angle, Time.deltaTime * DoorSwingSpeed);
+            float nextAngle = Mathf.Lerp(_currentAngle, _angle, Time.deltaTime * DoorSwingSpeed);
             SetLocalDoorRotation(nextAngle);
         }
 
@@ -198,6 +204,13 @@ namespace Interactables
             Vector3 relPosition;
             Vector3 relDirection;
             GetCameraTransforms(out relPosition, out relDirection);
+            if (flipped)
+            {
+                relPosition.z *= -1;
+                relDirection.y *= -1;
+                relDirection.y += 180;
+                relDirection.z *= -1;
+            }
 
             Vector3 targetPos = hinge.TransformPoint(relPosition);
             Quaternion targetRot = Quaternion.Euler(relDirection + hinge.transform.eulerAngles);
@@ -213,15 +226,15 @@ namespace Interactables
         /// <param name="DirectionResult">the relative rotation</param>
         public virtual void GetCameraTransforms(out Vector3 PositionResult, out Vector3 DirectionResult)
         {
-            if (isInFront)
+            if (isInFront != flipped)
             {
-                PositionResult = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, hinge.localEulerAngles.y / 90));
-                DirectionResult = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, -90, 0), hinge.localEulerAngles.y / 180);
+                PositionResult = new Vector3(1.1f, 1.6f, Mathf.Lerp(-0.2f, 0.3f, _currentAngle / 90));
+                DirectionResult = Vector3.Lerp(new Vector3(15, -50, -15), new Vector3(-10, -90, 0), _currentAngle / 180);
             }
             else
             {
-                PositionResult = Vector3.Lerp(new Vector3(0.5f, 1.6f, 0.3f), new Vector3(0.2f, 1.6f, 0.5f), hinge.localEulerAngles.y / 180);
-                DirectionResult = Vector3.Lerp(new Vector3(0, 120, -20), new Vector3(0, 0, 0), hinge.localEulerAngles.y / 180);
+                PositionResult = Vector3.Lerp(new Vector3(0.5f, 1.6f, 0.3f), new Vector3(0.2f, 1.6f, 0.5f), _currentAngle / 180);
+                DirectionResult = Vector3.Lerp(new Vector3(0, 120, -20), new Vector3(0, 0, 0), _currentAngle / 180);
             }
         }
 
@@ -295,9 +308,10 @@ namespace Interactables
         {
             if (hinge == null)
                 return;
+            _currentAngle = newAngle;
             hinge.localEulerAngles = new Vector3(
                 hinge.localEulerAngles.x,
-                newAngle,
+                newAngle * SwingDirection,
                 hinge.localEulerAngles.z);
         }
 
@@ -341,7 +355,7 @@ namespace Interactables
             {
                 float rads = a * Mathf.Deg2Rad;
                 float x = Mathf.Cos(rads) * radius;
-                float z = Mathf.Sin(rads) * radius;
+                float z = Mathf.Sin(rads) * radius * SwingDirection;
 
                 points.Add(new Vector3(x, 0f, z));
             }
