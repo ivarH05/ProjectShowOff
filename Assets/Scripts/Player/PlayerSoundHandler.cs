@@ -1,5 +1,6 @@
 using AdvancedSound;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -12,10 +13,17 @@ namespace Player
         [SerializeField] float RandomPitchRange;
         [SerializeField, Range(0, 1)] float WalkSpeedFootstepFloor = .2f;
         [SerializeField] float FootstepFrequencyMultiplier;
+        [SerializeField] Gradient _loudnessColorGradient;
+        [SerializeField] Graphic _loudnessIndicator;
+        [SerializeField] float _indicatorFadeoutSpeed = 1;
+        [SerializeField] float _indicatorSensitivity = 1;
+        [SerializeField] float _indicatorSmoothness = 2;
 
         Walk _walk;
         PlayerController _controller;
         float _footstepCounter;
+        float _currentLoudness;
+        float _smoothCurrentLoudness;
 
         private void Start()
         {
@@ -34,6 +42,8 @@ namespace Player
 
         private void Update()
         {
+            UpdateLoudnessIndicator();
+
             if (!_controller.UncoyotedGrounded) return; // no footsteps if youre not on the ground
 
             var vel = _controller.Body.linearVelocity;
@@ -47,22 +57,40 @@ namespace Player
             _footstepCounter = 0;
             if(_walk.IsCrouched)
             {
-                Crouch?.Play(1, GetRandomPitch());
+                if (Crouch == null) return;
+                Crouch.Play(1, GetRandomPitch());
+                _currentLoudness = Mathf.Max(RangeToLoudness(Crouch.FaintRangeAtFullVolume), _currentLoudness);
                 return;
             }
             if(_controller.SprintHeld)
             {
-                Run?.Play(1, GetRandomPitch());
+                if (Run == null) return;
+                Run.Play(1, GetRandomPitch());
+                _currentLoudness = Mathf.Max(RangeToLoudness(Run.FaintRangeAtFullVolume), _currentLoudness);
                 return;
             }
-            Walk?.Play(1, GetRandomPitch());
+            if(Walk == null) return;
+            Walk.Play(1, GetRandomPitch());
+            _currentLoudness = Mathf.Max(RangeToLoudness(Walk.FaintRangeAtFullVolume), _currentLoudness);
         }
 
         float GetRandomPitch() => 1 + (Random.value - .5f) * RandomPitchRange;
+        float RangeToLoudness(float range) => 1-Mathf.Exp(-range * _indicatorSensitivity);
+
+        void UpdateLoudnessIndicator()
+        {
+            if(_loudnessIndicator == null) return;
+            _currentLoudness -= Time.deltaTime * _indicatorFadeoutSpeed;
+            _currentLoudness = Mathf.Clamp01(_currentLoudness);
+            _smoothCurrentLoudness -= (_smoothCurrentLoudness - _currentLoudness) * (1- Mathf.Exp(-Time.deltaTime * _indicatorSmoothness));
+            _loudnessIndicator.color = _loudnessColorGradient.Evaluate(_smoothCurrentLoudness);
+        }
 
         void OnJump()
         {
-            Jump?.Play(1, GetRandomPitch());
+            if(Jump == null) return;
+            Jump.Play(1, GetRandomPitch());
+            _currentLoudness = Mathf.Max(RangeToLoudness(Jump.FaintRangeAtFullVolume), _currentLoudness);
         }
     }
 }
