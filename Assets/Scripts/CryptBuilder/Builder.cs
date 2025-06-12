@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CryptBuilder
 {
     public partial class Builder : MonoBehaviour
     {
-        [field:SerializeField] public RectangleCollection RectangleTree {get; private set; }
-        [SerializeField] float _rectRounding = .25f;
+        public CryptRoomStyle DefaultStyle => _defaultStyle;
+        public float RectRounding => _rectRounding;
+
+        [field:SerializeField, HideInInspector] public RectangleCollection RectangleTree {get; private set; }
+        [SerializeField] float _rectRounding = .5f;
         [SerializeField] CryptRoomStyle _defaultStyle;
+        [SerializeField, Tooltip("Should be a unit quad")] GameObject _floorWallHitbox;
 
         float _rectRotationRounding = 90;
         bool _showWallGizmos = true;
@@ -24,6 +29,30 @@ namespace CryptBuilder
             GizmoGenerator gen = new();
             gen.RectRounding = _rectRounding;
             GenerateCrypt(gen);
+            GenerateSurfaces(gen);
+        }
+
+        public void GenerateSurfaces<TGenerator>(TGenerator generator) where TGenerator : ICryptSurfaceGenerator
+        {
+            GenerateSurfacesRecursive(1, ref generator);
+
+            void GenerateSurfacesRecursive(int nodeIndex, ref TGenerator gen)
+            {
+                var node = RectangleTree.Nodes[nodeIndex];
+                var rects = node.Rectangles;
+                if (rects != null)
+                {
+                    for (int i = 0; i < rects.Count; i++)
+                    {
+                        GenerateSurfaces(nodeIndex, i, ref gen);
+                    }
+                }
+                if (node.ChildAIndex > 0)
+                {
+                    GenerateSurfacesRecursive(node.ChildAIndex, ref gen);
+                    GenerateSurfacesRecursive(node.ChildBIndex, ref gen);
+                }
+            }
         }
 
         /// <summary>
@@ -115,23 +144,49 @@ namespace CryptBuilder
             gen.OnNewRoom(rect);
 
             gen.GenerateFloor(bounds);
+            GenerateWall(bounds.Minimum, new(0f, 1f), bounds.Size.y, new(-1,0), ref gen);
+            GenerateWall(bounds.Minimum, new(1f, 0f), bounds.Size.x, new(0,-1), ref gen);
+            GenerateWall(bounds.Maximum, new(0, -1), bounds.Size.y, new(1,0), ref gen);
+            GenerateWall(bounds.Maximum, new(-1, 0), bounds.Size.x, new(0,1), ref gen);
 
-            void GenerateWall(Vector2 start, Vector2 direction, float boundsLength, Vector2 normal)
+            void GenerateWall(Vector2 start, Vector2 direction, float boundsLength, Vector2 normal, ref TGenerator gen)
             {
                 float wallStart = -1;
-                float wallEnd = -1;
-                for (float i = 0; i < boundsLength; i += _rectRounding)
+                bool buildingWallCurrently = false;
+                for (float i = .5f * _rectRounding; i < boundsLength; i += _rectRounding)
                 {
                     Vector2 point = start + direction * i;
-                    bool lowerPriority = false;
+                    bool pointHasWall = true;
                     foreach (var r in higherPriorityRects)
                         if (r.ContainsPoint(point))
                         {
-                            lowerPriority = true;
+                            pointHasWall = false;
                             break;
                         }
 
-
+                    var testEdge = point + normal * _rectRounding;
+                    pointHasWall = pointHasWall && !RectangleTree.TryGetRectangleAtPoint(testEdge, out _, out _);
+                    if (pointHasWall)
+                    {
+                        if(!buildingWallCurrently)
+                        {
+                            buildingWallCurrently = true;
+                            wallStart = i;
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if(buildingWallCurrently)
+                        {
+                            gen.GenerateWall(start + (wallStart - .5f*_rectRounding)*direction, start + (i - .5f*_rectRounding)*direction, normal);
+                            buildingWallCurrently = false;
+                        }
+                    }
+                }
+                if(buildingWallCurrently)
+                {
+                    gen.GenerateWall(start + (wallStart - .5f * _rectRounding) * direction, start + boundsLength * direction, normal);
                 }
             }
         }
@@ -167,8 +222,7 @@ namespace CryptBuilder
                 var contestCenter = contestRect.Center;
                 var thisCenter = bounds.Center;
                 if (contestCenter.y > thisCenter.y ||
-                    contestCenter.x > thisCenter.x ||
-                    contestRect.GetHashCode() > bounds.GetHashCode())
+                    (contestCenter.y == thisCenter.y && contestCenter.x > thisCenter.x))
                 {
                     higherPriorityRects.Add(contestRect);
                     continue;
@@ -193,7 +247,7 @@ namespace CryptBuilder
             void GenerateWall(Vector2 point, Vector2 normal);
         }
 
-        private struct GizmoGenerator : ICryptTileGenerator
+        private struct GizmoGenerator : ICryptTileGenerator, ICryptSurfaceGenerator
         {
             public float RectRounding;
 
@@ -204,7 +258,15 @@ namespace CryptBuilder
             public void GenerateFloor(Vector2 point){}
             public void GenerateWall(Vector2 point, Vector2 normal)
             {
-                Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
+                //Gizmos.DrawLine(point.To3D(), (point + normal * RectRounding * .5f).To3D());
+            }
+
+            public void GenerateFloor(BoundingBox shape){}
+
+            public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
+            {
+                normal *= .25f*RectRounding;
+                Gizmos.DrawLine((start + normal).To3D(), (end + normal).To3D());
             }
         }
 
