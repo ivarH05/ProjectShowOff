@@ -133,6 +133,8 @@ namespace Player.InventoryManagement
             Vector3 offset = RightHandPosition + additionalOffset;
             if (_slots[RightHandItem].Occupied)
                 offset += _slots[RightHandItem].item.baseRightOffset;
+            if (player.AimHeld)
+                offset += new Vector3(0, 0, -0.1f);
 
             return offset;
         }

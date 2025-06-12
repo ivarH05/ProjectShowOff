@@ -17,7 +17,6 @@ namespace NPC
             float distance = Vector3.Distance(sound.Origin, enemy.transform.position);
 
             float distanceBasedLoudness = Mathf.Sqrt(distance) / loudness;
-            Debug.Log(distanceBasedLoudness);
 
             if (distanceBasedLoudness < hearingThreshold)
                 return;
