@@ -21,3 +21,7 @@ MonoBehaviour:
   LowDetailCeiling: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
   LowDetailWall: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
   WallHeight: 2.25
+  Decoration:
+    Prefab: {fileID: 3970472755160472944, guid: 0be72491e0eaebc4d83f560db0b12f55, type: 3}
+    Width: 1
+    FlipEveryOther: 1
