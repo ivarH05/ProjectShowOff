@@ -10,7 +10,10 @@ namespace AdvancedSound
     /// </summary>
     public class SoundPlayer : MonoBehaviour
     {
+        public float FaintRangeAtFullVolume => _sound.AudibleRange * _sound.FaintThreshold;
+
         [SerializeField] Sound _sound;
+
         public void Play(float volume = 1, float pitch = 1)
         {
             if(_sound == null)

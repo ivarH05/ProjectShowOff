@@ -23,6 +23,12 @@ namespace AdvancedSound
             player.pitch = snd.Pitch * pitchMultiplier;
             player.maxDistance = snd.AudibleRange;
             player.rolloffMode = AudioRolloffMode.Custom;
+            player.SetCustomCurve(AudioSourceCurveType.Spread, new(
+                new(0, 1),
+                new(snd.LoudThreshold, .8f),
+                new(snd.ModerateThreshold, .5f),
+                new(snd.FaintThreshold, .3f),
+                new(1f, 0)));
             player.SetCustomCurve(AudioSourceCurveType.SpatialBlend, new(new Keyframe(0, 1, 0, 0)));
             AnimationCurve audioFalloff = new(
                 new(0, 1),
@@ -55,7 +61,7 @@ namespace AdvancedSound
             StartCoroutine(DestroyIfStopped());
             IEnumerator DestroyIfStopped()
             {
-                while (player.isPlaying)
+                while (player != null && player.isPlaying)
                     yield return new WaitForFixedUpdate();
                 Destroy(GO);
             }

@@ -1,6 +1,7 @@
 using DialogueSystem;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [CustomPropertyDrawer(typeof(DialogueEvent))]
 public class DialogueEventDrawer : PropertyDrawer
@@ -9,23 +10,33 @@ public class DialogueEventDrawer : PropertyDrawer
     private float VerticalSpacing = EditorGUIUtility.standardVerticalSpacing;
     private float FieldHeight = EditorGUIUtility.singleLineHeight;
 
+    private int lines = 0;
+
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         EditorGUI.BeginProperty(position, label, property);
 
+        lines = 0;
         float y = position.y;
-
         var typeProp = property.FindPropertyRelative("type");
-        var flagProp = property.FindPropertyRelative("flag");
-        var boolProp = property.FindPropertyRelative("_boolean");
 
         // Draw 'type' with custom label + field rects
         DrawLabeledField(position.x, ref y, "Type", typeProp, LabelWidth);
 
-        if ((DialogueEventType)typeProp.enumValueIndex == DialogueEventType.SetConditionFlag)
+        switch((DialogueEventType)typeProp.enumValueIndex)
         {
-            DrawLabeledField(position.x, ref y, "Flag", flagProp, LabelWidth);
-            DrawLabeledField(position.x, ref y, "Value", boolProp, LabelWidth);
+            case DialogueEventType.SetConditionFlag:
+                DrawLabeledField(position.x, ref y, "Flag", property.FindPropertyRelative("flag"), LabelWidth);
+                DrawLabeledField(position.x, ref y, "value", property.FindPropertyRelative("flagValue"), LabelWidth);
+                break;
+
+            case DialogueEventType.PlaySound:
+                DrawLabeledField(position.x, ref y, "Sound", property.FindPropertyRelative("sound"), LabelWidth);
+                break;
+
+            case DialogueEventType.ShakeCamera:
+                DrawLabeledField(position.x, ref y, "Magnitude", property.FindPropertyRelative("shakeMagnitude"), LabelWidth);
+                break;
         }
 
         EditorGUI.EndProperty();
@@ -40,18 +51,11 @@ public class DialogueEventDrawer : PropertyDrawer
         EditorGUI.PropertyField(fieldRect, property, GUIContent.none);
 
         y += FieldHeight + VerticalSpacing;
+        lines++;
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        var typeProp = property.FindPropertyRelative("type");
-        int lines = 1;
-
-        if ((DialogueEventType)typeProp.enumValueIndex == DialogueEventType.SetConditionFlag)
-        {
-            lines += 2;
-        }
-
         return lines * (FieldHeight + VerticalSpacing);
     }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Player.InventoryManagement
 {
-    [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item")]
+    [CreateAssetMenu(fileName = "Item", menuName = "Interactables/Item")]
     public class Item : ScriptableObject
     {
         public GameObject DefaultWorldObjectPrefab;
@@ -10,5 +11,9 @@ namespace Player.InventoryManagement
         public Vector3 baseRightOffset;
         public Vector3 baseLeftOffset;
         public Vector3 baseEulerAngles;
+
+        public UnityEvent OnPickUp = new UnityEvent();
+        [Tooltip("called when the item gets released from the inventory, think about dropping, placing in a frame, etc. ")]
+        public UnityEvent OnLose = new UnityEvent();
     }
 }

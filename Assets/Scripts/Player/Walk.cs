@@ -9,19 +9,7 @@ namespace Player
     /// </summary>
     public class Walk : MovementStrategy
     {
-        [SerializeField] float _speed = 2;
-        [SerializeField, Range(0.01f,1)] float _inAirSpeedMultiplier = .4f;
-        [SerializeField] float _turnSmoothness = 10f;
-
-        [SerializeField] float _sprintMultiplier = 2;
-        
-        [SerializeField] float _crouchSpeedMultiplier = .3f;
-        [SerializeField] float _crouchHeightMultiplier = .4f;
-        [SerializeField] float _crouchJumpHeightMultiplier = .2f;
-        [SerializeField] float _crouchAnimationSpeed = 1f;
-        
-        [SerializeField] float _jumpForce = 3;
-        [SerializeField] float _jumpCooldown = .5f;
+        [SerializeField] WalkSettings _settings;
 
         public event Action OnTrueJump;
         public bool IsCrouched => _crouchValue01 > .5f;
@@ -29,9 +17,14 @@ namespace Player
         float _currentJumpCooldown;
         float _crouchValue01 = 0; // 0 if not crouching, 1 if crouching, anything in between for transitionary states
 
-        public override void StartStrategy(PlayerController controller) {}
+        public override void StartStrategy(PlayerController controller) 
+        {
+            if (_settings == null) Debug.LogError("Walk settings were null! The player will not be able to move around.", this);
+        }
         public override void StopStrategy(PlayerController controller) 
         {
+            if (_settings == null) return;
+
             controller.StartCoroutine(StopCrouch());
             IEnumerator StopCrouch()
             {
@@ -40,43 +33,51 @@ namespace Player
                 {
                     if (myHeight != controller.MainCollider.height)
                         break;
-                    UpdateCrouch(false, controller);
+                    UpdateCrouch(CrouchState.Standing, controller);
                     myHeight = controller.MainCollider.height;
                     yield return new WaitForFixedUpdate();
                 }
             }
         }
 
-        public override void OnMoveUpdate(PlayerController controller, Vector3 direction, bool sprintHeld, bool crouchHeld)
+        public override void OnMoveUpdate(PlayerController controller, Vector3 direction, bool sprintHeld, CrouchState crouchHeld)
         {
+            if (_settings == null) return;
+
             if(_crouchValue01 > .2f) sprintHeld = false;
 
             _currentJumpCooldown += Time.deltaTime;
-            var vel = direction * _speed * (sprintHeld ? _sprintMultiplier : Mathf.Lerp(1, _crouchSpeedMultiplier, _crouchValue01));
+            var vel = direction * _settings.Speed * (sprintHeld ? _settings.SprintMultiplier : Mathf.Lerp(1, _settings.CrouchSpeedMultiplier, _crouchValue01));
             var curvel = controller.Body.linearVelocity;
             vel.y = curvel.y;
-            float lerpval = 1 - Mathf.Exp(Time.deltaTime * -_turnSmoothness / (controller.UncoyotedGrounded ? 1 : _inAirSpeedMultiplier));
+            float lerpval = 1 - Mathf.Exp(Time.deltaTime * -_settings.TurnSmoothness / (controller.UncoyotedGrounded ? 1 : _settings.InAirSpeedMultiplier));
             controller.Body.linearVelocity = Vector3.LerpUnclamped(vel, curvel, lerpval);
 
             UpdateCrouch(crouchHeld, controller);
         }
         public override void OnJump(PlayerController controller)
         {
-            if(controller.IsGrounded && _currentJumpCooldown > _jumpCooldown)
+            if (_settings == null) return;
+
+            if(controller.IsGrounded && _currentJumpCooldown > _settings.JumpCooldown)
             {
                 _currentJumpCooldown = 0;
-                controller.Body.AddForce(new Vector3(0,_jumpForce * Mathf.Lerp(1, _crouchJumpHeightMultiplier, _crouchValue01), 0), ForceMode.Impulse);
+                controller.Body.AddForce(new Vector3(0, _settings.JumpForce * Mathf.Lerp(1, _settings.CrouchJumpHeightMultiplier, _crouchValue01), 0), ForceMode.Impulse);
                 OnTrueJump?.Invoke();
             }
         }
-        void UpdateCrouch(bool crouchHeld, PlayerController controller)
+        void UpdateCrouch(CrouchState crouchHeld, PlayerController controller)
         {
-            if (crouchHeld)
-                _crouchValue01 += (1-_crouchValue01) * (1 - Mathf.Exp(-Time.deltaTime * _crouchAnimationSpeed));
-            else _crouchValue01 -= Time.deltaTime * _crouchAnimationSpeed;
+            if (_settings == null) return;
+
+            float speedMult = crouchHeld == CrouchState.CrouchFast ? _settings.FastCrouchSpeedMult : 1;
+
+            if (crouchHeld != CrouchState.Standing)
+                _crouchValue01 += (1-_crouchValue01) * (1 - Mathf.Exp(-Time.deltaTime * _settings.CrouchAnimationSpeed * speedMult));
+            else _crouchValue01 -= Time.deltaTime * _settings.CrouchAnimationSpeed;
             _crouchValue01 = Mathf.Clamp01(_crouchValue01);
 
-            float crouchedHeight = controller.CharacterHeight * _crouchHeightMultiplier;
+            float crouchedHeight = controller.CharacterHeight * _settings.CrouchHeightMultiplier;
             float currentHeight = Mathf.Lerp(controller.CharacterHeight, crouchedHeight, _crouchValue01);
             float heightDelta = currentHeight - controller.MainCollider.height;
 
@@ -85,7 +86,7 @@ namespace Player
             var ray = new Ray(headTipPos - Vector3.up * .2f, Vector3.up);
             if (heightDelta > 0 && Physics.Raycast(ray, .4f))
             {
-                _crouchValue01 = Mathf.Clamp01(_crouchValue01 + Time.deltaTime * _crouchAnimationSpeed);
+                _crouchValue01 = Mathf.Clamp01(_crouchValue01 + Time.deltaTime * _settings.CrouchAnimationSpeed * speedMult);
                 return;
             }
 
