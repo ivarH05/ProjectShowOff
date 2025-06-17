@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
   fadeRadius: 0
-  priority: 0
+  priority: 5
   customPasses:
   - rid: 5382439647411961856
   injectionPoint: 6
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
   fadeRadius: 0
-  priority: 0
+  priority: -5
   customPasses:
   - rid: 5382439647411961856
   injectionPoint: 6
