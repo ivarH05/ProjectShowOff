@@ -46,19 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
   fadeRadius: 0
-  priority: 0
+  priority: -5
   customPasses:
-  - rid: 7253527945419161676
-  injectionPoint: 2
+  - rid: 7572577812419969283
+  injectionPoint: 6
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
     version: 2
     RefIds:
-    - rid: 7253527945419161676
+    - rid: 7572577812419969283
       type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
-        m_Name: Custom Pass
+        m_Name: Overlay
         enabled: 1
         targetColorBuffer: 0
         targetDepthBuffer: 0
@@ -70,15 +70,15 @@ MonoBehaviour:
         renderQueueType: 10
         layerMask:
           serializedVersion: 2
-          m_Bits: 640
+          m_Bits: 512
         sortingCriteria: 51
         overrideMode: 0
         overrideMaterial: {fileID: 0}
         overrideMaterialPassIndex: 0
         overrideMaterialPassName: Forward
-        overrideShader: {fileID: 0}
+        overrideShader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
         overrideShaderPassIndex: 0
-        overrideShaderPassName: Forward
+        overrideShaderPassName: ScenePickingPass
         overrideDepthState: 1
         depthCompareFunction: 8
         depthWrite: 1
