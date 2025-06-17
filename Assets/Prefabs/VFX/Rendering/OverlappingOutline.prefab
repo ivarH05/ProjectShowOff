@@ -50,7 +50,7 @@ MonoBehaviour:
   priority: 5
   customPasses:
   - rid: 5382439647411961856
-  injectionPoint: 6
+  injectionPoint: 4
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
@@ -63,7 +63,7 @@ MonoBehaviour:
         enabled: 1
         targetColorBuffer: 0
         targetDepthBuffer: 0
-        clearFlags: 0
+        clearFlags: 2
         passFoldout: 0
         m_Version: 0
         filterFoldout: 1
@@ -82,7 +82,7 @@ MonoBehaviour:
         overrideShaderPassName: Forward
         overrideDepthState: 1
         depthCompareFunction: 8
-        depthWrite: 1
+        depthWrite: 0
         overrideStencil: 0
         stencilReferenceValue: 64
         stencilWriteMask: 192
@@ -110,7 +110,7 @@ MonoBehaviour:
   priority: -5
   customPasses:
   - rid: 5382439647411961856
-  injectionPoint: 6
+  injectionPoint: 2
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
@@ -141,7 +141,7 @@ MonoBehaviour:
         overrideShaderPassIndex: 0
         overrideShaderPassName: Forward
         overrideDepthState: 1
-        depthCompareFunction: 8
+        depthCompareFunction: 4
         depthWrite: 1
         overrideStencil: 0
         stencilReferenceValue: 64
