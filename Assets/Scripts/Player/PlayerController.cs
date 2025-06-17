@@ -117,7 +117,9 @@ namespace Player
 
         public void MovePosition(Vector3 position)
         {
+            Body.isKinematic = true;
             transform.position = position;
+            Body.isKinematic = false;
             Body.MovePosition(position);
         }
 

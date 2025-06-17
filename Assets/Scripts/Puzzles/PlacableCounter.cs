@@ -1,5 +1,6 @@
 using Interactables;
 using Player;
+using Player.InventoryManagement;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -22,14 +23,14 @@ namespace Puzzles
             }
         }
 
-        void RegisterSlot(Placable placable, PlayerController player)
+        void RegisterSlot(Placable placable, Item item, PlayerController player)
         {
             placedCounter++;
             if (placedCounter == placables.Length)
                 OnComplete.Invoke(this);
         }
 
-        void UnregisterSlot(Placable placable, PlayerController player)
+        void UnregisterSlot(Placable placable, Item item, PlayerController player)
         {
             placedCounter--;
         }
