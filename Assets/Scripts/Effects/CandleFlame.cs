@@ -29,6 +29,7 @@ namespace Effects
             delta = delta.normalized * deltaMag * _windStrength;
 
             _velocitySmoothed -= (_velocitySmoothed - delta) * (1 - Mathf.Exp(-Time.deltaTime * _windSmoothing));
+            _flameRenderer.transform.rotation = Quaternion.identity;
             _flameMaterial.SetVector("_WindVector", (Vector4)(-_velocitySmoothed));
         }
     }
