@@ -9,41 +9,27 @@ namespace Interactables
     public class SingleItemPlacable : Placable
     {
         [SerializeField] private Item _targetItem;
-        private Item _placedItem;
-        [SerializeField] private GameObject placedStateObject;
 
-        private void Start()
-        {
-            if (placed)
-                Place();
-            else
-                Remove();
-        }
+        [SerializeField] private GameObject placedStateObject;
 
         public override bool CanPlace(Item item) => (_targetItem == null || _targetItem == item) ? base.CanPlace(item) : false;
 
+        private void Awake()
+        {
+            if (isPlaced)
+                SetItem(_targetItem);
+            else
+                Remove(_targetItem);
+        }
 
-        void Place()
+        override internal void Place(Item item)
         {
             placedStateObject.SetActive(true);
-            placed = true;
         }
 
-        void Remove()
+        override internal void Remove(Item item)
         {
             placedStateObject.SetActive(false);
-            placed = false;
-        }
-
-        public override void OnUseStart(PlayerController controller) { }
-        public override void OnUse(PlayerController controller) { }
-        public override void OnUseStop(PlayerController controller) { }
-
-        [System.Serializable]
-        public struct Events
-        {
-            public UnityEvent<Placable, PlayerController> OnPlace;
-            public UnityEvent<Placable, PlayerController> OnRemove;
         }
     }
 }

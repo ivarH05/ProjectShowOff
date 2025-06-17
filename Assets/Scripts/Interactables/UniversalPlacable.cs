@@ -1,20 +1,28 @@
+using Interactables;
+using Player.InventoryManagement;
 using UnityEngine;
 
-public class UniversalPlacable : MonoBehaviour
+public class UniversalPlacable : Placable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject _placedStateObject;
+
+    [SerializeField] private Vector3 offset;
+
+    internal override void Place(Item item)
     {
-        
+        _placedStateObject = Instantiate(item.DefaultWorldObjectPrefab, transform);
+        _placedStateObject.transform.localPosition = item.ItemFrameOffset + offset;
+        ItemObject io = _placedStateObject.GetComponent<ItemObject>();
+        if (io != null)
+            Destroy(io);
+        Rigidbody rb = _placedStateObject.GetComponent<Rigidbody>();
+        if (rb != null)
+            Destroy(rb);
+        _placedStateObject.layer = 0;
     }
 
-    // Update is called once per frame
-    void Update(float var)
+    internal override void Remove(Item item)
     {
-        get{
-
-        }
-        set{ 
-        }
+        Destroy(_placedStateObject);
     }
 }

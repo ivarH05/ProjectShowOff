@@ -1,6 +1,5 @@
 using Player;
 using Player.InventoryManagement;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,46 +7,49 @@ namespace Interactables
 {
     public abstract class Placable : Interactable
     {
-        private Item _placedItem;
+        internal Item _placedItem;
 
         [SerializeField] private bool canRemove = true;
         [SerializeField] private bool canPlace = true;
         [Space]
-        private bool isPlaced = false;
+        [SerializeField] internal bool isPlaced = false;
         [Space]
         public Events events;
-
-        public virtual void CanPlace(Placable self, Item i)
-        {
-            return self.canPlace;
-        }
-
         public virtual bool CanPlace(Item i) => canPlace;
+        public virtual bool CanRemove(Item i) => canRemove;
 
         public override void OnInteract(PlayerController controller)
         {
             if (isPlaced)
             {
-                if (!canRemove)
+                if (!CanRemove(_placedItem))
                     return;
 
                 Remove(_placedItem);
                 controller.Inventory.PickupItem(_placedItem);
                 events.OnRemove.Invoke(this, _placedItem, controller);
                 _placedItem = null;
+                isPlaced = false;
                 return;
             }
             else
             {
                 Item item = controller.Inventory.activeItem;
+                if (item == null)
+                    return;
                 if (!CanPlace(item))
                     return;
-
-                Place(item);
-                _placedItem = item;
                 controller.Inventory.UseActiveItem();
                 events.OnPlace.Invoke(this, item, controller);
+                SetItem(item);
             }
+        }
+
+        protected void SetItem(Item item)
+        {
+            Place(item);
+            _placedItem = item;
+            isPlaced = true;
         }
 
         internal abstract void Place(Item item);
