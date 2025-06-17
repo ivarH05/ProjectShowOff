@@ -48,17 +48,17 @@ MonoBehaviour:
   fadeRadius: 0
   priority: 0
   customPasses:
-  - rid: 7572577812419969281
-  injectionPoint: 2
+  - rid: 5382439647411961856
+  injectionPoint: 6
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
     version: 2
     RefIds:
-    - rid: 7572577812419969281
+    - rid: 5382439647411961856
       type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
-        m_Name: Outline
+        m_Name: Custom Pass
         enabled: 1
         targetColorBuffer: 0
         targetDepthBuffer: 0
@@ -76,12 +76,12 @@ MonoBehaviour:
         overrideMaterial: {fileID: 2100000, guid: 232d1dfb49151a44caf884e24cb1100a, type: 2}
         overrideMaterialPassIndex: 0
         overrideMaterialPassName: ForwardOnly
-        overrideShader: {fileID: -6465566751694194690, guid: 103abe65dd4dbaa419c9a06b87992e96, type: 3}
+        overrideShader: {fileID: 0}
         overrideShaderPassIndex: 0
-        overrideShaderPassName: ShadowCaster
+        overrideShaderPassName: Forward
         overrideDepthState: 1
         depthCompareFunction: 8
-        depthWrite: 1
+        depthWrite: 0
         overrideStencil: 0
         stencilReferenceValue: 64
         stencilWriteMask: 192
