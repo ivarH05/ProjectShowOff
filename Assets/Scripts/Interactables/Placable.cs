@@ -17,6 +17,11 @@ namespace Interactables
         [Space]
         public Events events;
 
+        public virtual void CanPlace(Placable self, Item i)
+        {
+            return self.canPlace;
+        }
+
         public virtual bool CanPlace(Item i) => canPlace;
 
         public override void OnInteract(PlayerController controller)
