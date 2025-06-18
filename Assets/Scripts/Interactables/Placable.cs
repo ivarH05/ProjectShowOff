@@ -1,63 +1,60 @@
 using Player;
 using Player.InventoryManagement;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Interactables
 {
-    public class Placable : Interactable
+    public abstract class Placable : Interactable
     {
-        [SerializeField]private Item _targetItem;
+        internal Item _placedItem;
 
-        [SerializeField] private GameObject placedStateObject;
-        [SerializeField] private bool placed = false;
-        [SerializeField] private bool CanRemove = false;
+        [SerializeField] private bool canRemove = true;
+        [SerializeField] private bool canPlace = true;
+        [Space]
+        [SerializeField] internal bool isPlaced = false;
+        [Space]
         public Events events;
-
-
-        private void Start()
-        {
-            if (placed)
-                Place();
-            else
-                Remove();
-        }
-
-        public bool CanPlace(Item i) => _targetItem == i;
+        public virtual bool CanPlace(Item i) => canPlace;
+        public virtual bool CanRemove(Item i) => canRemove;
 
         public override void OnInteract(PlayerController controller)
         {
-            if (placed)
+            if (isPlaced)
             {
-                if (!CanRemove)
+                if (!CanRemove(_placedItem))
                     return;
 
-                Remove();
-                controller.Inventory.PickupItem(_targetItem);
-                events.OnRemove.Invoke(this, controller);
+                Remove(_placedItem);
+                controller.Inventory.PickupItem(_placedItem);
+                events.OnRemove.Invoke(this, _placedItem, controller);
+                _placedItem = null;
+                isPlaced = false;
                 return;
             }
-            Item item = controller.Inventory.activeItem;
-            if (!CanPlace(item))
-                return;
-
-            Place();
-            controller.Inventory.UseActiveItem();
-            events.OnPlace.Invoke(this, controller);
+            else
+            {
+                Item item = controller.Inventory.activeItem;
+                if (item == null)
+                    return;
+                if (!CanPlace(item))
+                    return;
+                controller.Inventory.UseActiveItem();
+                events.OnPlace.Invoke(this, item, controller);
+                SetItem(item);
+            }
         }
 
-        void Place()
+        protected void SetItem(Item item)
         {
-            placedStateObject.SetActive(true);
-            placed = true;
+            Place(item);
+            _placedItem = item;
+            isPlaced = true;
         }
 
-        void Remove()
-        {
-            placedStateObject.SetActive(false);
-            placed = false;
-        }
+        internal abstract void Place(Item item);
+
+        internal abstract void Remove(Item item);
 
         public override void OnUseStart(PlayerController controller) { }
         public override void OnUse(PlayerController controller) { }
@@ -66,8 +63,8 @@ namespace Interactables
         [System.Serializable]
         public struct Events
         {
-            public UnityEvent<Placable, PlayerController> OnPlace;
-            public UnityEvent<Placable, PlayerController> OnRemove;
+            public UnityEvent<Placable, Item, PlayerController> OnPlace;
+            public UnityEvent<Placable, Item, PlayerController> OnRemove;
         }
     }
 }
