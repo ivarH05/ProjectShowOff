@@ -8,6 +8,7 @@ namespace Daytime
     {
         [SerializeField] Transform LookAtHouseTransform;
         [SerializeField] DialogueRoot DialogueToShow;
+        [SerializeField] GameObject Renderer;
 
         FromCameraSelectable _selectable;
         CameraMouseSelector _selector;
@@ -17,17 +18,40 @@ namespace Daytime
         private void OnEnable()
         {
             _selectable = GetComponent<FromCameraSelectable>();
+            _selectable.OnHoverStart.AddListener(OnHover);
+            _selectable.OnHoverEnd.AddListener(OnHoverEnd);
             _selectable.OnClicked.AddListener(OnClick);
         }
         private void OnDisable()
         {
-            _selectable.OnClicked.AddListener(OnClick);
+            _selectable.OnClicked.RemoveListener(OnClick);
+            _selectable.OnHoverStart.RemoveListener(OnHover);
+            _selectable.OnHoverEnd.RemoveListener(OnHoverEnd);
         }
 
         public void ResetCamera()
         {
             (_follow.ToFollow.position, _follow.ToFollow.rotation) = _previousTransform;
             _selector.enabled = true;
+        }
+
+        void OnHover()
+        {
+            if (Renderer == null) return;
+            SetTagRecursive(Renderer, 8);
+        }
+
+        void OnHoverEnd()
+        {
+            if (Renderer == null) return;
+            SetTagRecursive(Renderer, 1);
+        }
+
+        void SetTagRecursive(GameObject go, int mask)
+        {
+            go.layer = mask;
+            foreach(Transform t in go.transform) 
+                SetTagRecursive(t.gameObject, mask);
         }
 
         void OnClick()

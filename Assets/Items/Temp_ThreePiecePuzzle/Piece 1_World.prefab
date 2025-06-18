@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1591736911220589003}
   - component: {fileID: 6074732157176886915}
   - component: {fileID: 873924627941526773}
+  - component: {fileID: 4506856840677377360}
+  - component: {fileID: 7860616474017213036}
   m_Layer: 6
   m_Name: Piece 1_World
   m_TagString: Untagged
@@ -172,3 +174,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4506856840677377360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659759394038980453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b57b4f57de2b04689cb61573fe7831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 7860616474017213036}
+  _maxLoudnessVelocity: 1
+--- !u!114 &7860616474017213036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659759394038980453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: 7c8a2ad87b998ed469bfefe3f4f455c1, type: 2}
+  _showGizmos: 1

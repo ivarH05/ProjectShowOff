@@ -97,6 +97,7 @@ namespace CryptBuilder
                             r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
                             DestroyImmediate(r.Room.GeneratedChildren);
                             _crypt.GenerateTiles(node, rect, ref generatorH);
+                            _crypt.GenerateSurfaces(node, rect, ref generatorH);
                         }
                         break;
 
@@ -118,6 +119,7 @@ namespace CryptBuilder
                         r.Room.CurrentLOD = CryptRoom.LOD.HighDetail;
                         DestroyImmediate(r.Room.GeneratedChildren);
                         _crypt.GenerateTiles(node, rect, ref generatorH);
+                        _crypt.GenerateSurfaces(node, rect, ref generatorH);
                         break;
                 }
             }
