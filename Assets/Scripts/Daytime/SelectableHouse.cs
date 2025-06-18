@@ -38,13 +38,20 @@ namespace Daytime
         void OnHover()
         {
             if (Renderer == null) return;
-            Renderer.layer = 1 << 8;
+            SetTagRecursive(Renderer, 8);
         }
 
         void OnHoverEnd()
         {
             if (Renderer == null) return;
-            Renderer.layer = 1;
+            SetTagRecursive(Renderer, 1);
+        }
+
+        void SetTagRecursive(GameObject go, int mask)
+        {
+            go.layer = mask;
+            foreach(Transform t in go.transform) 
+                SetTagRecursive(t.gameObject, mask);
         }
 
         void OnClick()
