@@ -13,13 +13,5 @@ MonoBehaviour:
   m_Name: DialogueSet
   m_EditorClassIdentifier: 
   Dialogues:
-  - conditions:
-    - condition: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}
-      expectedValue: 0
+  - conditions: []
     dialogue: {fileID: 11400000, guid: b5293cf2efe64e1409c3320fe64504e5, type: 2}
-  - conditions:
-    - condition: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
-      expectedValue: 1
-    - condition: {fileID: 11400000, guid: b8653da91de35494db4d79950b1d3b00, type: 2}
-      expectedValue: 1
-    dialogue: {fileID: 11400000, guid: 88decc4626c9f5c4092593c01dd17649, type: 2}

@@ -54,6 +54,7 @@ namespace DialogueSystem
             activeNode = _activeDialogue.GetStartNode();
             events.OnDialogueStart.Invoke(_activeDialogue);
             Debug.Log("Started");
+            Debug.Log("Type: " + activeNode.type);
             Next(0);
         }
 
@@ -63,7 +64,7 @@ namespace DialogueSystem
                 return;
 
             events.OnDialogueEnd.Invoke(_activeDialogue);
-            _activeDialogue = null;
+            //_activeDialogue = null;
             activeNode = null;
             gameObject.SetActive(false);
 
@@ -77,6 +78,7 @@ namespace DialogueSystem
             {
                 NextNode(index);
                 index = 0;
+                Debug.Log("Type: " + activeNode.type);
                 if (activeNode == null || activeNode.type == NodeType.End)
                 {
                     EndDialogue();
