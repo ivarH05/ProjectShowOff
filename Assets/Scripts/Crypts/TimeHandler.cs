@@ -8,27 +8,27 @@ namespace Crypts
     public class TimeHandler : MonoBehaviour
     {
         [SerializeField] float _maxSecondsInCrypt = 15*60;
-        [SerializeField] List<TimedEvent> _events;
+        [SerializeField] List<TimedEvent> _timedEvents;
         [SerializeField] Clockhand[] _clockHands;
 
         private void Awake()
         {
-            if (_events.Count > 0)
+            if (_timedEvents.Count > 0)
                 _maxSecondsInCrypt = 0;
          
-            foreach(var e in _events)
+            foreach(var e in _timedEvents)
                 _maxSecondsInCrypt = Mathf.Max( _maxSecondsInCrypt, e.TimeOfEventSeconds);
         }
 
         private void Update()
         {
-            for(int i = 0; i < _events.Count; i++)
+            for(int i = 0; i < _timedEvents.Count; i++)
             {
-                if (_events[i].TimeOfEventSeconds > Time.timeSinceLevelLoad) 
+                if (_timedEvents[i].TimeOfEventSeconds > Time.timeSinceLevelLoad) 
                     continue;
 
-                _events[i].Event?.Invoke();
-                _events.RemoveAt(i);
+                _timedEvents[i].Event?.Invoke();
+                _timedEvents.RemoveAt(i);
                 i--;
             }
 
