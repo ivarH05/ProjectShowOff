@@ -46,6 +46,8 @@ namespace Player
         {
             _walk = transform.parent.GetComponent<Walk>();
             _walk.OnTrueJump += OnJump;
+            if (_loudnessIndicator == null) 
+                Debug.LogError("PlayerSoundHandler does not have a loudnessindicator set. Assign it in the inspector please", this);
         }
         private void OnDisable()
         {

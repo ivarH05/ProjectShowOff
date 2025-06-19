@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,6 +31,12 @@ namespace Crypts
                 _timedEvents[i].Event?.Invoke();
                 _timedEvents.RemoveAt(i);
                 i--;
+            }
+
+            if (Time.timeSinceLevelLoad > _maxSecondsInCrypt)
+            {
+                UIManager.SetState<DeathUIState>();
+                Destroy(this);
             }
 
             foreach(var h in _clockHands)
