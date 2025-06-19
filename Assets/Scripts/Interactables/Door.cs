@@ -28,7 +28,6 @@ namespace Interactables
         public Events events = new Events();
 
         [SerializeField]
-        [HideInInspector]
         private DoorState state;
         [HideInInspector]
         public bool isInFront = false;
@@ -296,7 +295,10 @@ namespace Interactables
 
         public void SetAngle(float angle)
         {
-            _angle = Mathf.Clamp(angle, 0, maxAngle);
+            if (IsLocked)
+                _angle = 0;
+            else
+                _angle = Mathf.Clamp(angle, 0, maxAngle);
             events.OnMove.Invoke(this, controller);
         }
 
