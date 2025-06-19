@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.39, y: 3.173, z: 8.44}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8226048944576301331}
@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e3238e18d3a600a4497f6ce4d85984a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 935f010a047a4d14a9da66b7f49ba361, type: 2}
     - target: {fileID: 919132149155446097, guid: e3238e18d3a600a4497f6ce4d85984a8, type: 3}
       propertyPath: m_Name
       value: NiceCross
