@@ -52,7 +52,7 @@ namespace UI
             _currentState?.OnStateStop();
             if(!_states.ContainsKey(typeof(T)))
             {
-                Debug.LogError("UIState not assigned");
+                Debug.LogError($"UIState {typeof(T)} not assigned", _singleton);
                 return;
             }
 
