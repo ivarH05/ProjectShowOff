@@ -11,6 +11,16 @@ namespace CryptBuilder
         public Material LowDetailFloor;
         public Material LowDetailCeiling;
         public Material LowDetailWall;
+        public float WallHeight;
+        public WallDecoration Decoration;
+
+        [System.Serializable]
+        public struct WallDecoration
+        {
+            public GameObject Prefab;
+            public float Width;
+            public bool FlipEveryOther;
+        }
     }
 }
 
