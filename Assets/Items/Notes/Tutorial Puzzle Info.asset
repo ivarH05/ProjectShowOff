@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b2d9ca0523bd74585620ca2c41bd53, type: 3}
   m_Name: Tutorial Puzzle Info
   m_EditorClassIdentifier: 
-  content: 
+  content: "Prove yourself by bringing the symbols of Death, Violence and Faith here.
+    \n\nThey can be found around the crypt. \n\nAfterwards, the doors will open."
   OnGrab:
     m_PersistentCalls:
       m_Calls: []

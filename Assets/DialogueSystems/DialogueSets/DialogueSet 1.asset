@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b2d9ca0523bd74585620ca2c41bd53, type: 3}
-  m_Name: Puzzle 3 Info
+  m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
+  m_Name: DialogueSet 1
   m_EditorClassIdentifier: 
-  content: Bring the lost item and the reward
-  OnGrab:
-    m_PersistentCalls:
-      m_Calls: []
+  Dialogues:
+  - conditions: []
+    dialogue: {fileID: 0}
+  - conditions: []
+    dialogue: {fileID: 0}

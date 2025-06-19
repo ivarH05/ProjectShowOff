@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b2d9ca0523bd74585620ca2c41bd53, type: 3}
   m_Name: Puzzle 4 Info
   m_EditorClassIdentifier: 
-  content: 
+  content: Grab the heart of the crypt, and destroy it. To rid us once and for all
+    of this accursed place
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
