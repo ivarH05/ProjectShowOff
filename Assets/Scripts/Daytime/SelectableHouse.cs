@@ -10,6 +10,8 @@ namespace Daytime
         [SerializeField] Transform LookAtHouseTransform;
         [SerializeField] DialogueSet DialogueSet;
         [SerializeField] GameObject Renderer;
+        [SerializeField] bool showAtNight = false;
+        [SerializeField] bool hoverOnly = false;
 
         private Dialogue currentDialogue;
 
@@ -20,23 +22,22 @@ namespace Daytime
 
         private void OnEnable()
         {
-
             _selectable = GetComponent<FromCameraSelectable>();
             _selectable.OnHoverStart.AddListener(OnHover);
             _selectable.OnHoverEnd.AddListener(OnHoverEnd);
-            _selectable.OnClicked.AddListener(OnClick);
-
-            RecalculateDialogue();
+            if(!hoverOnly)
+                _selectable.OnClicked.AddListener(OnClick);
         }
 
-        void RecalculateDialogue()
+        public void RecalculateDialogue()
         {
             currentDialogue = DialogueSet?.GetDialogue();
-            if (currentDialogue == null)
-            {
+            if (currentDialogue == null || TimeHandler.IsNight() != showAtNight)
                 this.enabled = false;
-            }
+            else
+                this.enabled = true;
         }
+
         private void OnDisable()
         {
             _selectable.OnClicked.RemoveListener(OnClick);
@@ -50,7 +51,7 @@ namespace Daytime
             _selector.enabled = true;
         }
 
-        void OnHover()
+        public void OnHover()
         {
             if (Renderer == null) return;
             SetTagRecursive(Renderer, 8);
@@ -79,13 +80,7 @@ namespace Daytime
             _selector = Camera.main.GetComponent<CameraMouseSelector>();
             _selector.enabled = false;
 
-            DialoguePlayer.StartNewDialogue(currentDialogue, DisabledDialogue);
-
-            void DisabledDialogue()
-            {
-                ResetCamera();
-                RecalculateDialogue();
-            }
+            DialoguePlayer.StartNewDialogue(currentDialogue, ResetCamera);
         }
     }
 }

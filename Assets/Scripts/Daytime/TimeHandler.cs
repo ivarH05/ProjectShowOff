@@ -23,6 +23,7 @@ namespace Daytime
         }
 
         public static void Advance() => _singleton.TalkToCharacter();
+        public static bool IsNight() => _singleton == null ? false : _singleton._charactersTalkedTo >= _singleton._maximumCharactersTalkedTo;
 
         /// <summary>
         /// Registers a character being talked to and advances the clock.
