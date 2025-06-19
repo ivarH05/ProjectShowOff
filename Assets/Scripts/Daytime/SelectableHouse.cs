@@ -1,3 +1,4 @@
+using DialogueSystem;
 using Player;
 using UnityEngine;
 
@@ -7,8 +8,10 @@ namespace Daytime
     public class SelectableHouse : MonoBehaviour
     {
         [SerializeField] Transform LookAtHouseTransform;
-        [SerializeField] DialogueRoot DialogueToShow;
+        [SerializeField] DialogueSet DialogueSet;
         [SerializeField] GameObject Renderer;
+
+        private Dialogue currentDialogue;
 
         FromCameraSelectable _selectable;
         CameraMouseSelector _selector;
@@ -17,10 +20,22 @@ namespace Daytime
 
         private void OnEnable()
         {
+
             _selectable = GetComponent<FromCameraSelectable>();
             _selectable.OnHoverStart.AddListener(OnHover);
             _selectable.OnHoverEnd.AddListener(OnHoverEnd);
             _selectable.OnClicked.AddListener(OnClick);
+
+            RecalculateDialogue();
+        }
+
+        void RecalculateDialogue()
+        {
+            currentDialogue = DialogueSet?.GetDialogue();
+            if (currentDialogue == null)
+            {
+                this.enabled = false;
+            }
         }
         private void OnDisable()
         {
@@ -56,11 +71,6 @@ namespace Daytime
 
         void OnClick()
         {
-            if(DialogueToShow == null)
-            {
-                Debug.LogError("The DialogueRoot was missing, and thus dialogue could not be started.", this);
-                return;
-            }
 
             _follow = Camera.main.GetComponent<FollowTransform>();
             _previousTransform = (_follow.ToFollow.position, _follow.ToFollow.rotation);
@@ -69,14 +79,12 @@ namespace Daytime
             _selector = Camera.main.GetComponent<CameraMouseSelector>();
             _selector.enabled = false;
 
-            var dialogueRoot = DialogueToShow;
-            dialogueRoot.Enable();
-            dialogueRoot.OnDialogueDisable += DisabledDialogue;
+            DialoguePlayer.StartNewDialogue(currentDialogue, DisabledDialogue);
 
             void DisabledDialogue()
             {
                 ResetCamera();
-                dialogueRoot.OnDialogueDisable -= DisabledDialogue;
+                RecalculateDialogue();
             }
         }
     }

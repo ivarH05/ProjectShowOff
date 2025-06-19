@@ -146,7 +146,10 @@ MonoBehaviour:
   Thumbnail: 
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Brick1\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2647712898\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"opacitymult\" uid=\"4243335003\" type=\"0\" value=\"0.217\"
+    <presetinput identifier=\"opacitymult\" uid=\"4243335003\" type=\"0\" value=\"0\"
+    />\n  <presetinput identifier=\"leveloutlow\" uid=\"4243095872\" type=\"0\" value=\"0.326\"
+    />\n  <presetinput identifier=\"hue\" uid=\"4243095567\" type=\"0\" value=\"0.064\"
+    />\n  <presetinput identifier=\"saturation\" uid=\"4243095565\" type=\"0\" value=\"0.296\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -215,7 +218,7 @@ MonoBehaviour:
             blend
           Type: 0
           WidgetType: 1
-        Data: 0.217
+        Data: 0
         NumericalDescription:
           DefaultValue: 1
           MinValue: 0
@@ -235,7 +238,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.223404
+        Data: 0.326
         NumericalDescription:
           DefaultValue: 0.223404
           MinValue: 0
@@ -255,7 +258,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.5
+        Data: 0.064
         NumericalDescription:
           DefaultValue: 0.5
           MinValue: 0
@@ -275,7 +278,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.5
+        Data: 0.296
         NumericalDescription:
           DefaultValue: 0.5
           MinValue: 0

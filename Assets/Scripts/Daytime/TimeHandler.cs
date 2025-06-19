@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,8 @@ namespace Daytime
 {
     public class TimeHandler : MonoBehaviour
     {
+        private static TimeHandler _singleton;
+
         [SerializeField] int _maximumCharactersTalkedTo;
         [SerializeField] float _animatorSpeed = 5;
         [SerializeField] Animator _dayProgressAnimation;
@@ -16,7 +19,10 @@ namespace Daytime
         private void Start()
         {
             _dayProgressAnimation.StopPlayback();
+            _singleton = this;
         }
+
+        public static void Advance() => _singleton.TalkToCharacter();
 
         /// <summary>
         /// Registers a character being talked to and advances the clock.
