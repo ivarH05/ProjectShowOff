@@ -1016,7 +1016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8505296784720853710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4637422942320537434}
+        m_TargetAssemblyTypeName: DialogueSystem.DialoguePlayer, Assembly-CSharp
+        m_MethodName: EndDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3395066144759413379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2090,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7244289316198647684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4637422942320537434}
+        m_TargetAssemblyTypeName: DialogueSystem.DialoguePlayer, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8675542507457416855
 GameObject:
   m_ObjectHideFlags: 0
