@@ -1,3 +1,4 @@
+using DialogueSystem;
 using Player;
 using UnityEngine;
 
@@ -7,7 +8,12 @@ namespace Daytime
     public class SelectableHouse : MonoBehaviour
     {
         [SerializeField] Transform LookAtHouseTransform;
-        [SerializeField] DialogueRoot DialogueToShow;
+        [SerializeField] DialogueSet DialogueSet;
+        [SerializeField] GameObject Renderer;
+        [SerializeField] bool showAtNight = false;
+        [SerializeField] bool hoverOnly = false;
+
+        private Dialogue currentDialogue;
 
         FromCameraSelectable _selectable;
         CameraMouseSelector _selector;
@@ -17,11 +23,26 @@ namespace Daytime
         private void OnEnable()
         {
             _selectable = GetComponent<FromCameraSelectable>();
-            _selectable.OnClicked += OnClick;
+            _selectable.OnHoverStart.AddListener(OnHover);
+            _selectable.OnHoverEnd.AddListener(OnHoverEnd);
+            if(!hoverOnly)
+                _selectable.OnClicked.AddListener(OnClick);
         }
+
+        public void RecalculateDialogue()
+        {
+            currentDialogue = DialogueSet?.GetDialogue();
+            if (currentDialogue == null || TimeHandler.IsNight() != showAtNight)
+                this.enabled = false;
+            else
+                this.enabled = true;
+        }
+
         private void OnDisable()
         {
-            _selectable.OnClicked -= OnClick;
+            _selectable.OnClicked.RemoveListener(OnClick);
+            _selectable.OnHoverStart.RemoveListener(OnHover);
+            _selectable.OnHoverEnd.RemoveListener(OnHoverEnd);
         }
 
         public void ResetCamera()
@@ -30,13 +51,27 @@ namespace Daytime
             _selector.enabled = true;
         }
 
+        public void OnHover()
+        {
+            if (Renderer == null) return;
+            SetTagRecursive(Renderer, 8);
+        }
+
+        void OnHoverEnd()
+        {
+            if (Renderer == null) return;
+            SetTagRecursive(Renderer, 1);
+        }
+
+        void SetTagRecursive(GameObject go, int mask)
+        {
+            go.layer = mask;
+            foreach(Transform t in go.transform) 
+                SetTagRecursive(t.gameObject, mask);
+        }
+
         void OnClick()
         {
-            if(DialogueToShow == null)
-            {
-                Debug.LogError("The DialogueRoot was missing, and thus dialogue could not be started.", this);
-                return;
-            }
 
             _follow = Camera.main.GetComponent<FollowTransform>();
             _previousTransform = (_follow.ToFollow.position, _follow.ToFollow.rotation);
@@ -45,15 +80,7 @@ namespace Daytime
             _selector = Camera.main.GetComponent<CameraMouseSelector>();
             _selector.enabled = false;
 
-            var dialogueRoot = DialogueToShow;
-            dialogueRoot.Enable();
-            dialogueRoot.OnDialogueDisable += DisabledDialogue;
-
-            void DisabledDialogue()
-            {
-                ResetCamera();
-                dialogueRoot.OnDialogueDisable -= DisabledDialogue;
-            }
+            DialoguePlayer.StartNewDialogue(currentDialogue, ResetCamera);
         }
     }
 }

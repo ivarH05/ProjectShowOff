@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Running
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: 06d4b6afa57573f4a981441acd05835a, type: 3}
-  SelectionMode: 0
+  - {fileID: 8300000, guid: 20214de669edc8343ae428c3db0d0a58, type: 3}
+  - {fileID: 8300000, guid: 4ab0d83c58edd73469e4ca48fd5fe529, type: 3}
+  - {fileID: 8300000, guid: 85e1110c287b07840bbc3cb44883798b, type: 3}
+  - {fileID: 8300000, guid: a38e67c3aec807442b781175f7d7071a, type: 3}
+  - {fileID: 8300000, guid: e0fac820222ad0f4cb9bde53ff18e4fa, type: 3}
+  - {fileID: 8300000, guid: 8bdab245f178608439fb827911c4041e, type: 3}
+  SelectionMode: 1
   Type: 1
   Volume: 1
   Pitch: 1

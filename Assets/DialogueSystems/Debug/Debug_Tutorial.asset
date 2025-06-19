@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Debug_Tutorial
+  m_EditorClassIdentifier: 
+  Description: 
+  _nodes:
+  - rid: 7253528117036188003
+  - rid: 7253528117036188004
+  - rid: 7253528117036188005
+  - rid: 7253528117036188006
+  - rid: 7253528117036188007
+  - rid: 7253528117036188008
+  - rid: 7253528117036188009
+  - rid: 7253528117036188010
+  - rid: 7253528117036188011
+  - rid: 7253528117036188012
+  - rid: 7253528117036188013
+  - rid: 7253528117036188014
+  - rid: 7253528117036188015
+  - rid: 7253528117036188016
+  - rid: 7253528117036188017
+  - rid: 7253528117036188018
+  - rid: 7253528117036188019
+  - rid: 7253528117036188020
+  - rid: 7253528117036188021
+  _connections:
+  - OutputNodeGUID: bba6f4e1-7322-4490-8ea1-060011970616
+    OutputNodeIndex: 0
+    InputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+  - OutputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+    OutputNodeIndex: 0
+    InputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+  - OutputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+    OutputNodeIndex: 1
+    InputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+  - OutputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
+    OutputNodeIndex: 0
+    InputNodeGUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
+  - OutputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
+    OutputNodeIndex: 1
+    InputNodeGUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
+  - OutputNodeGUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
+    OutputNodeIndex: 0
+    InputNodeGUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+  - OutputNodeGUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
+    OutputNodeIndex: 0
+    InputNodeGUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+  - OutputNodeGUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+    OutputNodeIndex: 0
+    InputNodeGUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+  - OutputNodeGUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+    OutputNodeIndex: 0
+    InputNodeGUID: 81e17667-c495-454d-abfa-afaa9cbb370e
+  - OutputNodeGUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+    OutputNodeIndex: 0
+    InputNodeGUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+  - OutputNodeGUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+    OutputNodeIndex: 0
+    InputNodeGUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+  - OutputNodeGUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+    OutputNodeIndex: 0
+    InputNodeGUID: 5b598fb5-86ed-40a6-9d0c-941a45d71c4f
+  - OutputNodeGUID: 5193c932-40d2-44a6-864f-714763804644
+    OutputNodeIndex: 0
+    InputNodeGUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+  - OutputNodeGUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+    OutputNodeIndex: 0
+    InputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
+  - OutputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+    OutputNodeIndex: 0
+    InputNodeGUID: 5193c932-40d2-44a6-864f-714763804644
+  - OutputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+    OutputNodeIndex: 1
+    InputNodeGUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
+  - OutputNodeGUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
+    OutputNodeIndex: 0
+    InputNodeGUID: 95d26e94-9405-42c0-9634-5d878cfdd0d1
+  references:
+    version: 2
+    RefIds:
+    - rid: 7253528117036188003
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bba6f4e1-7322-4490-8ea1-060011970616
+        type: 3
+        Position: {x: 64, y: 159}
+    - rid: 7253528117036188004
+      type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+        type: 2
+        Position: {x: 243, y: 159}
+        flag: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}
+    - rid: 7253528117036188005
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9a2f7b8e-401a-4264-84ea-0d4f13a2bf91
+        type: 4
+        Position: {x: 405, y: 160}
+    - rid: 7253528117036188006
+      type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f676f1c5-9c72-4336-9f0e-168f837656b4
+        type: 2
+        Position: {x: 489, y: -355}
+        flag: {fileID: 0}
+    - rid: 7253528117036188007
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
+        type: 1
+        Position: {x: 650, y: -585}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188008
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
+        type: 1
+        Position: {x: 659, y: -169}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188009
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+        type: 5
+        Position: {x: 909, y: -556}
+        onRun:
+          type: 1
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 7253528117036188010
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+        type: 1
+        Position: {x: 1160, y: -574}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188011
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+        type: 1
+        Position: {x: 904, y: -171}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188012
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+        type: 5
+        Position: {x: 1165, y: -120}
+        onRun:
+          type: 1
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 7253528117036188013
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 81e17667-c495-454d-abfa-afaa9cbb370e
+        type: 4
+        Position: {x: 1503, y: -561}
+    - rid: 7253528117036188014
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+        type: 1
+        Position: {x: 1511, y: -233}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188015
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5b598fb5-86ed-40a6-9d0c-941a45d71c4f
+        type: 4
+        Position: {x: 1870, y: -157}
+    - rid: 7253528117036188016
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5193c932-40d2-44a6-864f-714763804644
+        type: 1
+        Position: {x: 956, y: 248}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188017
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+        type: 1
+        Position: {x: 1452, y: 254}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188018
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+        type: 1
+        Position: {x: 406, y: 258}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "Finally, I get to go to the village on my own without family.
+          \nDad told me as long as I talk to the priest first everything should be
+          fine"
+        Options:
+        - ResponseText: Continue
+          index: 0
+        - ResponseText: Debug_Skip
+          index: 1
+    - rid: 7253528117036188019
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 958dcff3-9ae9-412e-b808-3d6ac5da6712
+        type: 1
+        Position: {x: 708, y: -26}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528117036188020
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 95d26e94-9405-42c0-9634-5d878cfdd0d1
+        type: 4
+        Position: {x: 1104, y: 497}
+    - rid: 7253528117036188021
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
+        type: 5
+        Position: {x: 808, y: 483}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0

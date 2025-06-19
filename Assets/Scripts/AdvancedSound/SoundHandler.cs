@@ -1,5 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace AdvancedSound
 {
@@ -7,10 +10,34 @@ namespace AdvancedSound
     {
         public static SoundHandler Singleton => Instance ?? new GameObject("SoundHandler").AddComponent<SoundHandler>();
         static SoundHandler Instance;
+
+        List<PlayedSound> _playedSounds = new();
+        int _pos;
+        
+        private void OnAudioFilterRead(float[] data, int channels)
+        {
+            /*
+            for (int i = 0; i < data.Length; i += channels) 
+            { 
+                for(int ch = 0; ch<channels; ch++)
+                {
+                    data[i + ch] = Mathf.Sin(_pos * (.03f+.02f*ch))*.1f;
+                }
+                _pos++;
+            }*/
+        }
+
         private void Awake()
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.activeSceneChanged += OnLevel;
+            gameObject.AddComponent<AudioSource>();
+        }
+
+        void OnLevel(Scene s1, Scene s2)
+        {
+            _playedSounds.Clear();
         }
 
         public void PlaySound(Sound snd, Vector3 position, float volumeMultiplier = 1, float pitchMultiplier = 1)
@@ -23,6 +50,12 @@ namespace AdvancedSound
             player.pitch = snd.Pitch * pitchMultiplier;
             player.maxDistance = snd.AudibleRange;
             player.rolloffMode = AudioRolloffMode.Custom;
+            player.SetCustomCurve(AudioSourceCurveType.Spread, new(
+                new(0, 1),
+                new(snd.LoudThreshold, .8f),
+                new(snd.ModerateThreshold, .5f),
+                new(snd.FaintThreshold, .3f),
+                new(1f, 0)));
             player.SetCustomCurve(AudioSourceCurveType.SpatialBlend, new(new Keyframe(0, 1, 0, 0)));
             AnimationCurve audioFalloff = new(
                 new(0, 1),
@@ -55,10 +88,18 @@ namespace AdvancedSound
             StartCoroutine(DestroyIfStopped());
             IEnumerator DestroyIfStopped()
             {
-                while (player.isPlaying)
+                while (player != null && player.isPlaying)
                     yield return new WaitForFixedUpdate();
                 Destroy(GO);
             }
+        }
+
+
+        struct PlayedSound
+        {
+            public float StartTime;
+            public Sound Sound;
+            public Vector3 Position;
         }
     }
 }

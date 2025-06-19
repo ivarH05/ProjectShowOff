@@ -1,3 +1,4 @@
+using AdvancedSound;
 using GameManagement;
 using Player;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using UnityEngine.Events;
 namespace NPC
 {
     [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(SoundListener))]
     public abstract class Character : MonoBehaviour
     {
         /**                 SERIALIZED PUBLICS              */
@@ -27,14 +29,13 @@ namespace NPC
 
 
         /**                 PRIVATES              */
-        private NavMeshAgent _agent;
         private HashSet<PlayerController> visiblePlayers = new HashSet<PlayerController>();
 
         /**                 UNSERIALIZED PUBLICS              */
         public float health { get; private set; }
-        public Character character { get; private set; }
-        public float RemainingDistance => _agent.remainingDistance;
-        public void SetDestination(Vector3 destination) => _agent.SetDestination(destination);
+        public NavMeshAgent agent { get; private set; }
+        public float RemainingDistance => agent.remainingDistance;
+        public void SetDestination(Vector3 destination) => agent.SetDestination(destination);
 
 
         /**                 METHODS              */
@@ -42,7 +43,8 @@ namespace NPC
         internal virtual void Start()
         {
             AddCharacter(this);
-            _agent = GetComponent<NavMeshAgent>();
+            agent = GetComponent<NavMeshAgent>();
+            GetComponent<SoundListener>().OnHearSound += sound => { events.OnHearSound.Invoke(this, sound); };
 
             events.OnSpawn.Invoke(this);
             _behaviourState?.StartState(this);
@@ -63,19 +65,17 @@ namespace NPC
 
                 if (seesPlayer)
                 {
-                    if (visiblePlayers.Contains(player))
+                    if (!visiblePlayers.Contains(player))
                     {
-                        events.WhileSeePlayer.Invoke(this, player);
-                        return;
+                        events.OnNoticePlayer.Invoke(this, player);
+                        visiblePlayers.Add(player);
                     }
-                    events.OnNoticePlayer.Invoke(this, player);
-                    visiblePlayers.Add(player);
+                    events.WhileSeePlayer.Invoke(this, player);
                 }
                 else
                 {
-                    if (!seesPlayer)
-                        visiblePlayers.Remove(player);
-                    return;
+                    visiblePlayers.Remove(player);
+                    break;
                 }
             }
         }
@@ -197,7 +197,8 @@ namespace NPC
             public UnityEvent<Character> OnDeath;
             public UnityEvent<Character> OnDespawn;
             [Space]
-            public UnityEvent<Character, PlayerController> OnHearPlayer;
+            public UnityEvent<Character, HeardSound> OnHearSound;
+            [Space]
             public UnityEvent<Character, PlayerController> OnNoticePlayer;
             public UnityEvent<Character, PlayerController> WhileSeePlayer;
             public UnityEvent<Character, PlayerController> OnLosePlayer;

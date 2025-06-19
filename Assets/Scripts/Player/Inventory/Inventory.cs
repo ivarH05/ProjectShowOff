@@ -1,10 +1,7 @@
-using Player;
 using Interactables;
 using UnityEngine;
-using Player.InventoryManagement;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static UnityEditor.PlayerSettings;
 
 namespace Player.InventoryManagement
 {
@@ -43,6 +40,18 @@ namespace Player.InventoryManagement
         {
             LerpItems();
         }
+
+        public void SwitchItem(InputAction.CallbackContext context)
+        {
+            if (context.ReadValue<Vector2>().y < 0)
+                return;
+            if (RightHandItem == 0)
+                (RightHandItem, LeftHandItem) = (1, 0);
+            else
+                (RightHandItem, LeftHandItem) = (0, 1);
+
+            SwitchItemPositions();
+        }
         public void OnItem0(InputAction.CallbackContext context)
         {
             if (!context.started)
@@ -76,6 +85,15 @@ namespace Player.InventoryManagement
             if (!activeSlot.Occupied)
                 return;
             activeSlot.DropItem(player);
+        }
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (!context.canceled)
+                return;
+            if (!activeSlot.Occupied)
+                return;
+            ThrowActiveItem();
         }
 
         private void SwitchItemPositions()
@@ -115,6 +133,8 @@ namespace Player.InventoryManagement
             Vector3 offset = RightHandPosition + additionalOffset;
             if (_slots[RightHandItem].Occupied)
                 offset += _slots[RightHandItem].item.baseRightOffset;
+            if (player.AimHeld)
+                offset += new Vector3(0, 0, -0.1f);
 
             return offset;
         }
@@ -171,6 +191,11 @@ namespace Player.InventoryManagement
             activeSlot.Clear();
         }
 
+        private void ThrowActiveItem()
+        {
+            activeSlot.DropItem(player, 10);
+        }
+
         private void DropItem(Slot slot)
         {
             slot.DropItem(player);
@@ -212,6 +237,8 @@ namespace Player.InventoryManagement
 
                 worldObject = obj;
                 worldObject.gameObject.SetActive(false);
+
+                item.OnPickUp.Invoke();
             }
             public void SetItem(Item i)
             {
@@ -225,15 +252,19 @@ namespace Player.InventoryManagement
 
                 worldObject = Instantiate(item.DefaultWorldObjectPrefab).GetComponent<ItemObject>();
                 worldObject.gameObject.SetActive(false);
+
+                item.OnPickUp.Invoke();
             }
 
-            public void DropItem(PlayerController controller)
+            public void DropItem(PlayerController controller, float Velocity = 2.5f)
             {
                 if(!Occupied) return;
 
+                item.OnLose.Invoke();
+
                 worldObject.gameObject.SetActive(true);
                 worldObject.transform.position = controller.CameraTransform.position + controller.CameraTransform.forward * 0.25f;
-                worldObject.rigidbody.linearVelocity = controller.Body.linearVelocity + controller.CameraTransform.forward * 2.5f;
+                worldObject.rigidbody.linearVelocity = controller.Body.linearVelocity + controller.CameraTransform.forward * Velocity;
                 Clear();
             }
 

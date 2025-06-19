@@ -1,10 +1,11 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CryptBuilder
 {
     [Serializable]
-    public struct BoundingBox
+    public struct BoundingBox : IEquatable<BoundingBox>
     {
         public Vector2 Minimum;
         public Vector2 Maximum;
@@ -34,21 +35,38 @@ namespace CryptBuilder
             if(point.x < Minimum.x) return false;
             if(point.x > Maximum.x) return false;
             if(point.y < Minimum.y) return false;
-            return point.y < Maximum.y;
+            return point.y <= Maximum.y;
         }
 
         public bool FullyContains(BoundingBox box) => ContainsPoint(box.Minimum) && ContainsPoint(box.Maximum);
 
         public bool Intersects(BoundingBox other)
         {
-            if(ContainsPoint(other.Maximum) || ContainsPoint(other.Minimum)) return true;
-            return other.ContainsPoint(Minimum) || other.ContainsPoint(Maximum);
+            return Minimum.x <= other.Maximum.x && Maximum.x >= other.Minimum.x &&
+                Minimum.y <= other.Maximum.y && Maximum.y >= other.Minimum.y;
+        }
+
+        bool IEquatable<BoundingBox>.Equals(BoundingBox other)
+        {
+            return other.Minimum == this.Minimum && other.Maximum == this.Maximum;
         }
 
         public BoundingBox(Vector2 min, Vector2 max)
         {
             Minimum = min;
             Maximum = max;
+        }
+
+        public static bool operator== (BoundingBox left, BoundingBox right) { return (left as IEquatable<BoundingBox>).Equals(right); }
+        public static bool operator!= (BoundingBox left, BoundingBox right) { return !(left == right); }
+        public override bool Equals(object obj)
+        {
+            if(obj is BoundingBox b) return (this as IEquatable<BoundingBox>).Equals(b); 
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Minimum.GetHashCode(), Maximum.GetHashCode());
         }
     }
 }

@@ -143,6 +143,52 @@ MonoBehaviour:
   planetCenterPosition:
     m_OverrideState: 0
     m_Value: {x: 0, y: -6378100, z: 0}
+--- !u!114 &-7410023177841697834
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 3
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
+  maximumVelocity:
+    m_OverrideState: 1
+    m_Value: 0
+  minimumVelocity:
+    m_OverrideState: 1
+    m_Value: 0
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+  m_SampleCount:
+    m_OverrideState: 1
+    m_Value: 2
 --- !u!114 &-3798762637182773537
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -164,16 +210,16 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   cascadeShadowSplitCount:
-    m_OverrideState: 0
-    m_Value: 4
+    m_OverrideState: 1
+    m_Value: 3
   cascadeShadowSplit0:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.05
   cascadeShadowSplit1:
-    m_OverrideState: 0
-    m_Value: 0.15
+    m_OverrideState: 1
+    m_Value: 0.13
   cascadeShadowSplit2:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.3
   cascadeShadowBorder0:
     m_OverrideState: 0
@@ -203,11 +249,11 @@ MonoBehaviour:
   - {fileID: 8395283637690682614}
   - {fileID: -8661917026582584032}
   - {fileID: 5653077504613241724}
-  - {fileID: 2415158092014637637}
   - {fileID: -3798762637182773537}
-  - {fileID: 4890769212317197989}
   - {fileID: 8036722508194863600}
   - {fileID: 1485087753903227637}
+  - {fileID: 8863551034537550541}
+  - {fileID: -7410023177841697834}
 --- !u!114 &1485087753903227637
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -223,7 +269,7 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   threshold:
     m_OverrideState: 1
     m_Value: 0.85
@@ -250,264 +296,10 @@ MonoBehaviour:
     m_Value: 2
   m_HighQualityPrefiltering:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   m_HighQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &2415158092014637637
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  quality:
-    m_OverrideState: 0
-    m_Value: 1
-  enabled:
-    m_OverrideState: 1
-    m_Value: 1
-  colorMode:
-    m_OverrideState: 0
-    m_Value: 1
-  color:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 0.37254906, g: 0.791525, b: 1, a: 1}
-  maxFogDistance:
-    m_OverrideState: 0
-    m_Value: 1000
-  mipFogMaxMip:
-    m_OverrideState: 0
-    m_Value: 0.5
-  mipFogNear:
-    m_OverrideState: 0
-    m_Value: 0
-  mipFogFar:
-    m_OverrideState: 0
-    m_Value: 1000
-  baseHeight:
-    m_OverrideState: 1
-    m_Value: 10
-  maximumHeight:
-    m_OverrideState: 0
-    m_Value: 50
-  meanFreePath:
-    m_OverrideState: 1
-    m_Value: 75
-  enableVolumetricFog:
-    m_OverrideState: 1
-    m_Value: 1
-  albedo:
-    m_OverrideState: 1
-    m_Value: {r: 0.7490196, g: 0.95161957, b: 1, a: 1}
-  globalLightProbeDimmer:
-    m_OverrideState: 0
-    m_Value: 1
-  depthExtent:
-    m_OverrideState: 1
-    m_Value: 1000
-  denoisingMode:
-    m_OverrideState: 0
-    m_Value: 2
-  anisotropy:
-    m_OverrideState: 0
-    m_Value: 0
-  sliceDistributionUniformity:
-    m_OverrideState: 0
-    m_Value: 0.75
-  multipleScatteringIntensity:
-    m_OverrideState: 0
-    m_Value: 0
-  m_FogControlMode:
-    m_OverrideState: 0
-    m_Value: 0
-  screenResolutionPercentage:
-    m_OverrideState: 0
-    m_Value: 12.5
-  volumeSliceCount:
-    m_OverrideState: 0
-    m_Value: 64
-  m_VolumetricFogBudget:
-    m_OverrideState: 0
-    m_Value: 0.5
-  m_ResolutionDepthRatio:
-    m_OverrideState: 0
-    m_Value: 0.5
-  directionalLightsOnly:
-    m_OverrideState: 0
-    m_Value: 0
---- !u!114 &4890769212317197989
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e88178bb13f64a54f90d6cd6ef7aa9a1, type: 3}
-  m_Name: CloudLayer
-  m_EditorClassIdentifier: 
-  active: 1
-  opacity:
-    m_OverrideState: 0
-    m_Value: 1
-  upperHemisphereOnly:
-    m_OverrideState: 0
-    m_Value: 1
-  layers:
-    m_OverrideState: 0
-    m_Value: 0
-  resolution:
-    m_OverrideState: 0
-    m_Value: 1024
-  shadowMultiplier:
-    m_OverrideState: 0
-    m_Value: 1
-  shadowTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  shadowResolution:
-    m_OverrideState: 0
-    m_Value: 256
-  shadowSize:
-    m_OverrideState: 0
-    m_Value: 500
-  layerA:
-    cloudMap:
-      m_OverrideState: 0
-      m_Value: {fileID: 2800000, guid: 57a33fc2476a01644865bfde5f06e2f4, type: 3}
-    opacityR:
-      m_OverrideState: 1
-      m_Value: 0.5
-    opacityG:
-      m_OverrideState: 0
-      m_Value: 0
-    opacityB:
-      m_OverrideState: 1
-      m_Value: 0.5
-    opacityA:
-      m_OverrideState: 0
-      m_Value: 0
-    altitude:
-      m_OverrideState: 0
-      m_Value: 2000
-    rotation:
-      m_OverrideState: 0
-      m_Value: 0
-    tint:
-      m_OverrideState: 0
-      m_Value: {r: 1, g: 1, b: 1, a: 1}
-    exposure:
-      m_OverrideState: 0
-      m_Value: 0
-    distortionMode:
-      m_OverrideState: 0
-      m_Value: 0
-    scrollOrientation:
-      m_OverrideState: 0
-      m_Value:
-        mode: 1
-        customValue: 0
-        additiveValue: 0
-        multiplyValue: 1
-    scrollSpeed:
-      m_OverrideState: 0
-      m_Value:
-        mode: 1
-        customValue: 100
-        additiveValue: 0
-        multiplyValue: 1
-    flowmap:
-      m_OverrideState: 0
-      m_Value: {fileID: 0}
-    lighting:
-      m_OverrideState: 0
-      m_Value: 1
-    steps:
-      m_OverrideState: 0
-      m_Value: 6
-    thickness:
-      m_OverrideState: 0
-      m_Value: 0.5
-    ambientProbeDimmer:
-      m_OverrideState: 0
-      m_Value: 1
-    castShadows:
-      m_OverrideState: 0
-      m_Value: 0
-  layerB:
-    cloudMap:
-      m_OverrideState: 0
-      m_Value: {fileID: 2800000, guid: 57a33fc2476a01644865bfde5f06e2f4, type: 3}
-    opacityR:
-      m_OverrideState: 0
-      m_Value: 1
-    opacityG:
-      m_OverrideState: 0
-      m_Value: 0
-    opacityB:
-      m_OverrideState: 0
-      m_Value: 0
-    opacityA:
-      m_OverrideState: 0
-      m_Value: 0
-    altitude:
-      m_OverrideState: 0
-      m_Value: 2000
-    rotation:
-      m_OverrideState: 0
-      m_Value: 0
-    tint:
-      m_OverrideState: 0
-      m_Value: {r: 1, g: 1, b: 1, a: 1}
-    exposure:
-      m_OverrideState: 0
-      m_Value: 0
-    distortionMode:
-      m_OverrideState: 0
-      m_Value: 0
-    scrollOrientation:
-      m_OverrideState: 0
-      m_Value:
-        mode: 1
-        customValue: 0
-        additiveValue: 0
-        multiplyValue: 1
-    scrollSpeed:
-      m_OverrideState: 0
-      m_Value:
-        mode: 1
-        customValue: 100
-        additiveValue: 0
-        multiplyValue: 1
-    flowmap:
-      m_OverrideState: 0
-      m_Value: {fileID: 0}
-    lighting:
-      m_OverrideState: 0
-      m_Value: 1
-    steps:
-      m_OverrideState: 0
-      m_Value: 6
-    thickness:
-      m_OverrideState: 0
-      m_Value: 0.5
-    ambientProbeDimmer:
-      m_OverrideState: 0
-      m_Value: 1
-    castShadows:
-      m_OverrideState: 0
-      m_Value: 0
 --- !u!114 &5653077504613241724
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -523,10 +315,10 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 1
   meteringMode:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 3
   luminanceSource:
     m_OverrideState: 0
     m_Value: 1
@@ -534,14 +326,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   compensation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   limitMin:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 2
   limitMax:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 12.5
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -621,23 +413,23 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   adaptationMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   adaptationSpeedDarkToLight:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 3
   adaptationSpeedLightToDark:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   weightTextureMask:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   histogramPercentages:
-    m_OverrideState: 0
-    m_Value: {x: 40, y: 90}
+    m_OverrideState: 1
+    m_Value: {x: 86.72566, y: 100}
   histogramUseCurveRemapping:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   targetMidGray:
     m_OverrideState: 0
     m_Value: 0
@@ -645,11 +437,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   proceduralCenter:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   proceduralRadii:
-    m_OverrideState: 0
-    m_Value: {x: 0.15, y: 0.15}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1}
   maskMinIntensity:
     m_OverrideState: 0
     m_Value: -30
@@ -657,7 +449,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 30
   proceduralSoftness:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.5
 --- !u!114 &8036722508194863600
 MonoBehaviour:
@@ -671,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384c4d03a551c44448145f4093304119, type: 3}
   m_Name: ScreenSpaceReflection
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 0
     m_Value: 1
@@ -820,3 +612,104 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   m_Version: 1
+--- !u!114 &8863551034537550541
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ef2681fa3dc8c4fa031f044e68c63f, type: 3}
+  m_Name: GlobalIllumination
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 3
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  tracing:
+    m_OverrideState: 1
+    m_Value: 2
+  rayMiss:
+    m_OverrideState: 0
+    m_Value: 3
+  adaptiveProbeVolumesLayerMask:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 0
+      m_Bits: 1
+  depthBufferThickness:
+    m_OverrideState: 1
+    m_Value: 0.1
+  fullResolutionSS:
+    m_OverrideState: 1
+    m_Value: 1
+  m_MaxRaySteps:
+    m_OverrideState: 1
+    m_Value: 64
+  m_DenoiseSS:
+    m_OverrideState: 1
+    m_Value: 1
+  m_HalfResolutionDenoiserSS:
+    m_OverrideState: 1
+    m_Value: 0
+  m_DenoiserRadiusSS:
+    m_OverrideState: 1
+    m_Value: 0.255
+  m_SecondDenoiserPassSS:
+    m_OverrideState: 1
+    m_Value: 1
+  lastBounceFallbackHierarchy:
+    m_OverrideState: 0
+    m_Value: 3
+  ambientProbeDimmer:
+    m_OverrideState: 0
+    m_Value: 0
+  layerMask:
+    m_OverrideState: 1
+    m_Value:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  textureLodBias:
+    m_OverrideState: 0
+    m_Value: 7
+  m_RayLength:
+    m_OverrideState: 1
+    m_Value: 6
+  m_ClampValue:
+    m_OverrideState: 1
+    m_Value: 100
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
+  m_FullResolution:
+    m_OverrideState: 1
+    m_Value: 1
+  sampleCount:
+    m_OverrideState: 0
+    m_Value: 2
+  bounceCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 1
+    m_Value: 1
+  m_HalfResolutionDenoiser:
+    m_OverrideState: 1
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 1
+    m_Value: 0.75
+  m_SecondDenoiserPass:
+    m_OverrideState: 1
+    m_Value: 1
+  m_MaxMixedRaySteps:
+    m_OverrideState: 1
+    m_Value: 4
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1

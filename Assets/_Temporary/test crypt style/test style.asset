@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46add80a1fe643244adcc37bd73e03fe, type: 3}
+  m_Name: test style
+  m_EditorClassIdentifier: 
+  TilePrefabs:
+  - {fileID: 1808051665107411577, guid: eb02e356b88727d458926817139e840f, type: 3}
+  WallPrefabs:
+  - {fileID: 2529809563243432532, guid: 86fd3411070e61e45b85107bd422341e, type: 3}
+  CeilingPrefabs: []
+  LowDetailFloor: {fileID: 2100000, guid: 2713c4f066cc09f43a82b233115c9c4f, type: 2}
+  LowDetailCeiling: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
+  LowDetailWall: {fileID: 2100000, guid: 98eb684df2c3c114480ad132581fc78c, type: 2}

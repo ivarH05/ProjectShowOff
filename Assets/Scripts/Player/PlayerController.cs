@@ -19,6 +19,7 @@ namespace Player
         [field: SerializeField] public Transform CameraTransform { get; private set; }
         
         [SerializeField] float _coyoteTime = .2f;
+        [SerializeField] float _fastCrouchThresholdSeconds = .2f;
 
         public Inventory Inventory { get; private set; }
         public Rigidbody Body {get; private set;}
@@ -31,22 +32,29 @@ namespace Player
         public bool IsGrounded => _timeSinceLastFootCollider <= _coyoteTime;
         public bool UncoyotedGrounded => _timeSinceLastFootCollider <= 0;
         public bool SprintHeld { get; private set; }
-        public bool CrouchHeld { get; private set; }
+        public CrouchState Crouch { get; private set; }
+        public event Action OnFastCrouch;
+        public bool AimHeld { get; private set; }
+
+        [SerializeField] private bool LockCursor;
 
         Vector2 _currentPlayerDirection;
+        Vector2 _previousLookVector;
         bool _attackHeld;
         
         int _collidersInFootTrigger;
         float _timeSinceLastFootCollider = 0;
+        double _timeCrouchStartHeld = float.MinValue;
 
-        public Interactable ActiveInteractable { get { return InteractStrategy.activeInteractable; } }
+        public Interactable ActiveInteractable { get { return InteractStrategy?.activeInteractable; } }
 
         private void Awake() { PlayerManager.RegisterPlayer(this); }
         private void OnDestroy() { PlayerManager.UnregisterPlayer(this); }
 
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            if (LockCursor)
+                Cursor.lockState = CursorLockMode.Locked;
 
             Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
@@ -112,14 +120,27 @@ namespace Player
 
         public void MovePosition(Vector3 position)
         {
+            Body.isKinematic = true;
             transform.position = position;
+            Body.isKinematic = false;
             Body.MovePosition(position);
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
-        public void OnLook(InputAction.CallbackContext context) => MouseStrategy?.OnLook(this, context.ReadValue<Vector2>());
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            var val = context.ReadValue<Vector2>();
+            MouseStrategy?.OnLook(this, val);
+        }
+
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if (AimHeld)
+            {
+                Inventory.OnThrow(context);
+                return;
+            }
+
             if (context.started)
             {
                 _attackHeld = true;
@@ -131,6 +152,39 @@ namespace Player
                 InteractStrategy?.OnAttackStop(this);
             }
         }
+
+        public void OnAim(InputAction.CallbackContext context)
+        {
+            if (_attackHeld)
+                return;
+
+            if (context.started)
+                AimHeld = true;
+            if (context.canceled)
+                AimHeld = false;
+        }
+
+        public void OnPeekLeft(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                MouseStrategy.OnPeekLeftStart(this);
+            if (context.canceled)
+                MouseStrategy.OnPeekLeftStop(this);
+        }
+        public void OnPeekRight(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                MouseStrategy.OnPeekRightStart(this);
+            if (context.canceled)
+                MouseStrategy.OnPeekRightStop(this);
+        }
+
+        public void StopInteraction()
+        {
+            _attackHeld = false;
+            InteractStrategy?.OnAttackStop(this);
+        }
+
         public void OnAttackSecondary(InputAction.CallbackContext context) 
         {
             if(context.started)
@@ -146,9 +200,22 @@ namespace Player
         public void OnCrouch(InputAction.CallbackContext context)
         {
             if(context.started)
-                CrouchHeld = true;
-            if(context.canceled)
-                CrouchHeld = false;
+            {
+                if (Crouch != CrouchState.CrouchFast)
+                {
+                    _timeCrouchStartHeld = Time.realtimeSinceStartupAsDouble;
+                    Crouch = CrouchState.CrouchSlow;
+                }
+            }
+            if (context.canceled)
+            {
+                if (_timeCrouchStartHeld > Time.realtimeSinceStartupAsDouble - _fastCrouchThresholdSeconds)
+                {
+                    Crouch = CrouchState.CrouchFast;
+                    OnFastCrouch?.Invoke();
+                }
+                else Crouch = CrouchState.Standing;
+            }
         }
         public void OnJump(InputAction.CallbackContext context)
         {
@@ -169,7 +236,7 @@ namespace Player
             Vector3 res = default;
             res += transform.forward * _currentPlayerDirection.y;
             res += transform.right * _currentPlayerDirection.x;
-            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, CrouchHeld);
+            MoveStrategy?.OnMoveUpdate(this, res, SprintHeld, Crouch);
         }
 
         private void OnTriggerEnter(Collider other)

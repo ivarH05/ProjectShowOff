@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
+  m_Name: melody
+  m_EditorClassIdentifier: 
+  ClipSelection:
+  - {fileID: 8300000, guid: 15f2fffa87afe3441a8c7a77606d853e, type: 3}
+  - {fileID: 8300000, guid: fae4d99406e6b954290e8057f2c359cb, type: 3}
+  - {fileID: 8300000, guid: 58131dce5849d7b48bddd1d1ccef6bc0, type: 3}
+  - {fileID: 8300000, guid: 2b3ba3474b5ad424a90422ac5d8442fd, type: 3}
+  SelectionMode: 1
+  Type: 0
+  Volume: 0.5
+  Pitch: 1
+  AudibleRange: 1000000
+  FaintThreshold: 0.945
+  ModerateThreshold: 0.918
+  LoudThreshold: 0.872

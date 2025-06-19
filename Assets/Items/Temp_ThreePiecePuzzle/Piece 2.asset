@@ -14,5 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: a85d948fdda482e48ab393fe14aa055a, type: 3}
   HandHeldPrefab: {fileID: 9111433920995212162, guid: 425ae261a23cced468c8ea1dc2c1a4cc, type: 3}
-  baseOffset: {x: 0, y: 0, z: 0}
+  baseRightOffset: {x: 0, y: 0, z: 0}
+  baseLeftOffset: {x: 0, y: 0, z: 0}
   baseEulerAngles: {x: 0, y: 0, z: 0}
+  ItemFrameOffset: {x: 0, y: 0, z: 0}
+  ItemFrameEulerAngles: {x: 0, y: 0, z: 0}
+  weight: 2
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []
