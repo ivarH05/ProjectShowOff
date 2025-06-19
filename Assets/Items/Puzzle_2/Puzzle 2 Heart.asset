@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1310474a398d14e44b9dd800acabbb74, type: 3}
-  m_Name: Puzzle 2 Solution
+  m_Name: Puzzle 2 Heart
   m_EditorClassIdentifier: 
   DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: 133a2abb4a3a0ab4cbc81600aee6300b, type: 3}
   HandHeldPrefab: {fileID: 9111433920995212162, guid: 177b2fc971af134468355790755c0f43, type: 3}
