@@ -8,6 +8,8 @@ namespace DialogueSystem
 {
     public class DialoguePlayer : MonoBehaviour
     {
+        private static DialoguePlayer _singleton;
+
         [SerializeField] private OptionButtonManager optionButtonManager;
         [SerializeField] private GameObject nextButton;
         [SerializeField] private TMP_Text characterNameText;
@@ -21,11 +23,24 @@ namespace DialogueSystem
         public void Awake()
         {
             gameObject.SetActive(false);
+            _singleton = this;
+        }
+
+        public static void StartNewDialogue(Dialogue dialogue, Action OnEnd)
+        {
+            _singleton.events.OnDialogueEnd.AddListener(OnDialogueEnd);
+            _singleton.SetDialogue(dialogue);
+            _singleton.StartDialogue();
+
+            void OnDialogueEnd(Dialogue dialogue)
+            {
+                _singleton.events.OnDialogueEnd.RemoveListener(OnDialogueEnd);
+                OnEnd(); 
+            }
         }
 
         public void SetDialogue(Dialogue dialogue)
         {
-            Debug.Log("Dialogue set");
             _activeDialogue = dialogue;
         }
 
@@ -33,7 +48,6 @@ namespace DialogueSystem
         {
             if (_activeDialogue == null)
                 return;
-            Debug.Log("Dialogue started");
 
             gameObject.SetActive(true);
             activeNode = _activeDialogue.GetStartNode();
@@ -45,20 +59,19 @@ namespace DialogueSystem
         {
             if (_activeDialogue == null)
                 return;
-            Debug.Log("Dialogue Ended");
 
             events.OnDialogueEnd.Invoke(_activeDialogue);
-            _activeDialogue = null;
+            //_activeDialogue = null;
             activeNode = null;
             gameObject.SetActive(false);
         }
 
         public void Next(int index)
         {
-            Debug.Log("Dialogue updated");
             do
             {
                 NextNode(index);
+                index = 0;
                 if (activeNode == null || activeNode.type == NodeType.End)
                 {
                     EndDialogue();
