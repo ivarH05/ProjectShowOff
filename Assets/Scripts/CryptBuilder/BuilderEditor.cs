@@ -108,6 +108,7 @@ namespace CryptBuilder
                 {
                     Undo.RegisterFullObjectHierarchyUndo(b.gameObject, "[CryptBuilder] Generate hitboxes");
                     HitboxGenerator gen = new();
+                    gen.DefaultStyle = b._defaultStyle;
                     gen.TileScale = b._rectRounding;
                     b.GenerateSurfaces(gen);
                     EditorUtility.SetDirty(b);
@@ -513,9 +514,12 @@ namespace CryptBuilder
         struct HitboxGenerator : ICryptSurfaceGenerator
         {
             public float TileScale;
+            public CryptRoomStyle DefaultStyle;
             RotatedRectangle _room;
             Vector2 _tileOffset;
             bool _validRoom;
+            float _roomHeight;
+
             public void GenerateFloor(BoundingBox shape)
             {
                 if (!_validRoom) return;
@@ -525,6 +529,11 @@ namespace CryptBuilder
 
                 col.size = new(scale.x, 1f, scale.y);
                 col.center = new(0, -.5f, 0);
+                
+                col = _room.Room.Colliders.AddComponent<BoxCollider>();
+
+                col.size = new(scale.x, 1f, scale.y);
+                col.center = new(0, .5f + _roomHeight, 0);
             }
 
             public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
@@ -557,6 +566,11 @@ namespace CryptBuilder
                 }
 
                 _room = room;
+                _roomHeight = 2;
+                var style = room.Room.Style;
+                if(style == null ) style = DefaultStyle;
+                if(style != null && style.WallHeight > 0)
+                    _roomHeight = style.WallHeight;
             }
         }
     }
