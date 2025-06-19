@@ -12,15 +12,6 @@ namespace Crypts
         [SerializeField] List<TimedEvent> _timedEvents;
         [SerializeField] Clockhand[] _clockHands;
 
-        private void Awake()
-        {
-            if (_timedEvents.Count > 0)
-                _maxSecondsInCrypt = 0;
-         
-            foreach(var e in _timedEvents)
-                _maxSecondsInCrypt = Mathf.Max( _maxSecondsInCrypt, e.TimeOfEventSeconds);
-        }
-
         private void Update()
         {
             for(int i = 0; i < _timedEvents.Count; i++)

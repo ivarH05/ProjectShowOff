@@ -115,7 +115,7 @@ namespace CryptBuilder
         {
             _validRoom = room.Room != null;
             if (!_validRoom) 
-                Debug.LogError("Room is missing a generated room object! Click \"Regenerate rooms\" on the cryptbuilder.");
+                Debug.LogError("Room is missing a generated room object! CONSULT WITH CAPS.");
             else
             {
                 _tileOffset = room.Room.transform.position.To2D() - room.CenterPosition;
