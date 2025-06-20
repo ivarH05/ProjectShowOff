@@ -82,6 +82,9 @@ namespace CryptBuilder
             foreach ((int node, int rect) in _currentLowDetailRects)
             {
                 var r = _crypt.RectangleTree.Nodes[node].Rectangles[rect];
+                r.Room.LastBuilder = _crypt;
+                r.Room.LastGeneratedNodeIndex = node;
+                r.Room.LastGeneratedRectIndex = rect;
                 bool highDetail = _currentHighDetailRects.Contains((node, rect));
                 switch (r.Room.CurrentLOD)
                 {

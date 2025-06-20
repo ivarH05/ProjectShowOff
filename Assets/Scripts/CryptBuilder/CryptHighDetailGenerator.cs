@@ -17,6 +17,7 @@ namespace CryptBuilder
         Vector2 _surfaceOffset;
         Vector2 _previousWallNormal;
         bool _validRoom;
+        int _currentWallIndex;
         
         public void GenerateFloor(Vector2 point)
         {
@@ -102,14 +103,17 @@ namespace CryptBuilder
             if(alignedX && !integerDetailCount)
                 alignedX = false;
 
+            bool flipflip = (_currentRoom.Room.FlipWallDecorationMask & (1 << _currentWallIndex)) != 0;
             for (int i = 0; i < count; i++)
             {
-                bool flipped = ((i & 1) == 0) & _currentStyle.ArchDecoration.FlipEveryOther;
+                bool flipped = ((i & 1) == 0) ^ flipflip & _currentStyle.ArchDecoration.FlipEveryOther;
                 Vector2 pos = placeStart + offset * (i+1 - (flipped^alignedX ? 0 : 1));
                 var decoInstance = Object.Instantiate(_currentStyle.ArchDecoration.Prefab, _nonRotatedGenChildren);
                 decoInstance.transform.localPosition = pos.To3D(0);
                 decoInstance.transform.rotation = flipped ? rotation : rotationFlipped;
             }
+
+            _currentWallIndex++;
         }
         WallPointType WallTypeAtPoint(Vector2 v)
         {
@@ -138,6 +142,7 @@ namespace CryptBuilder
 
         public void OnNewRoom(RotatedRectangle room)
         {
+            _currentWallIndex = 0;
             _validRoom = room.Room != null;
             if (!_validRoom) 
                 Debug.LogError("Room is missing a generated room object! CONSULT WITH CAPS.");
