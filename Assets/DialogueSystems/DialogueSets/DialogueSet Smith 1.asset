@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
-  m_Name: DialogueSet 1
+  m_Name: DialogueSet Smith 1
   m_EditorClassIdentifier: 
   Dialogues:
   - conditions: []
-    dialogue: {fileID: 0}
-  - conditions: []
-    dialogue: {fileID: 0}
+    dialogue: {fileID: 11400000, guid: 81ef1ef09d8fa32429cfcf6f2bc9f334, type: 2}

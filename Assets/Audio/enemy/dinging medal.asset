@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: dinging medal
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 2b3ba3474b5ad424a90422ac5d8442fd, type: 3}
   SelectionMode: 0
   Type: 0
   Volume: 1

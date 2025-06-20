@@ -14,16 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: 
   _nodes:
-  - rid: 8154432770598240457
-  - rid: 8154432770598240458
-  - rid: 8154432770598240459
-  - rid: 8154432770598240460
-  - rid: 8154432770598240461
-  - rid: 8154432770598240462
-  - rid: 8154432770598240463
-  - rid: 8154432770598240464
-  - rid: 8154432770598240465
-  - rid: 8154432770598240466
+  - rid: 8154432770598240949
+  - rid: 8154432770598240950
+  - rid: 8154432770598240951
+  - rid: 8154432770598240952
+  - rid: 8154432770598240953
+  - rid: 8154432770598240954
+  - rid: 8154432770598240955
+  - rid: 8154432770598240956
+  - rid: 8154432770598240957
+  - rid: 8154432770598240958
+  - rid: 8154432770598240959
+  - rid: 8154432770598240960
+  - rid: 8154432770598240961
+  - rid: 8154432770598240962
   _connections:
   - OutputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
     OutputNodeIndex: 0
@@ -42,22 +46,34 @@ MonoBehaviour:
     InputNodeGUID: 8ca17bc5-ddb4-4cbd-a54f-dc69dd9bcbc6
   - OutputNodeGUID: 8ca17bc5-ddb4-4cbd-a54f-dc69dd9bcbc6
     OutputNodeIndex: 0
-    InputNodeGUID: 478ca887-9ac6-4d99-b053-cd94071563b6
-  - OutputNodeGUID: 478ca887-9ac6-4d99-b053-cd94071563b6
-    OutputNodeIndex: 0
-    InputNodeGUID: 60c60405-61eb-41a6-9b65-34d6d2a0bbab
+    InputNodeGUID: 7b0e9698-1e45-4240-8a18-592517d684c1
   - OutputNodeGUID: bba6f4e1-7322-4490-8ea1-060011970616
     OutputNodeIndex: 0
     InputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+  - OutputNodeGUID: 7b0e9698-1e45-4240-8a18-592517d684c1
+    OutputNodeIndex: 0
+    InputNodeGUID: 6915d599-22de-48f2-8afb-a772c4d61674
+  - OutputNodeGUID: 6915d599-22de-48f2-8afb-a772c4d61674
+    OutputNodeIndex: 0
+    InputNodeGUID: c662199a-4048-41ab-b6a6-a7364ff7f58d
+  - OutputNodeGUID: c662199a-4048-41ab-b6a6-a7364ff7f58d
+    OutputNodeIndex: 0
+    InputNodeGUID: 999b6780-b4d1-412a-afad-77d2b4bb7c9c
+  - OutputNodeGUID: 478ca887-9ac6-4d99-b053-cd94071563b6
+    OutputNodeIndex: 0
+    InputNodeGUID: 60c60405-61eb-41a6-9b65-34d6d2a0bbab
+  - OutputNodeGUID: 999b6780-b4d1-412a-afad-77d2b4bb7c9c
+    OutputNodeIndex: 0
+    InputNodeGUID: 478ca887-9ac6-4d99-b053-cd94071563b6
   references:
     version: 2
     RefIds:
-    - rid: 8154432770598240457
+    - rid: 8154432770598240949
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
         type: 1
-        Position: {x: 527.3333, y: 44.666664}
+        Position: {x: 527.3334, y: 44.666664}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
         dialogueText: 'Finally, my first time going to the town alone.
 
@@ -66,36 +82,36 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240458
+    - rid: 8154432770598240950
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 5193c932-40d2-44a6-864f-714763804644
         type: 1
-        Position: {x: 927.3333, y: 48.666664}
+        Position: {x: 927.3334, y: 48.666664}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
         dialogueText: "Though under one condition. \nI had to talk to Tomas De Ruiter
           as soon as I got here"
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240459
+    - rid: 8154432770598240951
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
         type: 1
-        Position: {x: 1281.3334, y: 51.333336}
+        Position: {x: 1281.3333, y: 51.333336}
         speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
         dialogueText: "The town of Rossum is small and cozy. \nBut compared to the
           farm you grew up on, it is absolutely massive"
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240460
+    - rid: 8154432770598240952
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 64038a6b-7f93-4572-b15c-80c2457411b8
         type: 1
-        Position: {x: 1689.3334, y: 46}
+        Position: {x: 1689.3333, y: 46}
         speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
         dialogueText: 'As you walk into town, taking in the new environment,
 
@@ -104,7 +120,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240461
+    - rid: 8154432770598240953
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: b9c40e31-b3e7-4570-be9b-36f07e45efc2
@@ -115,7 +131,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240462
+    - rid: 8154432770598240954
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 213ff0b4-f7a3-49e4-aff8-491056b93444
@@ -130,7 +146,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240463
+    - rid: 8154432770598240955
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 8ca17bc5-ddb4-4cbd-a54f-dc69dd9bcbc6
@@ -144,27 +160,73 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 8154432770598240464
+    - rid: 8154432770598240956
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bba6f4e1-7322-4490-8ea1-060011970616
+        type: 3
+        Position: {x: 308, y: 47.333336}
+    - rid: 8154432770598240957
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 7b0e9698-1e45-4240-8a18-592517d684c1
+        type: 5
+        Position: {x: 3233.3335, y: 65.333336}
+        onRun:
+          type: 2
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 11400000, guid: 5b276b4c7f67d354eb47a9d08e915a8b, type: 2}
+          shakeMagnitude: 0
+    - rid: 8154432770598240958
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6915d599-22de-48f2-8afb-a772c4d61674
+        type: 5
+        Position: {x: 3487.3335, y: 78}
+        onRun:
+          type: 2
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 11400000, guid: 5b276b4c7f67d354eb47a9d08e915a8b, type: 2}
+          shakeMagnitude: 0
+    - rid: 8154432770598240959
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c662199a-4048-41ab-b6a6-a7364ff7f58d
+        type: 1
+        Position: {x: 3724, y: 76}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: What was that?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 8154432770598240960
       type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 478ca887-9ac6-4d99-b053-cd94071563b6
         type: 5
-        Position: {x: 3102, y: 54.666664}
+        Position: {x: 4347.333, y: 193.33333}
         onRun:
           type: 4
           flag: {fileID: 11400000, guid: b8653da91de35494db4d79950b1d3b00, type: 2}
           flagValue: 1
           sound: {fileID: 0}
           shakeMagnitude: 0
-    - rid: 8154432770598240465
+    - rid: 8154432770598240961
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 999b6780-b4d1-412a-afad-77d2b4bb7c9c
+        type: 1
+        Position: {x: 3980.6667, y: 75.333336}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: Oh, nothing to worry about, the church bell is just old
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 8154432770598240962
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 60c60405-61eb-41a6-9b65-34d6d2a0bbab
         type: 4
-        Position: {x: 3346, y: 56}
-    - rid: 8154432770598240466
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: bba6f4e1-7322-4490-8ea1-060011970616
-        type: 3
-        Position: {x: 308, y: 47.333336}
+        Position: {x: 4742, y: 72}
