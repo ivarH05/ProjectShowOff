@@ -5,6 +5,7 @@ namespace CryptBuilder
     public struct CryptHighDetailGenerator : Builder.ICryptTileGenerator, Builder.ICryptSurfaceGenerator
     {
         public CryptRoomStyle DefaultStyle;
+        public Builder Crypt;
 
         CryptRoomStyle _currentStyle;
         Transform _nonRotatedGenChildren;
@@ -42,7 +43,7 @@ namespace CryptBuilder
         {
             if(!_validRoom) return;
             if (_currentStyle.Decoration.Prefab == null) return;
-            if (!(_currentStyle.Decoration.Width > .02)) return;
+            if (_currentStyle.Decoration.Width < .02) return;
 
             bool startIsCorner = IsCorner(start);
             bool endIsCorner = IsCorner(end);
@@ -102,13 +103,13 @@ namespace CryptBuilder
         }
         bool IsCorner(Vector2 v)
         {
-            var bounds = _currentBounds;
-            var size = bounds.Size.magnitude * .1f;
-            if (Vector2.Distance(bounds.Minimum, v) < size) return true;
-            if (Vector2.Distance(bounds.Maximum, v) < size) return true;
-            if (Vector2.Distance(new(bounds.Minimum.x, bounds.Maximum.y), v) < size) return true;
-            if (Vector2.Distance(new(bounds.Maximum.x, bounds.Minimum.y), v) < size) return true;
-            return false;
+            int wallHits = 0;
+            float size = Crypt.RectRounding * .5f;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, -size), out _, out _)) wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, size), out _, out _)) wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, -size), out _, out _)) wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, size), out _, out _)) wallHits++;
+            return wallHits > 2;
         }
 
         public void OnNewRoom(RotatedRectangle room)

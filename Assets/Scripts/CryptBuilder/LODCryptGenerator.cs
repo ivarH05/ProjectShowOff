@@ -73,6 +73,7 @@ namespace CryptBuilder
                 r.Room.CurrentLOD = CryptRoom.LOD.None;
             }
             var generatorH = new CryptHighDetailGenerator();
+            generatorH.Crypt = _crypt;
             generatorH.DefaultStyle = _crypt.DefaultStyle;
             var generatorL = new CryptLowDetailGenerator();
             generatorL.DefaultStyle = _crypt.DefaultStyle;
