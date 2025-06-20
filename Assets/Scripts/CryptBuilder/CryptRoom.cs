@@ -11,6 +11,7 @@ namespace CryptBuilder
     {
         public CryptRoomStyle Style;
         [field:SerializeField, HideInInspector] public uint FlipWallDecorationMask { get; private set; }
+        [field:SerializeField, HideInInspector] public uint DontGenerateWallDecMask { get; private set; }
 
         [NonSerialized] public LOD CurrentLOD;
         [NonSerialized] public int LastGeneratedNodeIndex;
@@ -125,18 +126,33 @@ namespace CryptBuilder
 
                 CryptRoom tgt = (CryptRoom)target;
                 _cur = ((tgt.FlipWallDecorationMask >> _selected) & 1u ) != 0;
+                bool generate = ((tgt.DontGenerateWallDecMask >> _selected) & 1u) == 0;
+
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Label($"Generate wall: ");
+                var newGen = EditorGUILayout.Toggle(generate);
+                EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label($"Wall flipped: ");
                 var newcur = EditorGUILayout.Toggle(_cur);
                 EditorGUILayout.EndHorizontal();
 
-                if (_cur == newcur) return;
-                Undo.RecordObject(tgt, $"Flip wall {_selected} at room {tgt.LastGeneratedNodeIndex},{tgt.LastGeneratedRectIndex}");
-                uint mask = 1u << _selected;
-                tgt.FlipWallDecorationMask ^= mask;
-                _cur = newcur;
-                SceneView.RepaintAll();
+                if (_cur != newcur)
+                {
+                    Undo.RecordObject(tgt, $"Flip wall {_selected} at room {tgt.LastGeneratedNodeIndex},{tgt.LastGeneratedRectIndex}");
+                    uint mask = 1u << _selected;
+                    tgt.FlipWallDecorationMask ^= mask;
+                    _cur = newcur;
+                    SceneView.RepaintAll();
+                }
+                if (generate != newGen)
+                {
+                    Undo.RecordObject(tgt, $"Set wall {_selected}'s generation at room {tgt.LastGeneratedNodeIndex},{tgt.LastGeneratedRectIndex}");
+                    uint mask = 1u << _selected;
+                    tgt.DontGenerateWallDecMask ^= mask;
+                    SceneView.RepaintAll();
+                }
             }
         }
 
@@ -147,6 +163,7 @@ namespace CryptBuilder
             public bool Flipped;
 
             Vector2 _surfaceOffset;
+            bool _genArches;
 
             public void GenerateFloor(BoundingBox shape){}
 
@@ -154,7 +171,7 @@ namespace CryptBuilder
             {
                 if(WallIndex == Selected)
                 {
-                    Handles.color = Color.green;
+                    Handles.color = _genArches ? Color.green : Color.red;
                     start += _surfaceOffset;
                     end += _surfaceOffset;
                     Handles.DrawLine(start.To3D(), end.To3D());
@@ -171,6 +188,7 @@ namespace CryptBuilder
             {
                 WallIndex = 0;
                 _surfaceOffset = room.Room.transform.position.To2D() - room.CenterPosition;
+                _genArches = (room.Room.DontGenerateWallDecMask & (1 << Selected)) == 0;
             }
         }
 #endif

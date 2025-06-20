@@ -77,7 +77,8 @@ namespace CryptBuilder
             bool integerDetailCount = Mathf.Abs(detailCount - (int)detailCount) < .01f;
 
             if (_currentStyle.ArchDecoration.Prefab == null) return;
-            if (!(startIsCorner || endIsCorner || integerDetailCount)) 
+            bool genArches = (_currentRoom.Room.DontGenerateWallDecMask & (1 << _currentWallIndex)) == 0;
+            if (!genArches || !(startIsCorner || endIsCorner || integerDetailCount)) 
                 return; // cant really place arches here in any way
 
             Quaternion rotation = Quaternion.AngleAxis(angle+90, Vector3.up);
