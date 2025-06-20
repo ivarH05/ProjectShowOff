@@ -17,6 +17,7 @@ namespace CryptBuilder
 
         List<(int, int)> _currentLowDetailRects = new();
         List<(int, int)> _currentHighDetailRects = new();
+        List<(Vector3 start, Vector3 end, Color col)> _gizmos;
         float _updateTime = 0;
         int _updates = 0;
 
@@ -124,6 +125,20 @@ namespace CryptBuilder
                         break;
                 }
             }
+
+            _gizmos ??= new();
+            foreach(var r in generatorH.Gizmos)
+                _gizmos.Add(r);
+        }
+
+        private void OnDrawGizmos()
+        {
+            if(_gizmos != null)
+                foreach(var g in _gizmos)
+                {
+                    Gizmos.color = g.col;
+                    Gizmos.DrawLine(g.end, g.start);    
+                }
         }
 
         List<(int, int)> GetRectanglesInRange(float range)

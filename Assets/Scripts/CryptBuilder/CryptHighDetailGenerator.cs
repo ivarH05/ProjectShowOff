@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CryptBuilder
@@ -6,6 +7,7 @@ namespace CryptBuilder
     {
         public CryptRoomStyle DefaultStyle;
         public Builder Crypt;
+        public List<(Vector3 start, Vector3 end, Color col)> Gizmos;
 
         CryptRoomStyle _currentStyle;
         Transform _nonRotatedGenChildren;
@@ -42,11 +44,11 @@ namespace CryptBuilder
         public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
         {
             if(!_validRoom) return;
-            if (_currentStyle.ArchDecoration.Prefab == null) return;
             if (_currentStyle.ArchDecoration.Width < .02) return;
+            if (_currentStyle.ArchDecoration.Prefab == null && _currentStyle.PillarDecoration.Prefab == null) return;
 
             WallPointType wallStart = WallTypeAtPoint(start);
-            WallPointType wallEnd = WallTypeAtPoint(start);
+            WallPointType wallEnd = WallTypeAtPoint(end);
             bool startIsCorner = wallStart >= WallPointType.InnerCorner;
             bool endIsCorner = wallEnd >= WallPointType.InnerCorner;
 
@@ -63,7 +65,7 @@ namespace CryptBuilder
             }
             void GenPillar(Vector2 pos, WallPointType type, GameObject prefab, Transform nonRotatedChildren)
             {
-                if (type != WallPointType.OuterCorner && type != WallPointType.InnerCorner) 
+                if (!(type == WallPointType.OuterCorner || type == WallPointType.InnerCorner)) 
                     return;
 
                 var decoInstance = Object.Instantiate(prefab, nonRotatedChildren);
@@ -73,6 +75,7 @@ namespace CryptBuilder
             var detailCount = Mathf.Abs(length / _currentStyle.ArchDecoration.Width);
             bool integerDetailCount = Mathf.Abs(detailCount - (int)detailCount) < .01f;
 
+            if (_currentStyle.ArchDecoration.Prefab == null) return;
             if (!(startIsCorner || endIsCorner || integerDetailCount)) 
                 return; // cant really place arches here in any way
 
@@ -112,10 +115,16 @@ namespace CryptBuilder
         {
             int wallHits = 0;
             float size = Crypt.RectRounding * .5f;
-            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, -size), out _, out _)) wallHits++;
-            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, size), out _, out _)) wallHits++;
-            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, -size), out _, out _)) wallHits++;
-            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, size), out _, out _)) wallHits++;
+            
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, -size), out _, out _))
+                wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, size), out _, out _))
+                wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, -size), out _, out _))
+                wallHits++;
+            if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, size), out _, out _))
+                wallHits++;
+            
             return (WallPointType)wallHits;
         }
         enum WallPointType
