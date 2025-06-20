@@ -42,51 +42,58 @@ namespace CryptBuilder
         public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
         {
             if(!_validRoom) return;
-            if (_currentStyle.Decoration.Prefab == null) return;
-            if (_currentStyle.Decoration.Width < .02) return;
+            if (_currentStyle.ArchDecoration.Prefab == null) return;
+            if (_currentStyle.ArchDecoration.Width < .02) return;
 
-            bool startIsCorner = IsCorner(start);
-            bool endIsCorner = IsCorner(end);
-            if(startIsCorner && endIsCorner)
-            {
-                startIsCorner = false;
-                endIsCorner = false;
-            }
+            WallPointType wallStart = WallTypeAtPoint(start);
+            WallPointType wallEnd = WallTypeAtPoint(start);
+            bool startIsCorner = wallStart >= WallPointType.InnerCorner;
+            bool endIsCorner = wallEnd >= WallPointType.InnerCorner;
 
             start -= _surfaceOffset;
             end -= _surfaceOffset;
             float angle = Mathf.Atan2(normal.x, normal.y) * Mathf.Rad2Deg;
             float length = Vector2.Distance(start, end);
+            bool alignedX = Mathf.Abs(normal.x) > .01f;
+            
+            if(alignedX && _currentStyle.PillarDecoration.Prefab != null)
+            {
+                GenPillar(start, wallStart, _currentStyle.PillarDecoration.Prefab, _nonRotatedGenChildren);
+                GenPillar(end, wallEnd, _currentStyle.PillarDecoration.Prefab, _nonRotatedGenChildren);
+            }
+            void GenPillar(Vector2 pos, WallPointType type, GameObject prefab, Transform nonRotatedChildren)
+            {
+                if (type != WallPointType.OuterCorner && type != WallPointType.InnerCorner) 
+                    return;
 
-            var detailCount = Mathf.Abs(length / _currentStyle.Decoration.Width);
+                var decoInstance = Object.Instantiate(prefab, nonRotatedChildren);
+                decoInstance.transform.localPosition = pos.To3D(0);
+            }
+
+            var detailCount = Mathf.Abs(length / _currentStyle.ArchDecoration.Width);
             bool integerDetailCount = Mathf.Abs(detailCount - (int)detailCount) < .01f;
 
             if (!(startIsCorner || endIsCorner || integerDetailCount)) 
-                return; // cant really place walls here in any way
+                return; // cant really place arches here in any way
 
             Quaternion rotation = Quaternion.AngleAxis(angle+90, Vector3.up);
             Quaternion rotationFlipped = Quaternion.AngleAxis(angle+270, Vector3.up);
-            Vector2 offset = (end-start).normalized * _currentStyle.Decoration.Width;
+            Vector2 offset = (end-start).normalized * _currentStyle.ArchDecoration.Width;
             Vector2 placeStart;
-            float height = 0;
             int count = (int)detailCount;
-            bool alignedX = Mathf.Abs(normal.x) > .01f;
             if (integerDetailCount)
             {
                 placeStart = start;
-                //height = 0f;
             }
             else if (endIsCorner)
             {
                 placeStart = start;
-                //height = 0.5f;
                 count++;
             }
             else
             {
                 placeStart = end;
                 offset = -offset;
-                //height = 1f;
                 count++;
             }
             if(alignedX && !integerDetailCount)
@@ -94,14 +101,14 @@ namespace CryptBuilder
 
             for (int i = 0; i < count; i++)
             {
-                bool flipped = ((i & 1) == 0) & _currentStyle.Decoration.FlipEveryOther;
+                bool flipped = ((i & 1) == 0) & _currentStyle.ArchDecoration.FlipEveryOther;
                 Vector2 pos = placeStart + offset * (i+1 - (flipped^alignedX ? 0 : 1));
-                var decoInstance = Object.Instantiate(_currentStyle.Decoration.Prefab, _nonRotatedGenChildren);
-                decoInstance.transform.localPosition = pos.To3D(height);
+                var decoInstance = Object.Instantiate(_currentStyle.ArchDecoration.Prefab, _nonRotatedGenChildren);
+                decoInstance.transform.localPosition = pos.To3D(0);
                 decoInstance.transform.rotation = flipped ? rotation : rotationFlipped;
             }
         }
-        bool IsCorner(Vector2 v)
+        WallPointType WallTypeAtPoint(Vector2 v)
         {
             int wallHits = 0;
             float size = Crypt.RectRounding * .5f;
@@ -109,7 +116,15 @@ namespace CryptBuilder
             if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(-size, size), out _, out _)) wallHits++;
             if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, -size), out _, out _)) wallHits++;
             if (!Crypt.RectangleTree.TryGetRectangleAtPoint(v + new Vector2(size, size), out _, out _)) wallHits++;
-            return wallHits > 2;
+            return (WallPointType)wallHits;
+        }
+        enum WallPointType
+        {
+            NoWalls = 0,
+            OuterCorner = 1,
+            Wall = 2,
+            InnerCorner = 3,
+            FullyInWall = 4
         }
 
         public void OnNewRoom(RotatedRectangle room)
