@@ -17,13 +17,6 @@ MonoBehaviour:
   WallPrefabs:
   - {fileID: 2529809563243432532, guid: 86fd3411070e61e45b85107bd422341e, type: 3}
   CeilingPrefabs: []
-  LowDetailFloor: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
+  LowDetailFloor: {fileID: 2100000, guid: 2713c4f066cc09f43a82b233115c9c4f, type: 2}
   LowDetailCeiling: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
-  LowDetailWall: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
-  WallHeight: 2.25
-  ArchDecoration:
-    Prefab: {fileID: 3970472755160472944, guid: 0be72491e0eaebc4d83f560db0b12f55, type: 3}
-    Width: 1
-    FlipEveryOther: 1
-  PillarDecoration:
-    Prefab: {fileID: 1498954519990620770, guid: faf5f17ee96258e4aba6b4699aefd977, type: 3}
+  LowDetailWall: {fileID: 2100000, guid: 98eb684df2c3c114480ad132581fc78c, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310474a398d14e44b9dd800acabbb74, type: 3}
+  m_Name: Piece 5
+  m_EditorClassIdentifier: 
+  DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: 412821d43bdc81a4c86555b86f1c2587, type: 3}
+  HandHeldPrefab: {fileID: 9111433920995212162, guid: 1904a9a662308024285ab40b0c7c34d7, type: 3}
+  baseRightOffset: {x: 0, y: 0, z: 0}
+  baseLeftOffset: {x: 0, y: 0, z: 0}
+  baseEulerAngles: {x: 0, y: 0, z: 0}
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []

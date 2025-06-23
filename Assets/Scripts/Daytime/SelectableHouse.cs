@@ -1,3 +1,4 @@
+using DialogueSystem;
 using Player;
 using UnityEngine;
 
@@ -7,8 +8,12 @@ namespace Daytime
     public class SelectableHouse : MonoBehaviour
     {
         [SerializeField] Transform LookAtHouseTransform;
-        [SerializeField] DialogueRoot DialogueToShow;
+        [SerializeField] DialogueSet DialogueSet;
         [SerializeField] GameObject Renderer;
+        [SerializeField] bool showAtNight = false;
+        [SerializeField] bool hoverOnly = false;
+
+        private Dialogue currentDialogue;
 
         FromCameraSelectable _selectable;
         CameraMouseSelector _selector;
@@ -20,8 +25,19 @@ namespace Daytime
             _selectable = GetComponent<FromCameraSelectable>();
             _selectable.OnHoverStart.AddListener(OnHover);
             _selectable.OnHoverEnd.AddListener(OnHoverEnd);
-            _selectable.OnClicked.AddListener(OnClick);
+            if(!hoverOnly)
+                _selectable.OnClicked.AddListener(OnClick);
         }
+
+        public void RecalculateDialogue()
+        {
+            currentDialogue = DialogueSet?.GetDialogue();
+            if (currentDialogue == null || TimeHandler.IsNight() != showAtNight)
+                this.enabled = false;
+            else
+                this.enabled = true;
+        }
+
         private void OnDisable()
         {
             _selectable.OnClicked.RemoveListener(OnClick);
@@ -35,7 +51,7 @@ namespace Daytime
             _selector.enabled = true;
         }
 
-        void OnHover()
+        public void OnHover()
         {
             if (Renderer == null) return;
             SetTagRecursive(Renderer, 8);
@@ -56,11 +72,6 @@ namespace Daytime
 
         void OnClick()
         {
-            if(DialogueToShow == null)
-            {
-                Debug.LogError("The DialogueRoot was missing, and thus dialogue could not be started.", this);
-                return;
-            }
 
             _follow = Camera.main.GetComponent<FollowTransform>();
             _previousTransform = (_follow.ToFollow.position, _follow.ToFollow.rotation);
@@ -69,15 +80,7 @@ namespace Daytime
             _selector = Camera.main.GetComponent<CameraMouseSelector>();
             _selector.enabled = false;
 
-            var dialogueRoot = DialogueToShow;
-            dialogueRoot.Enable();
-            dialogueRoot.OnDialogueDisable += DisabledDialogue;
-
-            void DisabledDialogue()
-            {
-                ResetCamera();
-                dialogueRoot.OnDialogueDisable -= DisabledDialogue;
-            }
+            DialoguePlayer.StartNewDialogue(currentDialogue, ResetCamera);
         }
     }
 }
