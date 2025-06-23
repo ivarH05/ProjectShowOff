@@ -164,15 +164,16 @@ namespace CryptBuilder
             {
                 _validRoom = false;
                 Debug.LogError("Room has no style, and the crypt doesnt have a default style!");
+                return;
             }
 
             var prefabs = _currentStyle?.WallPrefabs;
             if (prefabs == null || prefabs.Length < 1)
-                Debug.LogError("missing wall prefabs");
+                Debug.LogWarning("Style is missing wall prefabs", _currentStyle);
 
             prefabs = _currentStyle?.TilePrefabs;
             if (prefabs == null || prefabs.Length < 1)
-                Debug.LogError("missing tile prefabs");
+                Debug.LogWarning("Style is missing tile prefabs", _currentStyle);
         }
     }
 }
