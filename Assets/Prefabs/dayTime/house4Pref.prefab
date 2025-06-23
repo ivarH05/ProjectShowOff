@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9199037409141310280}
   - component: {fileID: 1158523974615782838}
+  - component: {fileID: 5075745060517127791}
+  - component: {fileID: -5998066196481801137}
   m_Layer: 7
   m_Name: house4Pref
   m_TagString: Untagged
@@ -54,6 +56,47 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.8937635, y: 6.8308125, z: 9.101843}
   m_Center: {x: -0.030805588, y: -0.02404654, z: 0.031888008}
+--- !u!114 &5075745060517127791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928132850625717115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e04032cd9d1284d8a62f9604c486d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  WhileHoverFixedUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClicked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5998066196481801137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928132850625717115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7de0f3fba07edf4cbf3e29bd5b6f757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtHouseTransform: {fileID: 0}
+  DialogueSet: {fileID: 0}
+  Renderer: {fileID: 0}
+  showAtNight: 0
+  hoverOnly: 0
 --- !u!1001 &6571091527702056654
 PrefabInstance:
   m_ObjectHideFlags: 0
