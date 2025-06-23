@@ -20616,10 +20616,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1335886678}
   - {fileID: 2019614938}
   - {fileID: 1938613561}
   - {fileID: 864279509}
-  - {fileID: 1335886678}
   - {fileID: 1817275727}
   - {fileID: 2120553130}
   m_Father: {fileID: 0}
@@ -22849,7 +22849,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849809605}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
@@ -24250,7 +24250,7 @@ MonoBehaviour:
       _rectangles: []
     <Count>k__BackingField: 78
   _rectRounding: 0.5
-  _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
+  _defaultStyle: {fileID: 11400000, guid: 24f48e56dd728eb429a1597a922534fe, type: 2}
   _floorWallHitbox: {fileID: 0}
   _editMode: 0
   _heldRectangles: []
@@ -28053,7 +28053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2120553130
 RectTransform:
   m_ObjectHideFlags: 0
