@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46add80a1fe643244adcc37bd73e03fe, type: 3}
-  m_Name: test style
+  m_Name: Main style
   m_EditorClassIdentifier: 
   TilePrefabs:
   - {fileID: 1808051665107411577, guid: eb02e356b88727d458926817139e840f, type: 3}
@@ -20,3 +20,10 @@ MonoBehaviour:
   LowDetailFloor: {fileID: 2100000, guid: 2713c4f066cc09f43a82b233115c9c4f, type: 2}
   LowDetailCeiling: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
   LowDetailWall: {fileID: 2100000, guid: 98eb684df2c3c114480ad132581fc78c, type: 2}
+  WallHeight: 2.25
+  ArchDecoration:
+    Prefab: {fileID: 0}
+    Width: 0
+    FlipEveryOther: 0
+  PillarDecoration:
+    Prefab: {fileID: 0}
