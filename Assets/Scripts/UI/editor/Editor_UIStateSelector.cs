@@ -15,7 +15,7 @@ namespace UI
 
         static void OnSelectionChanged()
         {
-            currentState?.gameObject.SetActive(false);
+            currentState?.gameObject?.SetActive(false);
 
             var selected = Selection.activeGameObject;
 
