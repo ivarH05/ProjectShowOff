@@ -10707,11 +10707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4711002230998736426, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4711002230998736426, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6340187229796959029, guid: 5378e8ee06b30cf42badc9f63ab743d0, type: 3}
       propertyPath: _fastCrouchThresholdSeconds
@@ -27525,6 +27525,30 @@ PrefabInstance:
     - target: {fileID: 6029108041405997091, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _maxSecondsInCrypt
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _clockHands.Array.data[0].PeriodSeconds
+      value: 1800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _clockHands.Array.data[1].PeriodSeconds
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _timedEvents.Array.data[0].TimeOfEventSeconds
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _timedEvents.Array.data[1].TimeOfEventSeconds
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452364413702887652, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
+      propertyPath: _timedEvents.Array.data[2].TimeOfEventSeconds
+      value: 840
       objectReference: {fileID: 0}
     - target: {fileID: 8820976747492337445, guid: bf0a9bf6be36a6d43863a7235c9e9df2, type: 3}
       propertyPath: m_Name

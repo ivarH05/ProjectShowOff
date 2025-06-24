@@ -62,6 +62,9 @@ namespace UI
             }
 
             UIState state = _states[typeof(T)];
+            if (state == _currentState) 
+                return;
+            
             _currentState = state;
             _currentState.OnStateStart();
 
