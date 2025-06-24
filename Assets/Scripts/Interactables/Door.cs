@@ -165,7 +165,7 @@ namespace Interactables
             {
                 Vector3 temp = cam.position;
                 controller.Body.isKinematic = false;
-                controller.MovePosition(cam.position - _originalCameraPosition);
+                controller.MovePosition(controller.Body.position + (controller.transform.TransformPoint(cam.localPosition) - _originalCameraPosition));
 
                 cam.position = temp;
                 cam.localEulerAngles = new Vector3(cam.localEulerAngles.x, cam.localEulerAngles.y, 0);
@@ -240,7 +240,7 @@ namespace Interactables
 
         override public void OnUseStart (PlayerController controller)
         {
-            _originalCameraPosition = controller.CameraTransform.localPosition;
+            _originalCameraPosition = controller.transform.TransformPoint(controller.CameraTransform.localPosition);
 
             this.controller = controller;
             controller.SwitchMouseStrategy<DoorMouseStrategy>();
