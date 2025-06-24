@@ -17,7 +17,8 @@ namespace Player
         [field: SerializeField] public MouseStrategy MouseStrategy { get; private set; }
         [field: SerializeField] public InteractStrategy InteractStrategy { get; private set; }
         [field: SerializeField] public Transform CameraTransform { get; private set; }
-        
+        [field: SerializeField] public Transform CrouchTransform { get; private set; }
+
         [SerializeField] float _coyoteTime = .2f;
         [SerializeField] float _fastCrouchThresholdSeconds = .2f;
 
@@ -60,7 +61,7 @@ namespace Player
             Body = GetComponent<Rigidbody>();
             MainCollider = GetComponent<CapsuleCollider>();
             CharacterHeight = MainCollider.height;
-            EyeOffset = CameraTransform.localPosition.y - MainCollider.height * .5f;
+            EyeOffset = CrouchTransform.localPosition.y - MainCollider.height * .5f;
 
             MoveStrategy ??= GetComponent<Walk>();
             MoveStrategy?.StartStrategy(this);
