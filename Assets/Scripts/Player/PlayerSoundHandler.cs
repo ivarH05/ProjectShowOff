@@ -10,7 +10,8 @@ namespace Player
         [SerializeField] SoundPlayer Crouch;
         [SerializeField] SoundPlayer Run;
         [SerializeField] SoundPlayer Jump;
-        
+        [SerializeField] SoundPlayer CrouchFast;
+
         [SerializeField] float RandomPitchRange;
         [SerializeField, Range(0, 1)] float WalkSpeedFootstepFloor = .2f;
         [SerializeField] float FootstepFrequencyMultiplier;
@@ -37,15 +38,12 @@ namespace Player
             _currentLoudness = Mathf.Max(_currentLoudness, loudness);
         }
 
-        private void Start()
-        {
-            _controller = transform.parent.GetComponent<PlayerController>();
-        }
-
         private void OnEnable()
         {
             _walk = transform.parent.GetComponent<Walk>();
+            _controller = transform.parent.GetComponent<PlayerController>();
             _walk.OnTrueJump += OnJump;
+            _controller.OnFastCrouch += OnCrouchFast;
             if (_loudnessIndicator == null) 
                 Debug.LogError("PlayerSoundHandler does not have a loudnessindicator set. Assign it in the inspector please", this);
         }
@@ -104,6 +102,13 @@ namespace Player
             if(Jump == null) return;
             Jump.Play(1, GetRandomPitch());
             AddSound(Jump.FaintRangeAtFullVolume);
+        }
+
+        void OnCrouchFast()
+        {
+            if (CrouchFast == null) return;
+            CrouchFast.Play(1, GetRandomPitch());
+            AddSound(CrouchFast.FaintRangeAtFullVolume);
         }
     }
 }
