@@ -73,6 +73,7 @@ namespace CryptBuilder
                 r.Room.CurrentLOD = CryptRoom.LOD.None;
             }
             var generatorH = new CryptHighDetailGenerator();
+            generatorH.Crypt = _crypt;
             generatorH.DefaultStyle = _crypt.DefaultStyle;
             var generatorL = new CryptLowDetailGenerator();
             generatorL.DefaultStyle = _crypt.DefaultStyle;
@@ -80,6 +81,9 @@ namespace CryptBuilder
             foreach ((int node, int rect) in _currentLowDetailRects)
             {
                 var r = _crypt.RectangleTree.Nodes[node].Rectangles[rect];
+                r.Room.LastBuilder = _crypt;
+                r.Room.LastGeneratedNodeIndex = node;
+                r.Room.LastGeneratedRectIndex = rect;
                 bool highDetail = _currentHighDetailRects.Contains((node, rect));
                 switch (r.Room.CurrentLOD)
                 {
