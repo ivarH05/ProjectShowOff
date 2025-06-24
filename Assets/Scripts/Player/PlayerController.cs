@@ -116,7 +116,7 @@ namespace Player
         public void DisableMovement()
         {
             MoveStrategy?.StopStrategy(this);
-            MoveStrategy = null; 
+            MoveStrategy = null;
         }
 
         public void MovePosition(Vector3 position)
@@ -125,6 +125,14 @@ namespace Player
             transform.position = position;
             Body.isKinematic = false;
             Body.MovePosition(position);
+        }
+
+        public void MoveRotation(Quaternion rot)
+        {
+            Body.isKinematic = true;
+            transform.rotation = rot;
+            Body.isKinematic = false;
+            Body.MoveRotation(rot);
         }
 
         public void OnMove(InputAction.CallbackContext context) => _currentPlayerDirection = context.ReadValue<Vector2>();
