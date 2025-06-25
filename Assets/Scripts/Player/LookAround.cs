@@ -21,8 +21,11 @@ namespace Player
         public override void StartStrategy(PlayerController controller) 
         {
             _currentMouse = new Vector2(
-                controller.transform.localEulerAngles.y + controller.CameraTransform.localEulerAngles.y, 
+                controller.transform.eulerAngles.y + controller.CameraTransform.localEulerAngles.y, 
                 controller.CameraTransform.eulerAngles.x);
+
+            controller.MoveRotation(Quaternion.Euler(0, _currentMouse.x, 0));
+            controller.CameraTransform.localRotation = Quaternion.Euler(_currentMouse.y, 0, 0);
         }
 
         public override void StopStrategy(PlayerController controller)

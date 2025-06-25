@@ -1,4 +1,6 @@
 using AdvancedSound;
+using Daytime;
+using System;
 using UnityEngine;
 
 namespace DialogueSystem
@@ -21,16 +23,29 @@ namespace DialogueSystem
         public float shakeMagnitude;
 
 
-        public void Invoke()
+        public void Invoke(DialoguePlayer player)
         {
-            switch (type)
+            try
             {
-                case DialogueEventType.Disabled:
-                    break;
-                case DialogueEventType.SetConditionFlag:
-                    flag.Set(flagValue);
-                    break;
+                switch (type)
+                {
+                    case DialogueEventType.Disabled:
+                        break;
+                    case DialogueEventType.SetConditionFlag:
+                        flag.Set(flagValue);
+                        break;
+                    case DialogueEventType.PlaySound:
+                        player.PlayOneShot(sound.GetClip(), sound.Volume, sound.Pitch);
+                        break;
+                    case DialogueEventType.ShakeCamera:
+                        CameraShake.ShakeCamera(1.15f, shakeMagnitude);
+                        break;
+                    case DialogueEventType.AdvanceTime:
+                        TimeHandler.Advance();
+                        break;
+                }
             }
+            catch(Exception e) { Debug.LogError(e.Message); }
         }
     }
 }

@@ -16,169 +16,276 @@ MonoBehaviour:
 
 '
   _nodes:
-  - rid: 7253528117036187868
-  - rid: 7253528117036187869
-  - rid: 7253528117036187870
-  - rid: 7253528117036187871
-  - rid: 7253528117036187872
-  - rid: 7253528117036187873
-  - rid: 7253528117036187874
-  - rid: 7253528117036187875
-  - rid: 7253528117036187876
-  - rid: 7253528117036187877
-  - rid: 7253528117036187878
-  - rid: 7253528117036187879
+  - rid: 7253528261283807823
+  - rid: 7253528261283807824
+  - rid: 7253528261283807825
+  - rid: 7253528261283807826
+  - rid: 7253528261283807827
+  - rid: 7253528261283807828
+  - rid: 7253528261283807829
+  - rid: 7253528261283807830
+  - rid: 7253528261283807831
+  - rid: 7253528261283807832
+  - rid: 7253528261283807833
+  - rid: 7253528261283807834
+  - rid: 7253528261283807835
+  - rid: 7253528261283807836
+  - rid: 7253528261283807837
+  - rid: 7253528261283807838
+  - rid: 7253528261283807839
+  - rid: 7253528261283807840
+  - rid: 7253528261283807841
+  - rid: 7253528261283807842
   _connections:
-  - OutputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
+  - OutputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
     OutputNodeIndex: 0
-    InputNodeGUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
-  - OutputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
+    InputNodeGUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
+  - OutputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
     OutputNodeIndex: 1
-    InputNodeGUID: ec46ef5a-161d-4c39-82e1-d000982551f1
-  - OutputNodeGUID: ec46ef5a-161d-4c39-82e1-d000982551f1
+    InputNodeGUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
+  - OutputNodeGUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
     OutputNodeIndex: 0
-    InputNodeGUID: 11242770-1d92-4f87-9c25-e55310c45139
-  - OutputNodeGUID: 11242770-1d92-4f87-9c25-e55310c45139
+    InputNodeGUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+  - OutputNodeGUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
     OutputNodeIndex: 0
-    InputNodeGUID: e40e64d6-448e-40ac-b9f8-7cee6def9d1c
-  - OutputNodeGUID: 11242770-1d92-4f87-9c25-e55310c45139
+    InputNodeGUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+  - OutputNodeGUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+    OutputNodeIndex: 0
+    InputNodeGUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+  - OutputNodeGUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+    OutputNodeIndex: 0
+    InputNodeGUID: 81e17667-c495-454d-abfa-afaa9cbb370e
+  - OutputNodeGUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+    OutputNodeIndex: 0
+    InputNodeGUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+  - OutputNodeGUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+    OutputNodeIndex: 0
+    InputNodeGUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+  - OutputNodeGUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+    OutputNodeIndex: 0
+    InputNodeGUID: 5b598fb5-86ed-40a6-9d0c-941a45d71c4f
+  - OutputNodeGUID: 5193c932-40d2-44a6-864f-714763804644
+    OutputNodeIndex: 0
+    InputNodeGUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+  - OutputNodeGUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+    OutputNodeIndex: 0
+    InputNodeGUID: f676f1c5-9c72-4336-9f0e-168f837656b4
+  - OutputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+    OutputNodeIndex: 0
+    InputNodeGUID: 5193c932-40d2-44a6-864f-714763804644
+  - OutputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
     OutputNodeIndex: 1
-    InputNodeGUID: 02a54210-bb14-4218-912b-ae9c502cff66
-  - OutputNodeGUID: 02a54210-bb14-4218-912b-ae9c502cff66
+    InputNodeGUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
+  - OutputNodeGUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
     OutputNodeIndex: 0
-    InputNodeGUID: ccdeffc2-ca51-42ee-8226-ba646f660ffe
-  - OutputNodeGUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
+    InputNodeGUID: 95d26e94-9405-42c0-9634-5d878cfdd0d1
+  - OutputNodeGUID: bba6f4e1-7322-4490-8ea1-060011970616
     OutputNodeIndex: 0
-    InputNodeGUID: c03b2c96-2877-4227-8bd2-26328640c3aa
-  - OutputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+    InputNodeGUID: cb70db0c-249b-4cf6-822c-1724c5e697cf
+  - OutputNodeGUID: cb70db0c-249b-4cf6-822c-1724c5e697cf
     OutputNodeIndex: 0
-    InputNodeGUID: 83e6388f-ca46-48de-999d-62f56803d275
-  - OutputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+    InputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+  - OutputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+    OutputNodeIndex: 0
+    InputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+  - OutputNodeGUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
     OutputNodeIndex: 1
-    InputNodeGUID: f6a6d12b-c828-4ec7-8409-5280861be274
-  - OutputNodeGUID: 9c34b998-4e85-416c-b4b1-431df7b1577b
-    OutputNodeIndex: 0
-    InputNodeGUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
+    InputNodeGUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
   references:
     version: 2
     RefIds:
-    - rid: 7253528117036187868
+    - rid: 7253528261283807823
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9a2f7b8e-401a-4264-84ea-0d4f13a2bf91
+        type: 4
+        Position: {x: 405, y: 160}
+    - rid: 7253528261283807824
       type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: 83e6388f-ca46-48de-999d-62f56803d275
+        GUID: f676f1c5-9c72-4336-9f0e-168f837656b4
         type: 2
-        Position: {x: 128, y: 310}
-        flag: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
-    - rid: 7253528117036187869
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: f6a6d12b-c828-4ec7-8409-5280861be274
-        type: 4
-        Position: {x: 128, y: 430}
-    - rid: 7253528117036187870
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 27801616-e657-44c2-becc-61492a7f0d4a
-        type: 4
-        Position: {x: 1147, y: 220}
-    - rid: 7253528117036187871
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: c03b2c96-2877-4227-8bd2-26328640c3aa
-        type: 4
-        Position: {x: 561, y: 106}
-    - rid: 7253528117036187872
-      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: ec46ef5a-161d-4c39-82e1-d000982551f1
-        type: 5
-        Position: {x: 289, y: 370}
-        onRun:
-          type: 1
-          flag: {fileID: 11400000, guid: 268fca871c58ba442a753eff819ce391, type: 2}
-          flagValue: 1
-          sound: {fileID: 0}
-          shakeMagnitude: 0
-    - rid: 7253528117036187873
+        Position: {x: 489, y: -355}
+        flag: {fileID: 0}
+    - rid: 7253528261283807825
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
-        GUID: 11242770-1d92-4f87-9c25-e55310c45139
+        GUID: 5f6600e3-4c3d-4584-88b1-5883d347222c
         type: 1
-        Position: {x: 520, y: 370}
-        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
-        dialogueText: Aight, here. now go throw rocks at bystanders or something
-        Options:
-        - ResponseText: thanks
-          index: 0
-        - ResponseText: why?
-          index: 1
-    - rid: 7253528117036187874
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 02a54210-bb14-4218-912b-ae9c502cff66
-        type: 1
-        Position: {x: 882, y: 502}
-        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
-        dialogueText: 'Because i said so. wait, never mind.
-
-          dont tell
-          them i told you to. got it?'
-        Options:
-        - ResponseText: sure
-          index: 0
-    - rid: 7253528117036187875
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: ccdeffc2-ca51-42ee-8226-ba646f660ffe
-        type: 1
-        Position: {x: 1116, y: 502}
-        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
-        dialogueText: 
-        Options:
-        - ResponseText: Continue
-          index: 0
-    - rid: 7253528117036187876
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 16717007-0e87-4aef-ba4b-5b50532ebaf0
-        type: 1
-        Position: {x: 289, y: 59}
-        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
-        dialogueText: You have already had a fish. get lost kiddo.
-        Options:
-        - ResponseText: (get lost)
-          index: 0
-        - ResponseText: (stay)
-          index: 1
-        - ResponseText: no hablas anglais
-          index: 2
-    - rid: 7253528117036187877
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 6641818e-d813-4cb6-85cd-32fce5648bf5
-        type: 1
-        Position: {x: -111, y: 246}
-        speaker: {fileID: 11400000, guid: d2b7c79f97ed52b41842d336a71f0220, type: 2}
-        dialogueText: What do you want?
-        Options:
-        - ResponseText: A fish please
-          index: 0
-        - ResponseText: Never mind
-          index: 1
-    - rid: 7253528117036187878
-      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 9c34b998-4e85-416c-b4b1-431df7b1577b
-        type: 3
-        Position: {x: -272, y: 246}
-    - rid: 7253528117036187879
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: e40e64d6-448e-40ac-b9f8-7cee6def9d1c
-        type: 1
-        Position: {x: 887, y: 286}
+        Position: {x: 650, y: -585}
         speaker: {fileID: 0}
         dialogueText: 
         Options:
         - ResponseText: Continue
           index: 0
+    - rid: 7253528261283807826
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e4e5f6a3-b167-4da2-b757-e2d75e93722f
+        type: 1
+        Position: {x: 659, y: -169}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807827
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0a27f7ca-d02f-4f31-8aef-753a466d3341
+        type: 5
+        Position: {x: 909, y: -556}
+        onRun:
+          type: 1
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 7253528261283807828
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e9d65bbf-2b31-4648-80c7-d8036a7f8906
+        type: 1
+        Position: {x: 1160, y: -574}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807829
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5b0e4400-71cc-40d5-aa5c-146698a0d2df
+        type: 1
+        Position: {x: 904, y: -171}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807830
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 56f4987c-1e50-4106-8d4f-c7c12d540850
+        type: 5
+        Position: {x: 1165, y: -120}
+        onRun:
+          type: 1
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 7253528261283807831
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 81e17667-c495-454d-abfa-afaa9cbb370e
+        type: 4
+        Position: {x: 1503, y: -561}
+    - rid: 7253528261283807832
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3a17ba4a-725a-45d7-8da6-6e460a875932
+        type: 1
+        Position: {x: 1511, y: -233}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807833
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5b598fb5-86ed-40a6-9d0c-941a45d71c4f
+        type: 4
+        Position: {x: 1870, y: -157}
+    - rid: 7253528261283807834
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5193c932-40d2-44a6-864f-714763804644
+        type: 1
+        Position: {x: 956, y: 248}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807835
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 113ca0cc-5bf6-478f-bedb-9985113c252d
+        type: 1
+        Position: {x: 1452, y: 254}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807836
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ea1621ac-d5bc-4ce0-b7c7-311ea6f51132
+        type: 1
+        Position: {x: 406, y: 258}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "Finally, I get to go to the village on my own without family.
+          \nDad told me as long as I talk to the priest first everything should be
+          fine"
+        Options:
+        - ResponseText: Continue
+          index: 0
+        - ResponseText: Debug_Skip
+          index: 1
+    - rid: 7253528261283807837
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 958dcff3-9ae9-412e-b808-3d6ac5da6712
+        type: 1
+        Position: {x: 708, y: -26}
+        speaker: {fileID: 0}
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 7253528261283807838
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 95d26e94-9405-42c0-9634-5d878cfdd0d1
+        type: 4
+        Position: {x: 1104, y: 497}
+    - rid: 7253528261283807839
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0ad31322-a187-4b4f-92e7-bcbce788bbd8
+        type: 5
+        Position: {x: 808, y: 483}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 7253528261283807840
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bba6f4e1-7322-4490-8ea1-060011970616
+        type: 3
+        Position: {x: -199, y: 157}
+    - rid: 7253528261283807841
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: cb70db0c-249b-4cf6-822c-1724c5e697cf
+        type: 5
+        Position: {x: -12, y: 160}
+        onRun:
+          type: 3
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 11400000, guid: 0348a4d791d460c459dcf7d69045de13, type: 2}
+          shakeMagnitude: 0.5
+    - rid: 7253528261283807842
+      type: {class: BranchNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ceb31199-692a-4a37-9cfc-530b6d9b7e29
+        type: 2
+        Position: {x: 243, y: 159}
+        flag: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}

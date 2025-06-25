@@ -92,7 +92,7 @@ namespace Player
 
             controller.MainCollider.height = currentHeight;
             controller.MainCollider.center += new Vector3(0, heightDelta*.5f, 0);
-            controller.CameraTransform.localPosition = new Vector3(0,headTipOffset + controller.EyeOffset,0);
+            controller.CrouchTransform.localPosition = new Vector3(0,headTipOffset + controller.EyeOffset,0);
         }
     }
 }
