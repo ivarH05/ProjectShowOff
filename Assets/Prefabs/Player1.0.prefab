@@ -725,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 6340187229796959029}
   _frequency: 8
-  _magnitude: 0.05
+  _magnitude: 0.5
   _speedThreshold: 0.3
   _windupSpeed: 1
   _idleBobStrength: 0.3
