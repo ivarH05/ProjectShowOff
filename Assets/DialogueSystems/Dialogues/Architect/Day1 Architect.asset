@@ -1,0 +1,486 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Day1 Architect
+  m_EditorClassIdentifier: 
+  Description: 
+  _nodes:
+  - rid: 5474676788425916952
+  - rid: 5474676788425916953
+  - rid: 5474676788425916954
+  - rid: 5474676788425916955
+  - rid: 5474676788425916956
+  - rid: 5474676788425916957
+  - rid: 5474676788425916958
+  - rid: 5474676788425916959
+  - rid: 5474676788425916960
+  - rid: 5474676788425916961
+  - rid: 5474676788425916962
+  - rid: 5474676788425916963
+  - rid: 5474676788425916964
+  - rid: 5474676788425916965
+  - rid: 5474676788425916966
+  - rid: 5474676788425916967
+  - rid: 5474676788425916968
+  - rid: 5474676788425916969
+  - rid: 5474676788425916970
+  - rid: 5474676788425916971
+  - rid: 5474676788425916972
+  - rid: 5474676788425916973
+  - rid: 5474676788425916974
+  - rid: 5474676788425916975
+  - rid: 5474676788425916976
+  - rid: 5474676788425916977
+  - rid: 5474676788425916978
+  - rid: 5474676788425916979
+  - rid: 5474676788425916980
+  - rid: 5474676788425916981
+  _connections:
+  - OutputNodeGUID: dbd8abc5-c39f-47da-8ee6-bcac30816933
+    OutputNodeIndex: 0
+    InputNodeGUID: 891bcc35-a4b6-473b-82d0-d015915add6e
+  - OutputNodeGUID: 891bcc35-a4b6-473b-82d0-d015915add6e
+    OutputNodeIndex: 0
+    InputNodeGUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
+  - OutputNodeGUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
+    OutputNodeIndex: 0
+    InputNodeGUID: 76949765-5ab0-4393-b121-0d1dbd10caa9
+  - OutputNodeGUID: 76949765-5ab0-4393-b121-0d1dbd10caa9
+    OutputNodeIndex: 0
+    InputNodeGUID: 11aa6511-a4b3-44e3-9a72-d32860b361da
+  - OutputNodeGUID: 11aa6511-a4b3-44e3-9a72-d32860b361da
+    OutputNodeIndex: 0
+    InputNodeGUID: 3fc5f0ae-3653-41a4-a633-582d101b84bb
+  - OutputNodeGUID: 3fc5f0ae-3653-41a4-a633-582d101b84bb
+    OutputNodeIndex: 0
+    InputNodeGUID: 8f35085a-9a43-4b8e-b2bb-43a012514738
+  - OutputNodeGUID: 7048e72b-81c4-4473-85cd-be8460b502b0
+    OutputNodeIndex: 0
+    InputNodeGUID: 5d6c6776-0c1b-4147-9904-6c301cdb0f00
+  - OutputNodeGUID: 5d6c6776-0c1b-4147-9904-6c301cdb0f00
+    OutputNodeIndex: 0
+    InputNodeGUID: 948361c7-701e-4d4e-8e62-cdfff9bd749c
+  - OutputNodeGUID: 948361c7-701e-4d4e-8e62-cdfff9bd749c
+    OutputNodeIndex: 0
+    InputNodeGUID: ce8dd515-0f0f-476d-9ca0-f4f0faf86ca5
+  - OutputNodeGUID: ce8dd515-0f0f-476d-9ca0-f4f0faf86ca5
+    OutputNodeIndex: 0
+    InputNodeGUID: 536dee7d-117d-4358-a2a8-3e4c282cbf49
+  - OutputNodeGUID: 536dee7d-117d-4358-a2a8-3e4c282cbf49
+    OutputNodeIndex: 0
+    InputNodeGUID: c4ac46ce-3cb2-4610-88fa-c9aa922c9c12
+  - OutputNodeGUID: 7aa6decf-f6c2-4c80-8995-76860596cb85
+    OutputNodeIndex: 0
+    InputNodeGUID: 1f93b8dd-3438-42ea-83eb-d29c66b62ed4
+  - OutputNodeGUID: 1f93b8dd-3438-42ea-83eb-d29c66b62ed4
+    OutputNodeIndex: 0
+    InputNodeGUID: 1be9f577-43a0-49c1-8e80-5966cad5bf4f
+  - OutputNodeGUID: 1be9f577-43a0-49c1-8e80-5966cad5bf4f
+    OutputNodeIndex: 0
+    InputNodeGUID: a6a380e7-ae88-436a-807c-578ef3cad593
+  - OutputNodeGUID: a6a380e7-ae88-436a-807c-578ef3cad593
+    OutputNodeIndex: 0
+    InputNodeGUID: 2a007869-101a-4b96-848f-a22686766246
+  - OutputNodeGUID: 2a007869-101a-4b96-848f-a22686766246
+    OutputNodeIndex: 0
+    InputNodeGUID: bc91fa4e-16bc-4f91-be63-67fb87130a68
+  - OutputNodeGUID: a155362b-ee72-4879-bbc2-4aeafc5a27ae
+    OutputNodeIndex: 0
+    InputNodeGUID: d60dea5a-84df-4ebd-bd5f-61ec7835ed01
+  - OutputNodeGUID: 8f35085a-9a43-4b8e-b2bb-43a012514738
+    OutputNodeIndex: 0
+    InputNodeGUID: a155362b-ee72-4879-bbc2-4aeafc5a27ae
+  - OutputNodeGUID: bc91fa4e-16bc-4f91-be63-67fb87130a68
+    OutputNodeIndex: 0
+    InputNodeGUID: bff6da01-217f-4cc7-8cc8-9aa9b99d0851
+  - OutputNodeGUID: bff6da01-217f-4cc7-8cc8-9aa9b99d0851
+    OutputNodeIndex: 0
+    InputNodeGUID: e499c005-32df-4cc1-9a69-d43e7b37ab8e
+  - OutputNodeGUID: e499c005-32df-4cc1-9a69-d43e7b37ab8e
+    OutputNodeIndex: 0
+    InputNodeGUID: 4d092fc3-701c-4a66-a1c5-4ada907e2ba2
+  - OutputNodeGUID: 4d092fc3-701c-4a66-a1c5-4ada907e2ba2
+    OutputNodeIndex: 0
+    InputNodeGUID: 87e3086a-96ba-4486-8d24-444fb6ca8570
+  - OutputNodeGUID: 87e3086a-96ba-4486-8d24-444fb6ca8570
+    OutputNodeIndex: 0
+    InputNodeGUID: 16370ad6-b0f6-41f5-8678-5fe9c24c7f3e
+  - OutputNodeGUID: 16370ad6-b0f6-41f5-8678-5fe9c24c7f3e
+    OutputNodeIndex: 0
+    InputNodeGUID: 3cab8ee2-b142-4394-8e07-6863d0a2e5c4
+  - OutputNodeGUID: 3cab8ee2-b142-4394-8e07-6863d0a2e5c4
+    OutputNodeIndex: 0
+    InputNodeGUID: 4fd0eee1-04d7-48b0-8ac3-8cfc7b775314
+  - OutputNodeGUID: 4fd0eee1-04d7-48b0-8ac3-8cfc7b775314
+    OutputNodeIndex: 0
+    InputNodeGUID: 20c4caf2-360b-4f50-8f4b-1253b9b1d2bd
+  - OutputNodeGUID: 20c4caf2-360b-4f50-8f4b-1253b9b1d2bd
+    OutputNodeIndex: 0
+    InputNodeGUID: eaaef759-362b-4166-a441-3de17efe50b9
+  - OutputNodeGUID: d60dea5a-84df-4ebd-bd5f-61ec7835ed01
+    OutputNodeIndex: 0
+    InputNodeGUID: 7048e72b-81c4-4473-85cd-be8460b502b0
+  - OutputNodeGUID: c4ac46ce-3cb2-4610-88fa-c9aa922c9c12
+    OutputNodeIndex: 0
+    InputNodeGUID: 7aa6decf-f6c2-4c80-8995-76860596cb85
+  references:
+    version: 2
+    RefIds:
+    - rid: 5474676788425916952
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: dbd8abc5-c39f-47da-8ee6-bcac30816933
+        type: 3
+        Position: {x: -312, y: 250.4}
+    - rid: 5474676788425916953
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 891bcc35-a4b6-473b-82d0-d015915add6e
+        type: 1
+        Position: {x: -116.8, y: 207.2}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        dialogueText: "*thud* \u2018\u2019O-ouch.."
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916954
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
+        type: 1
+        Position: {x: 170.4, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: 'A frail voice reaches out before inevitably tripping as I
+          bump into her. I catch her by her arm, but several metal sounds follow
+          against the pebbles on the ground. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916955
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 76949765-5ab0-4393-b121-0d1dbd10caa9
+        type: 1
+        Position: {x: 614.4, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: A pair of bold, green eyes, shining like jade under the scorching
+          sun, yet seemingly reaching no end.
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916956
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 11aa6511-a4b3-44e3-9a72-d32860b361da
+        type: 1
+        Position: {x: 1027.2, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: 'The girl got up from my grip, adjusting her golden locks and
+          beaten-up glasses, shooting me an angry look, before looking away when
+          aware of their intent. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916957
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3fc5f0ae-3653-41a4-a633-582d101b84bb
+        type: 1
+        Position: {x: 1455.2, y: 207.2}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        dialogueText: "Sorry for being in your way\u2026"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916958
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 7048e72b-81c4-4473-85cd-be8460b502b0
+        type: 1
+        Position: {x: 3043.2, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: So.. are you an architect?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916959
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5d6c6776-0c1b-4147-9904-6c301cdb0f00
+        type: 1
+        Position: {x: 3296.8, y: 207.2}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        dialogueText: She tucks her hair behind her ear, her blue ribbon shining
+          under the sun.
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916960
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 948361c7-701e-4d4e-8e62-cdfff9bd749c
+        type: 1
+        Position: {x: 3715.2, y: 207.2}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: Yes.. It was a but hard to get the job, but I managed to after
+          I proved to the carpenter of the town that I can do it..
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916961
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ce8dd515-0f0f-476d-9ca0-f4f0faf86ca5
+        type: 1
+        Position: {x: 4130.4004, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: The carpenter?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916962
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 536dee7d-117d-4358-a2a8-3e4c282cbf49
+        type: 1
+        Position: {x: 4391.2, y: 200}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "He\u2019s the oldest of this town, he basically was here when
+          this town only had a ran down shed.."
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916963
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 7aa6decf-f6c2-4c80-8995-76860596cb85
+        type: 1
+        Position: {x: 5211.2, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: She notices my questioning look, her piercing gaze framed by
+          the shade of purple from under her sleepless eyes
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916964
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1f93b8dd-3438-42ea-83eb-d29c66b62ed4
+        type: 1
+        Position: {x: 5643.2, y: 200}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "So\u2026 What brings you in this town? You don\u2019t look
+          like you\u2019re from around here.."
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916965
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1be9f577-43a0-49c1-8e80-5966cad5bf4f
+        type: 1
+        Position: {x: 6069.6, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "\u2018\u2019I\u2019m looking for a job currently, I\u2019m
+          just\u2026\u2019\u2019 \r\n\r\nShould I tell her? Would it sound odd..
+          Maybe she knows someone that knows.. "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916966
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a6a380e7-ae88-436a-807c-578ef3cad593
+        type: 1
+        Position: {x: 6496, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "\u2018\u2019Actually\u2026 I\u2019m looking for someone, but
+          the job part is just for me to be able to stay around for a while searching
+          for them\u2019\u2019 "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916967
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 2a007869-101a-4b96-848f-a22686766246
+        type: 1
+        Position: {x: 6901.6, y: 200}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "A person? I sadly would not know, I\u2019m terribly sorry,
+          I\u2019m mostly buried in my work\u2026 I do know a few people that can
+          maybe help\u2026"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916968
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a155362b-ee72-4879-bbc2-4aeafc5a27ae
+        type: 1
+        Position: {x: 2200, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "I awkwardly try to change the topic, helping her pick up her
+          bag\u2019s contents off the dusty ground."
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916969
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8f35085a-9a43-4b8e-b2bb-43a012514738
+        type: 1
+        Position: {x: 1724, y: 207.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "\u2019No, it\u2019s my fault for not looking.. The sun is
+          so bright today, I can barely see a thing\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916970
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bc91fa4e-16bc-4f91-be63-67fb87130a68
+        type: 1
+        Position: {x: 7336, y: 200}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "As for a job, however\u2026"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916971
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bff6da01-217f-4cc7-8cc8-9aa9b99d0851
+        type: 1
+        Position: {x: 7610.4004, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: 'Her hand covered in charcoal dust hands me a compass, seemingly
+          old but kept in quite a good shape. I take it and look at her with a questioning
+          glance '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916972
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e499c005-32df-4cc1-9a69-d43e7b37ab8e
+        type: 1
+        Position: {x: 8019.2, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "\u2018\u2019Why are you giving it to me, though? I\u2019m
+          no architect, nor artist..\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916973
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4d092fc3-701c-4a66-a1c5-4ada907e2ba2
+        type: 1
+        Position: {x: 8441.601, y: 200.8}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: ou remind me of someone I have once met..
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916974
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 87e3086a-96ba-4486-8d24-444fb6ca8570
+        type: 1
+        Position: {x: 8748, y: 200.8}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: 'My work includes precision, so tools like rulers and drawing
+          compass are a necessity.. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916975
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 16370ad6-b0f6-41f5-8678-5fe9c24c7f3e
+        type: 1
+        Position: {x: 9156.8, y: 200.8}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "I want you to have this as a token of luck when you find a
+          place to work, and when you\u2019re searching for your lost friend.."
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916976
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3cab8ee2-b142-4394-8e07-6863d0a2e5c4
+        type: 1
+        Position: {x: 9569.601, y: 200.8}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: 'A shy smile meets my gaze, a slight sparkle glimmering in
+          her eyes '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916977
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4fd0eee1-04d7-48b0-8ac3-8cfc7b775314
+        type: 1
+        Position: {x: 10004, y: 200.8}
+        speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        dialogueText: "Good luck on your search\u2026 Maybe try talking to the lamplighter?
+          She roams around at night every day, she might have seen someone around\u2026"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916978
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: eaaef759-362b-4166-a441-3de17efe50b9
+        type: 4
+        Position: {x: 10742.4, y: 223.2}
+    - rid: 5474676788425916979
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 20c4caf2-360b-4f50-8f4b-1253b9b1d2bd
+        type: 5
+        Position: {x: 10452.8, y: 300}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 5474676788425916980
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d60dea5a-84df-4ebd-bd5f-61ec7835ed01
+        type: 1
+        Position: {x: 2628, y: 200}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: 'Compasses, pencils, papers, tools I cannot distinguish...
+          I hand them back to her as she carefully places them in her old leather
+          bag, unable to close it because of the number of things inside. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 5474676788425916981
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c4ac46ce-3cb2-4610-88fa-c9aa922c9c12
+        type: 1
+        Position: {x: 4838.4004, y: 186.4}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        dialogueText: "Weird she says that\u2026 Wasn\u2019t this town around for
+          like\u2026 \r\n\r\nHundreds of years\u2026?"
+        Options:
+        - ResponseText: Continue
+          index: 0
