@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialogueSet 1
   m_EditorClassIdentifier: 
   Dialogues:
-  - conditions: []
-    dialogue: {fileID: 0}
-  - conditions: []
-    dialogue: {fileID: 0}
+  - conditions:
+    - condition: {fileID: 11400000, guid: d6c23b7b3cc3b36469f2e98ce24dede5, type: 2}
+      expectedValue: 0
+    dialogue: {fileID: 11400000, guid: 08e4adcfc1f6509449709ea559687606, type: 2}
