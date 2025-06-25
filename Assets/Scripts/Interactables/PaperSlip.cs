@@ -2,12 +2,15 @@ using Player;
 using Player.InventoryManagement;
 using UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Interactables
 {
     public class Note : Interactable
     {
         public NoteData note;
+
+        public UnityEvent onInteract;
 
         private void Awake()
         {
@@ -18,6 +21,8 @@ namespace Interactables
             UIManager.SetState<NoteUIState>();
             UIManager.CallUIEvent(new NoteUIEvent() { noteData = note } );
             Destroy(gameObject);
+
+            onInteract.Invoke();
         }
 
         public override void OnUseStart(PlayerController controller) { }
