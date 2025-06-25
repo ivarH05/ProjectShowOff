@@ -3813,7 +3813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditions:
   - condition: {fileID: 11400000, guid: 9d04e480c2383554eb185f59ae5873eb, type: 2}
-    expectedValue: 1
+    expectedValue: 0
 --- !u!1001 &1820481001
 PrefabInstance:
   m_ObjectHideFlags: 0
