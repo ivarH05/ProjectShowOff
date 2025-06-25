@@ -3886,7 +3886,7 @@ PrefabInstance:
     - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
       propertyPath: DialogueSet
       value: 
-      objectReference: {fileID: 11400000, guid: 100d1b1e4d82d824e874f9eaf379f511, type: 2}
+      objectReference: {fileID: 11400000, guid: 014bb7e6e235a3e44b1e6f13b6c73e0a, type: 2}
     - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
       propertyPath: showAtNight
       value: 0
