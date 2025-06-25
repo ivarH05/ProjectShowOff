@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 namespace DialogueSystem
 {
+    [RequireComponent(typeof(AudioSource))]
     public class DialoguePlayer : MonoBehaviour
     {
         private static DialoguePlayer _singleton;
@@ -14,6 +15,7 @@ namespace DialogueSystem
         [SerializeField] private GameObject nextButton;
         [SerializeField] private TMP_Text characterNameText;
         [SerializeField] private TMP_Text mainText;
+        private AudioSource _audioSource;
         private Dialogue _activeDialogue;
         private NodeData activeNode;
 
@@ -24,6 +26,7 @@ namespace DialogueSystem
         {
             gameObject.SetActive(false);
             _singleton = this;
+            _audioSource = GetComponent<AudioSource>();
         }
 
         public static void StartNewDialogue(Dialogue dialogue, Action OnEnd)
@@ -42,6 +45,13 @@ namespace DialogueSystem
         public void SetDialogue(Dialogue dialogue)
         {
             _activeDialogue = dialogue;
+        }
+
+        public void PlayOneShot(AudioClip clip, float volume, float pitch)
+        {
+            _audioSource.volume = volume;
+            _audioSource.pitch = pitch;
+            _audioSource.PlayOneShot(clip);
         }
 
         public void StartDialogue()
@@ -146,7 +156,7 @@ namespace DialogueSystem
         {
             if (!(activeNode is EventNodeData data))
                 return;
-            data.onRun.Invoke();
+            data.onRun.Invoke(this);
         }
 
         [System.Serializable]

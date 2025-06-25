@@ -49,6 +49,11 @@ namespace UI
 
         public static void SetState<T>() where T : UIState
         {
+            if(_singleton == null)
+            {
+                Debug.LogError("Scene doesnt have a UIManager!");
+                return;
+            }
             _currentState?.OnStateStop();
             if(!_states.ContainsKey(typeof(T)))
             {
