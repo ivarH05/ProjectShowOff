@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Architect
   m_EditorClassIdentifier: 
   name: Architect
-  sprite: {fileID: 21300000, guid: 69ee325ebf504964882086cf88b47fe5, type: 3}
+  sprite: {fileID: 21300000, guid: 94e4e720c6916874b8dcea734a7dd7ed, type: 3}
+  expressions: []
