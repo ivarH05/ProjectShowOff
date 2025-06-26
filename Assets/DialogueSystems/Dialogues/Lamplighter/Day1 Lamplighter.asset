@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Day1 Lamplighter
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
   Description: 
   _nodes:
   - rid: 5474676788425917281
@@ -176,6 +177,7 @@ MonoBehaviour:
         type: 1
         Position: {x: -160, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "Quietly, a girl is sitting down next to one of the houses,
           leaning herself against her a long pole, full of ashes and wick remains.
           Her coat, almost too big, rests on her shoulders while she\u2019s drifted
@@ -190,6 +192,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 256.80002, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "I wouldn\u2019t want to disturb her, she seems to be tired.. "
         Options:
         - ResponseText: Continue
@@ -201,6 +204,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 640.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "A sudden, bird like sound startles me, enough to almost trip
           over her pole and fall \r\n\r\nWhat a day, I don\u2019t think it can get
           any worse.. "
@@ -214,6 +218,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1051.2, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: Hm..??
         Options:
         - ResponseText: Continue
@@ -225,6 +230,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1305.6, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: A yawn, followed by her stretching as if it were the first
           hour of the morning. Curious, a crow emerges from behind her, seemingly
           the source of the sound. Her sleepy face quicky turns into panic, trying
@@ -239,6 +245,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1712, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "NO NO I PROMISE I\u2019M NOT A WITC-.. Oh.. And who would
           you be..?"
         Options:
@@ -251,6 +258,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2137.5999, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019..Not a witch hunter, I promise...\u2019\u2019 
           \r\n\r\nI say, trying to hold in a slight chuckle when seeing a pair of
           bead- like eyes peek from under her coat. "
@@ -264,6 +272,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2560.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019I\u2019m Jacob, Jacob Pieterzoon.. I just came
           to this town to search for someone that went missing a long time ago..
           Sorry for waking you up, I did not mean to\u2019\u2019 "
@@ -277,6 +286,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2958.4, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Sleepily, a hand reaches out, waiting for a handshake, as
           the girl ruffles her once tidy ponytail in place. I shake her hand, her
           bird companion watching my moves carefully '
@@ -290,6 +300,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 3369.5999, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Apology accepted. I\u2019m the lamplighter, and this is Heyl,
           he randomly started following me one night and now he won\u2019t leave
           my side.. I kinda enjoy having company, especially given that my work can
@@ -304,6 +315,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 3796.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2019Is that why you were scared I\u2019d call you a witch?\u2019\u2019
           \r\n\r\nScornful side eye. "
         Options:
@@ -316,6 +328,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4127.2, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019It\u2019s not like I had to move towns for the
           third time at this point....\u2019\u2019 \r\n\r\n\u2018\u2019........Right\u2019\u2019"
         Options:
@@ -328,6 +341,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4534.4004, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Anyways... You said you\u2019re searching for someone that\u2019s
           been missing?"
         Options:
@@ -340,6 +354,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4962.4004, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Yeah... Only thing I know is that we share our
           last name, nothing more...\u2019\u2019 "
         Options:
@@ -352,6 +367,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 5367.2, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Name, huh...A friend of mine told me long ago... A name is
           meant to be an echo of oneself onto this world, always coming back even
           when they\u2019re not here.."
@@ -365,6 +381,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 5797.6, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u201CHey. \u201C l looked up at the green- eyed girl, almost
           as if understanding her human speech \r\n\r\nA flash of sadness washes
           over her face, before shaking her head "
@@ -378,6 +395,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 6237.6, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "I should get more sleep while I\u2019m off work, huh.. Well,
           about your friend.. I think you should ask the priest of the town about
           it \u2013 He seems to know a lot about people that come and go around here.."
@@ -391,6 +409,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 6672, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Her face darkens slightly again, dark blonde bangs covering
           one of her eyes as she looks at me with an expression I cannot distinguish '
         Options:
@@ -403,6 +422,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 7078.4004, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Between you and me... I don\u2019t think it\u2019s my place
           to say this, however..."
         Options:
@@ -415,6 +435,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 7489.6, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: omeone.. Someone did go with the priest one late night into
           the church.. And never returned.. But that was long ago..
         Options:
@@ -427,6 +448,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 7916, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "A chill ran down my spine. No, this must be unrelated.. It\u2019s
           probably her night terrors from her work.. Impossible, a man of the church,
           to be involved in such a heinous act as causing someone to.. "
@@ -440,6 +462,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 8344, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "Yet why does it feel like.. Like HE\u2019s closer "
         Options:
         - ResponseText: Continue
@@ -451,6 +474,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 8637.601, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: But hey, maybe they just left as I fell asleep, you never know,
           haha..
         Options:
@@ -463,6 +487,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 9049.601, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'This feels like something deeper than just uncertanty.. Or
           than just a nightmare '
         Options:
@@ -475,6 +500,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 9448.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Well... I don\u2019t wish to awake more bad memories..
           Thank you for telling me, though, I will probably go and talk to him to
           see if he knows anything\u2019\u2019 "
@@ -488,6 +514,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 9844, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Her hands gripped around the lighting pole suddenly '
         Options:
         - ResponseText: Continue
@@ -499,6 +526,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 10182.4, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Don\u2019t tell him you found out from me, okay? He scares
           me.. And I don\u2019t have my hat to hide my gaze from him anymore, nor
           cover my ears.. I hear and see everything, every night.."
@@ -512,6 +540,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 10585.601, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Your.. Hat?\u2019\u2019"
         Options:
         - ResponseText: Continue
@@ -523,6 +552,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 10836.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "\u2019It tends to get so windy after the sunsets. I used to
           have a hat that I really like but the wind blew it away one day.. I would
           always hide my face behind it to not see or pull it over my ears to not
@@ -537,6 +567,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 11232, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\"Hey\" I took off and landed on top of her head with a scary
           timing \r\n\n\u2018\u2019..See and hear.. What exactly?\u2019\u2019"
         Options:
@@ -549,6 +580,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 11632, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "...Maybe let\u2019s continue the chat another time.. You should
           visit my friend first, the artist, though. she makes paintings for a lot
           of people from around here and from other towns.."
@@ -562,6 +594,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 12067.2, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Didn\u2019t you say I should ask the priest, though?\u2019\u2019 "
         Options:
         - ResponseText: Continue
@@ -573,6 +606,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 12384.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+        expression: 0
         dialogueText: "Maybe leave that for another day.. He\u2019s not the most
           pleasant"
         Options:
@@ -603,6 +637,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 12800.8, y: 193.6}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Thank you, will keep in mind..\u2019\u2019"
         Options:
         - ResponseText: Continue

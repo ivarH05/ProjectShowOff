@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Day1 Architect
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
   Description: 
   _nodes:
   - rid: 5474676788425916952
@@ -148,6 +149,7 @@ MonoBehaviour:
         type: 1
         Position: {x: -116.8, y: 207.2}
         speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
         dialogueText: "*thud* \u2018\u2019O-ouch.."
         Options:
         - ResponseText: Continue
@@ -159,6 +161,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 170.4, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'A frail voice reaches out before inevitably tripping as I
           bump into her. I catch her by her arm, but several metal sounds follow
           against the pebbles on the ground. '
@@ -172,6 +175,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 614.4, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: A pair of bold, green eyes, shining like jade under the scorching
           sun, yet seemingly reaching no end.
         Options:
@@ -184,6 +188,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1027.2, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'The girl got up from my grip, adjusting her golden locks and
           beaten-up glasses, shooting me an angry look, before looking away when
           aware of their intent. '
@@ -197,6 +202,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1455.2, y: 207.2}
         speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
         dialogueText: "Sorry for being in your way\u2026"
         Options:
         - ResponseText: Continue
@@ -208,6 +214,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 3043.2, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: So.. are you an architect?
         Options:
         - ResponseText: Continue
@@ -219,6 +226,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 3296.8, y: 207.2}
         speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
         dialogueText: She tucks her hair behind her ear, her blue ribbon shining
           under the sun.
         Options:
@@ -231,6 +239,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 3715.2, y: 207.2}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: Yes.. It was a but hard to get the job, but I managed to after
           I proved to the carpenter of the town that I can do it..
         Options:
@@ -243,6 +252,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4130.4004, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: The carpenter?
         Options:
         - ResponseText: Continue
@@ -254,6 +264,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4391.2, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "He\u2019s the oldest of this town, he basically was here when
           this town only had a ran down shed.."
         Options:
@@ -266,6 +277,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 5211.2, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: She notices my questioning look, her piercing gaze framed by
           the shade of purple from under her sleepless eyes
         Options:
@@ -278,6 +290,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 5643.2, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "So\u2026 What brings you in this town? You don\u2019t look
           like you\u2019re from around here.."
         Options:
@@ -290,6 +303,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 6069.6, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019I\u2019m looking for a job currently, I\u2019m
           just\u2026\u2019\u2019 \r\n\r\nShould I tell her? Would it sound odd..
           Maybe she knows someone that knows.. "
@@ -303,6 +317,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 6496, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Actually\u2026 I\u2019m looking for someone, but
           the job part is just for me to be able to stay around for a while searching
           for them\u2019\u2019 "
@@ -316,6 +331,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 6901.6, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "A person? I sadly would not know, I\u2019m terribly sorry,
           I\u2019m mostly buried in my work\u2026 I do know a few people that can
           maybe help\u2026"
@@ -329,6 +345,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2200, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "I awkwardly try to change the topic, helping her pick up her
           bag\u2019s contents off the dusty ground."
         Options:
@@ -341,6 +358,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1724, y: 207.2}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2019No, it\u2019s my fault for not looking.. The sun is
           so bright today, I can barely see a thing\u2019\u2019"
         Options:
@@ -353,6 +371,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 7336, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "As for a job, however\u2026"
         Options:
         - ResponseText: Continue
@@ -364,6 +383,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 7610.4004, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Her hand covered in charcoal dust hands me a compass, seemingly
           old but kept in quite a good shape. I take it and look at her with a questioning
           glance '
@@ -377,6 +397,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 8019.2, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "\u2018\u2019Why are you giving it to me, though? I\u2019m
           no architect, nor artist..\u2019\u2019"
         Options:
@@ -389,6 +410,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 8441.601, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: ou remind me of someone I have once met..
         Options:
         - ResponseText: Continue
@@ -400,6 +422,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 8748, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: 'My work includes precision, so tools like rulers and drawing
           compass are a necessity.. '
         Options:
@@ -412,6 +435,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 9156.8, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "I want you to have this as a token of luck when you find a
           place to work, and when you\u2019re searching for your lost friend.."
         Options:
@@ -424,6 +448,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 9569.601, y: 200.8}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'A shy smile meets my gaze, a slight sparkle glimmering in
           her eyes '
         Options:
@@ -436,6 +461,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 10004, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
+        expression: 0
         dialogueText: "Good luck on your search\u2026 Maybe try talking to the lamplighter?
           She roams around at night every day, she might have seen someone around\u2026"
         Options:
@@ -466,6 +492,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2628, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Compasses, pencils, papers, tools I cannot distinguish...
           I hand them back to her as she carefully places them in her old leather
           bag, unable to close it because of the number of things inside. '
@@ -479,6 +506,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 4838.4004, y: 186.4}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "Weird she says that\u2026 Wasn\u2019t this town around for
           like\u2026 \r\n\r\nHundreds of years\u2026?"
         Options:
