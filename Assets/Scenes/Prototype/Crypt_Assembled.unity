@@ -14081,8 +14081,8 @@ MonoBehaviour:
       _childAIndex: 68
       _childBIndex: 69
       _bounds:
-        Minimum: {x: -23, y: -17}
-        Maximum: {x: -8.5, y: -2.5}
+        Minimum: {x: -18.5, y: -17}
+        Maximum: {x: -8.5, y: -3.5}
       _rectangles: []
     - _parentIndex: 53
       _thisIndex: 61
@@ -14173,13 +14173,9 @@ MonoBehaviour:
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: -23, y: -9.5}
-        Maximum: {x: -21, y: -2.5}
-      _rectangles:
-      - Room: {fileID: 889648350}
-        HalfSize: {x: 3.5, y: 1}
-        CenterPosition: {x: -22, y: -6}
-        Rotation: 90
+        Minimum: {x: -15.75, y: -9.75}
+        Maximum: {x: -15.75, y: -9.75}
+      _rectangles: []
     - _parentIndex: 60
       _thisIndex: 69
       _childAIndex: 0
@@ -14270,7 +14266,7 @@ MonoBehaviour:
       _childBIndex: 77
       _bounds:
         Minimum: {x: -56.5, y: -35}
-        Maximum: {x: -18, y: -9}
+        Maximum: {x: -18, y: -2.5}
       _rectangles: []
     - _parentIndex: 28
       _thisIndex: 75
@@ -14294,7 +14290,7 @@ MonoBehaviour:
       _childBIndex: 79
       _bounds:
         Minimum: {x: -56.5, y: -35}
-        Maximum: {x: -18, y: -9}
+        Maximum: {x: -18, y: -2.5}
       _rectangles: []
     - _parentIndex: 74
       _thisIndex: 77
@@ -14310,7 +14306,7 @@ MonoBehaviour:
       _childBIndex: 81
       _bounds:
         Minimum: {x: -56.5, y: -35}
-        Maximum: {x: -18, y: -9}
+        Maximum: {x: -18, y: -2.5}
       _rectangles: []
     - _parentIndex: 76
       _thisIndex: 79
@@ -14322,6 +14318,54 @@ MonoBehaviour:
       _rectangles: []
     - _parentIndex: 78
       _thisIndex: 80
+      _childAIndex: 82
+      _childBIndex: 83
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 78
+      _thisIndex: 81
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 80
+      _thisIndex: 82
+      _childAIndex: 84
+      _childBIndex: 85
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 80
+      _thisIndex: 83
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 82
+      _thisIndex: 84
+      _childAIndex: 86
+      _childBIndex: 87
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 82
+      _thisIndex: 85
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 84
+      _thisIndex: 86
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -14340,18 +14384,22 @@ MonoBehaviour:
         HalfSize: {x: 1, y: 5}
         CenterPosition: {x: -53.5, y: -30}
         Rotation: 0
-    - _parentIndex: 78
-      _thisIndex: 81
+    - _parentIndex: 84
+      _thisIndex: 87
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
         Minimum: {x: -26, y: -17}
-        Maximum: {x: -18, y: -9}
+        Maximum: {x: -18, y: -2.5}
       _rectangles:
       - Room: {fileID: 148264033}
         HalfSize: {x: 4, y: 4}
         CenterPosition: {x: -22, y: -13}
         Rotation: 0
+      - Room: {fileID: 889648350}
+        HalfSize: {x: 3.5, y: 1}
+        CenterPosition: {x: -22, y: -6}
+        Rotation: 90
     - _parentIndex: 0
       _thisIndex: 0
       _childAIndex: 0
@@ -14672,57 +14720,9 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    <Count>k__BackingField: 82
+    <Count>k__BackingField: 88
   _rectRounding: 0.5
-  _defaultStyle: {fileID: 11400000, guid: 235c7b76927eb3c46bfa4d610f49d12f, type: 2}
+  _defaultStyle: {fileID: 11400000, guid: 5c36f98e8d6f1774680cc5e361a18ae8, type: 2}
   _floorWallHitbox: {fileID: 0}
   _editMode: 0
   _heldRectangles: []
@@ -36838,7 +36838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.81
+      value: -15.26
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36846,7 +36846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.23
+      value: -6.36
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.w
