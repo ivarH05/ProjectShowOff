@@ -11,6 +11,7 @@ namespace NPC
         private List<Clue> clues = new List<Clue>();
         [SerializeField] private AudioBehaviourStrategy _audioBehaviourStrategy;
         [SerializeField] private VisionBehaviourStrategy _visionBehaviourStrategy;
+        [SerializeField] private Animator _animator;
         public bool defaultBehaviour = true;
 
         internal override void Start()
@@ -23,8 +24,13 @@ namespace NPC
         internal override void Update()
         {
             base.Update();
-
+            _animator.SetFloat("Speed", agent.velocity.magnitude);
             CleanupClues();
+        }
+
+        public void SetSeesPlayer(bool value)
+        {
+            _animator.SetBool("SeesPlayer", value);
         }
 
         internal override void OnDestroy()

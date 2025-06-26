@@ -6,6 +6,7 @@ namespace DialogueSystem
     [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/Dialogue")]
     public class Dialogue : ScriptableObject
     {
+        public Character character;
         [TextArea(5, 15)]
         public string Description;
 

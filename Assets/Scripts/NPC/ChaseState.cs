@@ -14,6 +14,9 @@ namespace NPC
             base.StartState(character);
             _trackingPlayer = null;
             character.events.WhileSeePlayer.AddListener(WhileSeePlayer);
+
+            if (character is Enemy e)
+                e.SetSeesPlayer(true);
         }
         public override void UpdateState(Character character)
         {
@@ -24,6 +27,10 @@ namespace NPC
         public override void StopState(Character character) 
         {
             character.events.WhileSeePlayer.RemoveListener(WhileSeePlayer);
+
+
+            if (character is Enemy e)
+                e.SetSeesPlayer(false);
         }
 
         void StopChasing(Character character)

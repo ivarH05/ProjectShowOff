@@ -84,11 +84,14 @@ namespace DialogueSystem
                 SerializedObject so = new SerializedObject(characterData);
                 so.Update();
 
-                SerializedProperty prop = so.FindProperty("speaker");
-                EditorGUILayout.PropertyField(prop, GUIContent.none, true);
+                SerializedProperty speakerProp = so.FindProperty("speaker");
+                EditorGUILayout.PropertyField(speakerProp, GUIContent.none, true);
+                SerializedProperty expressionProp = so.FindProperty("expression");
+                EditorGUILayout.PropertyField(expressionProp, GUIContent.none, true);
                 so.ApplyModifiedProperties();
             });
 
+            imguiContainer.style.marginBottom = 10;
             parent.Add(imguiContainer);
 
 
@@ -154,6 +157,7 @@ namespace DialogueSystem
             TextNodeData data = new TextNodeData(base.SaveData());
             data.dialogueText = dialogueText;
             data.speaker = characterData.speaker;
+            data.expression = characterData.expression;
             return data;
         }
 
@@ -164,6 +168,7 @@ namespace DialogueSystem
                 return;
             SetText(d.dialogueText);
             characterData.speaker = d.speaker;
+            characterData.expression = d.expression;
         }
     }
 }
