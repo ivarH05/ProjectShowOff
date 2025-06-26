@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DialogueSystem
 {
-    public enum DialogueEventType { Disabled, SetConditionFlag, PlaySound, ShakeCamera, AdvanceTime, SetSprite }
+    public enum DialogueEventType { Disabled, SetConditionFlag, PlaySound, ShakeCamera, AdvanceTime }
 
     [System.Serializable]
     public class DialogueEvent
@@ -21,9 +21,6 @@ namespace DialogueSystem
 
         // camera shake
         public float shakeMagnitude;
-
-        // set sprite
-        public Sprite sprite;
 
 
         public void Invoke(DialoguePlayer player)

@@ -13,6 +13,7 @@ namespace DialogueSystem
             this.Position = data.Position;
         }
         public Character speaker;
+        public Expression expression;
         public string dialogueText;
         public List<OptionData> Options;
     }
@@ -22,5 +23,6 @@ namespace DialogueSystem
     {
         [SerializeField]
         public Character speaker;
+        public Expression expression;
     }
 }
