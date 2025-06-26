@@ -15,7 +15,8 @@ namespace Crypts
         }
         private void OnTriggerEnter(Collider other)
         {
-            UIManager.SetState<TryExitCryptUIState>();
+            if(other.transform.CompareTag("Player"))
+                UIManager.SetState<TryExitCryptUIState>();
         }
     }
 }
