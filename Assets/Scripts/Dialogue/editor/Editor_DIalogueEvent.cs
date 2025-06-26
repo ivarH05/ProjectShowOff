@@ -37,10 +37,6 @@ public class DialogueEventDrawer : PropertyDrawer
             case DialogueEventType.ShakeCamera:
                 DrawLabeledField(position.x, ref y, "Magnitude", property.FindPropertyRelative("shakeMagnitude"), LabelWidth);
                 break;
-
-            case DialogueEventType.SetSprite:
-                DrawLabeledField(position.x, ref y, "Sprite", property.FindPropertyRelative("sprite"), LabelWidth);
-                break;
         }
 
         EditorGUI.EndProperty();
