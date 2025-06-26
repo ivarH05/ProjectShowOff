@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype/Daytime.unity
     guid: 1df9429b5fe1f92418d38bf5f8d4cccb
   - enabled: 1
+    path: Assets/Scenes/Prototype/Week8Prototype.unity
+    guid: db8e013be9db50e45826b9e997f2b528
+  - enabled: 0
     path: Assets/Scenes/Prototype/Crypt_Assembled.unity
     guid: 561984d8aa5d410439f2f95e43dfcf1f
   m_configObjects:

@@ -20,7 +20,7 @@ MonoBehaviour:
   LowDetailFloor: {fileID: 0}
   LowDetailCeiling: {fileID: 0}
   LowDetailWall: {fileID: 0}
-  WallHeight: 2.25
+  WallHeight: 69
   ArchDecoration:
     Prefab: {fileID: 0}
     Width: 0
