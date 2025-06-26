@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Priest Simple Day 1
+  m_EditorClassIdentifier: 
+  Description: 
+  _nodes:
+  - rid: 8154432774677987378
+  - rid: 8154432774677987379
+  - rid: 8154432774677987380
+  - rid: 8154432774677987381
+  - rid: 8154432774677987382
+  - rid: 8154432774677987383
+  _connections:
+  - OutputNodeGUID: 5f0ec636-4863-4ed0-8af9-1f5ad8041006
+    OutputNodeIndex: 0
+    InputNodeGUID: 5a3356f7-0bf7-4169-9cbb-ea0540ac24e0
+  - OutputNodeGUID: 5a3356f7-0bf7-4169-9cbb-ea0540ac24e0
+    OutputNodeIndex: 0
+    InputNodeGUID: fdda79f2-71a7-42b6-afa8-2ceb43d8937f
+  - OutputNodeGUID: 5a3356f7-0bf7-4169-9cbb-ea0540ac24e0
+    OutputNodeIndex: 1
+    InputNodeGUID: c550be57-ef7f-4cd1-99a0-74500b11ef9b
+  - OutputNodeGUID: c550be57-ef7f-4cd1-99a0-74500b11ef9b
+    OutputNodeIndex: 0
+    InputNodeGUID: 5887668d-4291-413f-a05e-273f4307b1a2
+  - OutputNodeGUID: 5887668d-4291-413f-a05e-273f4307b1a2
+    OutputNodeIndex: 0
+    InputNodeGUID: fdda79f2-71a7-42b6-afa8-2ceb43d8937f
+  - OutputNodeGUID: fdda79f2-71a7-42b6-afa8-2ceb43d8937f
+    OutputNodeIndex: 0
+    InputNodeGUID: 38330e3f-552d-4425-8914-f5a7e6d37e08
+  references:
+    version: 2
+    RefIds:
+    - rid: 8154432774677987378
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5f0ec636-4863-4ed0-8af9-1f5ad8041006
+        type: 3
+        Position: {x: 100.666664, y: 228.66667}
+    - rid: 8154432774677987379
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5a3356f7-0bf7-4169-9cbb-ea0540ac24e0
+        type: 1
+        Position: {x: 307.3333, y: 230}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: Hello Jacob, what can I assist you with today?
+        Options:
+        - ResponseText: Nevermind
+          index: 0
+        - ResponseText: What do you do as a priest?
+          index: 1
+    - rid: 8154432774677987380
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c550be57-ef7f-4cd1-99a0-74500b11ef9b
+        type: 1
+        Position: {x: 668.6667, y: 301.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: 'Well, my job is to spread the word of god
+
+          and allow
+          people to find him.  '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 8154432774677987381
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5887668d-4291-413f-a05e-273f4307b1a2
+        type: 1
+        Position: {x: 982, y: 307.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        dialogueText: 'I take much pride in this work, and I am the best candidate.
+
+          If
+          you ever seek the word of god, or need to confess your sins, I will always
+          be here'
+        Options:
+        - ResponseText: End
+          index: 0
+    - rid: 8154432774677987382
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 38330e3f-552d-4425-8914-f5a7e6d37e08
+        type: 4
+        Position: {x: 1744.6666, y: 123.33333}
+    - rid: 8154432774677987383
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fdda79f2-71a7-42b6-afa8-2ceb43d8937f
+        type: 5
+        Position: {x: 1493.3333, y: 162}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
