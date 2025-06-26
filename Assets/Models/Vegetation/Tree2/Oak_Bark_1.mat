@@ -85,7 +85,7 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
-    - _Glossiness: 1
+    - _Glossiness: 0.35
     - _HueVariationKwToggle: 0
     - _MaterialID: 5
     - _MaterialTypeMask: 32
