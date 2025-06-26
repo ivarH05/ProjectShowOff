@@ -151,7 +151,7 @@ namespace DialogueSystem
             mainText.text = data.dialogueText;
             characterNameText.text = data.speaker.name;
 
-            SetSprite(data.speaker.GetSprite(data.expression));
+            SetSprite(_activeDialogue.character.GetSprite(data.expression));
         }
 
         void HandleBranchNode()
