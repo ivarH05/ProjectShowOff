@@ -37,7 +37,14 @@ namespace Player
             if(_controller != null && _controller.UncoyotedGrounded)
             {
                 _bobProgress += (_frequency * Mathf.Sqrt(vel/Time.deltaTime) + _idleBobFrequency)*Time.deltaTime;
-                transform.localPosition = Vector3.up * (float)Math.Sin(_bobProgress) * _magnitude * ((1-_idleBobStrength) * _bobStrength + _idleBobStrength);
+                float strength = _magnitude * ((1 - _idleBobStrength) * _bobStrength + _idleBobStrength);
+
+                transform.localPosition = new Vector3((float)Math.Sin(_bobProgress / 2) * strength / 35, (float)Math.Sin(_bobProgress) * strength / 50, 0);
+
+                transform.localEulerAngles = new Vector3(
+                    (float)Math.Sin(_bobProgress) / 4,
+                    (float)Math.Sin(_bobProgress / 2),
+                    0) * strength;
             }
         }
     }
