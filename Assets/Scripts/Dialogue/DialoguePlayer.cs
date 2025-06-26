@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace DialogueSystem
 {
@@ -15,6 +16,7 @@ namespace DialogueSystem
         [SerializeField] private GameObject nextButton;
         [SerializeField] private TMP_Text characterNameText;
         [SerializeField] private TMP_Text mainText;
+        [SerializeField] private Image characterSprite;
         private AudioSource _audioSource;
         private Dialogue _activeDialogue;
         private NodeData activeNode;
@@ -40,6 +42,15 @@ namespace DialogueSystem
                 _singleton.events.OnDialogueEnd.RemoveListener(OnDialogueEnd);
                 OnEnd(); 
             }
+        }
+
+        public void SetSprite(Sprite sprite)
+        {
+            characterSprite.sprite = sprite;
+            characterSprite.transform.localScale = new Vector3(
+                (float)sprite.texture.width / sprite.texture.height,
+                characterSprite.transform.localScale.y,
+                characterSprite.transform.localScale.z);
         }
 
         public void SetDialogue(Dialogue dialogue)
@@ -139,6 +150,8 @@ namespace DialogueSystem
             }
             mainText.text = data.dialogueText;
             characterNameText.text = data.speaker.name;
+
+            SetSprite(data.speaker.GetSprite(data.expression));
         }
 
         void HandleBranchNode()

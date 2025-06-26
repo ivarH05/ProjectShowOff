@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -3255,10 +3255,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631047160}
     m_Modifications:
-    - target: {fileID: 3489834743740159855, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5376591868091971271, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_Name
       value: DialogueScreen
@@ -3273,27 +3269,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.6999512
+      value: 1915.3
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_LocalPosition.x
