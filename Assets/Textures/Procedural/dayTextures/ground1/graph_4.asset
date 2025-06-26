@@ -147,6 +147,10 @@ MonoBehaviour:
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://daytimeGroundDirt_Pebbles\" label=\"\"
     >\n  <presetinput identifier=\"$outputsize\" uid=\"3416256190\" type=\"8\" value=\"10,10\"
     />\n  <presetinput identifier=\"$randomseed\" uid=\"2632841452\" type=\"4\" value=\"5466\"
+    />\n  <presetinput identifier=\"edge_width\" uid=\"2863608948\" type=\"0\" value=\"16\"
+    />\n  <presetinput identifier=\"contrast\" uid=\"2863611630\" type=\"0\" value=\"0\"
+    />\n  <presetinput identifier=\"balance\" uid=\"2863645063\" type=\"0\" value=\"1\"
+    />\n  <presetinput identifier=\"saturation\" uid=\"2863538081\" type=\"0\" value=\"0.411\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -156,8 +160,8 @@ MonoBehaviour:
     >\n  <presetinput identifier=\"$outputsize\" uid=\"3416256190\" type=\"8\" value=\"10,10\"
     />\n </sbspreset>\n"
   MaterialShader: HDRP/Lit
-  RenderTextures: 0
-  OutputRemaped: 0
+  RenderTextures: 1
+  OutputRemaped: 1
   Presets: []
   references:
     version: 2
@@ -214,7 +218,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 2.21
+        Data: 16
         NumericalDescription:
           DefaultValue: 2.21
           MinValue: 0
@@ -234,7 +238,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.9
+        Data: 0
         NumericalDescription:
           DefaultValue: 0.9
           MinValue: 0
@@ -254,7 +258,7 @@ MonoBehaviour:
           GuiDescription: Adjusts the balance between dark and bright values.
           Type: 0
           WidgetType: 1
-        Data: 0.73
+        Data: 1
         NumericalDescription:
           DefaultValue: 0.73
           MinValue: 0
@@ -296,7 +300,7 @@ MonoBehaviour:
             of the input image's color
           Type: 0
           WidgetType: 1
-        Data: 0.5
+        Data: 0.411
         NumericalDescription:
           DefaultValue: 0.5
           MinValue: 0
