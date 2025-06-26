@@ -26,4 +26,4 @@ MonoBehaviour:
     Width: 0
     FlipEveryOther: 0
   PillarDecoration:
-    Prefab: {fileID: 919132149155446097, guid: a3346dbddbac7d94ba3298c036715a02, type: 3}
+    Prefab: {fileID: 4080953915117933670, guid: 8e203ea69560c734d95757a233d48e4f, type: 3}

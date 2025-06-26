@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -13,6 +14,16 @@ namespace UI
         private static UIManager _singleton;
         private static Dictionary<Type, UIState> _states = new Dictionary<Type, UIState>();
         private static UIState _currentState;
+
+        static UIManager()
+        {
+            SceneManager.activeSceneChanged += (Scene A, Scene B) =>
+            {
+                _singleton = null;
+                _states.Clear();
+                _currentState = null;
+            };
+        }
 
         private void Start()
         {
@@ -54,7 +65,6 @@ namespace UI
                 Debug.LogError("Scene doesnt have a UIManager!");
                 return;
             }
-            _currentState?.OnStateStop();
             if(!_states.ContainsKey(typeof(T)))
             {
                 Debug.LogError($"UIState {typeof(T)} not assigned", _singleton);
@@ -62,6 +72,10 @@ namespace UI
             }
 
             UIState state = _states[typeof(T)];
+            if (state == _currentState) 
+                return;
+            
+            _currentState?.OnStateStop();
             _currentState = state;
             _currentState.OnStateStart();
 
