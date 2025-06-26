@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2086529523}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1820908243}
@@ -325,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2010613004}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 683406311}
@@ -536,6 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 446636479}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1367949433}
@@ -751,6 +757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 607128995}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1138141765}
@@ -858,6 +866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1705594988}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1579004661}
@@ -1224,6 +1234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1178013264}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 807582748}
@@ -1754,6 +1766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1189715030}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1935041992}
@@ -1912,6 +1926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 983358138}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1171821548}
@@ -2100,7 +2116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f1f323080fc6840b8837731fee368d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Style: {fileID: 0}
+  Style: {fileID: 11400000, guid: 235c7b76927eb3c46bfa4d610f49d12f, type: 2}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 622429123}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1854420922}
@@ -2151,6 +2169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 669480257}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 341767973}
@@ -2313,6 +2333,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160572724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &162075587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 577716519}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.099
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_Name
+      value: EnemyFinalized
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 01d859a7780ed244cb53c79919c65719, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626295431}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626295430}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626295429}
+  m_SourcePrefab: {fileID: 100100000, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+--- !u!4 &162075588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+  m_PrefabInstance: {fileID: 162075587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &163650498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2495,6 +2598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1748990636}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 258050545}
@@ -2545,6 +2650,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1375315186}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1081076906}
@@ -2862,6 +2969,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1524826839}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1752553737}
@@ -3517,6 +3626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 373355520}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 74706659}
@@ -3572,6 +3683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1293339388}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1400586939}
@@ -4184,6 +4297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 533934115}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 374000748}
@@ -4234,6 +4349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 375217740}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1763654490}
@@ -4289,6 +4406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 245379959}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 807738542}
@@ -4875,6 +4994,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 762013991}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1070078466}
@@ -5479,6 +5600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 600969241}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 103156206}
@@ -6240,6 +6363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1461679199}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1668124665}
@@ -7613,6 +7738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1538056531}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1582931209}
@@ -7663,6 +7790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 27757045}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 916296424}
@@ -8612,6 +8741,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2802933306193397277, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1626295428}
+    - target: {fileID: 2802933306193397277, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
       propertyPath: visionRange
       value: 10
       objectReference: {fileID: 0}
@@ -8668,10 +8801,19 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7907408524508109136, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2104786476808642098, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 162075588}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
+--- !u!4 &577716519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2104786476808642098, guid: 6926fda326605f94a8ea90cbda8e7ac0, type: 3}
+  m_PrefabInstance: {fileID: 577716518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &584110509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9525,13 +9667,12 @@ Transform:
   m_GameObject: {fileID: 628468522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0000014603138, z: -0, w: 1}
-  m_LocalPosition: {x: -10.017, y: 1.076, z: 5.63}
+  m_LocalPosition: {x: -9.777, y: 1.076, z: 5.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1646187189}
   - {fileID: 1117958127}
-  - {fileID: 7736080100739334229}
   m_Father: {fileID: 1058168024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &628468524
@@ -11126,6 +11267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1549668770}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1423413268}
@@ -11381,6 +11524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1484145411}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2044752826}
@@ -11587,6 +11732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2051991787}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1842638517}
@@ -11637,6 +11784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 792232574}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 768286260}
@@ -11687,6 +11836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 677192228}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1644734907}
@@ -12530,6 +12681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 928352901}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 599327944}
@@ -13229,7 +13382,7 @@ MonoBehaviour:
       _childBIndex: 5
       _bounds:
         Minimum: {x: -65.5, y: -38}
-        Maximum: {x: -23, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 1
       _thisIndex: 3
@@ -13245,7 +13398,7 @@ MonoBehaviour:
       _childBIndex: 7
       _bounds:
         Minimum: {x: -59.5, y: -38}
-        Maximum: {x: -23, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 2
       _thisIndex: 5
@@ -13261,7 +13414,7 @@ MonoBehaviour:
       _childBIndex: 9
       _bounds:
         Minimum: {x: -59.5, y: -38}
-        Maximum: {x: -23, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 4
       _thisIndex: 7
@@ -13277,7 +13430,7 @@ MonoBehaviour:
       _childBIndex: 13
       _bounds:
         Minimum: {x: -59.5, y: -38}
-        Maximum: {x: -33.5, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 6
       _thisIndex: 9
@@ -13317,7 +13470,7 @@ MonoBehaviour:
       _childBIndex: 25
       _bounds:
         Minimum: {x: -59.5, y: -38}
-        Maximum: {x: -33.5, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 8
       _thisIndex: 13
@@ -13485,7 +13638,7 @@ MonoBehaviour:
       _childBIndex: 29
       _bounds:
         Minimum: {x: -59.5, y: -38}
-        Maximum: {x: -43.5, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 12
       _thisIndex: 25
@@ -13553,7 +13706,7 @@ MonoBehaviour:
       _childBIndex: 75
       _bounds:
         Minimum: {x: -59.5, y: -35}
-        Maximum: {x: -46, y: 24.5}
+        Maximum: {x: -18, y: 24.5}
       _rectangles: []
     - _parentIndex: 24
       _thisIndex: 29
@@ -13836,7 +13989,7 @@ MonoBehaviour:
       _childAIndex: 60
       _childBIndex: 61
       _bounds:
-        Minimum: {x: -26, y: -17}
+        Minimum: {x: -25, y: -17}
         Maximum: {x: -7, y: 14}
       _rectangles: []
     - _parentIndex: 36
@@ -13928,8 +14081,8 @@ MonoBehaviour:
       _childAIndex: 68
       _childBIndex: 69
       _bounds:
-        Minimum: {x: -26, y: -17}
-        Maximum: {x: -8.5, y: -2.5}
+        Minimum: {x: -18.5, y: -17}
+        Maximum: {x: -8.5, y: -3.5}
       _rectangles: []
     - _parentIndex: 53
       _thisIndex: 61
@@ -14020,17 +14173,9 @@ MonoBehaviour:
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: -26, y: -17}
-        Maximum: {x: -18, y: -2.5}
-      _rectangles:
-      - Room: {fileID: 148264033}
-        HalfSize: {x: 4, y: 4}
-        CenterPosition: {x: -22, y: -13}
-        Rotation: 0
-      - Room: {fileID: 889648350}
-        HalfSize: {x: 3.5, y: 1}
-        CenterPosition: {x: -22, y: -6}
-        Rotation: 90
+        Minimum: {x: -15.75, y: -9.75}
+        Maximum: {x: -15.75, y: -9.75}
+      _rectangles: []
     - _parentIndex: 60
       _thisIndex: 69
       _childAIndex: 0
@@ -14117,6 +14262,110 @@ MonoBehaviour:
         Rotation: 90
     - _parentIndex: 28
       _thisIndex: 74
+      _childAIndex: 76
+      _childBIndex: 77
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 28
+      _thisIndex: 75
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -59.5, y: 9}
+        Maximum: {x: -46, y: 24.5}
+      _rectangles:
+      - Room: {fileID: 1293505046}
+        HalfSize: {x: 4, y: 4}
+        CenterPosition: {x: -55.5, y: 20.5}
+        Rotation: 0
+      - Room: {fileID: 1081503720}
+        HalfSize: {x: 4, y: 4}
+        CenterPosition: {x: -50, y: 13}
+        Rotation: 0
+    - _parentIndex: 74
+      _thisIndex: 76
+      _childAIndex: 78
+      _childBIndex: 79
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 74
+      _thisIndex: 77
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 76
+      _thisIndex: 78
+      _childAIndex: 80
+      _childBIndex: 81
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 76
+      _thisIndex: 79
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 78
+      _thisIndex: 80
+      _childAIndex: 82
+      _childBIndex: 83
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 78
+      _thisIndex: 81
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 80
+      _thisIndex: 82
+      _childAIndex: 84
+      _childBIndex: 85
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 80
+      _thisIndex: 83
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 82
+      _thisIndex: 84
+      _childAIndex: 86
+      _childBIndex: 87
+      _bounds:
+        Minimum: {x: -56.5, y: -35}
+        Maximum: {x: -18, y: -2.5}
+      _rectangles: []
+    - _parentIndex: 82
+      _thisIndex: 85
+      _childAIndex: 0
+      _childBIndex: 0
+      _bounds:
+        Minimum: {x: -37.25, y: -22}
+        Maximum: {x: -37.25, y: -22}
+      _rectangles: []
+    - _parentIndex: 84
+      _thisIndex: 86
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
@@ -14135,22 +14384,22 @@ MonoBehaviour:
         HalfSize: {x: 1, y: 5}
         CenterPosition: {x: -53.5, y: -30}
         Rotation: 0
-    - _parentIndex: 28
-      _thisIndex: 75
+    - _parentIndex: 84
+      _thisIndex: 87
       _childAIndex: 0
       _childBIndex: 0
       _bounds:
-        Minimum: {x: -59.5, y: 9}
-        Maximum: {x: -46, y: 24.5}
+        Minimum: {x: -26, y: -17}
+        Maximum: {x: -18, y: -2.5}
       _rectangles:
-      - Room: {fileID: 1293505046}
+      - Room: {fileID: 148264033}
         HalfSize: {x: 4, y: 4}
-        CenterPosition: {x: -55.5, y: 20.5}
+        CenterPosition: {x: -22, y: -13}
         Rotation: 0
-      - Room: {fileID: 1081503720}
-        HalfSize: {x: 4, y: 4}
-        CenterPosition: {x: -50, y: 13}
-        Rotation: 0
+      - Room: {fileID: 889648350}
+        HalfSize: {x: 3.5, y: 1}
+        CenterPosition: {x: -22, y: -6}
+        Rotation: 90
     - _parentIndex: 0
       _thisIndex: 0
       _childAIndex: 0
@@ -14471,105 +14720,9 @@ MonoBehaviour:
         Minimum: {x: 0, y: 0}
         Maximum: {x: 0, y: 0}
       _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    - _parentIndex: 0
-      _thisIndex: 0
-      _childAIndex: 0
-      _childBIndex: 0
-      _bounds:
-        Minimum: {x: 0, y: 0}
-        Maximum: {x: 0, y: 0}
-      _rectangles: []
-    <Count>k__BackingField: 76
+    <Count>k__BackingField: 88
   _rectRounding: 0.5
-  _defaultStyle: {fileID: 11400000, guid: ab1aae7ec1719df46b4a31ace6fb2163, type: 2}
+  _defaultStyle: {fileID: 11400000, guid: 5c36f98e8d6f1774680cc5e361a18ae8, type: 2}
   _floorWallHitbox: {fileID: 0}
   _editMode: 0
   _heldRectangles: []
@@ -14810,6 +14963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 408450156}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1262180242}
@@ -15493,6 +15648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1206860955}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 940059026}
@@ -15717,6 +15874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1538964797}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 557676291}
@@ -15767,6 +15926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2061590732}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1820732861}
@@ -16016,6 +16177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1990535232}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 551771180}
@@ -16440,6 +16603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1326707791}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 818437313}
@@ -16890,6 +17055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1058168023}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 217601881}
@@ -16973,6 +17140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 640554753}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1026683570}
@@ -17023,6 +17192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 943062966}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1450458939}
@@ -17391,6 +17562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 360106408}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 743174974}
@@ -17511,6 +17684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 886724101}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2146322831}
@@ -17561,6 +17736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 938964426}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2040008074}
@@ -17742,6 +17919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1551000057}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 595929636}
@@ -18025,6 +18204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1529298453}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1966746551}
@@ -18928,6 +19109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1428868502}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2029396670}
@@ -18978,6 +19161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1830671914}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 679397683}
@@ -19523,6 +19708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 542856854}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2024858269}
@@ -20178,6 +20365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 646768941}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2076828154}
@@ -20259,6 +20448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1375880760}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 628635723}
@@ -21357,6 +21548,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1100718680}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1762301666}
@@ -21729,6 +21922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1720193527}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1190407842}
@@ -22141,6 +22336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2049952312}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1747705308}
@@ -22299,6 +22496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 576359219}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 659801162}
@@ -23459,6 +23658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1067759928}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1308058448}
@@ -23743,6 +23944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 472737653}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2123635815}
@@ -23793,6 +23996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2120463607}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 942378402}
@@ -23843,6 +24048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2024329104}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2008388824}
@@ -24169,6 +24376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1024059737}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 778345632}
@@ -24397,6 +24606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1442420940}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1838302704}
@@ -24669,6 +24880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 885656853}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1349045287}
@@ -24929,6 +25142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1148544220}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2037727382}
@@ -25048,6 +25263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1272420052}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 633634170}
@@ -25098,6 +25315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 401878716}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1104355885}
@@ -25565,6 +25784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 745494257}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1925581802}
@@ -26799,6 +27020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1118830296}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 556519943}
@@ -26889,6 +27112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1158480903}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 461833859}
@@ -27002,6 +27227,78 @@ Transform:
   - {fileID: 91346000}
   m_Father: {fileID: 1965195212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1626295427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+  m_PrefabInstance: {fileID: 162075587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1626295428 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 0174c47ec307594478fef21c772d5aef, type: 3}
+  m_PrefabInstance: {fileID: 162075587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1626295429
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626295427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.18325035
+  m_Height: 1.8417853
+  m_Direction: 1
+  m_Center: {x: -0.024804384, y: 0.92779976, z: 0.006635517}
+--- !u!114 &1626295430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626295427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea5b5672b3a9074e9a2147c65703662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1626295431
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626295427}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1637149701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27300,6 +27597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 280788583}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 439840797}
@@ -27710,6 +28009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 152017023}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1512700856}
@@ -27935,6 +28236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 371471713}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 2015574094}
@@ -28278,6 +28581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1875323664}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1673434722}
@@ -28882,6 +29187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1003437211}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1897197696}
@@ -29672,6 +29979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 360756916}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 820457192}
@@ -29722,6 +30031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 503536263}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 290302071}
@@ -30524,6 +30835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1503391733}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 71779800}
@@ -32066,6 +32379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 777883379}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 790314767}
@@ -32363,6 +32678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1334994457}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1216640824}
@@ -32526,6 +32843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1620513480}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1133174950}
@@ -34410,6 +34729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2146073024}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1065614320}
@@ -34903,6 +35224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 228455664}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1369540385}
@@ -34953,6 +35276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1845189277}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 113081837}
@@ -35035,6 +35360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 259057044}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1727645707}
@@ -35926,6 +36253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 305008794}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1706537093}
@@ -36430,6 +36759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1124990278}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1910049716}
@@ -36507,7 +36838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.24
+      value: -15.26
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36515,23 +36846,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.64
+      value: -6.36
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.11713781
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9931157
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36539,7 +36870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -166.546
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -36689,6 +37020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1081466512}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 465410667}
@@ -36744,6 +37077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
+  <FlipWallDecorationMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 2111243551}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 343636488}
@@ -37298,6 +37633,75 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &6096460662279232253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5301960079239398658, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: beam
+      value: 
+      objectReference: {fileID: 1117958127}
+    - target: {fileID: 5301960079239398658, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: basket1
+      value: 
+      objectReference: {fileID: 1617230086}
+    - target: {fileID: 5301960079239398658, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: basket2
+      value: 
+      objectReference: {fileID: 823291595}
+    - target: {fileID: 7477779014512087042, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_Name
+      value: scale
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -47.291
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0747328
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.415846
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822111303764101816, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5281b0b4d9252e4469064c23871afe32, type: 3}
 --- !u!4 &6212723496823098142
 Transform:
   m_ObjectHideFlags: 0
@@ -37391,22 +37795,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6924217845093571311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7736080100739334229}
-  m_Layer: 0
-  m_Name: scale
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &6976886835648140602
 GameObject:
   m_ObjectHideFlags: 0
@@ -37439,21 +37827,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1646187189}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &7736080100739334229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6924217845093571311}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.0000014603138, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 628468523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8511420334335687559
 MeshFilter:
@@ -37500,3 +37873,4 @@ SceneRoots:
   - {fileID: 798825016}
   - {fileID: 256232870}
   - {fileID: 200310429}
+  - {fileID: 6096460662279232253}

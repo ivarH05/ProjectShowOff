@@ -16,7 +16,7 @@ namespace Player
 
         private int peekDirection;
 
-        Vector2 _currentMouse = new Vector2();
+        Vector2 _currentMouse = new Vector2(90,0);
 
         public override void StartStrategy(PlayerController controller) 
         {
