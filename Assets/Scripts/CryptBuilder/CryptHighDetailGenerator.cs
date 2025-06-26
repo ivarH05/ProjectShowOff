@@ -27,6 +27,7 @@ namespace CryptBuilder
 
             var floorInstance = Object.Instantiate(prefabs[Random.Range(0, prefabs.Length)], _currentRoom.Room.GeneratedChildren.transform);
             floorInstance.transform.position = (point + _tileOffset).To3D();
+            floorInstance.transform.rotation = Quaternion.AngleAxis(90 * (int)(Random.value * 4), Vector3.up);
         }
 
         public void GenerateFloor(BoundingBox shape){}
@@ -45,7 +46,6 @@ namespace CryptBuilder
         public void GenerateWall(Vector2 start, Vector2 end, Vector2 normal)
         {
             if(!_validRoom) return;
-            if (_currentStyle.ArchDecoration.Width < .02) return;
             if (_currentStyle.ArchDecoration.Prefab == null && _currentStyle.PillarDecoration.Prefab == null) return;
 
             WallPointType wallStart = WallTypeAtPoint(start);
@@ -76,6 +76,7 @@ namespace CryptBuilder
             var detailCount = Mathf.Abs(length / _currentStyle.ArchDecoration.Width);
             bool integerDetailCount = Mathf.Abs(detailCount - (int)detailCount) < .01f;
 
+            if (_currentStyle.ArchDecoration.Width < .02) return;
             if (_currentStyle.ArchDecoration.Prefab == null) return;
             bool genArches = (_currentRoom.Room.DontGenerateWallDecMask & (1 << _currentWallIndex)) == 0;
             if (!genArches || !(startIsCorner || endIsCorner || integerDetailCount)) 
