@@ -12,21 +12,7 @@ namespace AdvancedSound
         static SoundHandler Instance;
 
         List<PlayedSound> _playedSounds = new();
-        int _pos;
         
-        private void OnAudioFilterRead(float[] data, int channels)
-        {
-            /*
-            for (int i = 0; i < data.Length; i += channels) 
-            { 
-                for(int ch = 0; ch<channels; ch++)
-                {
-                    data[i + ch] = Mathf.Sin(_pos * (.03f+.02f*ch))*.1f;
-                }
-                _pos++;
-            }*/
-        }
-
         private void Awake()
         {
             Instance = this;
@@ -94,11 +80,11 @@ namespace AdvancedSound
             }
         }
 
-
         struct PlayedSound
         {
             public float StartTime;
             public Sound Sound;
+            public AudioClip PlayedClip;
             public Vector3 Position;
         }
     }
