@@ -22,7 +22,7 @@ MonoBehaviour:
   LowDetailWall: {fileID: 2100000, guid: 94b9da6c7cdf9cb44b7bf31129341fdb, type: 2}
   WallHeight: 2.25
   ArchDecoration:
-    Prefab: {fileID: 2261119299866131927, guid: 7ae8b92635259694c9a8950164138b9d, type: 3}
+    Prefab: {fileID: 5464941834703750277, guid: 2148e93aa5aa81c4ea1e18e8eccdb437, type: 3}
     Width: 0.7
     FlipEveryOther: 1
   PillarDecoration:
