@@ -20,3 +20,10 @@ MonoBehaviour:
   LowDetailFloor: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}
   LowDetailCeiling: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}
   LowDetailWall: {fileID: 2100000, guid: cf8ad0299733d7a408db3720e773571b, type: 2}
+  WallHeight: 0
+  ArchDecoration:
+    Prefab: {fileID: 2295063977814848268, guid: 7ae8b92635259694c9a8950164138b9d, type: 3}
+    Width: 1
+    FlipEveryOther: 0
+  PillarDecoration:
+    Prefab: {fileID: 0}
