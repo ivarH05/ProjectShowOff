@@ -32,7 +32,7 @@ namespace Daytime
         public void RecalculateDialogue()
         {
             currentDialogue = DialogueSet?.GetDialogue();
-            if (currentDialogue == null || TimeHandler.IsNight() != showAtNight)
+            if (currentDialogue == null || (TimeHandler.IsNight() && !showAtNight))
                 this.enabled = false;
             else
                 this.enabled = true;
@@ -70,8 +70,10 @@ namespace Daytime
                 SetTagRecursive(t.gameObject, mask);
         }
 
-        void OnClick()
+        public void OnClick()
         {
+            if (TimeHandler.IsNight())
+                return;
 
             _follow = Camera.main.GetComponent<FollowTransform>();
             _previousTransform = (_follow.ToFollow.position, _follow.ToFollow.rotation);
@@ -82,5 +84,7 @@ namespace Daytime
 
             DialoguePlayer.StartNewDialogue(currentDialogue, ResetCamera);
         }
+
+        public void SetHoverOnly(bool value) => hoverOnly = value;
     }
 }

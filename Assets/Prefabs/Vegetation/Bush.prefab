@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: b9dd8e961787a18468f16eca0de4ff5b, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.0030057682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1218912716677395249, guid: b9dd8e961787a18468f16eca0de4ff5b, type: 3}

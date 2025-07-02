@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Priest
   m_EditorClassIdentifier: 
   name: Priest
-  sprite: {fileID: 21300000, guid: e2aa188cd189eb04cbc7b69879919cd1, type: 3}
+  sprite: {fileID: 21300000, guid: afa8751d7b151d241b969287756e9cdc, type: 3}
+  expressions: []
