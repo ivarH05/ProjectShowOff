@@ -26,12 +26,12 @@ namespace Daytime
                 return;
             }
 
-            StartCoroutine(PlayRandomSound());
+            StartCoroutine(PlayRandomSound(Random.value));
         }
 
-        IEnumerator PlayRandomSound()
+        IEnumerator PlayRandomSound(float delayMult = 1)
         {
-            yield return new WaitForSeconds(Random.Range(_minimumDelay, _maximumDelay));
+            yield return new WaitForSeconds(Random.Range(_minimumDelay, _maximumDelay) * delayMult);
 
             int attempt = default;
             for(int i = 0; i < 10; i++)
@@ -41,6 +41,7 @@ namespace Daytime
                     break;
             }
 
+            _previousSoundIndex = attempt;
             _sounds[attempt].Play();
 
             StartCoroutine(PlayRandomSound());
