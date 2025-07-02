@@ -34,7 +34,7 @@ public class GlitchEffectHandler : MonoBehaviour
         _volume.weight = _strength;
         _material.SetFloat("_OffsetStrength", _strength * 0.025f * strengthMultiplier);
         _material.SetFloat("_ChromaticAberationStrength", _strength * 0.015f * strengthMultiplier);
-        _material.SetFloat("_Seed", Random.value * 5000000);
+        _material.SetFloat("_Seed", Random.value * 16000);
         _timer = Mathf.Clamp(Mathf.Pow(Random.value * 2 - 1, 10), 0.03f, 0.7f);
     }
 
