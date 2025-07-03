@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b072f8a47b8a4e8e42f39cad01ada, type: 3}
   m_Name: Lamplighter
   m_EditorClassIdentifier: 
-  name: Lamplighter
+  name: Wilhelmina Salem
   sprite: {fileID: 21300000, guid: 22b2de52c1a9a5845b982396867888ad, type: 3}
-  expressions: []
+  expressions:
+  - expression: 3
+    sprite: {fileID: 21300000, guid: 77e430534e2c1ed40a829f86d3bbc29e, type: 3}
+  - expression: 2
+    sprite: {fileID: 21300000, guid: d413860f2d5c8e741aef89a72baf4860, type: 3}
+  - expression: 1
+    sprite: {fileID: 21300000, guid: 7bb447d5fa783144cb602101f1e040f4, type: 3}
