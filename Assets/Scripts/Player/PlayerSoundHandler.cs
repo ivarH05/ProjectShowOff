@@ -1,4 +1,5 @@
 using AdvancedSound;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,7 @@ namespace Player
         [SerializeField, Range(0, 1)] float WalkSpeedFootstepFloor = .2f;
         [SerializeField] float FootstepFrequencyMultiplier;
 
-        [SerializeField] Gradient _loudnessColorGradient;
-        [SerializeField] Graphic _loudnessIndicator;
+        [SerializeField] LoudnessIndicator _loudnessIndicator;
         [SerializeField] float _indicatorFadeoutSpeed = 1;
         [SerializeField] float _indicatorSensitivity = 1;
         [SerializeField] float _indicatorSmoothness = 2;
@@ -94,7 +94,7 @@ namespace Player
             _currentLoudness -= Time.deltaTime * _indicatorFadeoutSpeed;
             _currentLoudness = Mathf.Clamp01(_currentLoudness);
             _smoothCurrentLoudness -= (_smoothCurrentLoudness - _currentLoudness) * (1- Mathf.Exp(-Time.deltaTime * _indicatorSmoothness));
-            _loudnessIndicator.color = _loudnessColorGradient.Evaluate(_smoothCurrentLoudness);
+            _loudnessIndicator.Loudness = _smoothCurrentLoudness;
         }
 
         void OnJump()
