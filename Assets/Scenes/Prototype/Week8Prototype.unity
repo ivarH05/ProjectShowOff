@@ -42392,7 +42392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 1
   _disabledAtDistance: {fileID: 152017023}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 192877976}
@@ -44940,7 +44940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 2
   _disabledAtDistance: {fileID: 1003437211}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 644999049}
@@ -55559,7 +55559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.4
+      value: -14.24
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -55567,7 +55567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.1
+      value: -5.85
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.w

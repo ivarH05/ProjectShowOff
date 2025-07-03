@@ -129,12 +129,12 @@ namespace CryptBuilder
                 bool generate = ((tgt.DontGenerateWallDecMask >> _selected) & 1u) == 0;
 
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Label($"Generate wall: ");
+                GUILayout.Label($"Generate wall arches: ");
                 var newGen = EditorGUILayout.Toggle(generate);
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Label($"Wall flipped: ");
+                GUILayout.Label($"Wall arches flipped: ");
                 var newcur = EditorGUILayout.Toggle(_cur);
                 EditorGUILayout.EndHorizontal();
 
