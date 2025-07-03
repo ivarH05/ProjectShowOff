@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilePrefabs:
   - {fileID: 1808051665107411577, guid: eb02e356b88727d458926817139e840f, type: 3}
+  - {fileID: 1808051665107411577, guid: c8d0221d476050946bde0a2a6131695b, type: 3}
+  - {fileID: 1808051665107411577, guid: ec676e768b9473f49bbf93ca81b76284, type: 3}
+  - {fileID: 1808051665107411577, guid: acb6304486c691c44af38c86ef231ac3, type: 3}
   WallPrefabs:
   - {fileID: 2529809563243432532, guid: 86fd3411070e61e45b85107bd422341e, type: 3}
   CeilingPrefabs:
