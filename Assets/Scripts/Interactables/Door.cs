@@ -166,11 +166,10 @@ namespace Interactables
 
             if (Mathf.Abs(cam.localEulerAngles.z) < 1)
             {
-                Vector3 temp = cam.position;
                 controller.Body.isKinematic = false;
                 controller.MovePosition(controller.Body.position + (controller.transform.TransformPoint(cam.localPosition) - _originalCameraPosition));
 
-                cam.position = temp;
+                cam.localPosition = Vector3.zero;
                 cam.localEulerAngles = new Vector3(cam.localEulerAngles.x, cam.localEulerAngles.y, 0);
 
                 controller.SwitchMouseStrategy<LookAround>();

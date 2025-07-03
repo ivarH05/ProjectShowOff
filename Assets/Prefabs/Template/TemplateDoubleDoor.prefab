@@ -103,6 +103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1094658922788455492}
     m_Modifications:
+    - target: {fileID: 1387883358539444601, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: m_Size.z
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1397198483519223238, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: flipped
       value: 1
@@ -142,6 +146,10 @@ PrefabInstance:
     - target: {fileID: 2275285127103864161, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_Name
       value: LeftDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142222992753867783, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
+      propertyPath: m_Size.z
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4322272892429166820, guid: 807507b638a00fe40a5c8e1db145314f, type: 3}
       propertyPath: m_LocalScale.x
