@@ -6873,7 +6873,7 @@ PrefabInstance:
     - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
       propertyPath: DialogueSet
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: a5c62d07edab70242878f30090af26aa, type: 2}
     - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
       propertyPath: showAtNight
       value: 1
@@ -7913,6 +7913,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 617013953}
     - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
+      propertyPath: DialogueSet
+      value: 
+      objectReference: {fileID: 11400000, guid: ff7e72ac3ee62e043af8099159e94499, type: 2}
+    - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
       propertyPath: LookAtHouseTransform
       value: 
       objectReference: {fileID: 1107836746}
@@ -8329,6 +8333,10 @@ PrefabInstance:
       propertyPath: Renderer
       value: 
       objectReference: {fileID: 146160064}
+    - target: {fileID: 9113942310460396250, guid: c816e88e57b902345b1ea376a646c2b4, type: 3}
+      propertyPath: DialogueSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e39a4069e8848249b6067dc3d18cdd4, type: 2}
     - target: {fileID: 9113942310460396250, guid: c816e88e57b902345b1ea376a646c2b4, type: 3}
       propertyPath: LookAtHouseTransform
       value: 

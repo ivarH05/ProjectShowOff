@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Carpenter Day 2 1Death
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421809
+  - rid: 2736092980574421810
+  - rid: 2736092980574421811
+  - rid: 2736092980574421812
+  - rid: 2736092980574421813
+  - rid: 2736092980574421814
+  - rid: 2736092980574421815
+  - rid: 2736092980574421816
+  - rid: 2736092980574421817
+  - rid: 2736092980574421818
+  - rid: 2736092980574421819
+  - rid: 2736092980574421820
+  - rid: 2736092980574421821
+  - rid: 2736092980574421822
+  _connections:
+  - OutputNodeGUID: b9d4c109-4d0b-494e-9392-38006bcd4675
+    OutputNodeIndex: 0
+    InputNodeGUID: d362931a-4106-4ac8-add5-f518dfcc86c1
+  - OutputNodeGUID: d362931a-4106-4ac8-add5-f518dfcc86c1
+    OutputNodeIndex: 0
+    InputNodeGUID: 3dad937d-d5a2-4dd5-b2a7-04405eb7b9c5
+  - OutputNodeGUID: 3dad937d-d5a2-4dd5-b2a7-04405eb7b9c5
+    OutputNodeIndex: 0
+    InputNodeGUID: 0a895379-7784-42b7-bc71-86e62f4cdf16
+  - OutputNodeGUID: 0a895379-7784-42b7-bc71-86e62f4cdf16
+    OutputNodeIndex: 0
+    InputNodeGUID: 70c9ac28-3a62-42fb-a8a0-d27c7a16a156
+  - OutputNodeGUID: 70c9ac28-3a62-42fb-a8a0-d27c7a16a156
+    OutputNodeIndex: 0
+    InputNodeGUID: 1e74ca43-4057-4da7-a0ef-167e121d2f28
+  - OutputNodeGUID: 1e74ca43-4057-4da7-a0ef-167e121d2f28
+    OutputNodeIndex: 0
+    InputNodeGUID: d06636cd-445c-4f31-87db-c2cc13076c2d
+  - OutputNodeGUID: d06636cd-445c-4f31-87db-c2cc13076c2d
+    OutputNodeIndex: 0
+    InputNodeGUID: f6f240fc-5413-4de4-90f4-512fdc854a0f
+  - OutputNodeGUID: d06636cd-445c-4f31-87db-c2cc13076c2d
+    OutputNodeIndex: 1
+    InputNodeGUID: 03e06f50-b72a-4f0e-b0fb-0e1a4f2ad615
+  - OutputNodeGUID: f6f240fc-5413-4de4-90f4-512fdc854a0f
+    OutputNodeIndex: 0
+    InputNodeGUID: c3031351-933a-4c52-9ed1-47172cc2bf89
+  - OutputNodeGUID: 03e06f50-b72a-4f0e-b0fb-0e1a4f2ad615
+    OutputNodeIndex: 0
+    InputNodeGUID: c3031351-933a-4c52-9ed1-47172cc2bf89
+  - OutputNodeGUID: c3031351-933a-4c52-9ed1-47172cc2bf89
+    OutputNodeIndex: 0
+    InputNodeGUID: 4bd85160-b0f0-404d-b3a0-a75e67dc6b1e
+  - OutputNodeGUID: 4bd85160-b0f0-404d-b3a0-a75e67dc6b1e
+    OutputNodeIndex: 0
+    InputNodeGUID: 827dbdfa-5f86-426b-93ff-734cfcdf51b5
+  - OutputNodeGUID: 827dbdfa-5f86-426b-93ff-734cfcdf51b5
+    OutputNodeIndex: 0
+    InputNodeGUID: 342d0acc-434f-4073-af8b-d9171e3a11fc
+  - OutputNodeGUID: 342d0acc-434f-4073-af8b-d9171e3a11fc
+    OutputNodeIndex: 0
+    InputNodeGUID: 51888589-8569-4a61-af4c-3df2f1845b82
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421809
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b9d4c109-4d0b-494e-9392-38006bcd4675
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092980574421810
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d362931a-4106-4ac8-add5-f518dfcc86c1
+        type: 1
+        Position: {x: 402, y: 242.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "The usual smell of cedar and maple is surprisingly absent
+          from the carpenter's shop when you walk past. No sounds of work, just eerie
+          silence and quiet. \_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421811
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3dad937d-d5a2-4dd5-b2a7-04405eb7b9c5
+        type: 1
+        Position: {x: 842, y: 263.33334}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "As the carpenter sees you walk past, he calls you over\_\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421812
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0a895379-7784-42b7-bc71-86e62f4cdf16
+        type: 1
+        Position: {x: 1200.6666, y: 265.33334}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Hey boy, I'd assume you aren't much of an artist, are you?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421813
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 70c9ac28-3a62-42fb-a8a0-d27c7a16a156
+        type: 1
+        Position: {x: 1624, y: 270.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: I work on a farm, the only art I do is herding cows back to
+          the shed in what you could call a pattern
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421814
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1e74ca43-4057-4da7-a0ef-167e121d2f28
+        type: 1
+        Position: {x: 2046, y: 276.66666}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 2
+        dialogueText: Damn. I've been having issues getting all my ideas properly
+          drawn, I am not much of a mathematician, I can't seem to get my scale and
+          edge alignment right.
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421815
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d06636cd-445c-4f31-87db-c2cc13076c2d
+        type: 1
+        Position: {x: 2470, y: 281.33334}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 2
+        dialogueText: 'I knew this job had a lot of math involved, and I willfully
+          ignored it when I was young but now that I pride myself in my skills...
+          I need to learn. I don''t know anyone that can do it for me, so I suppose
+          some elbow grease will have to do it. '
+        Options:
+        - ResponseText: '"What do you mean there''s no-one? Elisabeth should be able
+            to help, right?"'
+          index: 0
+        - ResponseText: "Stay Silent\_\_"
+          index: 1
+    - rid: 2736092980574421816
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f6f240fc-5413-4de4-90f4-512fdc854a0f
+        type: 1
+        Position: {x: 2942.6667, y: 140}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Who are you talking about? Is she maybe from Enschede? Haven't
+          been over there in a while
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421817
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 03e06f50-b72a-4f0e-b0fb-0e1a4f2ad615
+        type: 1
+        Position: {x: 2882.6667, y: 446}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Maybe someone in a town nearby can teach me some. I am sure
+          there's some other carpenters that don't struggle with this
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421818
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c3031351-933a-4c52-9ed1-47172cc2bf89
+        type: 1
+        Position: {x: 3398, y: 328}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: At least everything I make holds up still, so I have no issues
+          so far. Just getting frustrated at the recent failures I had when trying
+          to sketch for a new house in town
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421819
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4bd85160-b0f0-404d-b3a0-a75e67dc6b1e
+        type: 1
+        Position: {x: 3881.3335, y: 349.33334}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: We have a great spot in town that really looks like it needs
+          something there, and as long as I can figure out how to make a proper sketch
+          for it, it could be yours even when it's done. Wouldn't be a bad place
+          to stay
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421820
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 827dbdfa-5f86-426b-93ff-734cfcdf51b5
+        type: 1
+        Position: {x: 4368.6665, y: 356.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: If I can somehow find the money, it sounds like it would be
+          great
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421821
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 51888589-8569-4a61-af4c-3df2f1845b82
+        type: 4
+        Position: {x: 5008, y: 391.33334}
+    - rid: 2736092980574421822
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 342d0acc-434f-4073-af8b-d9171e3a11fc
+        type: 5
+        Position: {x: 4809.333, y: 470.66666}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0

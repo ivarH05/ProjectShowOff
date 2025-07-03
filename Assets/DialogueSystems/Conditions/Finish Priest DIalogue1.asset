@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b072f8a47b8a4e8e42f39cad01ada, type: 3}
-  m_Name: Priest
+  m_Script: {fileID: 11500000, guid: a331313c8680a4444a3b8a59627dbd8f, type: 3}
+  m_Name: Finish Priest DIalogue1
   m_EditorClassIdentifier: 
-  name: Tomas De Ruiter
-  sprite: {fileID: 21300000, guid: afa8751d7b151d241b969287756e9cdc, type: 3}
-  expressions: []
+  description: 

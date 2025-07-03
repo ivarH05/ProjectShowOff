@@ -1,0 +1,314 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Smith day 3 Deathless
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092979401588957
+  - rid: 2736092979401588958
+  - rid: 2736092979401588959
+  - rid: 2736092979401588960
+  - rid: 2736092979401588961
+  - rid: 2736092979401588962
+  - rid: 2736092979401588963
+  - rid: 2736092979401588964
+  - rid: 2736092979401588965
+  - rid: 2736092979401588966
+  - rid: 2736092979401588967
+  - rid: 2736092979401588968
+  - rid: 2736092979401588969
+  - rid: 2736092979401588970
+  - rid: 2736092979401588971
+  - rid: 2736092979401588972
+  - rid: 2736092979401588973
+  - rid: 2736092979401588974
+  - rid: 2736092979401588975
+  _connections:
+  - OutputNodeGUID: fe26c7f0-1874-4133-8c4d-bfde047e2f8f
+    OutputNodeIndex: 0
+    InputNodeGUID: 8861544c-1507-439f-b300-3a6a2d48cf62
+  - OutputNodeGUID: 8861544c-1507-439f-b300-3a6a2d48cf62
+    OutputNodeIndex: 0
+    InputNodeGUID: fd5950a8-f591-48b2-9246-74a9afad3675
+  - OutputNodeGUID: 8861544c-1507-439f-b300-3a6a2d48cf62
+    OutputNodeIndex: 1
+    InputNodeGUID: 82c25551-8256-4013-a1da-7555f73fa86a
+  - OutputNodeGUID: 0981e56a-b0e8-4809-a9e7-a5b666ac43db
+    OutputNodeIndex: 0
+    InputNodeGUID: 83cd2c9d-46a0-4cfa-b084-cd65161c9123
+  - OutputNodeGUID: fd5950a8-f591-48b2-9246-74a9afad3675
+    OutputNodeIndex: 0
+    InputNodeGUID: 0981e56a-b0e8-4809-a9e7-a5b666ac43db
+  - OutputNodeGUID: 82c25551-8256-4013-a1da-7555f73fa86a
+    OutputNodeIndex: 0
+    InputNodeGUID: 950cc531-f91e-44f1-bd24-4c20f8234f37
+  - OutputNodeGUID: 950cc531-f91e-44f1-bd24-4c20f8234f37
+    OutputNodeIndex: 0
+    InputNodeGUID: c11e068c-9834-45d4-aec7-a6f90ff8b46e
+  - OutputNodeGUID: c11e068c-9834-45d4-aec7-a6f90ff8b46e
+    OutputNodeIndex: 0
+    InputNodeGUID: 41c2de22-75a7-4d3c-920f-4b3f53163f04
+  - OutputNodeGUID: 41c2de22-75a7-4d3c-920f-4b3f53163f04
+    OutputNodeIndex: 0
+    InputNodeGUID: 4cd1f5e1-ce4d-4af2-bf7a-2f767942d205
+  - OutputNodeGUID: 0ab10ff8-7efb-43e7-bf96-4197716272ba
+    OutputNodeIndex: 0
+    InputNodeGUID: b679ff11-4e4c-417e-963e-c3798d498160
+  - OutputNodeGUID: b679ff11-4e4c-417e-963e-c3798d498160
+    OutputNodeIndex: 0
+    InputNodeGUID: 9a57abf8-e2b2-4f4b-b432-127b01cda525
+  - OutputNodeGUID: 9a57abf8-e2b2-4f4b-b432-127b01cda525
+    OutputNodeIndex: 0
+    InputNodeGUID: 11b201a6-f079-4c11-9993-6407c3378cc1
+  - OutputNodeGUID: 11b201a6-f079-4c11-9993-6407c3378cc1
+    OutputNodeIndex: 0
+    InputNodeGUID: 1616dac7-9487-49c5-aebb-777377fdbe9f
+  - OutputNodeGUID: 1616dac7-9487-49c5-aebb-777377fdbe9f
+    OutputNodeIndex: 0
+    InputNodeGUID: 751a635f-a8bb-4eb7-98ce-f69f51bc663a
+  - OutputNodeGUID: 751a635f-a8bb-4eb7-98ce-f69f51bc663a
+    OutputNodeIndex: 0
+    InputNodeGUID: 49f8617c-a3f6-4683-8d61-3875bd730e73
+  - OutputNodeGUID: 49f8617c-a3f6-4683-8d61-3875bd730e73
+    OutputNodeIndex: 0
+    InputNodeGUID: c6e8aa95-7c78-432e-bc56-6f65c8c66323
+  - OutputNodeGUID: c6e8aa95-7c78-432e-bc56-6f65c8c66323
+    OutputNodeIndex: 0
+    InputNodeGUID: a8148016-4ee0-4148-8d27-10154fab56c7
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092979401588957
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fe26c7f0-1874-4133-8c4d-bfde047e2f8f
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092979401588958
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8861544c-1507-439f-b300-3a6a2d48cf62
+        type: 1
+        Position: {x: 396.66666, y: 248.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "\_It feels like the smith is extra energetic today. You can
+          hear the hammering almost across town. It sounds like he's angry with something.
+          Or just really passionate, which is more likely. "
+        Options:
+        - ResponseText: Continue Work
+          index: 0
+        - ResponseText: Talk
+          index: 1
+    - rid: 2736092979401588959
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0981e56a-b0e8-4809-a9e7-a5b666ac43db
+        type: 5
+        Position: {x: 1122, y: 252.66666}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401588960
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fd5950a8-f591-48b2-9246-74a9afad3675
+        type: 5
+        Position: {x: 831.3334, y: 258}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401588961
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 83cd2c9d-46a0-4cfa-b084-cd65161c9123
+        type: 4
+        Position: {x: 1445.3333, y: 262.66666}
+    - rid: 2736092979401588962
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 82c25551-8256-4013-a1da-7555f73fa86a
+        type: 1
+        Position: {x: 838.6667, y: 396.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Ah, back as per usual. I swear, you are like clockwork, always
+          around without missing a beat
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588963
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 950cc531-f91e-44f1-bd24-4c20f8234f37
+        type: 1
+        Position: {x: 1275.3333, y: 406}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: When you are used to sleeping at 1am and waking up at 6, you
+          get used to punctuality
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588964
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c11e068c-9834-45d4-aec7-a6f90ff8b46e
+        type: 1
+        Position: {x: 1726.6666, y: 416.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: You know, that is a rhythm I have tried to get used to for
+          years upon years. And I still can't get used to it.
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588965
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 41c2de22-75a7-4d3c-920f-4b3f53163f04
+        type: 1
+        Position: {x: 2175.3335, y: 424.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: I've had nightmares ever since trying something stupid when
+          I was a couple years younger. Can't really sleep at night that well because
+          of them. but you know, that's how life is
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588966
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4cd1f5e1-ce4d-4af2-bf7a-2f767942d205
+        type: 1
+        Position: {x: 2622.6667, y: 426.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"What kind of nightmares?"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588967
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0ab10ff8-7efb-43e7-bf96-4197716272ba
+        type: 1
+        Position: {x: 2930.6667, y: 416.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Oh when I was younger I explored the crypt below the church.
+          You know, where they store all the bodies? It's still giving me nightmares"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588968
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b679ff11-4e4c-417e-963e-c3798d498160
+        type: 1
+        Position: {x: 3388, y: 426}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: I see I am not the only one that went in there
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588969
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9a57abf8-e2b2-4f4b-b432-127b01cda525
+        type: 1
+        Position: {x: 3753.3335, y: 414.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Oh you really are not smart, are you? Why?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588970
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 11b201a6-f079-4c11-9993-6407c3378cc1
+        type: 1
+        Position: {x: 4082.6667, y: 418}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\_\"There's something down there, something bad\""
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588971
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1616dac7-9487-49c5-aebb-777377fdbe9f
+        type: 1
+        Position: {x: 4465.333, y: 424.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: I know, but it doesn't come out at night. Whenever you hear
+          it. Stop making sound. It can't see
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588972
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 751a635f-a8bb-4eb7-98ce-f69f51bc663a
+        type: 1
+        Position: {x: 4914.6665, y: 406.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Also, the priest put some security on the deeper part of the
+          crypt, some puzzles if I remember correctly. Try to get through those
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588973
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 49f8617c-a3f6-4683-8d61-3875bd730e73
+        type: 1
+        Position: {x: 5370.6665, y: 402}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: I probably shouldn't be taking advise from you on this, but
+          I'll keep it in mind
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401588974
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a8148016-4ee0-4148-8d27-10154fab56c7
+        type: 4
+        Position: {x: 6145.333, y: 451.33334}
+    - rid: 2736092979401588975
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c6e8aa95-7c78-432e-bc56-6f65c8c66323
+        type: 5
+        Position: {x: 5816.6665, y: 439.33334}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
