@@ -144,8 +144,8 @@ MonoBehaviour:
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://FloorTileBase\" label=\"\" >\n 
     <presetinput identifier=\"$outputsize\" uid=\"1051556859\" type=\"8\" value=\"11,11\"
     />\n  <presetinput identifier=\"$randomseed\" uid=\"1776250281\" type=\"4\" value=\"6006\"
-    />\n  <presetinput identifier=\"x_amount_1\" uid=\"1602418201\" type=\"4\" value=\"2\"
-    />\n  <presetinput identifier=\"y_amount_1\" uid=\"1602418176\" type=\"4\" value=\"2\"
+    />\n  <presetinput identifier=\"x_amount_1\" uid=\"1602418201\" type=\"4\" value=\"1\"
+    />\n  <presetinput identifier=\"y_amount_1\" uid=\"1602418176\" type=\"4\" value=\"1\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
           GuiDescription: Amount of patterns on the X axis.
           Type: 4
           WidgetType: 1
-        Data: 2
+        Data: 1
         NumericalDescription:
           DefaultValue: 4
           MinValue: 1
@@ -237,7 +237,7 @@ MonoBehaviour:
           GuiDescription: Amount of patterns on the Y axis.
           Type: 4
           WidgetType: 1
-        Data: 2
+        Data: 1
         NumericalDescription:
           DefaultValue: 4
           MinValue: 1
