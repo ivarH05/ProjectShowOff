@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Priest Day 2 Deathless
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421072
+  - rid: 2736092980574421073
+  - rid: 2736092980574421074
+  - rid: 2736092980574421075
+  - rid: 2736092980574421076
+  - rid: 2736092980574421077
+  - rid: 2736092980574421078
+  - rid: 2736092980574421079
+  - rid: 2736092980574421080
+  - rid: 2736092980574421081
+  - rid: 2736092980574421082
+  - rid: 2736092980574421083
+  - rid: 2736092980574421084
+  - rid: 2736092980574421085
+  - rid: 2736092980574421086
+  - rid: 2736092980574421087
+  _connections:
+  - OutputNodeGUID: b1bc38c0-6699-442d-8029-ff84bafd24b1
+    OutputNodeIndex: 0
+    InputNodeGUID: a9d733b8-dc7d-4367-a187-44202b888d81
+  - OutputNodeGUID: a9d733b8-dc7d-4367-a187-44202b888d81
+    OutputNodeIndex: 0
+    InputNodeGUID: 81d50523-24c9-4eff-bac1-3342a0bb4bc2
+  - OutputNodeGUID: 81d50523-24c9-4eff-bac1-3342a0bb4bc2
+    OutputNodeIndex: 0
+    InputNodeGUID: 4f3f5955-fe61-4597-8454-a1a5df7b338d
+  - OutputNodeGUID: 81d50523-24c9-4eff-bac1-3342a0bb4bc2
+    OutputNodeIndex: 1
+    InputNodeGUID: e1a65f8b-82e0-4db9-9d36-92d9ad6734de
+  - OutputNodeGUID: 4f3f5955-fe61-4597-8454-a1a5df7b338d
+    OutputNodeIndex: 0
+    InputNodeGUID: 929e7dbb-450e-4c00-b480-4707c551c919
+  - OutputNodeGUID: e1a65f8b-82e0-4db9-9d36-92d9ad6734de
+    OutputNodeIndex: 0
+    InputNodeGUID: 929e7dbb-450e-4c00-b480-4707c551c919
+  - OutputNodeGUID: 929e7dbb-450e-4c00-b480-4707c551c919
+    OutputNodeIndex: 0
+    InputNodeGUID: a89a3492-28dc-4bde-9541-cbb57754100a
+  - OutputNodeGUID: a89a3492-28dc-4bde-9541-cbb57754100a
+    OutputNodeIndex: 0
+    InputNodeGUID: 6b72594c-b1a4-4416-8b62-028256e73b87
+  - OutputNodeGUID: 6b72594c-b1a4-4416-8b62-028256e73b87
+    OutputNodeIndex: 0
+    InputNodeGUID: 5141180d-1737-4b07-8fcd-87cea13bda44
+  - OutputNodeGUID: 5141180d-1737-4b07-8fcd-87cea13bda44
+    OutputNodeIndex: 0
+    InputNodeGUID: 9b50b185-79f2-4f5b-920d-33319b078a6d
+  - OutputNodeGUID: 9b50b185-79f2-4f5b-920d-33319b078a6d
+    OutputNodeIndex: 0
+    InputNodeGUID: b19e58db-a6c8-4b05-b9cf-653c8a9a8955
+  - OutputNodeGUID: b19e58db-a6c8-4b05-b9cf-653c8a9a8955
+    OutputNodeIndex: 0
+    InputNodeGUID: c6c23648-b52d-4ed9-83c3-1d913f5baad7
+  - OutputNodeGUID: c6c23648-b52d-4ed9-83c3-1d913f5baad7
+    OutputNodeIndex: 0
+    InputNodeGUID: 1db01abb-f8dd-4e9f-9293-c6f98ca2124e
+  - OutputNodeGUID: 1db01abb-f8dd-4e9f-9293-c6f98ca2124e
+    OutputNodeIndex: 0
+    InputNodeGUID: d6af7864-8545-41c9-8fec-90adb1178e0d
+  - OutputNodeGUID: d6af7864-8545-41c9-8fec-90adb1178e0d
+    OutputNodeIndex: 0
+    InputNodeGUID: d8153ff2-ac2f-4acd-b031-84a901d7fe47
+  - OutputNodeGUID: d8153ff2-ac2f-4acd-b031-84a901d7fe47
+    OutputNodeIndex: 0
+    InputNodeGUID: 002a0d1a-af47-42af-8795-a40b69b97550
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421072
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b1bc38c0-6699-442d-8029-ff84bafd24b1
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092980574421073
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a9d733b8-dc7d-4367-a187-44202b888d81
+        type: 1
+        Position: {x: 376, y: 246.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "As you walk through the city you can see the priest just standing
+          in the doors, looking over the city. Just as he did yesterday\_\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421074
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 81d50523-24c9-4eff-bac1-3342a0bb4bc2
+        type: 1
+        Position: {x: 812, y: 242.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Still walking though the city looking for a job?
+        Options:
+        - ResponseText: I finally got one
+          index: 0
+        - ResponseText: Still looking for one
+          index: 1
+    - rid: 2736092980574421075
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4f3f5955-fe61-4597-8454-a1a5df7b338d
+        type: 1
+        Position: {x: 1156, y: 208}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: I finally got one
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421076
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e1a65f8b-82e0-4db9-9d36-92d9ad6734de
+        type: 1
+        Position: {x: 1161.3333, y: 504}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Still looking for one
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421077
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 929e7dbb-450e-4c00-b480-4707c551c919
+        type: 1
+        Position: {x: 1469.3333, y: 452.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: As expected
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421078
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a89a3492-28dc-4bde-9541-cbb57754100a
+        type: 1
+        Position: {x: 1742.6666, y: 456.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: The city has been going quiet later, there's not a lot to do.
+          It feels off
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421079
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6b72594c-b1a4-4416-8b62-028256e73b87
+        type: 1
+        Position: {x: 2220.6667, y: 452.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Work has been quiet for everyone it seems, there must be a
+          reason
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421080
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5141180d-1737-4b07-8fcd-87cea13bda44
+        type: 1
+        Position: {x: 2692, y: 455.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: If I can't find one, there isn't one
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421081
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9b50b185-79f2-4f5b-920d-33319b078a6d
+        type: 1
+        Position: {x: 2956, y: 454.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Well, work ebbs and flows, it's just a time of ebb right now
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421082
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b19e58db-a6c8-4b05-b9cf-653c8a9a8955
+        type: 1
+        Position: {x: 3322.6667, y: 458}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: I guess that is how supply and demand works. Since when are
+          you the scientific type?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421083
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c6c23648-b52d-4ed9-83c3-1d913f5baad7
+        type: 1
+        Position: {x: 3726.6667, y: 468}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: I was a banker before I found god. Everyone in town has a history.
+          It just so happens mine is insanely boring
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421084
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1db01abb-f8dd-4e9f-9293-c6f98ca2124e
+        type: 1
+        Position: {x: 4174.6665, y: 470}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: I have to get to preparing my sermon for tomorrow, I wish you
+          the best of luck finding work, or doing whatever else you are doing in
+          town
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421085
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d6af7864-8545-41c9-8fec-90adb1178e0d
+        type: 5
+        Position: {x: 4589.333, y: 472.66666}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: 1fca38fb82ff7fe429e99433763ba4c7, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092980574421086
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 002a0d1a-af47-42af-8795-a40b69b97550
+        type: 4
+        Position: {x: 5060.6665, y: 472}
+    - rid: 2736092980574421087
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d8153ff2-ac2f-4acd-b031-84a901d7fe47
+        type: 5
+        Position: {x: 4827.333, y: 476.66666}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0

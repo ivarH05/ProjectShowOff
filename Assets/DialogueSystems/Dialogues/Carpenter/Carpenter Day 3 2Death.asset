@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Carpenter Day 3 2Death
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421851
+  - rid: 2736092980574421852
+  - rid: 2736092980574421853
+  - rid: 2736092980574421854
+  - rid: 2736092980574421855
+  - rid: 2736092980574421856
+  - rid: 2736092980574421857
+  - rid: 2736092980574421858
+  - rid: 2736092980574421859
+  - rid: 2736092980574421860
+  - rid: 2736092980574421861
+  - rid: 2736092980574421862
+  - rid: 2736092980574421863
+  - rid: 2736092980574421864
+  _connections:
+  - OutputNodeGUID: 00a3dd8f-9d8b-47cf-8ebc-91f645882cde
+    OutputNodeIndex: 0
+    InputNodeGUID: ece4ec74-8bcd-4bc8-b87f-9c5bfa46f874
+  - OutputNodeGUID: ece4ec74-8bcd-4bc8-b87f-9c5bfa46f874
+    OutputNodeIndex: 0
+    InputNodeGUID: 484fc126-8e73-4134-bf50-f73559e39826
+  - OutputNodeGUID: 484fc126-8e73-4134-bf50-f73559e39826
+    OutputNodeIndex: 0
+    InputNodeGUID: d1a68aca-3272-41d6-8a6f-655d20901e39
+  - OutputNodeGUID: d1a68aca-3272-41d6-8a6f-655d20901e39
+    OutputNodeIndex: 0
+    InputNodeGUID: e52d89c0-0872-4240-97bc-6d0ea6390d97
+  - OutputNodeGUID: e52d89c0-0872-4240-97bc-6d0ea6390d97
+    OutputNodeIndex: 0
+    InputNodeGUID: 4d9a09b1-3101-4741-be9d-01dee9ea5ffc
+  - OutputNodeGUID: 4d9a09b1-3101-4741-be9d-01dee9ea5ffc
+    OutputNodeIndex: 0
+    InputNodeGUID: a79b154d-f1ad-4b25-b601-014c9210fb91
+  - OutputNodeGUID: a79b154d-f1ad-4b25-b601-014c9210fb91
+    OutputNodeIndex: 0
+    InputNodeGUID: 4032d97c-5eae-4f2b-b2a0-aaa2d3c90783
+  - OutputNodeGUID: 4032d97c-5eae-4f2b-b2a0-aaa2d3c90783
+    OutputNodeIndex: 0
+    InputNodeGUID: 21692bf7-cb85-431f-b0b5-a3fd872c287e
+  - OutputNodeGUID: 21692bf7-cb85-431f-b0b5-a3fd872c287e
+    OutputNodeIndex: 0
+    InputNodeGUID: 70aaae52-e7f7-4810-b157-9fc1e0fc1214
+  - OutputNodeGUID: 70aaae52-e7f7-4810-b157-9fc1e0fc1214
+    OutputNodeIndex: 0
+    InputNodeGUID: 6f19a94e-9760-4350-803a-fca159216e46
+  - OutputNodeGUID: 6f19a94e-9760-4350-803a-fca159216e46
+    OutputNodeIndex: 0
+    InputNodeGUID: 13d796c5-4f92-4ddb-9119-d63c5aa8ce57
+  - OutputNodeGUID: 13d796c5-4f92-4ddb-9119-d63c5aa8ce57
+    OutputNodeIndex: 0
+    InputNodeGUID: 6a505a30-7841-4a4b-8782-6790ae974f9b
+  - OutputNodeGUID: 6a505a30-7841-4a4b-8782-6790ae974f9b
+    OutputNodeIndex: 0
+    InputNodeGUID: b0f4ebaf-e7c9-437e-8e8c-508e30c0054f
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421851
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 00a3dd8f-9d8b-47cf-8ebc-91f645882cde
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092980574421852
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ece4ec74-8bcd-4bc8-b87f-9c5bfa46f874
+        type: 1
+        Position: {x: 376.66666, y: 252}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: As you walk past the carpenters store, it's completely quiet
+          and almost seems empty.
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421853
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 484fc126-8e73-4134-bf50-f73559e39826
+        type: 1
+        Position: {x: 848, y: 253.33334}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: owever, you do see him sitting in the storefront, head bowed
+          down over a blue schematic that seems to be filled with a bunch of incomprehensible
+          scribbles (Cursive)
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421854
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d1a68aca-3272-41d6-8a6f-655d20901e39
+        type: 1
+        Position: {x: 1292.6666, y: 260}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Oh hey, what are you doing here?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421855
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e52d89c0-0872-4240-97bc-6d0ea6390d97
+        type: 1
+        Position: {x: 1571.3333, y: 262.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"Just checking, it seemed empty"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421856
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4d9a09b1-3101-4741-be9d-01dee9ea5ffc
+        type: 1
+        Position: {x: 1850.6666, y: 264.66666}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: '"Yea, I am, for once, stuck on something"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421857
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a79b154d-f1ad-4b25-b601-014c9210fb91
+        type: 1
+        Position: {x: 2137.3335, y: 266.66666}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: '"Recently, I haven''t been able to make any proper schematics
+          for buildings. I can do small tools just fine, but I have not been able
+          to design any proper buildings. I guess I should look into hiring someone"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421858
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4032d97c-5eae-4f2b-b2a0-aaa2d3c90783
+        type: 1
+        Position: {x: 2591.3335, y: 254}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: '"And before you pipe up, no sadly not you. A professional"
+
+'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421859
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 21692bf7-cb85-431f-b0b5-a3fd872c287e
+        type: 1
+        Position: {x: 2993.3335, y: 276}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"I can''t design anything anyways, I am not quite what you
+          would be looking for"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421860
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 70aaae52-e7f7-4810-b157-9fc1e0fc1214
+        type: 1
+        Position: {x: 3401.3335, y: 262}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"I swear there was someone in town that could help with this.
+          Did we not have an architect? Laura I think she was called?"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421861
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6f19a94e-9760-4350-803a-fca159216e46
+        type: 1
+        Position: {x: 3834, y: 242.66666}
+        speaker: {fileID: 0}
+        expression: 0
+        dialogueText: '"Oh if we ever did I would never have these issues. But I
+          think you may still be half asleep, we''ve never had a Laura in town"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421862
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 13d796c5-4f92-4ddb-9119-d63c5aa8ce57
+        type: 1
+        Position: {x: 4340, y: 305.33334}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"That being said, get yourself some sleep while I continue
+          to break my brain over this"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421863
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6a505a30-7841-4a4b-8782-6790ae974f9b
+        type: 5
+        Position: {x: 4850.6665, y: 432}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092980574421864
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b0f4ebaf-e7c9-437e-8e8c-508e30c0054f
+        type: 4
+        Position: {x: 5124.6665, y: 316}
