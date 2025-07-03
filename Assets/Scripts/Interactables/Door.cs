@@ -156,6 +156,9 @@ namespace Interactables
 
         private void ReturnCamera()
         {
+            if(controller == null)
+                return;
+
             Transform cam = controller.CameraTransform;
 
             Quaternion targetRot = Quaternion.Euler(cam.localEulerAngles.x, cam.localEulerAngles.y, 0);
@@ -172,8 +175,10 @@ namespace Interactables
 
                 controller.SwitchMouseStrategy<LookAround>();
                 controller.SwitchMovementStrategy<Walk>();
+                controller.SwitchInteractStrategy<StandardInteract>();
                 controller = null;
                 _returningCamera = false;
+                isUsing = false;
             }
         }
 
@@ -237,9 +242,13 @@ namespace Interactables
             }
         }
 
+        bool isUsing = false;
 
         override public void OnUseStart (PlayerController controller)
         {
+            if (IsLocked || isUsing)
+                return;
+            isUsing = true;
             _originalCameraPosition = controller.transform.TransformPoint(controller.CameraTransform.localPosition);
 
             this.controller = controller;
@@ -260,17 +269,23 @@ namespace Interactables
 
         public override void OnUse (PlayerController controller)
         {
+            if (IsLocked || !isUsing)
+                return;
             HandleCamera(controller.CameraTransform);
         }
 
         override public void OnUseStop (PlayerController controller)
         {
+            if (IsLocked || !isUsing)
+                return;
+
             if (_angle < 10)
                 Close();
             else
                 SetAngle(maxAngle);
 
             _returningCamera = true;
+            controller.ClearInteractStrategy();
         }
 
         /// <summary>

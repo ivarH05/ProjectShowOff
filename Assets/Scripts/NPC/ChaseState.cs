@@ -45,6 +45,8 @@ namespace NPC
 
         void WhileSeePlayer(Character character, PlayerController player)
         {
+            if (_lastSeenTime < 0.25f && character.RemainingDistance > 0.05f)
+                return;
             if (_trackingPlayer == null)
                 _trackingPlayer = player;
             character.SetDestination(player.transform.position);

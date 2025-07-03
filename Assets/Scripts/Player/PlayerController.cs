@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Interactables;
 using Player.InventoryManagement;
+using UnityEngine.AI;
 
 namespace Player
 {
@@ -47,6 +48,8 @@ namespace Player
         float _timeSinceLastFootCollider = 0;
         double _timeCrouchStartHeld = float.MinValue;
 
+        Vector3 lastPosition;
+
         public Interactable ActiveInteractable { get { return InteractStrategy?.activeInteractable; } }
 
         private void Awake() { PlayerManager.RegisterPlayer(this); }
@@ -56,6 +59,7 @@ namespace Player
         {
             if (LockCursor)
                 Cursor.lockState = CursorLockMode.Locked;
+            lastPosition = transform.position;
 
             Inventory = GetComponent<Inventory>();
             Body = GetComponent<Rigidbody>();
@@ -75,6 +79,11 @@ namespace Player
         {
             if(_attackHeld)
                 InteractStrategy?.OnAttack(this);
+
+            /*if (!NavMesh.SamplePosition(transform.position - new Vector3(0, 0.9f, 0), out NavMeshHit hit, 0.25f, NavMesh.AllAreas))
+                Body.position = lastPosition;
+            else
+                lastPosition = hit.position + new Vector3(0, 0.9f, 0);*/
         }
 
         /// <summary>
@@ -111,6 +120,26 @@ namespace Player
             MoveStrategy?.StopStrategy(this);
             MoveStrategy = newStrategy;
             newStrategy?.StartStrategy(this);
+        }
+
+        public void SwitchInteractStrategy<T>() where T : InteractStrategy
+        {
+            InteractStrategy newStrategy = GetComponent<T>();
+            if (newStrategy == null)
+            {
+                Debug.LogError($"Missing required component of type {typeof(T)} on GameObject. Cannot switch strategy.");
+                return;
+            }
+
+            InteractStrategy?.StopStrategy(this);
+            InteractStrategy = newStrategy;
+            newStrategy?.StartStrategy(this);
+        }
+
+        public void ClearInteractStrategy()
+        {
+            InteractStrategy?.StopStrategy(this);
+            InteractStrategy = null;
         }
 
         public void DisableMovement()
