@@ -15,43 +15,40 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
   Description: 
   _nodes:
-  - rid: 5474676788425916952
-  - rid: 5474676788425916953
-  - rid: 5474676788425916954
-  - rid: 5474676788425916955
-  - rid: 5474676788425916956
-  - rid: 5474676788425916957
-  - rid: 5474676788425916958
-  - rid: 5474676788425916959
-  - rid: 5474676788425916960
-  - rid: 5474676788425916961
-  - rid: 5474676788425916962
-  - rid: 5474676788425916963
-  - rid: 5474676788425916964
-  - rid: 5474676788425916965
-  - rid: 5474676788425916966
-  - rid: 5474676788425916967
-  - rid: 5474676788425916968
-  - rid: 5474676788425916969
-  - rid: 5474676788425916970
-  - rid: 5474676788425916971
-  - rid: 5474676788425916972
-  - rid: 5474676788425916973
-  - rid: 5474676788425916974
-  - rid: 5474676788425916975
-  - rid: 5474676788425916976
-  - rid: 5474676788425916977
-  - rid: 5474676788425916978
-  - rid: 5474676788425916979
-  - rid: 5474676788425916980
-  - rid: 5474676788425916981
+  - rid: 2586427461972787260
+  - rid: 2586427461972787261
+  - rid: 2586427461972787262
+  - rid: 2586427461972787263
+  - rid: 2586427461972787264
+  - rid: 2586427461972787265
+  - rid: 2586427461972787266
+  - rid: 2586427461972787267
+  - rid: 2586427461972787268
+  - rid: 2586427461972787269
+  - rid: 2586427461972787270
+  - rid: 2586427461972787271
+  - rid: 2586427461972787272
+  - rid: 2586427461972787273
+  - rid: 2586427461972787274
+  - rid: 2586427461972787275
+  - rid: 2586427461972787276
+  - rid: 2586427461972787277
+  - rid: 2586427461972787278
+  - rid: 2586427461972787279
+  - rid: 2586427461972787280
+  - rid: 2586427461972787281
+  - rid: 2586427461972787282
+  - rid: 2586427461972787283
+  - rid: 2586427461972787284
+  - rid: 2586427461972787285
+  - rid: 2586427461972787286
+  - rid: 2586427461972787287
+  - rid: 2586427461972787288
+  - rid: 2586427461972787289
   _connections:
   - OutputNodeGUID: dbd8abc5-c39f-47da-8ee6-bcac30816933
     OutputNodeIndex: 0
     InputNodeGUID: 891bcc35-a4b6-473b-82d0-d015915add6e
-  - OutputNodeGUID: 891bcc35-a4b6-473b-82d0-d015915add6e
-    OutputNodeIndex: 0
-    InputNodeGUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
   - OutputNodeGUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
     OutputNodeIndex: 0
     InputNodeGUID: 76949765-5ab0-4393-b121-0d1dbd10caa9
@@ -133,28 +130,19 @@ MonoBehaviour:
   - OutputNodeGUID: c4ac46ce-3cb2-4610-88fa-c9aa922c9c12
     OutputNodeIndex: 0
     InputNodeGUID: 7aa6decf-f6c2-4c80-8995-76860596cb85
+  - OutputNodeGUID: 891bcc35-a4b6-473b-82d0-d015915add6e
+    OutputNodeIndex: 0
+    InputNodeGUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
   references:
     version: 2
     RefIds:
-    - rid: 5474676788425916952
+    - rid: 2586427461972787260
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: dbd8abc5-c39f-47da-8ee6-bcac30816933
         type: 3
         Position: {x: -312, y: 250.4}
-    - rid: 5474676788425916953
-      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
-      data:
-        GUID: 891bcc35-a4b6-473b-82d0-d015915add6e
-        type: 1
-        Position: {x: -116.8, y: 207.2}
-        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
-        expression: 0
-        dialogueText: "*thud* \u2018\u2019O-ouch.."
-        Options:
-        - ResponseText: Continue
-          index: 0
-    - rid: 5474676788425916954
+    - rid: 2586427461972787261
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 3e252d5d-3b57-43ac-9d86-5c5ba6187cb7
@@ -168,7 +156,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916955
+    - rid: 2586427461972787262
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 76949765-5ab0-4393-b121-0d1dbd10caa9
@@ -181,7 +169,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916956
+    - rid: 2586427461972787263
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 11aa6511-a4b3-44e3-9a72-d32860b361da
@@ -195,19 +183,19 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916957
+    - rid: 2586427461972787264
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 3fc5f0ae-3653-41a4-a633-582d101b84bb
         type: 1
         Position: {x: 1455.2, y: 207.2}
         speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
-        expression: 0
+        expression: 3
         dialogueText: "Sorry for being in your way\u2026"
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916958
+    - rid: 2586427461972787265
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 7048e72b-81c4-4473-85cd-be8460b502b0
@@ -219,7 +207,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916959
+    - rid: 2586427461972787266
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 5d6c6776-0c1b-4147-9904-6c301cdb0f00
@@ -232,7 +220,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916960
+    - rid: 2586427461972787267
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 948361c7-701e-4d4e-8e62-cdfff9bd749c
@@ -245,7 +233,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916961
+    - rid: 2586427461972787268
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: ce8dd515-0f0f-476d-9ca0-f4f0faf86ca5
@@ -257,33 +245,33 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916962
+    - rid: 2586427461972787269
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 536dee7d-117d-4358-a2a8-3e4c282cbf49
         type: 1
         Position: {x: 4391.2, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: "He\u2019s the oldest of this town, he basically was here when
           this town only had a ran down shed.."
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916963
+    - rid: 2586427461972787270
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 7aa6decf-f6c2-4c80-8995-76860596cb85
         type: 1
         Position: {x: 5211.2, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
-        expression: 0
+        expression: 4
         dialogueText: She notices my questioning look, her piercing gaze framed by
           the shade of purple from under her sleepless eyes
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916964
+    - rid: 2586427461972787271
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 1f93b8dd-3438-42ea-83eb-d29c66b62ed4
@@ -296,7 +284,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916965
+    - rid: 2586427461972787272
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 1be9f577-43a0-49c1-8e80-5966cad5bf4f
@@ -310,7 +298,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916966
+    - rid: 2586427461972787273
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: a6a380e7-ae88-436a-807c-578ef3cad593
@@ -324,21 +312,21 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916967
+    - rid: 2586427461972787274
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 2a007869-101a-4b96-848f-a22686766246
         type: 1
         Position: {x: 6901.6, y: 200}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
-        expression: 0
+        expression: 4
         dialogueText: "A person? I sadly would not know, I\u2019m terribly sorry,
           I\u2019m mostly buried in my work\u2026 I do know a few people that can
           maybe help\u2026"
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916968
+    - rid: 2586427461972787275
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: a155362b-ee72-4879-bbc2-4aeafc5a27ae
@@ -351,7 +339,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916969
+    - rid: 2586427461972787276
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 8f35085a-9a43-4b8e-b2bb-43a012514738
@@ -364,7 +352,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916970
+    - rid: 2586427461972787277
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: bc91fa4e-16bc-4f91-be63-67fb87130a68
@@ -376,21 +364,21 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916971
+    - rid: 2586427461972787278
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: bff6da01-217f-4cc7-8cc8-9aa9b99d0851
         type: 1
         Position: {x: 7610.4004, y: 200}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: 'Her hand covered in charcoal dust hands me a compass, seemingly
           old but kept in quite a good shape. I take it and look at her with a questioning
           glance '
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916972
+    - rid: 2586427461972787279
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: e499c005-32df-4cc1-9a69-d43e7b37ab8e
@@ -403,58 +391,58 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916973
+    - rid: 2586427461972787280
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 4d092fc3-701c-4a66-a1c5-4ada907e2ba2
         type: 1
         Position: {x: 8441.601, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: ou remind me of someone I have once met..
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916974
+    - rid: 2586427461972787281
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 87e3086a-96ba-4486-8d24-444fb6ca8570
         type: 1
         Position: {x: 8748, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: 'My work includes precision, so tools like rulers and drawing
           compass are a necessity.. '
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916975
+    - rid: 2586427461972787282
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 16370ad6-b0f6-41f5-8678-5fe9c24c7f3e
         type: 1
         Position: {x: 9156.8, y: 200.8}
         speaker: {fileID: 11400000, guid: 99521871e346090409ad38df313f8d21, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: "I want you to have this as a token of luck when you find a
           place to work, and when you\u2019re searching for your lost friend.."
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916976
+    - rid: 2586427461972787283
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 3cab8ee2-b142-4394-8e07-6863d0a2e5c4
         type: 1
         Position: {x: 9569.601, y: 200.8}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
-        expression: 0
+        expression: 1
         dialogueText: 'A shy smile meets my gaze, a slight sparkle glimmering in
           her eyes '
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916977
+    - rid: 2586427461972787284
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 4fd0eee1-04d7-48b0-8ac3-8cfc7b775314
@@ -467,13 +455,13 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916978
+    - rid: 2586427461972787285
       type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: eaaef759-362b-4166-a441-3de17efe50b9
         type: 4
         Position: {x: 10742.4, y: 223.2}
-    - rid: 5474676788425916979
+    - rid: 2586427461972787286
       type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: 20c4caf2-360b-4f50-8f4b-1253b9b1d2bd
@@ -485,7 +473,7 @@ MonoBehaviour:
           flagValue: 1
           sound: {fileID: 0}
           shakeMagnitude: 0
-    - rid: 5474676788425916980
+    - rid: 2586427461972787287
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: d60dea5a-84df-4ebd-bd5f-61ec7835ed01
@@ -499,7 +487,7 @@ MonoBehaviour:
         Options:
         - ResponseText: Continue
           index: 0
-    - rid: 5474676788425916981
+    - rid: 2586427461972787288
       type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
       data:
         GUID: c4ac46ce-3cb2-4610-88fa-c9aa922c9c12
@@ -509,6 +497,18 @@ MonoBehaviour:
         expression: 0
         dialogueText: "Weird she says that\u2026 Wasn\u2019t this town around for
           like\u2026 \r\n\r\nHundreds of years\u2026?"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787289
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 891bcc35-a4b6-473b-82d0-d015915add6e
+        type: 1
+        Position: {x: -116.8, y: 207.2}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
+        dialogueText: "*thud* \u2018\u2019O-ouch.."
         Options:
         - ResponseText: Continue
           index: 0

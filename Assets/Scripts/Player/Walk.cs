@@ -70,8 +70,6 @@ namespace Player
         {
             if (_settings == null) return;
 
-            Debug.Log(crouchHeld);
-
             float speedMult = crouchHeld == CrouchState.CrouchFast ? _settings.FastCrouchSpeedMult : 1;
 
             if (crouchHeld != CrouchState.Standing)
