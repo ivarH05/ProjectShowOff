@@ -7223,7 +7223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
-  <FlipWallDecorationMask>k__BackingField: 0
+  <FlipWallDecorationMask>k__BackingField: 32
   <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1048987986}
   _generatedChildren: {fileID: 0}
