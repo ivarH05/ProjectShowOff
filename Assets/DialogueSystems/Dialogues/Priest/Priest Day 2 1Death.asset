@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Priest Day 2 1Death
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421228
+  - rid: 2736092980574421229
+  - rid: 2736092980574421230
+  - rid: 2736092980574421231
+  - rid: 2736092980574421232
+  - rid: 2736092980574421233
+  - rid: 2736092980574421234
+  - rid: 2736092980574421235
+  - rid: 2736092980574421236
+  - rid: 2736092980574421237
+  _connections:
+  - OutputNodeGUID: b380d6e7-13d5-439d-9bc0-42601c2e65a7
+    OutputNodeIndex: 0
+    InputNodeGUID: 3feaab87-8b02-4c0c-955f-977b8d411462
+  - OutputNodeGUID: 0b20c6ba-00e1-4bb0-b856-2bdafe5c5281
+    OutputNodeIndex: 0
+    InputNodeGUID: 1f3edcf0-109e-4e52-ac79-3ec23fae2023
+  - OutputNodeGUID: 0b20c6ba-00e1-4bb0-b856-2bdafe5c5281
+    OutputNodeIndex: 1
+    InputNodeGUID: 1f3edcf0-109e-4e52-ac79-3ec23fae2023
+  - OutputNodeGUID: 3feaab87-8b02-4c0c-955f-977b8d411462
+    OutputNodeIndex: 0
+    InputNodeGUID: 0b20c6ba-00e1-4bb0-b856-2bdafe5c5281
+  - OutputNodeGUID: 1f3edcf0-109e-4e52-ac79-3ec23fae2023
+    OutputNodeIndex: 0
+    InputNodeGUID: f07ab9ac-030a-4435-9051-b5d05fa6833e
+  - OutputNodeGUID: f07ab9ac-030a-4435-9051-b5d05fa6833e
+    OutputNodeIndex: 0
+    InputNodeGUID: 3b93cea0-ecf8-4ea7-8d4f-78bcc0c98518
+  - OutputNodeGUID: 3b93cea0-ecf8-4ea7-8d4f-78bcc0c98518
+    OutputNodeIndex: 0
+    InputNodeGUID: 5305dba7-c4b0-4b66-ad95-68d96f23a146
+  - OutputNodeGUID: 5305dba7-c4b0-4b66-ad95-68d96f23a146
+    OutputNodeIndex: 0
+    InputNodeGUID: 67bbc0bd-f8f5-4792-a58e-c68ee2adaa16
+  - OutputNodeGUID: 67bbc0bd-f8f5-4792-a58e-c68ee2adaa16
+    OutputNodeIndex: 0
+    InputNodeGUID: d4ea1ea1-a9d9-48d2-ac31-0d0501ec4bb9
+  - OutputNodeGUID: d4ea1ea1-a9d9-48d2-ac31-0d0501ec4bb9
+    OutputNodeIndex: 0
+    InputNodeGUID: 42bc73ac-c89d-4b8d-ba90-b5761e058ee0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421228
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b380d6e7-13d5-439d-9bc0-42601c2e65a7
+        type: 3
+        Position: {x: 206, y: 255.33334}
+    - rid: 2736092980574421229
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 0b20c6ba-00e1-4bb0-b856-2bdafe5c5281
+        type: 1
+        Position: {x: 856, y: 268.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: There's our young man again. How's the job hunt going?
+        Options:
+        - ResponseText: Bad. Still have not found anything in the slightest
+          index: 0
+        - ResponseText: I actually found something
+          index: 1
+    - rid: 2736092980574421230
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3feaab87-8b02-4c0c-955f-977b8d411462
+        type: 1
+        Position: {x: 412.66666, y: 250}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: As you walk through the city you can see the priest just standing
+          in the doors, looking over the city. Just as he did yesterday. But there's
+          a piercing stare in his eyes, which falls away as you approach the church.
+          Probably nothing
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421231
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1f3edcf0-109e-4e52-ac79-3ec23fae2023
+        type: 1
+        Position: {x: 1244, y: 290}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Well, that was to be expected
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421232
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f07ab9ac-030a-4435-9051-b5d05fa6833e
+        type: 1
+        Position: {x: 1522.6666, y: 301.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Even if you do/did find a temporary solution, you will eventually
+          need to find something permanent. Maybe something creative?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421233
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3b93cea0-ecf8-4ea7-8d4f-78bcc0c98518
+        type: 1
+        Position: {x: 1980, y: 302}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: The buildings all work fine, and are structurally sound. The
+          Architect does her best, but she's the efficient type, not the creative
+          one. She could use a helping hand for visuals
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421234
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5305dba7-c4b0-4b66-ad95-68d96f23a146
+        type: 1
+        Position: {x: 2414, y: 304}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\_\"I am a farmhand, I don't really know art\""
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421235
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 67bbc0bd-f8f5-4792-a58e-c68ee2adaa16
+        type: 1
+        Position: {x: 2721.3335, y: 301.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Well, you can learn still. I used to be a banker before I did
+          this. Perseverance makes you achieve surprising things
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421236
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d4ea1ea1-a9d9-48d2-ac31-0d0501ec4bb9
+        type: 5
+        Position: {x: 3151.3335, y: 304}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092980574421237
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 42bc73ac-c89d-4b8d-ba90-b5761e058ee0
+        type: 4
+        Position: {x: 3392, y: 304}

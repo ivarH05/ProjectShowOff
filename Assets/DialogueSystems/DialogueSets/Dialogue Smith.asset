@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
+  m_Name: Dialogue Smith
+  m_EditorClassIdentifier: 
+  Dialogues:
+  - conditions:
+    - condition: {fileID: 11400000, guid: 68f45a08c5456af479684517ea4b0479, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 4d9a0b6187348f24d8256207cea3efaa, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: bfcafeaf7ebd0dd4191d6b2ca3c80e24, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 1ae40f9de91be3041b27d846afef30d9, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: fd684b54f93fb12419a1192e2e77b306, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 5f02cb4b8810ffa4094454aea7c32c21, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: 1c1a6168d55322b408329bafcd20e3e4, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: a4804628990e4584cafff987460223e6, type: 2}
+  - conditions: []
+    dialogue: {fileID: 11400000, guid: 8573ab7c13af07d4ea918fabb22fb747, type: 2}

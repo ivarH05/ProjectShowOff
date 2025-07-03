@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Carpenter Day 3 Deathless
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421837
+  - rid: 2736092980574421838
+  - rid: 2736092980574421839
+  - rid: 2736092980574421840
+  - rid: 2736092980574421841
+  - rid: 2736092980574421842
+  - rid: 2736092980574421843
+  - rid: 2736092980574421844
+  - rid: 2736092980574421845
+  - rid: 2736092980574421846
+  - rid: 2736092980574421847
+  - rid: 2736092980574421848
+  - rid: 2736092980574421849
+  - rid: 2736092980574421850
+  _connections:
+  - OutputNodeGUID: 3f33e7fc-df9e-4cb0-805c-a44ff1e7e715
+    OutputNodeIndex: 0
+    InputNodeGUID: cff46330-7ede-43e6-aeee-041bd47ddb72
+  - OutputNodeGUID: cff46330-7ede-43e6-aeee-041bd47ddb72
+    OutputNodeIndex: 0
+    InputNodeGUID: b79a0426-0b3c-4d7f-9492-c22961116cf6
+  - OutputNodeGUID: b79a0426-0b3c-4d7f-9492-c22961116cf6
+    OutputNodeIndex: 0
+    InputNodeGUID: f9733887-0d0b-4736-bd92-b0416be12815
+  - OutputNodeGUID: f9733887-0d0b-4736-bd92-b0416be12815
+    OutputNodeIndex: 0
+    InputNodeGUID: c6a7a854-c205-460d-8210-3f65ae50ebb2
+  - OutputNodeGUID: c6a7a854-c205-460d-8210-3f65ae50ebb2
+    OutputNodeIndex: 0
+    InputNodeGUID: a09d97bd-d33a-4048-ab84-3c8a6c40afc8
+  - OutputNodeGUID: a09d97bd-d33a-4048-ab84-3c8a6c40afc8
+    OutputNodeIndex: 0
+    InputNodeGUID: 6c08c059-980a-4b1f-9ab6-65f692147495
+  - OutputNodeGUID: 6c08c059-980a-4b1f-9ab6-65f692147495
+    OutputNodeIndex: 0
+    InputNodeGUID: 2db51f54-e7ae-4d3f-b5dd-634cb48dacd7
+  - OutputNodeGUID: 2db51f54-e7ae-4d3f-b5dd-634cb48dacd7
+    OutputNodeIndex: 0
+    InputNodeGUID: 66754c98-7de7-4509-972f-59b33f0cd6b5
+  - OutputNodeGUID: a64b6ae9-99b4-4800-bd22-2fa94e978e4f
+    OutputNodeIndex: 0
+    InputNodeGUID: bdd06485-d57c-4617-8aae-88a7d2522509
+  - OutputNodeGUID: 66754c98-7de7-4509-972f-59b33f0cd6b5
+    OutputNodeIndex: 0
+    InputNodeGUID: a64b6ae9-99b4-4800-bd22-2fa94e978e4f
+  - OutputNodeGUID: bdd06485-d57c-4617-8aae-88a7d2522509
+    OutputNodeIndex: 0
+    InputNodeGUID: bd25e34d-de6d-45dd-9705-2f553c97b6ff
+  - OutputNodeGUID: bd25e34d-de6d-45dd-9705-2f553c97b6ff
+    OutputNodeIndex: 0
+    InputNodeGUID: ccb20b2f-2f7f-4bdb-9ed8-7674ea61e618
+  - OutputNodeGUID: ccb20b2f-2f7f-4bdb-9ed8-7674ea61e618
+    OutputNodeIndex: 0
+    InputNodeGUID: 7398861a-bf8d-4a27-8913-36e9fa1cfeaa
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421837
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3f33e7fc-df9e-4cb0-805c-a44ff1e7e715
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092980574421838
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: cff46330-7ede-43e6-aeee-041bd47ddb72
+        type: 1
+        Position: {x: 396.66666, y: 256.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: 'The carpenters store is quiet, but still has a heavy smell
+          of work exuding from it. For some reason, you think the carpenter is intentionally
+          trying to be quiet. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421839
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b79a0426-0b3c-4d7f-9492-c22961116cf6
+        type: 1
+        Position: {x: 851.3334, y: 260.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: As you walk up, he shushes a finger at you and signs for you
+          to walk closer
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421840
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f9733887-0d0b-4736-bd92-b0416be12815
+        type: 1
+        Position: {x: 1306, y: 262}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Enter quietly and keep your voice down
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421841
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c6a7a854-c205-460d-8210-3f65ae50ebb2
+        type: 1
+        Position: {x: 1624.6666, y: 264.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"Why, what is there to be hushed for"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421842
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a09d97bd-d33a-4048-ab84-3c8a6c40afc8
+        type: 1
+        Position: {x: 1922, y: 262}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: It turns out my work has been loud enough to wake people up
+          early in the morning
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421843
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6c08c059-980a-4b1f-9ab6-65f692147495
+        type: 1
+        Position: {x: 2354, y: 259.33334}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: I am here to help the community, not wake up half of them hours
+          before they want to be awake
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421844
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 2db51f54-e7ae-4d3f-b5dd-634cb48dacd7
+        type: 1
+        Position: {x: 2814, y: 259.33334}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: So I am keeping it down until later today, just to make sure
+          people can catch some shut eye
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421845
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a64b6ae9-99b4-4800-bd22-2fa94e978e4f
+        type: 1
+        Position: {x: 3718, y: 262.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"What would that be?"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421846
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 66754c98-7de7-4509-972f-59b33f0cd6b5
+        type: 1
+        Position: {x: 3228, y: 264.66666}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: In the mean time, I can sink my teeth into planning out a new
+          project
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421847
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bdd06485-d57c-4617-8aae-88a7d2522509
+        type: 1
+        Position: {x: 4007.3335, y: 266.66666}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: I... haven't gotten that far yet
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421848
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bd25e34d-de6d-45dd-9705-2f553c97b6ff
+        type: 1
+        Position: {x: 4266.6665, y: 272}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Unless you have any bright ideas, I'm sure I will come up with
+          something on my own. Now leave this old man be, the gears in my brain don't
+          turn that fast anymore, but even slower with someone around distracting
+          me
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421849
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ccb20b2f-2f7f-4bdb-9ed8-7674ea61e618
+        type: 5
+        Position: {x: 4671.333, y: 388.66666}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092980574421850
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 7398861a-bf8d-4a27-8913-36e9fa1cfeaa
+        type: 4
+        Position: {x: 4925.333, y: 318}

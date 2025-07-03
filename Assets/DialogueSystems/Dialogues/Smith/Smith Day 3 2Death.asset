@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Smith Day 3 2Death
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092979401589106
+  - rid: 2736092979401589107
+  - rid: 2736092979401589108
+  - rid: 2736092979401589109
+  - rid: 2736092979401589110
+  - rid: 2736092979401589111
+  - rid: 2736092979401589112
+  - rid: 2736092979401589113
+  - rid: 2736092979401589114
+  - rid: 2736092979401589115
+  - rid: 2736092979401589116
+  - rid: 2736092979401589117
+  - rid: 2736092979401589118
+  _connections:
+  - OutputNodeGUID: 8059e409-7e89-44f9-be0f-f036b3fc48ba
+    OutputNodeIndex: 0
+    InputNodeGUID: 6f723cba-2633-490b-8128-a20a988c5a3a
+  - OutputNodeGUID: 6f723cba-2633-490b-8128-a20a988c5a3a
+    OutputNodeIndex: 0
+    InputNodeGUID: 6d66f928-ffa0-4349-a11c-a0e5c12b5ea6
+  - OutputNodeGUID: 6d66f928-ffa0-4349-a11c-a0e5c12b5ea6
+    OutputNodeIndex: 0
+    InputNodeGUID: 5fc50cc2-5ecd-40c2-b428-6ff1f16253da
+  - OutputNodeGUID: 5fc50cc2-5ecd-40c2-b428-6ff1f16253da
+    OutputNodeIndex: 0
+    InputNodeGUID: 14afb7dd-e439-4c41-8ce8-5be107c57c9e
+  - OutputNodeGUID: 14afb7dd-e439-4c41-8ce8-5be107c57c9e
+    OutputNodeIndex: 0
+    InputNodeGUID: f15fb179-5352-4b60-b96e-3a8fea04c4f6
+  - OutputNodeGUID: f15fb179-5352-4b60-b96e-3a8fea04c4f6
+    OutputNodeIndex: 0
+    InputNodeGUID: feba8aba-7fcf-4e58-aa43-ab53a2934fba
+  - OutputNodeGUID: feba8aba-7fcf-4e58-aa43-ab53a2934fba
+    OutputNodeIndex: 0
+    InputNodeGUID: df5f8921-3efc-4e62-8c0e-4ba33a82a318
+  - OutputNodeGUID: df5f8921-3efc-4e62-8c0e-4ba33a82a318
+    OutputNodeIndex: 0
+    InputNodeGUID: 13b0a616-3c59-44e8-a407-28a0c6e88b16
+  - OutputNodeGUID: 13b0a616-3c59-44e8-a407-28a0c6e88b16
+    OutputNodeIndex: 0
+    InputNodeGUID: fd895d26-588c-4136-853c-d166420acf42
+  - OutputNodeGUID: fd895d26-588c-4136-853c-d166420acf42
+    OutputNodeIndex: 0
+    InputNodeGUID: 77072d92-937b-406e-96a2-9147a9d38309
+  - OutputNodeGUID: 77072d92-937b-406e-96a2-9147a9d38309
+    OutputNodeIndex: 0
+    InputNodeGUID: bc7e4495-110e-4992-9c4d-33178d84b616
+  - OutputNodeGUID: bc7e4495-110e-4992-9c4d-33178d84b616
+    OutputNodeIndex: 0
+    InputNodeGUID: 3a42b4d1-bee0-4eef-8291-223cd711925f
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092979401589106
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8059e409-7e89-44f9-be0f-f036b3fc48ba
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092979401589107
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6f723cba-2633-490b-8128-a20a988c5a3a
+        type: 1
+        Position: {x: 410.66666, y: 247.33334}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: The forge seems quiet. Not empty, as you can see the shadow
+          of the smith hunched over a table, just staring at something on the table
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589108
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6d66f928-ffa0-4349-a11c-a0e5c12b5ea6
+        type: 1
+        Position: {x: 855.3334, y: 254.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "\_As you walk up, the smith turns to look at you, a tired
+          look in his eyes"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589109
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 5fc50cc2-5ecd-40c2-b428-6ff1f16253da
+        type: 1
+        Position: {x: 1259.3333, y: 254.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Sorry, not feeling the greatest today
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589110
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 14afb7dd-e439-4c41-8ce8-5be107c57c9e
+        type: 1
+        Position: {x: 1537.3333, y: 258}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: As he points over at a trashcan full of scrap paper
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589111
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f15fb179-5352-4b60-b96e-3a8fea04c4f6
+        type: 1
+        Position: {x: 1905.3333, y: 267.33334}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: I just can't seem to design anything worth making. The carpenter
+          asked me for help on the new building in town he was working on, but I
+          seem to be of no help at all
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589112
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: feba8aba-7fcf-4e58-aa43-ab53a2934fba
+        type: 1
+        Position: {x: 2342.6667, y: 273.33334}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: '"I suppose building are different than tools, but I assumed
+          I would at least be able to help with something'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589113
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: df5f8921-3efc-4e62-8c0e-4ba33a82a318
+        type: 1
+        Position: {x: 2790, y: 268.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Buildings and tools are two entirely different beasts. I would
+          know, I can't make either
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589114
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 13b0a616-3c59-44e8-a407-28a0c6e88b16
+        type: 1
+        Position: {x: 3244, y: 276}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "\_As the smith just gives a tired smile in response"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589115
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fd895d26-588c-4136-853c-d166420acf42
+        type: 1
+        Position: {x: 3606, y: 276}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Yea, I guess I should be glad I can at least do one of the
+          two
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589116
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 77072d92-937b-406e-96a2-9147a9d38309
+        type: 1
+        Position: {x: 4071.3335, y: 282}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: '"Well, unless you have some grandiose ideas, I''ll get back
+          to it. Wish you the best of luck. And do check in on the Carpenter if you
+          can. He''s even more frustrated than I am'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589117
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: bc7e4495-110e-4992-9c4d-33178d84b616
+        type: 5
+        Position: {x: 4480, y: 279.33334}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401589118
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3a42b4d1-bee0-4eef-8291-223cd711925f
+        type: 4
+        Position: {x: 4770, y: 286.66666}
