@@ -20,6 +20,7 @@ namespace UI
                 return;
             }
 
+            var size = GetComponent<RectTransform>().sizeDelta;
             LoudnessIndicatorBar prev = null;
             for (int i = 0; i < _barCount; i++)
             {
@@ -32,7 +33,8 @@ namespace UI
                     prev.Next = bar;
                 prev = bar;
 
-                bar.MaxHeight = GetComponent<RectTransform>().sizeDelta.y;
+                bar.Init(size.x / _barCount);
+                bar.MaxHeight = size.y;
             }
 
             StartCoroutine(UpdateLoudness());
