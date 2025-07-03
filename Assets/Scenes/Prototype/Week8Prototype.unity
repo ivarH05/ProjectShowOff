@@ -7655,7 +7655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 3
   _disabledAtDistance: {fileID: 600969241}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1860353424}
@@ -15582,6 +15582,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2245754522469145785, guid: 9b51f4460b2c0b24d959dedb47efde91, type: 3}
   m_PrefabInstance: {fileID: 1640514212}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723887092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723887094}
+  - component: {fileID: 723887093}
+  m_Layer: 0
+  m_Name: Crypt collapser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &723887093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723887092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c29ab868d5de58418b196b13cedc7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rockPrefabs:
+  - {fileID: 5388307973862661320, guid: de67b2d3020197d458685ec9f5489b3a, type: 3}
+  - {fileID: 2100396220939734684, guid: fd41937e1c8f3be42b247a4192633721, type: 3}
+  - {fileID: 5360948554076278422, guid: 4e2b3e474fa015941947f9259e8547be, type: 3}
+  _maxRange: 26.32
+  RockFrequency: 10
+--- !u!4 &723887094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723887092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.9, y: 0, z: -6.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &726290732
 GameObject:
   m_ObjectHideFlags: 0
@@ -55653,7 +55703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 0
+  <DontGenerateWallDecMask>k__BackingField: 2
   _disabledAtDistance: {fileID: 1081466512}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 851191959}
@@ -56480,3 +56530,4 @@ SceneRoots:
   - {fileID: 1661964578}
   - {fileID: 1384575285}
   - {fileID: 323296294}
+  - {fileID: 723887094}
