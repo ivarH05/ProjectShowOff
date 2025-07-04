@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: enemy notice
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: ff2eef5b6b975774db4964cc4ded769d, type: 3}
+  - {fileID: 8300000, guid: 6e049acd09babfa4e9c12c104158e570, type: 3}
   SelectionMode: 0
   Type: 0
   Volume: 1
@@ -21,4 +21,4 @@ MonoBehaviour:
   AudibleRange: 18
   FaintThreshold: 0.8645834
   ModerateThreshold: 0.5535712
-  LoudThreshold: 0.2583332
+  LoudThreshold: 0.1

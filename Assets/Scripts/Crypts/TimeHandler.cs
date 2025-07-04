@@ -26,7 +26,7 @@ namespace Crypts
 
             if (Time.timeSinceLevelLoad > _maxSecondsInCrypt)
             {
-                UIManager.SetState<DeathUIState>();
+                DeathCountTracker.Death();
                 Destroy(this);
             }
 

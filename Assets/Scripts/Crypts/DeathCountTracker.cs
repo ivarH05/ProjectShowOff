@@ -1,5 +1,7 @@
 using DialogueSystem;
+using UI;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DeathCountTracker : MonoBehaviour
 {
@@ -10,8 +12,13 @@ public class DeathCountTracker : MonoBehaviour
 
     private static bool died = false;
 
-    public void Increment()
+    private void Awake()
     {
+        _singleton = this;
+    }
+    public void CallDeath()
+    {
+        UIManager.SetState<DeathUIState>();
         if (died)
             return;
 
@@ -20,6 +27,8 @@ public class DeathCountTracker : MonoBehaviour
             flags[deathCount].Set(true);
         deathCount++;
     }
+
+    public static void Death() => _singleton.CallDeath();
 
     public void Reenable()
     {

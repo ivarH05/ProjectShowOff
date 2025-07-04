@@ -67,7 +67,7 @@ namespace Interactables
             get { return _angle < 1; }
         }
 
-        private int SwingDirection { get => flipped ? -1 : 1; }
+        public int SwingDirection { get => flipped ? -1 : 1; }
 
         /// <summary>
         /// check if the door is fully locked, also usable to lock and unlock it
