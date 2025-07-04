@@ -1,6 +1,7 @@
 using DialogueSystem;
 using Player;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Daytime
 {
@@ -12,6 +13,8 @@ namespace Daytime
         [SerializeField] GameObject Renderer;
         [SerializeField] bool showAtNight = false;
         [SerializeField] bool hoverOnly = false;
+
+        public Sprite popupImage;
 
         private Dialogue currentDialogue;
 
