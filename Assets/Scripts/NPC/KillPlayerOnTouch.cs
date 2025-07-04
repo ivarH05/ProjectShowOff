@@ -12,7 +12,7 @@ namespace NPC
         {
             var player = collision?.gameObject?.GetComponent<Player.PlayerController>();
             if (player != null)
-                UIManager.SetState<DeathUIState>();
+                DeathCountTracker.Death();
         }
     }
 }

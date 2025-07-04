@@ -21,12 +21,12 @@ namespace NPC
         private void OnEnable()
         {
             _enemy = transform.parent.GetComponent<Enemy>();
-            _enemy.events.OnNoticePlayer.AddListener(OnNotice);
+            _enemy.events.OnChangeState.AddListener(OnChangeState);
             _previousPosition = _enemy.transform.position;
         }
         private void OnDisable()
         {
-            _enemy.events.OnNoticePlayer.RemoveListener(OnNotice);
+            _enemy.events.OnChangeState.RemoveListener(OnChangeState);
         }
 
         private void FixedUpdate()
@@ -52,9 +52,10 @@ namespace NPC
             }
         }
 
-        void OnNotice(Character ch, Player.PlayerController co)
+        void OnChangeState(Character character, BehaviourState state)
         {
-            _onNotice.Play();
+            if(state is ChasingState)
+                _onNotice.Play();
         }
     }
 }

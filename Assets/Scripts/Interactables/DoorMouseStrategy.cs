@@ -19,7 +19,7 @@ namespace Interactables
                 return;
 
 
-            door.Move(lookDelta.y * (door.isInFront ? -_doorSensitivity : _doorSensitivity));
+            door.Move(lookDelta.y * (door.isInFront ? -_doorSensitivity : _doorSensitivity) * door.SwingDirection);
 
         }
         public override void StopStrategy(PlayerController controller) { }
