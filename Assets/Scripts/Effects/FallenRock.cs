@@ -1,4 +1,5 @@
 using System.Collections;
+using AdvancedSound;
 using UnityEngine;
 
 namespace Effects
@@ -42,6 +43,7 @@ namespace Effects
 
         IEnumerator Sink()
         {
+            Destroy(GetComponent<SoundOnCollision>());
             Destroy(GetComponent<Rigidbody>());
             float t = 0;
             while(true)

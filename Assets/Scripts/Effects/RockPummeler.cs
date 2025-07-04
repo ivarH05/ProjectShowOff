@@ -14,14 +14,17 @@ namespace Effects
         {
             _cooldown += Time.deltaTime * RockFrequency;
 
-            if(_cooldown > 1)
+            int instances = 0;
+            while(_cooldown > 1 && instances < 10)
             {
+                instances++;
                 _cooldown -= 1;
 
                 var pos = Random.insideUnitCircle * _maxRange;
                 if(Physics.Raycast(new Vector3(pos.x, 0, pos.y) + transform.position, Vector3.up, out RaycastHit hitinfo, 10))
                 {
-                    Instantiate(_rockPrefabs[Random.Range(0, _rockPrefabs.Length)], hitinfo.point, Random.rotation);
+                    var instance = Instantiate(_rockPrefabs[Random.Range(0, _rockPrefabs.Length)], hitinfo.point, Random.rotation);
+                    instance.GetComponent<Rigidbody>().AddForce(Random.insideUnitSphere + Vector3.down, ForceMode.VelocityChange);
                 }
             }
         }
