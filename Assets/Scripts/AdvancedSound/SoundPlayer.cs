@@ -14,6 +14,7 @@ namespace AdvancedSound
 
         [SerializeField] Sound _sound;
 
+        public void Play(float volume) => Play(volume, 1);
         public void Play(float volume = 1, float pitch = 1)
         {
             if(_sound == null)
