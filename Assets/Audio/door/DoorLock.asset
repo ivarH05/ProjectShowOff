@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoorLock
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 8300000, guid: 9ba826f3decbbb045a76c0bcef275923, type: 3}
+  - {fileID: 8300000, guid: 25f6dd21aa3690d4ebfa53d79fc00e51, type: 3}
   SelectionMode: 0
   Type: 2
   Volume: 1

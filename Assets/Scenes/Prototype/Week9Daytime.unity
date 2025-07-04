@@ -5033,60 +5033,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1340334331}
     m_Modifications:
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_text
-      value: 'skibidi
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontSize
-      value: 41.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.13552864
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.15266997
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.16981131
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 41.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 568021627512082438, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4280493867
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041139050396003827, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041139050396003827, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041139050396003827, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041139050396003827, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -30
-      objectReference: {fileID: 0}
     - target: {fileID: 4637422942320537434, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: events.OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -5146,14 +5092,6 @@ PrefabInstance:
     - target: {fileID: 5376591868091971271, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689197355785743694, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740805728344283095, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8633085814370858397, guid: b7945f66485ac0a4f80e7a07b6392557, type: 3}
       propertyPath: m_Pivot.x
@@ -7209,7 +7147,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Week8Prototype
+          m_StringArgument: FinalPrototype
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1515222471

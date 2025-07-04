@@ -7,6 +7,8 @@ namespace DialogueSystem
     {
         private static HashSet<DialogueConditionFlag> _flags = new HashSet<DialogueConditionFlag>();
 
+        public static void Clear() => _flags.Clear();
+
         public static bool IsTrue(DialogueConditionFlag flag) => _flags.Contains(flag);
         public static bool IsFalse(DialogueConditionFlag flag) => !_flags.Contains(flag);
 

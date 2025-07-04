@@ -88,6 +88,16 @@ namespace UI
             }
         }
 
+        public static void ToggleState<T>() where T : UIState
+        {
+            Debug.Log(_currentState is T);
+            
+            if (_currentState is T)
+                Close();
+            else
+                SetState<T>();
+        }
+
         public static void CallUIEvent<T>(T context) where T : UIEvent => _currentState.OnEvent(context);
     }
 }
