@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Smith SImple Day 1
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
   Description: 
   _nodes:
   - rid: 8154432770598241243
@@ -51,6 +52,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 372, y: 246}
         speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
         dialogueText: Hello. Name's Ben De Jong. If you need any work done at your
           farm, I'll be here in my shop
         Options:
@@ -65,6 +67,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 790.6667, y: 114}
         speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
         dialogueText: 'The shed you use, I made that a couple years back.
 
           You

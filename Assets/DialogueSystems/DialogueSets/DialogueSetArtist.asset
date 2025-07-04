@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
-  m_Name: Lamplighter
+  m_Name: DialogueSetArtist
   m_EditorClassIdentifier: 
   Dialogues:
-  - conditions: []
-    dialogue: {fileID: 11400000, guid: 1249aedd42259544f8a4f0355ad49fc3, type: 2}
   - conditions:
-    - condition: {fileID: 11400000, guid: bfcafeaf7ebd0dd4191d6b2ca3c80e24, type: 2}
-      expectedValue: 1
-    dialogue: {fileID: 11400000, guid: 249f69fe41795cc488984e2267116552, type: 2}
+    - condition: {fileID: 11400000, guid: c1be527ad54f9234b9955e23e1f671be, type: 2}
+      expectedValue: 0
+    dialogue: {fileID: 11400000, guid: 54ed8e16e84c1f64d811c14c84870bca, type: 2}
   - conditions: []
-    dialogue: {fileID: 11400000, guid: 5e6c04938ef4e0147b083a2390eaead7, type: 2}
+    dialogue: {fileID: 11400000, guid: 30ce9261a02ff4f4a9985f6361f45e05, type: 2}

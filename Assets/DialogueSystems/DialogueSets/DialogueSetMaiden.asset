@@ -10,16 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
-  m_Name: Architect
+  m_Name: DialogueSetMaiden
   m_EditorClassIdentifier: 
   Dialogues:
-  - conditions: []
-    dialogue: {fileID: 11400000, guid: d51ff0dbcca8a57459f754140682f366, type: 2}
-  - conditions:
-    - condition: {fileID: 0}
-      expectedValue: 0
-    dialogue: {fileID: 11400000, guid: 4762de99bf2dbfa4a90602da7cc8ce56, type: 2}
   - conditions:
     - condition: {fileID: 11400000, guid: bfcafeaf7ebd0dd4191d6b2ca3c80e24, type: 2}
       expectedValue: 1
-    dialogue: {fileID: 11400000, guid: d48cfa875186fbd4b8f3670dc5812788, type: 2}
+    dialogue: {fileID: 11400000, guid: 73c8171b80f01ab4cad68a7188a92d22, type: 2}
