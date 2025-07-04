@@ -4446,6 +4446,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 370563890}
+        m_TargetAssemblyTypeName: Interactables.Door, Assembly-CSharp
+        m_MethodName: set_IsLocked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 370563889}
+        m_TargetAssemblyTypeName: Interactables.Door, Assembly-CSharp
+        m_MethodName: set_IsLocked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &117794595
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13628,6 +13652,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1094658922788455492, guid: 265264b3f96dd974b8a9cfab5ef529c8, type: 3}
   m_PrefabInstance: {fileID: 370563887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &370563889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7995200890500759588, guid: 265264b3f96dd974b8a9cfab5ef529c8, type: 3}
+  m_PrefabInstance: {fileID: 370563887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f067e8ca901fef042820555ea0b76fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &370563890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3423447587362570438, guid: 265264b3f96dd974b8a9cfab5ef529c8, type: 3}
+  m_PrefabInstance: {fileID: 370563887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f067e8ca901fef042820555ea0b76fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371471713
 GameObject:
   m_ObjectHideFlags: 0

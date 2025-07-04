@@ -23,6 +23,8 @@ namespace Daytime
         FollowTransform _follow;
         (Vector3, Quaternion) _previousTransform;
 
+        bool fullyDissabled = false;
+
         private void OnEnable()
         {
             _selectable = GetComponent<FromCameraSelectable>();
@@ -34,7 +36,10 @@ namespace Daytime
 
         public void RecalculateDialogue()
         {
+            if (fullyDissabled)
+                return;
             currentDialogue = DialogueSet?.GetDialogue();
+
             if (currentDialogue == null || (TimeHandler.IsNight() && !showAtNight))
                 this.enabled = false;
             else
@@ -43,7 +48,8 @@ namespace Daytime
 
         private void OnDisable()
         {
-            _selectable.OnClicked.RemoveListener(OnClick);
+            if (!hoverOnly)
+                _selectable.OnClicked.RemoveListener(OnClick);
             _selectable.OnHoverStart.RemoveListener(OnHover);
             _selectable.OnHoverEnd.RemoveListener(OnHoverEnd);
         }
@@ -52,6 +58,8 @@ namespace Daytime
         {
             (_follow.ToFollow.position, _follow.ToFollow.rotation) = _previousTransform;
             _selector.enabled = true;
+            this.enabled = false;
+            fullyDissabled = true;
         }
 
         public void OnHover()
@@ -86,6 +94,8 @@ namespace Daytime
             _selector.enabled = false;
 
             DialoguePlayer.StartNewDialogue(currentDialogue, ResetCamera);
+
+            this.enabled = false;
         }
 
         public void SetHoverOnly(bool value) => hoverOnly = value;
