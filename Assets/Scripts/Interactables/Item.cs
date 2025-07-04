@@ -1,6 +1,7 @@
 using Player;
 using Player.InventoryManagement;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Interactables
 {
@@ -8,6 +9,9 @@ namespace Interactables
     public class ItemObject : Interactable
     {
         public Item item;
+        public bool skipInventory = false;
+
+        public UnityEvent<Item> onGrab = new UnityEvent<Item>();
         public new Rigidbody rigidbody {  get; private set; }
 
         private void Awake()
@@ -17,7 +21,9 @@ namespace Interactables
 
         public override void OnInteract(PlayerController controller)
         {
-            controller.Inventory.PickupItem(this);
+            if(!skipInventory)
+                controller.Inventory.PickupItem(this);
+            onGrab.Invoke(item);
         }
 
         public override void OnUseStart(PlayerController controller) { }
