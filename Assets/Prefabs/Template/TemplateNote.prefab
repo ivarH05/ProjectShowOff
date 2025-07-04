@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8065686465936888881}
   - component: {fileID: 1627666224392967914}
   - component: {fileID: 332812987183193857}
+  - component: {fileID: 4493180976208930858}
   m_Layer: 6
   m_Name: TemplateNote
   m_TagString: Untagged
@@ -70,7 +71,33 @@ MonoBehaviour:
   note: {fileID: 11400000, guid: 4d5f44bbdc1b13c46bf433fe9575ae36, type: 2}
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4493180976208930858}
+        m_TargetAssemblyTypeName: AdvancedSound.SoundPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4493180976208930858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746987191078292888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae034501f4935d40833e36f43fe474c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: e07070e8d630faa479262a819dfd5d49, type: 2}
+  _showGizmos: 1
 --- !u!1001 &5696272183865673842
 PrefabInstance:
   m_ObjectHideFlags: 0
