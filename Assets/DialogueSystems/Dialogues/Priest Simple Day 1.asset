@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Priest Simple Day 1
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
   Description: 
   _nodes:
   - rid: 8154432774677987378
@@ -55,6 +56,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 307.3333, y: 230}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: Hello Jacob, what can I assist you with today?
         Options:
         - ResponseText: Nevermind
@@ -68,6 +70,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 668.6667, y: 301.33334}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: 'Well, my job is to spread the word of god
 
           and allow
@@ -82,6 +85,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 982, y: 307.33334}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: 'I take much pride in this work, and I am the best candidate.
 
           If

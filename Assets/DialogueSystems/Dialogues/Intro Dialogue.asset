@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Intro Dialogue
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
   Description: 
   _nodes:
   - rid: 5474676788425916503
@@ -62,6 +63,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 527.2, y: 44.800003}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: 'Finally, my first time going to the town alone.
 
           It
@@ -76,6 +78,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 927.2, y: 48.800003}
         speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
         dialogueText: "Though under one condition. \nI had to talk to Tomas De Ruiter
           as soon as I got here"
         Options:
@@ -88,6 +91,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1281.6, y: 51.199997}
         speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
         dialogueText: "The town of Rossum is small and cozy. \nBut compared to the
           farm you grew up on, it is absolutely massive"
         Options:
@@ -100,6 +104,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1689.6, y: 46.4}
         speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
         dialogueText: 'As you walk into town, taking in the new environment,
 
           A
@@ -114,6 +119,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2058.4, y: 45.6}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: 'Welcome to Rossum, Jacob Pieterzoon. '
         Options:
         - ResponseText: Continue
@@ -125,6 +131,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2344.8, y: 46.4}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: 'I got the letter from your dad that you would be allowed to
           travel here on your own.
 
@@ -140,6 +147,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 2760, y: 52.800003}
         speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
         dialogueText: 'Feel free to talk to everyone to get acquainted
 
           Have

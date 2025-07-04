@@ -1,0 +1,376 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Day2 Maiden DEATH
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 71ff8954ee5f0794babc310016c79a1e, type: 2}
+  Description: 
+  _nodes:
+  - rid: 2586427488681853387
+  - rid: 2586427488681853388
+  - rid: 2586427488681853389
+  - rid: 2586427488681853390
+  - rid: 2586427488681853391
+  - rid: 2586427488681853392
+  - rid: 2586427488681853393
+  - rid: 2586427488681853394
+  - rid: 2586427488681853395
+  - rid: 2586427488681853396
+  - rid: 2586427488681853397
+  - rid: 2586427488681853398
+  - rid: 2586427488681853399
+  - rid: 2586427488681853400
+  - rid: 2586427488681853401
+  - rid: 2586427488681853402
+  - rid: 2586427488681853403
+  - rid: 2586427488681853404
+  - rid: 2586427488681853405
+  - rid: 2586427488681853406
+  - rid: 2586427488681853407
+  - rid: 2586427488681853408
+  _connections:
+  - OutputNodeGUID: f2978d0b-6ace-460c-8ca1-76f7c5b099cd
+    OutputNodeIndex: 0
+    InputNodeGUID: a94f95fc-a8cd-4291-9d21-4183a9ac88c3
+  - OutputNodeGUID: e153c737-3fdb-4955-8163-f0d11887c656
+    OutputNodeIndex: 0
+    InputNodeGUID: 471263f4-e00e-4fa2-8b83-576dd884e56c
+  - OutputNodeGUID: 097263c0-52ee-4cf7-bf65-a365220ff3fe
+    OutputNodeIndex: 0
+    InputNodeGUID: 8b038e60-eb4a-4934-9451-f04e11d4b929
+  - OutputNodeGUID: b156f888-abcd-4652-b9a0-77d5d9ee99f8
+    OutputNodeIndex: 0
+    InputNodeGUID: da55427e-10f3-4066-acd8-646e77dd536d
+  - OutputNodeGUID: ab4eec55-9d1e-488a-a47c-a4af4bf09324
+    OutputNodeIndex: 0
+    InputNodeGUID: 6b8a8ce0-ced7-49d9-bd03-7d8f8a8c8ad6
+  - OutputNodeGUID: 9e24551c-c956-482c-80a1-3e9fdb637ecb
+    OutputNodeIndex: 0
+    InputNodeGUID: 4d66a7b3-1dbf-4189-8e9c-bc0db4abe724
+  - OutputNodeGUID: 4d66a7b3-1dbf-4189-8e9c-bc0db4abe724
+    OutputNodeIndex: 0
+    InputNodeGUID: ce2f18f3-05dd-430e-82a4-831684cf0f57
+  - OutputNodeGUID: ce2f18f3-05dd-430e-82a4-831684cf0f57
+    OutputNodeIndex: 0
+    InputNodeGUID: 371ada87-23e0-4aa9-93eb-2c255044ebd4
+  - OutputNodeGUID: 371ada87-23e0-4aa9-93eb-2c255044ebd4
+    OutputNodeIndex: 0
+    InputNodeGUID: 89808bef-3cfe-4194-9d1a-b39c2029d035
+  - OutputNodeGUID: 89808bef-3cfe-4194-9d1a-b39c2029d035
+    OutputNodeIndex: 0
+    InputNodeGUID: 092cc974-48ad-41c6-b15d-0d8d48c29e88
+  - OutputNodeGUID: 092cc974-48ad-41c6-b15d-0d8d48c29e88
+    OutputNodeIndex: 0
+    InputNodeGUID: b638750f-4f48-473b-b451-8160c035dc5c
+  - OutputNodeGUID: b638750f-4f48-473b-b451-8160c035dc5c
+    OutputNodeIndex: 0
+    InputNodeGUID: e9d01c2a-e5fe-4345-bd99-5250448262ac
+  - OutputNodeGUID: 292df72e-b199-47fa-b184-16a2e6a6af16
+    OutputNodeIndex: 0
+    InputNodeGUID: 48f9c7ea-b62b-4c33-a257-43d708bf8dfe
+  - OutputNodeGUID: a94f95fc-a8cd-4291-9d21-4183a9ac88c3
+    OutputNodeIndex: 0
+    InputNodeGUID: 8b0bd158-54d5-4b04-a0db-784dfc45401c
+  - OutputNodeGUID: 6b8a8ce0-ced7-49d9-bd03-7d8f8a8c8ad6
+    OutputNodeIndex: 0
+    InputNodeGUID: 9e24551c-c956-482c-80a1-3e9fdb637ecb
+  - OutputNodeGUID: 8b0bd158-54d5-4b04-a0db-784dfc45401c
+    OutputNodeIndex: 0
+    InputNodeGUID: e153c737-3fdb-4955-8163-f0d11887c656
+  - OutputNodeGUID: 471263f4-e00e-4fa2-8b83-576dd884e56c
+    OutputNodeIndex: 0
+    InputNodeGUID: 097263c0-52ee-4cf7-bf65-a365220ff3fe
+  - OutputNodeGUID: 8b038e60-eb4a-4934-9451-f04e11d4b929
+    OutputNodeIndex: 0
+    InputNodeGUID: b156f888-abcd-4652-b9a0-77d5d9ee99f8
+  - OutputNodeGUID: da55427e-10f3-4066-acd8-646e77dd536d
+    OutputNodeIndex: 0
+    InputNodeGUID: ab4eec55-9d1e-488a-a47c-a4af4bf09324
+  - OutputNodeGUID: e9d01c2a-e5fe-4345-bd99-5250448262ac
+    OutputNodeIndex: 0
+    InputNodeGUID: 292df72e-b199-47fa-b184-16a2e6a6af16
+  - OutputNodeGUID: 48f9c7ea-b62b-4c33-a257-43d708bf8dfe
+    OutputNodeIndex: 0
+    InputNodeGUID: acdda9fc-ae17-40b7-b413-d743098ba6b6
+  references:
+    version: 2
+    RefIds:
+    - rid: 2586427488681853387
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f2978d0b-6ace-460c-8ca1-76f7c5b099cd
+        type: 3
+        Position: {x: -366, y: 250.66666}
+    - rid: 2586427488681853388
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e153c737-3fdb-4955-8163-f0d11887c656
+        type: 1
+        Position: {x: 640.6667, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
+        dialogueText: " \u2018\u2019A Pieterzoon.. Haven\u2019t seen one around here
+          in so long..\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853389
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 097263c0-52ee-4cf7-bf65-a365220ff3fe
+        type: 1
+        Position: {x: 1305.3333, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019Of course... I thought you\u2019d come around
+          sooner or later, you know, especially since the disappearance of that young
+          man...\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853390
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b156f888-abcd-4652-b9a0-77d5d9ee99f8
+        type: 1
+        Position: {x: 2137.3335, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019I-I..\u2019\u2019 "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853391
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ab4eec55-9d1e-488a-a47c-a4af4bf09324
+        type: 1
+        Position: {x: 2958, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "Her hand reaches up to my cheek as tears are forming in my
+          eyes, tears I don\u2019t know the origin of "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853392
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9e24551c-c956-482c-80a1-3e9fdb637ecb
+        type: 1
+        Position: {x: 3796.6667, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 1
+        dialogueText: "\u2018\u2019No.. I know..\u2019\u2019 \r\n\r\n\u2018\u2019It\u2019s
+          my fault..\u2019\u2019 "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853393
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4d66a7b3-1dbf-4189-8e9c-bc0db4abe724
+        type: 1
+        Position: {x: 4126.6665, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 1
+        dialogueText: 'The old woman faintly smiles, her sternness going away for
+          one moment. Her eyes shining of life once more '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853394
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ce2f18f3-05dd-430e-82a4-831684cf0f57
+        type: 1
+        Position: {x: 4534, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019Some mistakes cannot be undone.. Yet others can..
+          What doesn\u2019t hurt us in the moment can hurt someone else...\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853395
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 371ada87-23e0-4aa9-93eb-2c255044ebd4
+        type: 1
+        Position: {x: 4962, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\u2018\u2019I.. I\u2019m going to the crypt to find answers,
+          I need to know what happened to him, to her, to everyone..\u2019\u2019 "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853396
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 89808bef-3cfe-4194-9d1a-b39c2029d035
+        type: 1
+        Position: {x: 5366.6665, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 2
+        dialogueText: "Words coming out of my mouth without me realising, words which
+          I probably shouldn\u2019t say to anyone this easily "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853397
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 092cc974-48ad-41c6-b15d-0d8d48c29e88
+        type: 1
+        Position: {x: 5797.333, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 0
+        dialogueText: " \u2018\u2019Well.. You know what you must do\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853398
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b638750f-4f48-473b-b451-8160c035dc5c
+        type: 1
+        Position: {x: 6237.333, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 2
+        dialogueText: " \u2018\u2019...Jacob\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853399
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 292df72e-b199-47fa-b184-16a2e6a6af16
+        type: 1
+        Position: {x: 7078, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 2
+        dialogueText: 'Whispering words I cannot hear '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853400
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: acdda9fc-ae17-40b7-b413-d743098ba6b6
+        type: 4
+        Position: {x: 13344, y: 193.33333}
+    - rid: 2586427488681853401
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a94f95fc-a8cd-4291-9d21-4183a9ac88c3
+        type: 1
+        Position: {x: -160, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "An older woman walking around, her eyes sparkling of once
+          youth, spots me as I\u2019m walking around aimlessly. She signals me to
+          come talk to her. Her beaten-up hands, holding a cane as she moves her
+          immaculate skirt out of the way to step forward with an air of royalty. "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853402
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6b8a8ce0-ced7-49d9-bd03-7d8f8a8c8ad6
+        type: 1
+        Position: {x: 3369.3335, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019You\u2019ve felt it too, didn\u2019t you.. Her
+          disappearance, no one believes me.. Everyone says it\u2019s my age talking...\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853403
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8b0bd158-54d5-4b04-a0db-784dfc45401c
+        type: 1
+        Position: {x: 256.66666, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 66a4d237c6ed01c48a9453e76cd43272, type: 2}
+        expression: 0
+        dialogueText: "\u2018\u2019Hello, young man.. What brings you to these lands?\u2019\u2019
+          She asks in a stern but soft voice. "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853404
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 471263f4-e00e-4fa2-8b83-576dd884e56c
+        type: 1
+        Position: {x: 1050.6666, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 1
+        dialogueText: "\u2018\u2019You.. know my father?\u2019\u2019 "
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853405
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8b038e60-eb4a-4934-9451-f04e11d4b929
+        type: 1
+        Position: {x: 1710.6666, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019Of course... I thought you\u2019d come around
+          sooner or later, you know, especially since the disappearance of that young
+          man...\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853406
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: da55427e-10f3-4066-acd8-646e77dd536d
+        type: 1
+        Position: {x: 2560.6667, y: 193.33333}
+        speaker: {fileID: 11400000, guid: ecd09e49451f93040ba76b22230e4617, type: 2}
+        expression: 2
+        dialogueText: "\u2018\u2019You seem troubled.. Young man.. Are you crying?\u2019\u2019"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853407
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e9d01c2a-e5fe-4345-bd99-5250448262ac
+        type: 1
+        Position: {x: 6671.333, y: 193.33333}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 2
+        dialogueText: 'Before I can say anything else, the maiden turns around and
+          walks away towards the empty field of grass, placing a lily on the edge
+          of the road '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427488681853408
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 48f9c7ea-b62b-4c33-a257-43d708bf8dfe
+        type: 5
+        Position: {x: 7520, y: 272}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0

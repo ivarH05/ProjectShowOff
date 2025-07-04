@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Unkown
   m_EditorClassIdentifier: 
   name: ???
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1ba54f57dc6aed8439f0cf8eec7ed80f, type: 3}
+  expressions: []

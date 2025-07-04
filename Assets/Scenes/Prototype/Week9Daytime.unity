@@ -1215,6 +1215,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1451617991}
     - target: {fileID: 1863799630311236595, guid: 83f3e0f95f1efd84985c6dc88c8a1d29, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 93f7aaa2051379b4eacf115316c40044, type: 3}
+    - target: {fileID: 1863799630311236595, guid: 83f3e0f95f1efd84985c6dc88c8a1d29, type: 3}
       propertyPath: DialogueSet
       value: 
       objectReference: {fileID: 11400000, guid: 7233d31b3dd18514aabbabac37f1e4e6, type: 2}
@@ -2583,6 +2587,14 @@ PrefabInstance:
       propertyPath: Renderer
       value: 
       objectReference: {fileID: 1710845133}
+    - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 5df977b8e44d722418fbac588adef6f1, type: 3}
+    - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
+      propertyPath: DialogueSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b92112abda3e30f45be68f3caacdd57d, type: 2}
     - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
       propertyPath: LookAtHouseTransform
       value: 
@@ -4924,6 +4936,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 923246546}
     - target: {fileID: 1863799630311236595, guid: 83f3e0f95f1efd84985c6dc88c8a1d29, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 35882b88e24b5c5449258b9ce99bb9c7, type: 3}
+    - target: {fileID: 1863799630311236595, guid: 83f3e0f95f1efd84985c6dc88c8a1d29, type: 3}
       propertyPath: DialogueSet
       value: 
       objectReference: {fileID: 11400000, guid: 100d1b1e4d82d824e874f9eaf379f511, type: 2}
@@ -6991,6 +7007,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 171257351}
     - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: cc19428d46c54974ab8173bee7777255, type: 3}
+    - target: {fileID: 5123509331782115287, guid: d593583420b647644b9fef318120faf3, type: 3}
       propertyPath: DialogueSet
       value: 
       objectReference: {fileID: 11400000, guid: a5c62d07edab70242878f30090af26aa, type: 2}
@@ -7974,7 +7994,7 @@ PrefabInstance:
     - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
       propertyPath: popupImage
       value: 
-      objectReference: {fileID: 21300000, guid: 28b163a401834bd4b8cd8ff4262f5906, type: 3}
+      objectReference: {fileID: 21300000, guid: cf8bbd51e9479b944a96457c7ca76536, type: 3}
     - target: {fileID: -5998066196481801137, guid: ee553dd94f2656a46a78741834361491, type: 3}
       propertyPath: DialogueSet
       value: 
@@ -8424,6 +8444,10 @@ PrefabInstance:
       propertyPath: Renderer
       value: 
       objectReference: {fileID: 146160064}
+    - target: {fileID: 9113942310460396250, guid: c816e88e57b902345b1ea376a646c2b4, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a2b886cf9daf6e4c90a112a8a11f13f, type: 3}
     - target: {fileID: 9113942310460396250, guid: c816e88e57b902345b1ea376a646c2b4, type: 3}
       propertyPath: DialogueSet
       value: 
@@ -10025,6 +10049,10 @@ PrefabInstance:
       propertyPath: Renderer
       value: 
       objectReference: {fileID: 1299864178}
+    - target: {fileID: 930461671047317435, guid: 8c2a0670a6d45f94bb75c26448cc338a, type: 3}
+      propertyPath: popupImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3488ddfed135aab419a58de1b3e7446b, type: 3}
     - target: {fileID: 930461671047317435, guid: 8c2a0670a6d45f94bb75c26448cc338a, type: 3}
       propertyPath: LookAtHouseTransform
       value: 
