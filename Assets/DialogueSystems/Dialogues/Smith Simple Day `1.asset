@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Smith Simple Day `1
   m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
   Description: 
   _nodes:
   - rid: 8154432774677987328
@@ -54,6 +55,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 400.66666, y: 184}
         speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
         dialogueText: Oh hey, you are Jacob right? Son of Peter
         Options:
         - ResponseText: Yes?
@@ -71,6 +73,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 700.6667, y: 187.33333}
         speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
         dialogueText: Great, my name is Joris Smid, I'm a friend of your fathers!
         Options:
         - ResponseText: Continue
@@ -82,6 +85,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1095.3333, y: 189.33333}
         speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
         dialogueText: Great to finally meet you, your dad talks a lot about you
         Options:
         - ResponseText: Really?
@@ -95,6 +99,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1496.6666, y: 27.333332}
         speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
         dialogueText: 'Yes really, he is quite fond of you after all. '
         Options:
         - ResponseText: Good to know
@@ -106,6 +111,7 @@ MonoBehaviour:
         type: 1
         Position: {x: 1492.6666, y: 417.33334}
         speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
         dialogueText: Good way of course, no need to be scared boy, he thinks highly
           of you
         Options:

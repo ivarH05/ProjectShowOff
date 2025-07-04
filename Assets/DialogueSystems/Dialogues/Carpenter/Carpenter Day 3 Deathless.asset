@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Carpenter Day 3 Deathless
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
   Description: 
   _nodes:
   - rid: 2736092980574421837

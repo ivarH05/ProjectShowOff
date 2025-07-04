@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
   m_Name: Smith Day 2 Deathless
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
   Description: 
   _nodes:
   - rid: 2736092979401589172
