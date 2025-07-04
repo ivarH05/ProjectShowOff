@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2b072f8a47b8a4e8e42f39cad01ada, type: 3}
+  m_Name: Maiden
+  m_EditorClassIdentifier: 
+  name: Maria Molenaar
+  sprite: {fileID: 21300000, guid: 3f868a6a50c7ca54a9a7eefd601781c1, type: 3}
+  expressions:
+  - expression: 2
+    sprite: {fileID: 21300000, guid: 13c9fae65ee7b064b9495c4700c26a79, type: 3}

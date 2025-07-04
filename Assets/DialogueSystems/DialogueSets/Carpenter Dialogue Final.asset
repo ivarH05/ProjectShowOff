@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9df24d7c42a8ed428504a0de65766b2, type: 3}
+  m_Name: Carpenter Dialogue Final
+  m_EditorClassIdentifier: 
+  Dialogues:
+  - conditions:
+    - condition: {fileID: 11400000, guid: 68f45a08c5456af479684517ea4b0479, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 68679a33209a6fc4db294beb9e995c60, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: bfcafeaf7ebd0dd4191d6b2ca3c80e24, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: a7c75721059c10a448fa4eb069085b4f, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: 39a3791bfdf2e94478c8a154007bfd78, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 4a282fe4ac69a854b8a41128b24b119c, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: 3ff1430d5db867d4e999c61895c1d911, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 7bc8ef301d953a845a145664a9449bf4, type: 2}
+  - conditions: []
+    dialogue: {fileID: 11400000, guid: 812e39e6920ece64c9d00d67fd59a436, type: 2}

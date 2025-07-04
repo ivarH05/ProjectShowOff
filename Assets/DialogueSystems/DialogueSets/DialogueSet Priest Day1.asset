@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: DialogueSet Priest Day1
   m_EditorClassIdentifier: 
   Dialogues:
+  - conditions:
+    - condition: {fileID: 11400000, guid: 68f45a08c5456af479684517ea4b0479, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 9bf02f701be2ec6468bf83b261efa971, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: bfcafeaf7ebd0dd4191d6b2ca3c80e24, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 3ccfe62a6264000478f7fafc93c0fccb, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: 1fca38fb82ff7fe429e99433763ba4c7, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 8f63086ad4d52c742aeee0f586a5a967, type: 2}
+  - conditions:
+    - condition: {fileID: 11400000, guid: 5bf001bf3e2169b41ba08e006af0d2be, type: 2}
+      expectedValue: 1
+    dialogue: {fileID: 11400000, guid: 5ad3e4be6f0ef8a4dad03dcc7c60b5ce, type: 2}
   - conditions: []
-    dialogue: {fileID: 11400000, guid: 15ba28769d414674eabc93f50a381cb5, type: 2}
-  - conditions: []
-    dialogue: {fileID: 0}
+    dialogue: {fileID: 11400000, guid: 64767d85f15c5234a87e485629bbe890, type: 2}

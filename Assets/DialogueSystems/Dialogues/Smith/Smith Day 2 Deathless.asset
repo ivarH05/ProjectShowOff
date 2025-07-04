@@ -1,0 +1,324 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Smith Day 2 Deathless
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092979401589153
+  - rid: 2736092979401589154
+  - rid: 2736092979401589155
+  - rid: 2736092979401589156
+  - rid: 2736092979401589157
+  - rid: 2736092979401589158
+  - rid: 2736092979401589159
+  - rid: 2736092979401589160
+  - rid: 2736092979401589161
+  - rid: 2736092979401589162
+  - rid: 2736092979401589163
+  - rid: 2736092979401589164
+  - rid: 2736092979401589165
+  - rid: 2736092979401589166
+  - rid: 2736092979401589167
+  - rid: 2736092979401589168
+  - rid: 2736092979401589169
+  - rid: 2736092979401589170
+  - rid: 2736092979401589171
+  _connections:
+  - OutputNodeGUID: afe6d8b9-d0b5-440a-8f92-500cdaa8e5d6
+    OutputNodeIndex: 0
+    InputNodeGUID: f1bfd1db-dd6a-433a-89c3-9b9bb804d68b
+  - OutputNodeGUID: b062a2ea-c843-42c1-98f0-4c02c4e0f488
+    OutputNodeIndex: 0
+    InputNodeGUID: 73ae5e4d-7ab9-4289-bac2-dec8c9037956
+  - OutputNodeGUID: f1bfd1db-dd6a-433a-89c3-9b9bb804d68b
+    OutputNodeIndex: 0
+    InputNodeGUID: b062a2ea-c843-42c1-98f0-4c02c4e0f488
+  - OutputNodeGUID: 73ae5e4d-7ab9-4289-bac2-dec8c9037956
+    OutputNodeIndex: 0
+    InputNodeGUID: f0b3898e-0bb5-48d9-ae24-221934b59d02
+  - OutputNodeGUID: f0b3898e-0bb5-48d9-ae24-221934b59d02
+    OutputNodeIndex: 0
+    InputNodeGUID: 58687d0c-c9bf-40a6-8e22-ed9b60a288f9
+  - OutputNodeGUID: 58687d0c-c9bf-40a6-8e22-ed9b60a288f9
+    OutputNodeIndex: 0
+    InputNodeGUID: 1fbdd0dc-4aac-4d57-913f-7bcd01230567
+  - OutputNodeGUID: 1fbdd0dc-4aac-4d57-913f-7bcd01230567
+    OutputNodeIndex: 0
+    InputNodeGUID: 883c156c-ba2b-4374-a8b5-a2e7e885cec2
+  - OutputNodeGUID: 883c156c-ba2b-4374-a8b5-a2e7e885cec2
+    OutputNodeIndex: 0
+    InputNodeGUID: e3cd3960-52d6-4a04-94ff-88552be5ab37
+  - OutputNodeGUID: e3cd3960-52d6-4a04-94ff-88552be5ab37
+    OutputNodeIndex: 0
+    InputNodeGUID: 44fe3ac7-226f-49c1-b283-a05c984a057a
+  - OutputNodeGUID: 44fe3ac7-226f-49c1-b283-a05c984a057a
+    OutputNodeIndex: 0
+    InputNodeGUID: 3f5cb37b-a731-48aa-95e4-a742fbb9e320
+  - OutputNodeGUID: 3f5cb37b-a731-48aa-95e4-a742fbb9e320
+    OutputNodeIndex: 0
+    InputNodeGUID: a465cdb5-34e4-4327-9b18-7befbc06759e
+  - OutputNodeGUID: a465cdb5-34e4-4327-9b18-7befbc06759e
+    OutputNodeIndex: 0
+    InputNodeGUID: f979857a-813e-4511-8d01-a2ce0dd17c06
+  - OutputNodeGUID: f979857a-813e-4511-8d01-a2ce0dd17c06
+    OutputNodeIndex: 0
+    InputNodeGUID: fb33aac8-97d9-4d8c-91b7-3a6fc12f41ad
+  - OutputNodeGUID: f979857a-813e-4511-8d01-a2ce0dd17c06
+    OutputNodeIndex: 1
+    InputNodeGUID: 036cd06a-698e-4d06-ab08-3ddad78f5ddb
+  - OutputNodeGUID: fb33aac8-97d9-4d8c-91b7-3a6fc12f41ad
+    OutputNodeIndex: 0
+    InputNodeGUID: 9d5e0574-c9eb-46b0-9b5d-efec2c2d4aab
+  - OutputNodeGUID: 9d5e0574-c9eb-46b0-9b5d-efec2c2d4aab
+    OutputNodeIndex: 0
+    InputNodeGUID: 4ffb7513-02c5-43d4-ad5d-2aaa8f0597c4
+  - OutputNodeGUID: 036cd06a-698e-4d06-ab08-3ddad78f5ddb
+    OutputNodeIndex: 0
+    InputNodeGUID: 8b4236e2-69c4-4808-9cfe-8a55e18ad5c0
+  - OutputNodeGUID: 8b4236e2-69c4-4808-9cfe-8a55e18ad5c0
+    OutputNodeIndex: 0
+    InputNodeGUID: 52f48695-7ca6-4336-b35a-83b89aed2433
+  - OutputNodeGUID: 4ffb7513-02c5-43d4-ad5d-2aaa8f0597c4
+    OutputNodeIndex: 0
+    InputNodeGUID: 52f48695-7ca6-4336-b35a-83b89aed2433
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092979401589153
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: afe6d8b9-d0b5-440a-8f92-500cdaa8e5d6
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092979401589154
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b062a2ea-c843-42c1-98f0-4c02c4e0f488
+        type: 1
+        Position: {x: 868.6667, y: 253.33334}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Oh hey, in town again?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589155
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f1bfd1db-dd6a-433a-89c3-9b9bb804d68b
+        type: 1
+        Position: {x: 406.66666, y: 258.66666}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: 'As you walk past the forge again, the same sounds of high
+          energy forge work from yesterday are still present. The sizzling heat,
+          the sparks, the high feeling of the hammer hitting metal. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589156
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 73ae5e4d-7ab9-4289-bac2-dec8c9037956
+        type: 1
+        Position: {x: 1174, y: 263.33334}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\u201CStill here for that same business\u201D"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589157
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f0b3898e-0bb5-48d9-ae24-221934b59d02
+        type: 1
+        Position: {x: 1432.6666, y: 264}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: Oh of course, finding a job?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589158
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 58687d0c-c9bf-40a6-8e22-ed9b60a288f9
+        type: 1
+        Position: {x: 1702, y: 270.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Correct, Finding a job is just really hard
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589159
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1fbdd0dc-4aac-4d57-913f-7bcd01230567
+        type: 1
+        Position: {x: 1973.3333, y: 266}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: I suppose that does make sense, small town, and every just
+          kind of figured it out on their own without assistants
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589160
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 883c156c-ba2b-4374-a8b5-a2e7e885cec2
+        type: 1
+        Position: {x: 2426.6667, y: 268.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: However, if you are really in need of something, I could use
+          someone for a couple days. Got a big order to deal with, Priest wants some
+          new gates for the graveyard
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589161
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e3cd3960-52d6-4a04-94ff-88552be5ab37
+        type: 1
+        Position: {x: 2891.3335, y: 257.33334}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: It's heavy work that will take a ton of time, but I'll pay
+          you a cut of the amount the church is paying us. Should be enough to get
+          you a place here
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589162
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 44fe3ac7-226f-49c1-b283-a05c984a057a
+        type: 1
+        Position: {x: 3350.6667, y: 256.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Oh that would be amazing, I'd love to. Just hammering stuff
+          and hard work?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589163
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3f5cb37b-a731-48aa-95e4-a742fbb9e320
+        type: 1
+        Position: {x: 3799.3335, y: 258.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: 
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589164
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a465cdb5-34e4-4327-9b18-7befbc06759e
+        type: 1
+        Position: {x: 4129.333, y: 279.33334}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: that is 90% of my work after all, so yes
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092979401589165
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f979857a-813e-4511-8d01-a2ce0dd17c06
+        type: 1
+        Position: {x: 4440, y: 274.66666}
+        speaker: {fileID: 11400000, guid: c6112750dcc4248479fc88706f6e1ec6, type: 2}
+        expression: 0
+        dialogueText: It'll take quite a bit of time though, but if you have the
+          time to spare, lets start immediately
+        Options:
+        - ResponseText: Accept
+          index: 0
+        - ResponseText: Decline
+          index: 1
+    - rid: 2736092979401589166
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fb33aac8-97d9-4d8c-91b7-3a6fc12f41ad
+        type: 5
+        Position: {x: 4794, y: 72}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401589167
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 9d5e0574-c9eb-46b0-9b5d-efec2c2d4aab
+        type: 5
+        Position: {x: 5046.6665, y: 66.666664}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401589168
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 036cd06a-698e-4d06-ab08-3ddad78f5ddb
+        type: 5
+        Position: {x: 4886.6665, y: 597.3333}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401589169
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 52f48695-7ca6-4336-b35a-83b89aed2433
+        type: 4
+        Position: {x: 5375.333, y: 386}
+    - rid: 2736092979401589170
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8b4236e2-69c4-4808-9cfe-8a55e18ad5c0
+        type: 5
+        Position: {x: 5267.333, y: 527.3333}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: fd684b54f93fb12419a1192e2e77b306, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092979401589171
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 4ffb7513-02c5-43d4-ad5d-2aaa8f0597c4
+        type: 5
+        Position: {x: 5418.6665, y: 55.333336}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: fd684b54f93fb12419a1192e2e77b306, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0

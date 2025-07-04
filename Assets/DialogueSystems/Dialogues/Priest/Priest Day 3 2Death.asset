@@ -1,0 +1,275 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Priest Day 3 2Death
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2736092980574421377
+  - rid: 2736092980574421378
+  - rid: 2736092980574421379
+  - rid: 2736092980574421380
+  - rid: 2736092980574421381
+  - rid: 2736092980574421382
+  - rid: 2736092980574421383
+  - rid: 2736092980574421384
+  - rid: 2736092980574421385
+  - rid: 2736092980574421386
+  - rid: 2736092980574421387
+  - rid: 2736092980574421388
+  - rid: 2736092980574421389
+  - rid: 2736092980574421390
+  - rid: 2736092980574421391
+  - rid: 2736092980574421392
+  _connections:
+  - OutputNodeGUID: fdbfa75b-af96-4341-a69f-d9212c5f640a
+    OutputNodeIndex: 0
+    InputNodeGUID: de9199cb-7c1a-4f3e-ab71-ebb3d84cb496
+  - OutputNodeGUID: de9199cb-7c1a-4f3e-ab71-ebb3d84cb496
+    OutputNodeIndex: 0
+    InputNodeGUID: dc798e8c-8239-4cad-a2ee-9027bb14b672
+  - OutputNodeGUID: dc798e8c-8239-4cad-a2ee-9027bb14b672
+    OutputNodeIndex: 0
+    InputNodeGUID: ab986e1b-6000-435b-bd66-3ae0ff6d1019
+  - OutputNodeGUID: ab986e1b-6000-435b-bd66-3ae0ff6d1019
+    OutputNodeIndex: 0
+    InputNodeGUID: 424473ab-1355-46ef-a8f7-264ec2c8f8ef
+  - OutputNodeGUID: 424473ab-1355-46ef-a8f7-264ec2c8f8ef
+    OutputNodeIndex: 0
+    InputNodeGUID: 352a7aea-a894-4558-8609-fc298ffd0912
+  - OutputNodeGUID: 352a7aea-a894-4558-8609-fc298ffd0912
+    OutputNodeIndex: 0
+    InputNodeGUID: d7c84472-ecf8-48a0-a140-11ebb43396f3
+  - OutputNodeGUID: d7c84472-ecf8-48a0-a140-11ebb43396f3
+    OutputNodeIndex: 0
+    InputNodeGUID: a437efc2-96a3-4d11-9d48-fd1bf7912d36
+  - OutputNodeGUID: a437efc2-96a3-4d11-9d48-fd1bf7912d36
+    OutputNodeIndex: 0
+    InputNodeGUID: c40ed16a-92e6-4375-9336-856cbb5ef198
+  - OutputNodeGUID: c40ed16a-92e6-4375-9336-856cbb5ef198
+    OutputNodeIndex: 0
+    InputNodeGUID: f635ea5a-f99e-4d07-9385-0a2dfe987ffd
+  - OutputNodeGUID: f635ea5a-f99e-4d07-9385-0a2dfe987ffd
+    OutputNodeIndex: 0
+    InputNodeGUID: f64578f0-06cb-44c6-81fe-5c960abcac61
+  - OutputNodeGUID: f64578f0-06cb-44c6-81fe-5c960abcac61
+    OutputNodeIndex: 0
+    InputNodeGUID: f64cafce-247e-440d-be1a-d3daefb21488
+  - OutputNodeGUID: f64cafce-247e-440d-be1a-d3daefb21488
+    OutputNodeIndex: 0
+    InputNodeGUID: 6981b336-d6de-404c-8aad-a5539d87e925
+  - OutputNodeGUID: 6981b336-d6de-404c-8aad-a5539d87e925
+    OutputNodeIndex: 0
+    InputNodeGUID: 7766ddd8-23fe-49b8-b5c4-f644d2b55759
+  - OutputNodeGUID: 7766ddd8-23fe-49b8-b5c4-f644d2b55759
+    OutputNodeIndex: 0
+    InputNodeGUID: 6bd79a33-371b-402b-b5d8-083c2af71094
+  - OutputNodeGUID: 6bd79a33-371b-402b-b5d8-083c2af71094
+    OutputNodeIndex: 0
+    InputNodeGUID: af4ceeb0-f72f-46fb-a7e9-cfb50862162b
+  references:
+    version: 2
+    RefIds:
+    - rid: 2736092980574421377
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: fdbfa75b-af96-4341-a69f-d9212c5f640a
+        type: 3
+        Position: {x: 200, y: 250}
+    - rid: 2736092980574421378
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: de9199cb-7c1a-4f3e-ab71-ebb3d84cb496
+        type: 1
+        Position: {x: 384.66666, y: 227.33333}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: 'As the priest, again, is standing in the doorway. This time
+          his eyes fixated on an empty space in town. An empty space that used to
+          have a house. He can''t know, can he? Or maybe you are just imagining things. '
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421379
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: dc798e8c-8239-4cad-a2ee-9027bb14b672
+        type: 1
+        Position: {x: 870.6667, y: 244.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: As you walk up, he seems to almost snap back to reality and
+          focus his eyes on you. Slightly... weary for some reason?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421380
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: ab986e1b-6000-435b-bd66-3ae0ff6d1019
+        type: 1
+        Position: {x: 1345.3333, y: 254.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Good morning Jacob, what brings you to the church today
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421381
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 424473ab-1355-46ef-a8f7-264ec2c8f8ef
+        type: 1
+        Position: {x: 1800.6666, y: 262}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: I saw you staring at an empty spot in town, and was wondering
+          why
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421382
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 352a7aea-a894-4558-8609-fc298ffd0912
+        type: 1
+        Position: {x: 2204, y: 259.33334}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Can't let on I know that it used to have something
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421383
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d7c84472-ecf8-48a0-a140-11ebb43396f3
+        type: 1
+        Position: {x: 2568, y: 262}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: I was thinking about maybe commissioning the carpenter to build
+          something there. Like a library. The curch makes enough from tithe that
+          it can sponsor things like this
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421384
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a437efc2-96a3-4d11-9d48-fd1bf7912d36
+        type: 1
+        Position: {x: 3000.6667, y: 258.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Getting books and knowledge in general has proven to be a task.
+          Sure, we can buy books from the town over. But they are often expensive
+          and fragile
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421385
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: c40ed16a-92e6-4375-9336-856cbb5ef198
+        type: 1
+        Position: {x: 3463.3335, y: 260.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Having our own library would be very beneficial to the townsfolk.
+          On top of that, we can also even use it to store history of the town
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421386
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f635ea5a-f99e-4d07-9385-0a2dfe987ffd
+        type: 1
+        Position: {x: 3911.3335, y: 267.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: For some reason, I woke up with a sense of dread. A fear of
+          being forgotten. Anything written down can not be forgotten
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421387
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f64578f0-06cb-44c6-81fe-5c960abcac61
+        type: 1
+        Position: {x: 4322.6665, y: 267.33334}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"But the paper can still be lost or burned, can it not?"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421388
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f64cafce-247e-440d-be1a-d3daefb21488
+        type: 1
+        Position: {x: 4693.333, y: 258.66666}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: That it can, but it's better than word of mouth. "A man dies
+          twice in his life. When he gets lowered into the ground, and when he is
+          last thought of"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421389
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6981b336-d6de-404c-8aad-a5539d87e925
+        type: 1
+        Position: {x: 5098.6665, y: 262.66666}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: '"Wise words, I should expect that from a priest"'
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421390
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 7766ddd8-23fe-49b8-b5c4-f644d2b55759
+        type: 1
+        Position: {x: 5436.6665, y: 257.33334}
+        speaker: {fileID: 11400000, guid: 8e4100fa478a71c4ebeff302a9edd5ac, type: 2}
+        expression: 0
+        dialogueText: Indeed you should. I should go back inside, too much thinking
+          like this will make both you and me melancholic. Have a great day
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2736092980574421391
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 6bd79a33-371b-402b-b5d8-083c2af71094
+        type: 5
+        Position: {x: 5855.333, y: 280.66666}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2736092980574421392
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: af4ceeb0-f72f-46fb-a7e9-cfb50862162b
+        type: 4
+        Position: {x: 6096.6665, y: 280.66666}

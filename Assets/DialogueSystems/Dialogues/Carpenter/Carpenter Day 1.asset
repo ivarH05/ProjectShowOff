@@ -1,0 +1,459 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c38b7277a3d114f9cc695b213f57e0, type: 3}
+  m_Name: Carpenter Day 1
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  Description: 
+  _nodes:
+  - rid: 2586427461972787317
+  - rid: 2586427461972787318
+  - rid: 2586427461972787319
+  - rid: 2586427461972787320
+  - rid: 2586427461972787321
+  - rid: 2586427461972787322
+  - rid: 2586427461972787323
+  - rid: 2586427461972787324
+  - rid: 2586427461972787325
+  - rid: 2586427461972787326
+  - rid: 2586427461972787327
+  - rid: 2586427461972787328
+  - rid: 2586427461972787329
+  - rid: 2586427461972787330
+  - rid: 2586427461972787331
+  - rid: 2586427461972787332
+  - rid: 2586427461972787333
+  - rid: 2586427461972787334
+  - rid: 2586427461972787335
+  - rid: 2586427461972787336
+  - rid: 2586427461972787337
+  - rid: 2586427461972787338
+  - rid: 2586427461972787339
+  - rid: 2586427461972787340
+  - rid: 2586427461972787341
+  - rid: 2586427461972787342
+  - rid: 2586427461972787343
+  _connections:
+  - OutputNodeGUID: 2958d5c4-0237-42b0-aadd-85d8c95c096a
+    OutputNodeIndex: 0
+    InputNodeGUID: d1790b1d-e38d-4876-b8c5-1f7e25ca3b27
+  - OutputNodeGUID: d1790b1d-e38d-4876-b8c5-1f7e25ca3b27
+    OutputNodeIndex: 0
+    InputNodeGUID: 68c6246f-d525-4a72-a0d4-d6522e4d682c
+  - OutputNodeGUID: 68c6246f-d525-4a72-a0d4-d6522e4d682c
+    OutputNodeIndex: 0
+    InputNodeGUID: 8872059c-455e-44e9-8d1f-08a5c5fecea8
+  - OutputNodeGUID: 8872059c-455e-44e9-8d1f-08a5c5fecea8
+    OutputNodeIndex: 0
+    InputNodeGUID: 8e289d44-3b15-4665-912d-87f70ff33725
+  - OutputNodeGUID: 8e289d44-3b15-4665-912d-87f70ff33725
+    OutputNodeIndex: 0
+    InputNodeGUID: 43a949b4-1e3e-43d5-8e04-33c39320f06c
+  - OutputNodeGUID: 43a949b4-1e3e-43d5-8e04-33c39320f06c
+    OutputNodeIndex: 0
+    InputNodeGUID: e1615937-d393-42f2-a16c-0a0953bc0649
+  - OutputNodeGUID: e1615937-d393-42f2-a16c-0a0953bc0649
+    OutputNodeIndex: 0
+    InputNodeGUID: e2638c25-4dd5-49f3-a855-dc507df8bce2
+  - OutputNodeGUID: e2638c25-4dd5-49f3-a855-dc507df8bce2
+    OutputNodeIndex: 0
+    InputNodeGUID: d3499e82-14c2-412e-8800-792e5b52384a
+  - OutputNodeGUID: d3499e82-14c2-412e-8800-792e5b52384a
+    OutputNodeIndex: 0
+    InputNodeGUID: 25595944-5a0a-425e-984b-2ee47f78f6be
+  - OutputNodeGUID: 25595944-5a0a-425e-984b-2ee47f78f6be
+    OutputNodeIndex: 0
+    InputNodeGUID: 88ce0ced-3010-4881-8000-8cb435a7a4f5
+  - OutputNodeGUID: 88ce0ced-3010-4881-8000-8cb435a7a4f5
+    OutputNodeIndex: 0
+    InputNodeGUID: f7752071-a179-4001-a576-cfa162bc7d4a
+  - OutputNodeGUID: f7752071-a179-4001-a576-cfa162bc7d4a
+    OutputNodeIndex: 0
+    InputNodeGUID: a8293124-8eff-4f11-8737-b7a2477a4351
+  - OutputNodeGUID: a8293124-8eff-4f11-8737-b7a2477a4351
+    OutputNodeIndex: 0
+    InputNodeGUID: 00c9827d-522c-4c50-85c1-c6c0cd116b1f
+  - OutputNodeGUID: 00c9827d-522c-4c50-85c1-c6c0cd116b1f
+    OutputNodeIndex: 0
+    InputNodeGUID: 287389dc-9ad1-4325-975a-d21b13561876
+  - OutputNodeGUID: 287389dc-9ad1-4325-975a-d21b13561876
+    OutputNodeIndex: 0
+    InputNodeGUID: 1cc39c73-ef3c-4d00-99fa-a24a7cc70523
+  - OutputNodeGUID: 1cc39c73-ef3c-4d00-99fa-a24a7cc70523
+    OutputNodeIndex: 0
+    InputNodeGUID: f2188b5e-580e-4f22-93b6-3b59a7891cff
+  - OutputNodeGUID: f2188b5e-580e-4f22-93b6-3b59a7891cff
+    OutputNodeIndex: 0
+    InputNodeGUID: 89a10030-f50b-47f6-934c-2ddf260e847e
+  - OutputNodeGUID: 89a10030-f50b-47f6-934c-2ddf260e847e
+    OutputNodeIndex: 0
+    InputNodeGUID: b6890afe-5617-4fe4-9e36-fd4b6a2cfc04
+  - OutputNodeGUID: 84ef130f-7878-4f48-85b5-4073323ec0be
+    OutputNodeIndex: 0
+    InputNodeGUID: 063cd1a1-368f-4650-8f58-92cee4c5f676
+  - OutputNodeGUID: 571a8f0a-b2b0-48e1-918a-0bd51a8f095b
+    OutputNodeIndex: 0
+    InputNodeGUID: dd32d8f9-4e08-4c07-bb05-3e9f0aa24cf5
+  - OutputNodeGUID: a903a090-df04-4d9f-a081-ed2941258fb9
+    OutputNodeIndex: 0
+    InputNodeGUID: 571a8f0a-b2b0-48e1-918a-0bd51a8f095b
+  - OutputNodeGUID: dd32d8f9-4e08-4c07-bb05-3e9f0aa24cf5
+    OutputNodeIndex: 0
+    InputNodeGUID: 3f4de283-6b9b-4e91-895c-eb6d9eb5d960
+  - OutputNodeGUID: 3f4de283-6b9b-4e91-895c-eb6d9eb5d960
+    OutputNodeIndex: 0
+    InputNodeGUID: 479e9236-30f8-42ef-a35f-7331c4497cd9
+  - OutputNodeGUID: b6890afe-5617-4fe4-9e36-fd4b6a2cfc04
+    OutputNodeIndex: 0
+    InputNodeGUID: 490a8258-74fb-4a5d-a260-5ef4a67689de
+  - OutputNodeGUID: 490a8258-74fb-4a5d-a260-5ef4a67689de
+    OutputNodeIndex: 0
+    InputNodeGUID: 84ef130f-7878-4f48-85b5-4073323ec0be
+  - OutputNodeGUID: 063cd1a1-368f-4650-8f58-92cee4c5f676
+    OutputNodeIndex: 0
+    InputNodeGUID: a903a090-df04-4d9f-a081-ed2941258fb9
+  references:
+    version: 2
+    RefIds:
+    - rid: 2586427461972787317
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 2958d5c4-0237-42b0-aadd-85d8c95c096a
+        type: 3
+        Position: {x: 200, y: 250.4}
+    - rid: 2586427461972787318
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d1790b1d-e38d-4876-b8c5-1f7e25ca3b27
+        type: 1
+        Position: {x: 372, y: 268.8}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "As you walk past the carpenters' building, the air is filled
+          with the smell of cedar and maple. Fragrant wood and charcoal. You hear
+          an axe sinking into logs, and a wood plane shaving the wood to perfection.
+          \_\_\n"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787319
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 68c6246f-d525-4a72-a0d4-d6522e4d682c
+        type: 1
+        Position: {x: 833.60004, y: 238.4}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "Well, I have enough muscle from work on the farm, and I don't
+          mind working with wood. It's worth a shot I guess?\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787320
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8872059c-455e-44e9-8d1f-08a5c5fecea8
+        type: 1
+        Position: {x: 1251.2, y: 247.20001}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "As you walk up to the storefront, you notice everything in
+          the store is made of wood. Everything including the cups to hold coffee
+          and the chairs. \_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787321
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 8e289d44-3b15-4665-912d-87f70ff33725
+        type: 1
+        Position: {x: 1675.2, y: 244}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Sit down, I will be with you soon. Just finishing up this last
+          thing for Pieterzoon then I'll be over
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787322
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 43a949b4-1e3e-43d5-8e04-33c39320f06c
+        type: 1
+        Position: {x: 2136, y: 248.79999}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\u201CI don't remember ordering anything\u201D\_\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787323
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e1615937-d393-42f2-a16c-0a0953bc0649
+        type: 1
+        Position: {x: 2411.2, y: 254.4}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 3
+        dialogueText: Of course you don't, it's for your dad
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787324
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: e2638c25-4dd5-49f3-a855-dc507df8bce2
+        type: 1
+        Position: {x: 2684.8, y: 261.6}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 3
+        dialogueText: The shed you have in the backyard has been having some issues
+          with rain lingering on it too long, causing rot
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787325
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: d3499e82-14c2-412e-8800-792e5b52384a
+        type: 1
+        Position: {x: 3171.2, y: 262.4}
+        speaker: {fileID: 0}
+        expression: 0
+        dialogueText: But it's an easy fix, a water barrel and a gutter should do
+          the trick
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787326
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 25595944-5a0a-425e-984b-2ee47f78f6be
+        type: 1
+        Position: {x: 3602.4, y: 272.8}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: As, a couple of minutes waiting later, you see a tall, broad
+          man walk out of his workshop into the storefront
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787327
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 88ce0ced-3010-4881-8000-8cb435a7a4f5
+        type: 1
+        Position: {x: 4004, y: 274.4}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: Oh, I should probably introduce myself. Ben De Jong, carpenter
+          and lumberjack
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787328
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f7752071-a179-4001-a576-cfa162bc7d4a
+        type: 1
+        Position: {x: 4432.8003, y: 279.2}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: Jacob Pieterzoon, pleasure to meet you
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787329
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a8293124-8eff-4f11-8737-b7a2477a4351
+        type: 1
+        Position: {x: 4739.2, y: 296.8}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: It's been a while since I've seen you, you probably don't even
+          remember me seeing you
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787330
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 00c9827d-522c-4c50-85c1-c6c0cd116b1f
+        type: 1
+        Position: {x: 5164.8003, y: 300}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: "I\u2019ve been over at the farm a couple times, just for repairs
+          and such. Oh, and the shed of course. Still one of my best works"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787331
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 287389dc-9ad1-4325-975a-d21b13561876
+        type: 1
+        Position: {x: 5597.6, y: 301.6}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: You don't happen to need an assistant, do you
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787332
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 1cc39c73-ef3c-4d00-99fa-a24a7cc70523
+        type: 1
+        Position: {x: 5934.4004, y: 299.2}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 3
+        dialogueText: Right, your dad did say that you were looking for a job. Sadly,
+          I think you are better off sticking to farmwork. Carpentry is a harsh trade
+          to learn, and I don't have the time for an apprentice
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787333
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: f2188b5e-580e-4f22-93b6-3b59a7891cff
+        type: 1
+        Position: {x: 6420, y: 292}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 3
+        dialogueText: Why do you need a job, anyways? I get a young kid trying to
+          get some independence, but why not take it a bit slower?
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787334
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 89a10030-f50b-47f6-934c-2ddf260e847e
+        type: 1
+        Position: {x: 6865.6, y: 305.6}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "I don't think I should tell him. Not letting this spread across
+          the town is the right move\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787335
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 84ef130f-7878-4f48-85b5-4073323ec0be
+        type: 1
+        Position: {x: 8343.2, y: 314.4}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\"Thank you, I have a feeling my dad would kill me if he knew\u201D"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787336
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 571a8f0a-b2b0-48e1-918a-0bd51a8f095b
+        type: 1
+        Position: {x: 9428, y: 341.6}
+        speaker: {fileID: 11400000, guid: 820537dd9008ee04cb552cf5f14ceb37, type: 2}
+        expression: 0
+        dialogueText: "As the carpenter shakes your hand, and walks back into his
+          workshop. \_\_\_\_\_\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787337
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: a903a090-df04-4d9f-a081-ed2941258fb9
+        type: 1
+        Position: {x: 9039.2, y: 346.4}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: I would love to chat some more, but I do have work to get back
+          to. I'll see you around
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787338
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: dd32d8f9-4e08-4c07-bb05-3e9f0aa24cf5
+        type: 5
+        Position: {x: 9878.4, y: 402.4}
+        onRun:
+          type: 1
+          flag: {fileID: 11400000, guid: 3ff1430d5db867d4e999c61895c1d911, type: 2}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2586427461972787339
+      type: {class: NodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 479e9236-30f8-42ef-a35f-7331c4497cd9
+        type: 4
+        Position: {x: 10237.601, y: 427.2}
+    - rid: 2586427461972787340
+      type: {class: EventNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 3f4de283-6b9b-4e91-895c-eb6d9eb5d960
+        type: 5
+        Position: {x: 10061.601, y: 244.79999}
+        onRun:
+          type: 4
+          flag: {fileID: 0}
+          flagValue: 1
+          sound: {fileID: 0}
+          shakeMagnitude: 0
+    - rid: 2586427461972787341
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: b6890afe-5617-4fe4-9e36-fd4b6a2cfc04
+        type: 1
+        Position: {x: 7383.2, y: 292.8}
+        speaker: {fileID: 11400000, guid: 44cf7d3d0f4b54b449c8109b737b7469, type: 2}
+        expression: 0
+        dialogueText: "\u201CI have some business in town that needs to be taken
+          care of, and biking multiple kilometers each day is not the best\u201D\_"
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787342
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 490a8258-74fb-4a5d-a260-5ef4a67689de
+        type: 1
+        Position: {x: 7857.6, y: 310.4}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 1
+        dialogueText: Right. Business... Listen I won't tell your dad you have a
+          girlfriend, don't worry about it
+        Options:
+        - ResponseText: Continue
+          index: 0
+    - rid: 2586427461972787343
+      type: {class: TextNodeData, ns: DialogueSystem, asm: Assembly-CSharp}
+      data:
+        GUID: 063cd1a1-368f-4650-8f58-92cee4c5f676
+        type: 1
+        Position: {x: 8731.2, y: 336}
+        speaker: {fileID: 11400000, guid: d49f226d1e23bd048b3a52790017aeaa, type: 2}
+        expression: 0
+        dialogueText: "Don't worry, your secret is safe with me.\_\_"
+        Options:
+        - ResponseText: Continue
+          index: 0

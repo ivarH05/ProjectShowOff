@@ -7655,7 +7655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 3
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 600969241}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 1860353424}
@@ -42392,7 +42392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 1
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 152017023}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 192877976}
@@ -44940,7 +44940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 2
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1003437211}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 644999049}
@@ -55559,7 +55559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.24
+      value: 7.78
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -55567,7 +55567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.85
+      value: -5.45
       objectReference: {fileID: 0}
     - target: {fileID: 6817915385953658727, guid: d3fb937da67c5494bbe20da2e7d532f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55653,7 +55653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Style: {fileID: 0}
   <FlipWallDecorationMask>k__BackingField: 0
-  <DontGenerateWallDecMask>k__BackingField: 2
+  <DontGenerateWallDecMask>k__BackingField: 0
   _disabledAtDistance: {fileID: 1081466512}
   _generatedChildren: {fileID: 0}
   _colliders: {fileID: 851191959}
@@ -56154,63 +56154,6 @@ Transform:
   - {fileID: 1293385675}
   m_Father: {fileID: 1992451245265615517}
   m_LocalEulerAnglesHint: {x: 0, y: 105, z: 0}
---- !u!1001 &4843533881763026495
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.43982
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.054
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527401038445651881, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6600217113822561934, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
-      propertyPath: m_Name
-      value: Crypt Collapse
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4346e1dff264cfc4b91de790f978c165, type: 3}
 --- !u!23 &5036313534515475098
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56537,4 +56480,3 @@ SceneRoots:
   - {fileID: 1661964578}
   - {fileID: 1384575285}
   - {fileID: 323296294}
-  - {fileID: 4843533881763026495}
