@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1310474a398d14e44b9dd800acabbb74, type: 3}
-  m_Name: Piece 6
+  m_Name: Piece 9
   m_EditorClassIdentifier: 
-  DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: bbb25cf8e8b1261478c6954f03b5a29b, type: 3}
-  HandHeldPrefab: {fileID: 9111433920995212162, guid: 5efbcb4b775c5dd4c80612af5efa40b1, type: 3}
+  DefaultWorldObjectPrefab: {fileID: 3659759394038980453, guid: bd153b3e134a88342a6d4f0289f062a0, type: 3}
+  HandHeldPrefab: {fileID: 9111433920995212162, guid: 3e8ed55522d205a42aca92c52139f173, type: 3}
   baseRightOffset: {x: 0, y: 0, z: 0}
   baseLeftOffset: {x: 0, y: 0, z: 0}
   baseEulerAngles: {x: 0, y: 0, z: 0}
+  ItemFrameOffset: {x: 0, y: 0, z: 0}
+  ItemFrameEulerAngles: {x: 0, y: 0, z: 0}
+  weight: 0
   OnPickUp:
     m_PersistentCalls:
       m_Calls: []
