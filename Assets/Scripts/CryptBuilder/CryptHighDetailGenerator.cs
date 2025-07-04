@@ -75,12 +75,16 @@ namespace CryptBuilder
 
             var detailCount = Mathf.Abs(length / _currentStyle.ArchDecoration.Width);
             bool integerDetailCount = Mathf.Abs(detailCount - (int)detailCount) < .01f;
+            
 
             if (_currentStyle.ArchDecoration.Width < .02) return;
             if (_currentStyle.ArchDecoration.Prefab == null) return;
             bool genArches = (_currentRoom.Room.DontGenerateWallDecMask & (1 << _currentWallIndex)) == 0;
-            if (!genArches || !(startIsCorner || endIsCorner || integerDetailCount)) 
+            if (!genArches || !(startIsCorner || endIsCorner || integerDetailCount))
+            {
+                _currentWallIndex++;
                 return; // cant really place arches here in any way
+            }
 
             Quaternion rotation = Quaternion.AngleAxis(angle+90, Vector3.up);
             Quaternion rotationFlipped = Quaternion.AngleAxis(angle+270, Vector3.up);
@@ -114,7 +118,6 @@ namespace CryptBuilder
                 decoInstance.transform.localPosition = pos.To3D(0);
                 decoInstance.transform.rotation = flipped ? rotation : rotationFlipped;
             }
-
             _currentWallIndex++;
         }
         WallPointType WallTypeAtPoint(Vector2 v)

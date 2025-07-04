@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
+  m_Name: RockSound
+  m_EditorClassIdentifier: 
+  ClipSelection:
+  - {fileID: 8300000, guid: 0e026d43e05aa8f418b0dd58ec5b1001, type: 3}
+  - {fileID: 8300000, guid: 7878d07cff92177408b81dbf1209765f, type: 3}
+  - {fileID: 8300000, guid: 02564b041aa3f914c9cd2291475a07b8, type: 3}
+  - {fileID: 8300000, guid: 53ac8fcbaec45c24591e462427f18c5d, type: 3}
+  - {fileID: 8300000, guid: 96efd9b7c935bb2459897cd907138d5d, type: 3}
+  - {fileID: 8300000, guid: 8547cc7b15ea0e645ab5513218c56b35, type: 3}
+  - {fileID: 8300000, guid: 8b3df1d95fed4cc48a108c6d934ef6f6, type: 3}
+  SelectionMode: 1
+  Type: 0
+  Volume: 1
+  Pitch: 1
+  AudibleRange: 8.9
+  FaintThreshold: 0.459
+  ModerateThreshold: 0.2
+  LoudThreshold: 0.076
