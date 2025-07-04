@@ -13,12 +13,20 @@ MonoBehaviour:
   m_Name: dinging medal
   m_EditorClassIdentifier: 
   ClipSelection:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4aad4ff627927e549a26673563dd0802, type: 3}
+  - {fileID: 8300000, guid: 4e3adbe1944abc14b8fe398e80fee25b, type: 3}
+  - {fileID: 8300000, guid: 8c4430c0ff3916b429ee33d685bf9b59, type: 3}
+  - {fileID: 8300000, guid: 4bd23cf8df8915441824bf1bdd11f170, type: 3}
+  - {fileID: 8300000, guid: e7a8ca99db2408a4b96dded67d726926, type: 3}
+  - {fileID: 8300000, guid: a2214ae30ea56424c9b54e4d90a3a5f4, type: 3}
+  - {fileID: 8300000, guid: a29da723a270c2d498f3d0e38a183206, type: 3}
+  - {fileID: 8300000, guid: 39c47e7c29180bd43a77b0c98e8710cd, type: 3}
+  - {fileID: 8300000, guid: 6e88adc1df2c0d8419be4f48e2580118, type: 3}
   SelectionMode: 0
   Type: 0
   Volume: 1
   Pitch: 1
-  AudibleRange: 1
+  AudibleRange: 18.18
   FaintThreshold: 0.80952376
   ModerateThreshold: 0.490476
   LoudThreshold: 0.15238091
