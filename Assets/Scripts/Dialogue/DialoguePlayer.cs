@@ -1,6 +1,7 @@
 using DialogueSystem.UI;
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -23,6 +24,8 @@ namespace DialogueSystem
 
         public Events events = new Events();
 
+        UnityEvent<Dialogue> preEndDialogue = new UnityEvent<Dialogue>();
+
 
         public void Awake()
         {
@@ -33,14 +36,14 @@ namespace DialogueSystem
 
         public static void StartNewDialogue(Dialogue dialogue, Action OnEnd)
         {
-            _singleton.events.OnDialogueEnd.AddListener(OnDialogueEnd);
+            _singleton.preEndDialogue.AddListener(OnDialogueEnd);
             _singleton.SetDialogue(dialogue);
             _singleton.StartDialogue();
 
             void OnDialogueEnd(Dialogue dialogue)
             {
-                _singleton.events.OnDialogueEnd.RemoveListener(OnDialogueEnd);
-                OnEnd(); 
+                OnEnd();
+                _singleton.preEndDialogue.RemoveListener(OnDialogueEnd);
             }
         }
 
@@ -81,6 +84,7 @@ namespace DialogueSystem
             if (_activeDialogue == null)
                 return;
 
+            preEndDialogue.Invoke(_activeDialogue);
             events.OnDialogueEnd.Invoke(_activeDialogue);
             //_activeDialogue = null;
             activeNode = null;

@@ -25,11 +25,14 @@ public class PopupManager : MonoBehaviour
         }
         else
         {
-            for (int i = length; i < instances.Count; i++)
+            for (int i = length - 1; i < instances.Count; i++)
+            {
                 Destroy(instances[i]);
+                instances.RemoveAt(i);
+            }
         }
 
-        for (int i = 0; i < instances.Count; i++)
+        for (int i = 0; i < sprites.Length && i < instances.Count; i++)
             instances[i].sprite = sprites[i];
         positions = worldPositions;
     }
