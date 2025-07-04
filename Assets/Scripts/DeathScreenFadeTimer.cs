@@ -19,6 +19,7 @@ public class DeathScreenFadeTimer : MonoBehaviour
         if (timer > 3)
         {
             sceneTransitioner.TransitionScene(targetScene);
+            this.enabled = false;
         }
     }
 }
