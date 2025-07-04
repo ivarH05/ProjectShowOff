@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d992f60e0aed49b067afad4421ecf, type: 3}
+  m_Name: dust
+  m_EditorClassIdentifier: 
+  ClipSelection:
+  - {fileID: 8300000, guid: 6e7c135f3d08a9249bb16fdfd633c8b6, type: 3}
+  - {fileID: 8300000, guid: 541caeaab5954ec44aafe8dcd7cc9841, type: 3}
+  - {fileID: 8300000, guid: bf7786a86556adf4aa09509dd179f314, type: 3}
+  - {fileID: 8300000, guid: 8502b6bedae94394f80eeb89f021a939, type: 3}
+  - {fileID: 8300000, guid: d2b94a18a1008db4fabc8c5538aa0314, type: 3}
+  - {fileID: 8300000, guid: 7fc43ab9089f0cd48804d6c4338bd599, type: 3}
+  SelectionMode: 1
+  Type: 0
+  Volume: 1
+  Pitch: 1
+  AudibleRange: 100
+  FaintThreshold: 0.876
+  ModerateThreshold: 0.324
+  LoudThreshold: 0.071
